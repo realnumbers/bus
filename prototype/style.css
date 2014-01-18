@@ -3,7 +3,7 @@
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-        box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Roboto Condensed", Helvetica, Segoe, Arial, sans-serif;
   color: #333;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 10px;
+  margin: 0;
   font-weight: 600;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
@@ -35,24 +35,17 @@ h1 {
   font-size: 40px;
 }
 h2 {
-  margin-top: 20px;
   font-size: 32px;
 }
 h3 {
-  margin-top: 24px;
   font-size: 24px;
 }
 h4, h5, h6 {
-  margin-top: 16px;
   font-size: 16px;
 }
 
 p {
-  margin: 0 0 15px;
-}
-
-ul, ol {
-  margin-bottom: 15px;
+  margin: 0;
 }
 li {
   color: #888580;
@@ -67,23 +60,12 @@ a:focus {
   text-decoration: underline;
 }
 
+/* GENERIC */
+
 .container {
   padding: 1em;
   width: 95%;
   margin: 0 auto;
-}
-.chosen-line * {
-  line-height: 0em;
-}
-.blue {
-  color: #1e85fe;
-}
-.label {
-  display: inline-block;
-  font-size: 1.4em;
-  font-weight: bold;
-  text-transform: uppercase;
-  width: 3.2em;
 }
 .text-element {
   display: inline-block;
@@ -92,19 +74,37 @@ a:focus {
 .list-element {
   display: block;
 }
-
 .line-big {
   display: inline;
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: bold;
 }
 .line-small {
   display: inline;
   font-size: 1.1em;
 }
+.bigger {
+  font-size: 1.5em;
+}
+.blue {
+  color: #1e85fe;
+}
+.thin {
+  font-weight: 400;
+}
 
 /* SEARCH */
 
+.chosen-line {
+  margin: 0.1em 0 0;
+}
+.label {
+  display: inline-block;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 3.2em;
+}
 .input {
   width: 100%;
   margin: 0.4em 0 0em;
@@ -123,7 +123,7 @@ a:focus {
     color: white;
 }
 .suggest-element {
-  margin-left: 0.8em;
+  margin: 0.3em 0 0 0.8em;
 }
 
 /* SEARCH RESULTS */
@@ -134,7 +134,22 @@ a:focus {
 .search-results .line-big {
   display: inline-block;
   width: 5.7em;
-  line-height: 1em;
+  margin-bottom: 0.3em;
 }
 
 /* ROUTE DETAILS */
+
+.timestamp {
+  
+}
+.left-column {
+  display: inline-block;
+  width: 3em;
+}
+.connection-symbol {
+  height: 1em;
+  margin: 0.2em 0 0 0.8em;
+}
+.intermediate-block {
+  margin: 1.3em 0;
+}
