@@ -25,6 +25,7 @@ parse(){
 				echo ","
 			fi
 	echo -n "{ 
+		\"label\"   : \"$name_de, $city_de - $name_it, $city_it\",
 		\"name_de\" : \"$name_de\",
 		\"name_it\" : \"$name_it\",
 		\"city_de\" : \"$city_de\",
@@ -41,4 +42,5 @@ parse(){
 	echo
 	echo ]
 }
-parse > busstops.json
+parse > ../js/busstops.json
+cat ../js/busstops.json | json_verify -u
