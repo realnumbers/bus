@@ -1,8 +1,8 @@
 var data_ready = false;
 var lang = "it";
 var busstops = $.getJSON( "js/busstops.json", function(data){
-		console.log(" success");
-		console.log(data);
+		//console.log("success");
+		//console.log(data);
 		data_ready = true;
 	});
 //console.log(busstops);
@@ -29,29 +29,31 @@ function autocom(data){
 		document.getElementsByClassName("suggest-element")[1].innerHTML = "";
 		document.getElementsByClassName("suggest-element")[2].innerHTML = "";
 		data = busstops.responseJSON;
-		console.log("Change");
+		//console.log("Change");
 		function tryMatch(element, index, array) {
-			value_list.forEach(tryPattern);
+		var respons = value_list.every(tryPattern);
+			if ( i < 3 && respons){
+				document.getElementsByClassName("suggest-element")[i].innerHTML = "<p class=\"line-big list\">"+element.name+",</p> <p class=\"line-small list\">"+element.city+"</p>";
+				i++;
+			}
+			if ( i > 2 )
+					return false;
+		return true;
 			
 		function tryPattern(item, index, array){
 			//console.log(item);
+			//console.log(element);
 			var pattern = new RegExp(item, "i");
 			var found = element.label.match(pattern);
 			if ( value != "" && found != null){
-				if ( i >= 0  ){
-				document.getElementsByClassName("suggest-element")[i].innerHTML = "<p class=\"line-big list\">"+element.name+",</p> <p class=\"line-small list\">"+element.city+"</p>";
-				i--;
-				}
-			//console.log(found);
+				return true;
 			}	
-			if ( found == null ){
-					console.log(i);
-					i = 2;
-					return false;
+			else{
+				return false;
 			}
 		}
 			}
 
 		var str = data[lang];
-		str.forEach(tryMatch);
+		str.every(tryMatch);
  }
