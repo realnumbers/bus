@@ -13,34 +13,56 @@ split_city(){
 	city_it=${ADDR[0]}
 	city_de=${ADDR[1]}
 }
+gen_json_de(){
+	echo -n "{ 
+		\"label\"   : \"$name_de, $city_de\",
+		\"name\" : \"$name_de\",
+		\"city\" : \"$city_de\",
+		\"id\" : \"$id\"
+	
+	}";
+}
+gen_json_it(){
+	echo -n "{ 
+		\"label\"   : \"$name_it, $city_it\",
+		\"name\" : \"$name_it\",
+		\"city\" : \"$city_it\",
+		\"id\" : \"$id\"
+	
+	}";
+}
 parse(){
 	export IFS=";"
-	echo [
 	cat fermate.csv | while read id dummy name dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummydummy city dummy ;
 	do 
 		if [ "$id" != "Numero esterno" ]; then
 			split_name
 			split_city
 			if [ "$prec" != "Numero esterno" ]; then
-				echo ","
+				echo "," >> de.json
+				echo "," >> it.json
 			fi
-	echo -n "{ 
-		\"label\"   : \"$name_de, $city_de - $name_it, $city_it\",
-		\"name_de\" : \"$name_de\",
-		\"name_it\" : \"$name_it\",
-		\"city_de\" : \"$city_de\",
-		\"city_it\" : \"$city_it\",
-		\"id\" : \"$id\"
-	
-	}";
+		gen_json_de >> de.json
+		gen_json_it >> it.json
 			prec="0"
 		else
 			prec="Numero esterno"
 		fi
 
 	done
-	echo
-	echo ]
 }
-parse > ../js/busstops.json
-cat ../js/busstops.json | json_verify -u
+TARGET=../js/busstops.json
+rm $TARGET 
+parse
+echo "{
+	\"de\" : [" >> $TARGET
+cat de.json >> $TARGET
+echo "], " >> $TARGET
+echo "\"it\" : [" >> $TARGET
+cat it.json >> $TARGET
+echo "" >> $TARGET
+echo "]" >> $TARGET
+echo "}" >> $TARGET
+cat $TARGET | json_verify -u
+rm de.json
+rm it.json
