@@ -1,5 +1,13 @@
-var busstops = $.getJSON( "js/busstops.json", function( data ){
-	return data;
+var busstops = $.getJSON( "js/busstops.json", function(data){
+		console.log("success");
+		console.log(data);
+		autocom(data);
 	});
-console.log(busstops);
-
+//console.log(busstops);
+function autocom(data){
+$(function() {
+	$( "#to-input" ).autocomplete({
+		source: data
+	});
+});
+}

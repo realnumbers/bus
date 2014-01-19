@@ -1,7850 +1,7850 @@
-{
-	"1" : { 
-		"name_de" : "Meran Bahnhof",
+[
+{ 
+		"label" : "Meran Bahnhof",
 		"name_it" : "Merano stazione",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "1"
 	
 	},
-	"100" : { 
-		"name_de" : "Weingartnerstr. 1",
+{ 
+		"label" : "Weingartnerstr. 1",
 		"name_it" : "via Weingartner 1",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "100"
 	
 	},
-	"1000" : { 
-		"name_de" : "Bozen AutBhf",
+{ 
+		"label" : "Bozen AutBhf",
 		"name_it" : "Bolzano Autostazione",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1000"
 	
 	},
-	"1000001" : { 
-		"name_de" : "St. Franziskus Str.",
+{ 
+		"label" : "St. Franziskus Str.",
 		"name_it" : "via San Francesco",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "1000001"
 	
 	},
-	"1000002" : { 
-		"name_de" : "Petrarca Str. 2",
+{ 
+		"label" : "Petrarca Str. 2",
 		"name_it" : "via Petrarca 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "1000002"
 	
 	},
-	"1000004" : { 
-		"name_de" : "Weissensteiner Str. 2",
+{ 
+		"label" : "Weissensteiner Str. 2",
 		"name_it" : "via Pietralba 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1000004"
 	
 	},
-	"100003" : { 
-		"name_de" : "Weissensteiner Str. 1",
+{ 
+		"label" : "Weissensteiner Str. 1",
 		"name_it" : "via Pietralba 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "100003"
 	
 	},
-	"100007" : { 
-		"name_de" : "Fagen Str. 2",
+{ 
+		"label" : "Fagen Str. 2",
 		"name_it" : "via Fago 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100007"
 	
 	},
-	"100008" : { 
-		"name_de" : "Fagen Str. 1",
+{ 
+		"label" : "Fagen Str. 1",
 		"name_it" : "via Fago 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100008"
 	
 	},
-	"100010" : { 
-		"name_de" : "Blumau",
+{ 
+		"label" : "Blumau",
 		"name_it" : "Prato Isarco",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "100010"
 	
 	},
-	"100011" : { 
-		"name_de" : "Galizien Str. 1",
+{ 
+		"label" : "Galizien Str. 1",
 		"name_it" : "via Galizia 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "100011"
 	
 	},
-	"100012" : { 
-		"name_de" : "Wangergasse",
+{ 
+		"label" : "Wangergasse",
 		"name_it" : "via dei Vanga",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100012"
 	
 	},
-	"100013" : { 
-		"name_de" : "Talfergasse",
+{ 
+		"label" : "Talfergasse",
 		"name_it" : "via Talvera",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100013"
 	
 	},
-	"100014" : { 
-		"name_de" : "Runkelsteinerstr. 2",
+{ 
+		"label" : "Runkelsteinerstr. 2",
 		"name_it" : "via Castel Roncolo 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100014"
 	
 	},
-	"100015" : { 
-		"name_de" : "Vintler Str.",
+{ 
+		"label" : "Vintler Str.",
 		"name_it" : "via Vintler",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100015"
 	
 	},
-	"100016" : { 
-		"name_de" : "Runkelsteinerstr. 1",
+{ 
+		"label" : "Runkelsteinerstr. 1",
 		"name_it" : "via Castel Roncolo 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100016"
 	
 	},
-	"100017" : { 
-		"name_de" : "Selig Heinrich Str. 1",
+{ 
+		"label" : "Selig Heinrich Str. 1",
 		"name_it" : "via Beato Arrigo 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100017"
 	
 	},
-	"100018" : { 
-		"name_de" : "Wangergasse",
+{ 
+		"label" : "Wangergasse",
 		"name_it" : "via dei Vanga",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100018"
 	
 	},
-	"100019" : { 
-		"name_de" : "Weggenstein Str. 1 non esiste",
+{ 
+		"label" : "Weggenstein Str. 1 non esiste",
 		"name_it" : "via Weggenstein 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100019"
 	
 	},
-	"10002" : { 
-		"name_de" : "Hofer Str. 2",
+{ 
+		"label" : "Hofer Str. 2",
 		"name_it" : "via Hofer 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "10002"
 	
 	},
-	"100020" : { 
-		"name_de" : "Lanciastr. 1",
+{ 
+		"label" : "Lanciastr. 1",
 		"name_it" : "via Lancia 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "100020"
 	
 	},
-	"10008" : { 
-		"name_de" : "Kardaun Handwerkerz. 1",
+{ 
+		"label" : "Kardaun Handwerkerz. 1",
 		"name_it" : "Cardano zona Art. 1",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "10008"
 	
 	},
-	"10022" : { 
-		"name_de" : "Burgstall Seilb. Voeran",
+{ 
+		"label" : "Burgstall Seilb. Voeran",
 		"name_it" : "Postal Fun. Verano",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "10022"
 	
 	},
-	"101" : { 
-		"name_de" : "Goethe Str. 4",
+{ 
+		"label" : "Goethe Str. 4",
 		"name_it" : "via Goethe 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "101"
 	
 	},
-	"10849" : { 
-		"name_de" : "Terlan Bahnhof",
+{ 
+		"label" : "Terlan Bahnhof",
 		"name_it" : "Terlano Stazione",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "10849"
 	
 	},
-	"1090" : { 
-		"name_de" : "Pacinotti Str. 1",
+{ 
+		"label" : "Pacinotti Str. 1",
 		"name_it" : "via Pacinotti 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1090"
 	
 	},
-	"1091" : { 
-		"name_de" : "Volta Str. 3",
+{ 
+		"label" : "Volta Str. 3",
 		"name_it" : "via Volta 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1091"
 	
 	},
-	"1092" : { 
-		"name_de" : "Friedhof 1",
+{ 
+		"label" : "Friedhof 1",
 		"name_it" : "Cimitero 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1092"
 	
 	},
-	"1093" : { 
-		"name_de" : "Friedhof 1",
+{ 
+		"label" : "Friedhof 1",
 		"name_it" : "Cimitero 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1093"
 	
 	},
-	"1094" : { 
-		"name_de" : "Pfarrhof Str. 2",
+{ 
+		"label" : "Pfarrhof Str. 2",
 		"name_it" : "via Maso della Pieve 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1094"
 	
 	},
-	"1095" : { 
-		"name_de" : "Pfarrhof Str. 2",
+{ 
+		"label" : "Pfarrhof Str. 2",
 		"name_it" : "via Maso della Pieve 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1095"
 	
 	},
-	"1096" : { 
-		"name_de" : "St. Jakob Str. 1",
+{ 
+		"label" : "St. Jakob Str. 1",
 		"name_it" : "via S. Giacomo 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1096"
 	
 	},
-	"1097" : { 
-		"name_de" : "St. Jakob Str. 1",
+{ 
+		"label" : "St. Jakob Str. 1",
 		"name_it" : "via S. Giacomo 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1097"
 	
 	},
-	"1098" : { 
-		"name_de" : "St. Jakob Str. 3",
+{ 
+		"label" : "St. Jakob Str. 3",
 		"name_it" : "via S. Giacomo 3",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1098"
 	
 	},
-	"1099" : { 
-		"name_de" : "St. Jakob Str. 3",
+{ 
+		"label" : "St. Jakob Str. 3",
 		"name_it" : "via S. Giacomo 3",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1099"
 	
 	},
-	"1100" : { 
-		"name_de" : "St. Jakob Str. 5",
+{ 
+		"label" : "St. Jakob Str. 5",
 		"name_it" : "via S. Giacomo 5",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1100"
 	
 	},
-	"1101" : { 
-		"name_de" : "St. Jakob Str. 5",
+{ 
+		"label" : "St. Jakob Str. 5",
 		"name_it" : "via S. Giacomo 5",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1101"
 	
 	},
-	"1102" : { 
-		"name_de" : "Steinmannwald",
+{ 
+		"label" : "Steinmannwald",
 		"name_it" : "Pineta",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1102"
 	
 	},
-	"1103" : { 
-		"name_de" : "Steinmannwald",
+{ 
+		"label" : "Steinmannwald",
 		"name_it" : "Pineta",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1103"
 	
 	},
-	"1104" : { 
-		"name_de" : "Kennedy Str. 1",
+{ 
+		"label" : "Kennedy Str. 1",
 		"name_it" : "via Kennedy 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1104"
 	
 	},
-	"1105" : { 
-		"name_de" : "Kennedy Str. 1",
+{ 
+		"label" : "Kennedy Str. 1",
 		"name_it" : "via Kennedy 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1105"
 	
 	},
-	"1106" : { 
-		"name_de" : "Kennedy Str. 2",
+{ 
+		"label" : "Kennedy Str. 2",
 		"name_it" : "via Kennedy 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1106"
 	
 	},
-	"1107" : { 
-		"name_de" : "Kennedy Str. 2",
+{ 
+		"label" : "Kennedy Str. 2",
 		"name_it" : "via Kennedy 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1107"
 	
 	},
-	"1108" : { 
-		"name_de" : "Kennedy Str. 3",
+{ 
+		"label" : "Kennedy Str. 3",
 		"name_it" : "via Kennedy 3",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1108"
 	
 	},
-	"1109" : { 
-		"name_de" : "Kennedy Str. 3",
+{ 
+		"label" : "Kennedy Str. 3",
 		"name_it" : "via Kennedy 3",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1109"
 	
 	},
-	"1110" : { 
-		"name_de" : "Kennedy Str. 4",
+{ 
+		"label" : "Kennedy Str. 4",
 		"name_it" : "via Kennedy 4",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1110"
 	
 	},
-	"1111" : { 
-		"name_de" : "Kennedy Str. 4",
+{ 
+		"label" : "Kennedy Str. 4",
 		"name_it" : "via Kennedy 4",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "1111"
 	
 	},
-	"1116" : { 
-		"name_de" : "Branzoll SS12 Raif",
+{ 
+		"label" : "Branzoll SS12 Raif",
 		"name_it" : "Bronzolo SS12 Raif",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "1116"
 	
 	},
-	"1117" : { 
-		"name_de" : "Branzoll SS12 Raif",
+{ 
+		"label" : "Branzoll SS12 Raif",
 		"name_it" : "Bronzolo SS12 Raif",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "1117"
 	
 	},
-	"1125" : { 
-		"name_de" : "Auer Dorf",
+{ 
+		"label" : "Auer Dorf",
 		"name_it" : "Ora Paese",
 		"city_de" : "Auer",
 		"city_it" : "Ora",
 		"id" : "1125"
 	
 	},
-	"1211" : { 
-		"name_de" : "Andrian Rathaus",
+{ 
+		"label" : "Andrian Rathaus",
 		"name_it" : "Andriano Municipio",
 		"city_de" : "Andrian",
 		"city_it" : "Andriano",
 		"id" : "1211"
 	
 	},
-	"1212" : { 
-		"name_de" : "Andrian Rathaus",
+{ 
+		"label" : "Andrian Rathaus",
 		"name_it" : "Andriano Municipio",
 		"city_de" : "Andrian",
 		"city_it" : "Andriano",
 		"id" : "1212"
 	
 	},
-	"1213" : { 
-		"name_de" : "Andrian Lido",
+{ 
+		"label" : "Andrian Lido",
 		"name_it" : "Andriano Lido",
 		"city_de" : "Andrian",
 		"city_it" : "Andriano",
 		"id" : "1213"
 	
 	},
-	"1214" : { 
-		"name_de" : "Andrian Lido",
+{ 
+		"label" : "Andrian Lido",
 		"name_it" : "Andriano Lido",
 		"city_de" : "Andrian",
 		"city_it" : "Andriano",
 		"id" : "1214"
 	
 	},
-	"1215" : { 
-		"name_de" : "Andrianerstr. (Kaltbrunn)",
+{ 
+		"label" : "Andrianerstr. (Kaltbrunn)",
 		"name_it" : "via Andriano (Kaltbrunn)",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1215"
 	
 	},
-	"1216" : { 
-		"name_de" : "Andrianerstr. (Kaltbrunn)",
+{ 
+		"label" : "Andrianerstr. (Kaltbrunn)",
 		"name_it" : "via Andriano (Kaltbrunn)",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1216"
 	
 	},
-	"1217" : { 
-		"name_de" : "Andrianerstr. (Huben)",
+{ 
+		"label" : "Andrianerstr. (Huben)",
 		"name_it" : "via Andriano (Huben)",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1217"
 	
 	},
-	"1218" : { 
-		"name_de" : "Andrianerstr. (Huben)",
+{ 
+		"label" : "Andrianerstr. (Huben)",
 		"name_it" : "via Andriano (Huben)",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1218"
 	
 	},
-	"1219" : { 
-		"name_de" : "Nals Rathaus",
+{ 
+		"label" : "Nals Rathaus",
 		"name_it" : "Nalles Municipio",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1219"
 	
 	},
-	"1220" : { 
-		"name_de" : "Nals Rathaus",
+{ 
+		"label" : "Nals Rathaus",
 		"name_it" : "Nalles Municipio",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1220"
 	
 	},
-	"1221" : { 
-		"name_de" : "Brunnen Platz",
+{ 
+		"label" : "Brunnen Platz",
 		"name_it" : "piazza Fontana",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1221"
 	
 	},
-	"1222" : { 
-		"name_de" : "Brunnen Platz",
+{ 
+		"label" : "Brunnen Platz",
 		"name_it" : "piazza Fontana",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1222"
 	
 	},
-	"1223" : { 
-		"name_de" : "Vilpian Bahnhof",
+{ 
+		"label" : "Vilpian Bahnhof",
 		"name_it" : "Vilpiano stazione",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "1223"
 	
 	},
-	"1225" : { 
-		"name_de" : "Abzw. Kuenserhof",
+{ 
+		"label" : "Abzw. Kuenserhof",
 		"name_it" : "Bivio Kuenserhof",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "1225"
 	
 	},
-	"1236" : { 
-		"name_de" : "Kardaun Friedhof",
+{ 
+		"label" : "Kardaun Friedhof",
 		"name_it" : "Cardano Cimitero",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "1236"
 	
 	},
-	"1237" : { 
-		"name_de" : "Kardaun Friedhof",
+{ 
+		"label" : "Kardaun Friedhof",
 		"name_it" : "Cardano Cimitero",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "1237"
 	
 	},
-	"1238" : { 
-		"name_de" : "Karneid Moar",
+{ 
+		"label" : "Karneid Moar",
 		"name_it" : "Cornedo Moar",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "1238"
 	
 	},
-	"1239" : { 
-		"name_de" : "Karneid Moar",
+{ 
+		"label" : "Karneid Moar",
 		"name_it" : "Cornedo Moar",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "1239"
 	
 	},
-	"1340" : { 
-		"name_de" : "Volta Str. 4",
+{ 
+		"label" : "Volta Str. 4",
 		"name_it" : "via Volta 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1340"
 	
 	},
-	"1341" : { 
-		"name_de" : "Volta Str. 4",
+{ 
+		"label" : "Volta Str. 4",
 		"name_it" : "via Volta 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1341"
 	
 	},
-	"1342" : { 
-		"name_de" : "Oebersthoefe",
+{ 
+		"label" : "Oebersthoefe",
 		"name_it" : "Maso Alto",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "1342"
 	
 	},
-	"1343" : { 
-		"name_de" : "Abzw. Gfeis/Oebersthoefe",
+{ 
+		"label" : "Abzw. Gfeis/Oebersthoefe",
 		"name_it" : "Bivio Gaveis/Maso Alto",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "1343"
 	
 	},
-	"1344" : { 
-		"name_de" : "Abzw. Gfeis/Oebersthoefe",
+{ 
+		"label" : "Abzw. Gfeis/Oebersthoefe",
 		"name_it" : "Bivio Gaveis/Maso Alto",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "1344"
 	
 	},
-	"1345" : { 
-		"name_de" : "Kuenserstr. (Sonngarten)",
+{ 
+		"label" : "Kuenserstr. (Sonngarten)",
 		"name_it" : "via Caines (Sonngarten)",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "1345"
 	
 	},
-	"1346" : { 
-		"name_de" : "Kuenserstr. (Sonngarten)",
+{ 
+		"label" : "Kuenserstr. (Sonngarten)",
 		"name_it" : "via Caines (Sonngarten)",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "1346"
 	
 	},
-	"1347" : { 
-		"name_de" : "Schloss Karneid",
+{ 
+		"label" : "Schloss Karneid",
 		"name_it" : "Castel Cornedo",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "1347"
 	
 	},
-	"1348" : { 
-		"name_de" : "Vilpian Campingpl.",
+{ 
+		"label" : "Vilpian Campingpl.",
 		"name_it" : "Vilpiano Campeggio",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "1348"
 	
 	},
-	"1349" : { 
-		"name_de" : "Vilpian Campingpl.",
+{ 
+		"label" : "Vilpian Campingpl.",
 		"name_it" : "Vilpiano Campeggio",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "1349"
 	
 	},
-	"1351" : { 
-		"name_de" : "Nals, Giessen",
+{ 
+		"label" : "Nals, Giessen",
 		"name_it" : "Nalles, Giessen",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1351"
 	
 	},
-	"1352" : { 
-		"name_de" : "Nals, Giessen",
+{ 
+		"label" : "Nals, Giessen",
 		"name_it" : "Nalles, Giessen",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "1352"
 	
 	},
-	"1362" : { 
-		"name_de" : "Fagen Str. 4",
+{ 
+		"label" : "Fagen Str. 4",
 		"name_it" : "via Fago 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1362"
 	
 	},
-	"1364" : { 
-		"name_de" : "Sozialsprengel",
+{ 
+		"label" : "Sozialsprengel",
 		"name_it" : "Distretto Sanitario",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "1364"
 	
 	},
-	"1409" : { 
-		"name_de" : "St. Kathrein Dorf",
+{ 
+		"label" : "St. Kathrein Dorf",
 		"name_it" : "S. Caterina Paese",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "1409"
 	
 	},
-	"1412" : { 
-		"name_de" : "Moar Wiese (Viktoria)",
+{ 
+		"label" : "Moar Wiese (Viktoria)",
 		"name_it" : "Moar Wiese (Viktoria)",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "1412"
 	
 	},
-	"1413" : { 
-		"name_de" : "Oberdorf (Sonnenheim)",
+{ 
+		"label" : "Oberdorf (Sonnenheim)",
 		"name_it" : "Avelengo di Sopra (Sonnenheim)",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "1413"
 	
 	},
-	"1414" : { 
-		"name_de" : "Hafling Rathaus",
+{ 
+		"label" : "Hafling Rathaus",
 		"name_it" : "Avelengo Municipio",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "1414"
 	
 	},
-	"1415" : { 
-		"name_de" : "Hafling (Gantahler)",
+{ 
+		"label" : "Hafling (Gantahler)",
 		"name_it" : "Avelengo (Ganthaler)",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "1415"
 	
 	},
-	"1416" : { 
-		"name_de" : "Hafling (Brunnerhof)",
+{ 
+		"label" : "Hafling (Brunnerhof)",
 		"name_it" : "Avelengo (Brunnerhof)",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "1416"
 	
 	},
-	"1489" : { 
-		"name_de" : "Ackpfeil",
+{ 
+		"label" : "Ackpfeil",
 		"name_it" : "Acquaviva",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "1489"
 	
 	},
-	"1833" : { 
-		"name_de" : "Gargazon Gemeinde",
+{ 
+		"label" : "Gargazon Gemeinde",
 		"name_it" : "Gragazzone Comune",
 		"city_de" : "Gargazon",
 		"city_it" : "Gargazzone",
 		"id" : "1833"
 	
 	},
-	"1834" : { 
-		"name_de" : "Sonnenstr.",
+{ 
+		"label" : "Sonnenstr.",
 		"name_it" : "via del Sole",
 		"city_de" : "Andrian",
 		"city_it" : "Andriano",
 		"id" : "1834"
 	
 	},
-	"1891" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "via Weingartner usc. MeBo-Weingartnerstr. Ausf. MeBo",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "1891"
 	
 	},
-	"1892" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "via Weingartner usc. MeBo-Weingartnerstr. Ausf. MeBo",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "1892"
 	
 	},
-	"1909" : { 
-		"name_de" : "Mailandstr. 3A",
+{ 
+		"label" : "Mailandstr. 3A",
 		"name_it" : "via Milano 3A",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1909"
 	
 	},
-	"1910" : { 
-		"name_de" : "Mailandstr. 3A",
+{ 
+		"label" : "Mailandstr. 3A",
 		"name_it" : "via Milano 3A",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1910"
 	
 	},
-	"1964" : { 
-		"name_de" : "Siemens Str. 3",
+{ 
+		"label" : "Siemens Str. 3",
 		"name_it" : "via Siemens 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "1964"
 	
 	},
-	"1972" : { 
-		"name_de" : "Toell Bahnhof",
+{ 
+		"label" : "Toell Bahnhof",
 		"name_it" : "Tel Stazione",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "1972"
 	
 	},
-	"2" : { 
-		"name_de" : "Rennweg",
+{ 
+		"label" : "Rennweg",
 		"name_it" : "via delle Corse",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "2"
 	
 	},
-	"2006" : { 
-		"name_de" : "Steurerweg",
+{ 
+		"label" : "Steurerweg",
 		"name_it" : "Steurerweg",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "2006"
 	
 	},
-	"2007" : { 
-		"name_de" : "Steurerweg",
+{ 
+		"label" : "Steurerweg",
 		"name_it" : "Steurerweg",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "2007"
 	
 	},
-	"2008" : { 
-		"name_de" : "Stroblwiese 2",
+{ 
+		"label" : "Stroblwiese 2",
 		"name_it" : "Stroblwiese 2",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "2008"
 	
 	},
-	"2039" : { 
-		"name_de" : "Segenbuehl Sessellift",
+{ 
+		"label" : "Segenbuehl Sessellift",
 		"name_it" : "Monte S.Benedetto Seggiovia",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "2039"
 	
 	},
-	"2040" : { 
-		"name_de" : "St. Ruprechtskirche",
+{ 
+		"label" : "St. Ruprechtskirche",
 		"name_it" : "Chiesa San Ruprecht",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "2040"
 	
 	},
-	"2049" : { 
-		"name_de" : "Astoria",
+{ 
+		"label" : "Astoria",
 		"name_it" : "Astoria",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "2049"
 	
 	},
-	"2050" : { 
-		"name_de" : "Obere Laurin Str.",
+{ 
+		"label" : "Obere Laurin Str.",
 		"name_it" : "via Laurin Alta",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "2050"
 	
 	},
-	"2075" : { 
-		"name_de" : "Thalguter Str.",
+{ 
+		"label" : "Thalguter Str.",
 		"name_it" : "via Thalguter",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "2075"
 	
 	},
-	"2264" : { 
-		"name_de" : "Rotwand",
+{ 
+		"label" : "Rotwand",
 		"name_it" : "Rotwand",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "2264"
 	
 	},
-	"248" : { 
-		"name_de" : "Rennweg",
+{ 
+		"label" : "Rennweg",
 		"name_it" : "via delle Corse",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "248"
 	
 	},
-	"249" : { 
-		"name_de" : "Goethe Str. 2",
+{ 
+		"label" : "Goethe Str. 2",
 		"name_it" : "via Goethe 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "249"
 	
 	},
-	"3" : { 
-		"name_de" : "Goethe Str. 2",
+{ 
+		"label" : "Goethe Str. 2",
 		"name_it" : "via Goethe 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "3"
 	
 	},
-	"306" : { 
-		"name_de" : "Piavestr. 1",
+{ 
+		"label" : "Piavestr. 1",
 		"name_it" : "via Piave 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "306"
 	
 	},
-	"307" : { 
-		"name_de" : "St. Georgen Str.",
+{ 
+		"label" : "St. Georgen Str.",
 		"name_it" : "via San Giorgio",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "307"
 	
 	},
-	"308" : { 
-		"name_de" : "St. Georgen Str.",
+{ 
+		"label" : "St. Georgen Str.",
 		"name_it" : "via San Giorgio",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "308"
 	
 	},
-	"310" : { 
-		"name_de" : "Jaufenstr.",
+{ 
+		"label" : "Jaufenstr.",
 		"name_it" : "via passo Giovo",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "310"
 	
 	},
-	"311" : { 
-		"name_de" : "Jaufenstr.",
+{ 
+		"label" : "Jaufenstr.",
 		"name_it" : "via passo Giovo",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "311"
 	
 	},
-	"312" : { 
-		"name_de" : "Finele",
+{ 
+		"label" : "Finele",
 		"name_it" : "Finele",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "312"
 	
 	},
-	"313" : { 
-		"name_de" : "Finele",
+{ 
+		"label" : "Finele",
 		"name_it" : "Finele",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "313"
 	
 	},
-	"314" : { 
-		"name_de" : "Kuens, Kuenserhof",
+{ 
+		"label" : "Kuens, Kuenserhof",
 		"name_it" : "Caines, Kuenserhof",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "314"
 	
 	},
-	"315" : { 
-		"name_de" : "Kuens, Kuenserhof",
+{ 
+		"label" : "Kuens, Kuenserhof",
 		"name_it" : "Caines, Kuenserhof",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "315"
 	
 	},
-	"316" : { 
-		"name_de" : "Riffian",
+{ 
+		"label" : "Riffian",
 		"name_it" : "Rifiano",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "316"
 	
 	},
-	"317" : { 
-		"name_de" : "Riffian",
+{ 
+		"label" : "Riffian",
 		"name_it" : "Rifiano",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "317"
 	
 	},
-	"319" : { 
-		"name_de" : "Abzweigung Vernuer",
+{ 
+		"label" : "Abzweigung Vernuer",
 		"name_it" : "Bivio Vernurio",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "319"
 	
 	},
-	"396" : { 
-		"name_de" : "Piavestr. 3",
+{ 
+		"label" : "Piavestr. 3",
 		"name_it" : "via Piave 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "396"
 	
 	},
-	"397" : { 
-		"name_de" : "Piavestr. 3",
+{ 
+		"label" : "Piavestr. 3",
 		"name_it" : "via Piave 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "397"
 	
 	},
-	"398" : { 
-		"name_de" : "Untermais Bahnhof",
+{ 
+		"label" : "Untermais Bahnhof",
 		"name_it" : "Maia Bassa stazione",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "398"
 	
 	},
-	"399" : { 
-		"name_de" : "Untermais Bahnhof",
+{ 
+		"label" : "Untermais Bahnhof",
 		"name_it" : "Maia Bassa stazione",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "399"
 	
 	},
-	"4" : { 
-		"name_de" : "Goethe Str. 4",
+{ 
+		"label" : "Goethe Str. 4",
 		"name_it" : "via Goethe 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "4"
 	
 	},
-	"400" : { 
-		"name_de" : "Marlinger Bruecke",
+{ 
+		"label" : "Marlinger Bruecke",
 		"name_it" : "ponte Marlengo",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "400"
 	
 	},
-	"401" : { 
-		"name_de" : "Marlinger Bruecke",
+{ 
+		"label" : "Marlinger Bruecke",
 		"name_it" : "ponte Marlengo",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "401"
 	
 	},
-	"402" : { 
-		"name_de" : "Marling 1",
+{ 
+		"label" : "Marling 1",
 		"name_it" : "Marlengo 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "402"
 	
 	},
-	"403" : { 
-		"name_de" : "Marling 1",
+{ 
+		"label" : "Marling 1",
 		"name_it" : "Marlengo 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "403"
 	
 	},
-	"404" : { 
-		"name_de" : "Tscherms 3",
+{ 
+		"label" : "Tscherms 3",
 		"name_it" : "Cermes 3",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "404"
 	
 	},
-	"405" : { 
-		"name_de" : "Tscherms 3",
+{ 
+		"label" : "Tscherms 3",
 		"name_it" : "Cermes 3",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "405"
 	
 	},
-	"406" : { 
-		"name_de" : "Lana Busbahnhof",
+{ 
+		"label" : "Lana Busbahnhof",
 		"name_it" : "Lana Autostazione",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "406"
 	
 	},
-	"4085" : { 
-		"name_de" : "Schulen Fermi/Lienz",
+{ 
+		"label" : "Schulen Fermi/Lienz",
 		"name_it" : "scuole Fermi/Lienz",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "4085"
 	
 	},
-	"40953" : { 
-		"name_de" : " Sigmundskron Bhf 2",
+{ 
+		"label" : " Sigmundskron Bhf 2",
 		"name_it" : "Ponte Adige Staz. 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "40953"
 	
 	},
-	"4147" : { 
-		"name_de" : "Sigmundskron",
+{ 
+		"label" : "Sigmundskron",
 		"name_it" : "Ponte Adige",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "4147"
 	
 	},
-	"4220" : { 
-		"name_de" : "Schule St.Jakob",
+{ 
+		"label" : "Schule St.Jakob",
 		"name_it" : "scuola S.Giacomo",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "4220"
 	
 	},
-	"4242" : { 
-		"name_de" : "Schulen Rosmini/Stifter",
+{ 
+		"label" : "Schulen Rosmini/Stifter",
 		"name_it" : "scuole Rosmini/Stifter",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "4242"
 	
 	},
-	"466" : { 
-		"name_de" : "Lana Busbahnhof",
+{ 
+		"label" : "Lana Busbahnhof",
 		"name_it" : "Lana Autostazione",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "466"
 	
 	},
-	"467" : { 
-		"name_de" : "Gemeinde Lana",
+{ 
+		"label" : "Gemeinde Lana",
 		"name_it" : "Lana Comune",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "467"
 	
 	},
-	"468" : { 
-		"name_de" : "Heilig Kreuz Kirche",
+{ 
+		"label" : "Heilig Kreuz Kirche",
 		"name_it" : "Chiesa S. Croce",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "468"
 	
 	},
-	"469" : { 
-		"name_de" : "Lana Knabenschule",
+{ 
+		"label" : "Lana Knabenschule",
 		"name_it" : "Lana Knabenschule",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "469"
 	
 	},
-	"470" : { 
-		"name_de" : "Tribusplatz",
+{ 
+		"label" : "Tribusplatz",
 		"name_it" : "piazza Tribus",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "470"
 	
 	},
-	"471" : { 
-		"name_de" : "Sankt Anna",
+{ 
+		"label" : "Sankt Anna",
 		"name_it" : "Sant'Anna",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "471"
 	
 	},
-	"472" : { 
-		"name_de" : "Zollstr. 1",
+{ 
+		"label" : "Zollstr. 1",
 		"name_it" : "via Dogana 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "472"
 	
 	},
-	"473" : { 
-		"name_de" : "Zollstr. 3",
+{ 
+		"label" : "Zollstr. 3",
 		"name_it" : "via Dogana 3",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "473"
 	
 	},
-	"474" : { 
-		"name_de" : "Lana Schwimmbad",
+{ 
+		"label" : "Lana Schwimmbad",
 		"name_it" : "Lana Lido",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "474"
 	
 	},
-	"475" : { 
-		"name_de" : "Burgstall Bahnhof",
+{ 
+		"label" : "Burgstall Bahnhof",
 		"name_it" : "Postal Stazione",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "475"
 	
 	},
-	"476" : { 
-		"name_de" : "Burgstall Dorf",
+{ 
+		"label" : "Burgstall Dorf",
 		"name_it" : "Postal Paese",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "476"
 	
 	},
-	"477" : { 
-		"name_de" : "Burgstall Seilb. Voeran",
+{ 
+		"label" : "Burgstall Seilb. Voeran",
 		"name_it" : "Postal Fun. Verano",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "477"
 	
 	},
-	"478" : { 
-		"name_de" : "Gargazon",
+{ 
+		"label" : "Gargazon",
 		"name_it" : "Gargazzone",
 		"city_de" : "Gargazon",
 		"city_it" : "Gargazzone",
 		"id" : "478"
 	
 	},
-	"479" : { 
-		"name_de" : "Gargazon Waldweg",
+{ 
+		"label" : "Gargazon Waldweg",
 		"name_it" : "Gargazzone Waldweg",
 		"city_de" : "Gargazon",
 		"city_it" : "Gargazzone",
 		"id" : "479"
 	
 	},
-	"481" : { 
-		"name_de" : "Gargazon Waldweg",
+{ 
+		"label" : "Gargazon Waldweg",
 		"name_it" : "Gargazzone Waldweg",
 		"city_de" : "Gargazon",
 		"city_it" : "Gargazzone",
 		"id" : "481"
 	
 	},
-	"482" : { 
-		"name_de" : "Gargazon ",
+{ 
+		"label" : "Gargazon ",
 		"name_it" : "Gargazzone",
 		"city_de" : "Gargazon",
 		"city_it" : "Gargazzone",
 		"id" : "482"
 	
 	},
-	"483" : { 
-		"name_de" : "Burgstall Seilb. Voeran",
+{ 
+		"label" : "Burgstall Seilb. Voeran",
 		"name_it" : "Postal Fun. Verano",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "483"
 	
 	},
-	"484" : { 
-		"name_de" : "Sportzone",
+{ 
+		"label" : "Sportzone",
 		"name_it" : "Zona Sportiva",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "484"
 	
 	},
-	"485" : { 
-		"name_de" : "Burgstall Dorf",
+{ 
+		"label" : "Burgstall Dorf",
 		"name_it" : "Postal Paese",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "485"
 	
 	},
-	"486" : { 
-		"name_de" : "Lana Schwimmbad",
+{ 
+		"label" : "Lana Schwimmbad",
 		"name_it" : "Lana Lido",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "486"
 	
 	},
-	"487" : { 
-		"name_de" : "Boznerstr. 2",
+{ 
+		"label" : "Boznerstr. 2",
 		"name_it" : "via Bolzano 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "487"
 	
 	},
-	"488" : { 
-		"name_de" : "Boznerstr. 1",
+{ 
+		"label" : "Boznerstr. 1",
 		"name_it" : "via Bolzano 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "488"
 	
 	},
-	"489" : { 
-		"name_de" : "Tribusplatz",
+{ 
+		"label" : "Tribusplatz",
 		"name_it" : "piazza Tribus",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "489"
 	
 	},
-	"492" : { 
-		"name_de" : "Schnatterbeckstr. 1",
+{ 
+		"label" : "Schnatterbeckstr. 1",
 		"name_it" : "via Schnatterbeck 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "492"
 	
 	},
-	"493" : { 
-		"name_de" : "Schnatterbeckstr. 2",
+{ 
+		"label" : "Schnatterbeckstr. 2",
 		"name_it" : "via Schnatterbeck 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "493"
 	
 	},
-	"494" : { 
-		"name_de" : "Niederlana",
+{ 
+		"label" : "Niederlana",
 		"name_it" : "Lana di sotto",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "494"
 	
 	},
-	"495" : { 
-		"name_de" : "Zollstr. 3",
+{ 
+		"label" : "Zollstr. 3",
 		"name_it" : "via Dogana 3",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "495"
 	
 	},
-	"496" : { 
-		"name_de" : "Zollstr. 1",
+{ 
+		"label" : "Zollstr. 1",
 		"name_it" : "via Dogana 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "496"
 	
 	},
-	"497" : { 
-		"name_de" : "Schnatterbeckstr. 2",
+{ 
+		"label" : "Schnatterbeckstr. 2",
 		"name_it" : "via Schnatterbeck 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "497"
 	
 	},
-	"498" : { 
-		"name_de" : "Kirchweg 3",
+{ 
+		"label" : "Kirchweg 3",
 		"name_it" : "via della Chiesa 3",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "498"
 	
 	},
-	"499" : { 
-		"name_de" : "Kirchweg 2",
+{ 
+		"label" : "Kirchweg 2",
 		"name_it" : "via della Chiesa 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "499"
 	
 	},
-	"5" : { 
-		"name_de" : "Weingartnerstr. 1",
+{ 
+		"label" : "Weingartnerstr. 1",
 		"name_it" : "via Weingartner 1",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "5"
 	
 	},
-	"500" : { 
-		"name_de" : "Lana Knabenschule",
+{ 
+		"label" : "Lana Knabenschule",
 		"name_it" : "Lana Knabenschule",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "500"
 	
 	},
-	"5000" : { 
-		"name_de" : "Mailand Str. 4",
+{ 
+		"label" : "Mailand Str. 4",
 		"name_it" : "via Milano 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5000"
 	
 	},
-	"5001" : { 
-		"name_de" : "Gutenberg Str.",
+{ 
+		"label" : "Gutenberg Str.",
 		"name_it" : "via Gutenberg",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5001"
 	
 	},
-	"5002" : { 
-		"name_de" : "Gutenberg Str.",
+{ 
+		"label" : "Gutenberg Str.",
 		"name_it" : "via Gutenberg",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5002"
 	
 	},
-	"5003" : { 
-		"name_de" : "Europa Allee 4",
+{ 
+		"label" : "Europa Allee 4",
 		"name_it" : "viale Europa 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5003"
 	
 	},
-	"5004" : { 
-		"name_de" : "Europa Allee 4",
+{ 
+		"label" : "Europa Allee 4",
 		"name_it" : "viale Europa 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5004"
 	
 	},
-	"5005" : { 
-		"name_de" : "Europa Allee 3",
+{ 
+		"label" : "Europa Allee 3",
 		"name_it" : "viale Europa 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5005"
 	
 	},
-	"5006" : { 
-		"name_de" : "Europa Allee 3",
+{ 
+		"label" : "Europa Allee 3",
 		"name_it" : "viale Europa 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5006"
 	
 	},
-	"5007" : { 
-		"name_de" : "Europa Allee 2",
+{ 
+		"label" : "Europa Allee 2",
 		"name_it" : "viale Europa 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5007"
 	
 	},
-	"5008" : { 
-		"name_de" : "Europa Allee 2",
+{ 
+		"label" : "Europa Allee 2",
 		"name_it" : "viale Europa 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5008"
 	
 	},
-	"5009" : { 
-		"name_de" : "Europa Allee 1",
+{ 
+		"label" : "Europa Allee 1",
 		"name_it" : "viale Europa 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5009"
 	
 	},
-	"501" : { 
-		"name_de" : "Heilig Kreuz Kirche",
+{ 
+		"label" : "Heilig Kreuz Kirche",
 		"name_it" : "Chiesa S. Croce",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "501"
 	
 	},
-	"5010" : { 
-		"name_de" : "Palermo Str. 1",
+{ 
+		"label" : "Palermo Str. 1",
 		"name_it" : "via Palermo 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5010"
 	
 	},
-	"5011" : { 
-		"name_de" : "Palermo Str. 1",
+{ 
+		"label" : "Palermo Str. 1",
 		"name_it" : "via Palermo 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5011"
 	
 	},
-	"5012" : { 
-		"name_de" : "Roen Str. 2",
+{ 
+		"label" : "Roen Str. 2",
 		"name_it" : "via Roen 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5012"
 	
 	},
-	"5013" : { 
-		"name_de" : "Roen Str. 2",
+{ 
+		"label" : "Roen Str. 2",
 		"name_it" : "via Roen 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5013"
 	
 	},
-	"5014" : { 
-		"name_de" : "Roen Str. 1",
+{ 
+		"label" : "Roen Str. 1",
 		"name_it" : "via Roen 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5014"
 	
 	},
-	"5015" : { 
-		"name_de" : "Roen Str. 1",
+{ 
+		"label" : "Roen Str. 1",
 		"name_it" : "via Roen 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5015"
 	
 	},
-	"5017" : { 
-		"name_de" : "Gerichtsplatz",
+{ 
+		"label" : "Gerichtsplatz",
 		"name_it" : "piazza Tribunale",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5017"
 	
 	},
-	"5018" : { 
-		"name_de" : "Gerichtsplatz",
+{ 
+		"label" : "Gerichtsplatz",
 		"name_it" : "piazza Tribunale",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5018"
 	
 	},
-	"5019" : { 
-		"name_de" : "Battisti Str.",
+{ 
+		"label" : "Battisti Str.",
 		"name_it" : "via Battisti",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5019"
 	
 	},
-	"502" : { 
-		"name_de" : "Gemeinde Lana",
+{ 
+		"label" : "Gemeinde Lana",
 		"name_it" : "Lana Comune",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "502"
 	
 	},
-	"5020" : { 
-		"name_de" : "Battisti Str.",
+{ 
+		"label" : "Battisti Str.",
 		"name_it" : "via Battisti",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5020"
 	
 	},
-	"5021" : { 
-		"name_de" : "Siegesplatz 1",
+{ 
+		"label" : "Siegesplatz 1",
 		"name_it" : "piazza Vittoria 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5021"
 	
 	},
-	"5022" : { 
-		"name_de" : "Siegesplatz 1",
+{ 
+		"label" : "Siegesplatz 1",
 		"name_it" : "piazza Vittoria 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5022"
 	
 	},
-	"5023" : { 
-		"name_de" : "Rosmini Str.",
+{ 
+		"label" : "Rosmini Str.",
 		"name_it" : "via Rosmini",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5023"
 	
 	},
-	"5025" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "piazza Universita- Universitätsplatz",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5025"
 	
 	},
-	"5026" : { 
-		"name_de" : "Dominikaner Platz",
+{ 
+		"label" : "Dominikaner Platz",
 		"name_it" : "piazza Domenicani",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5026"
 	
 	},
-	"5027" : { 
-		"name_de" : "Dominikaner Platz",
+{ 
+		"label" : "Dominikaner Platz",
 		"name_it" : "piazza Domenicani",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5027"
 	
 	},
-	"5028" : { 
-		"name_de" : "Walther Platz",
+{ 
+		"label" : "Walther Platz",
 		"name_it" : "piazza Walther",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5028"
 	
 	},
-	"5029" : { 
-		"name_de" : "Walther Platz",
+{ 
+		"label" : "Walther Platz",
 		"name_it" : "piazza Walther",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5029"
 	
 	},
-	"503" : { 
-		"name_de" : "Lana Mittelschule",
+{ 
+		"label" : "Lana Mittelschule",
 		"name_it" : "Lana scuola media",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "503"
 	
 	},
-	"5031" : { 
-		"name_de" : "Suedtiroler Str. 2",
+{ 
+		"label" : "Suedtiroler Str. 2",
 		"name_it" : "via Alto Adige 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5031"
 	
 	},
-	"5032" : { 
-		"name_de" : "Sparkassen Str.",
+{ 
+		"label" : "Sparkassen Str.",
 		"name_it" : "via Cassa di Risparmio",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5032"
 	
 	},
-	"5033" : { 
-		"name_de" : "Siegesplatz 2",
+{ 
+		"label" : "Siegesplatz 2",
 		"name_it" : "piazza Vittoria 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5033"
 	
 	},
-	"5034" : { 
-		"name_de" : "Siegesplatz 2",
+{ 
+		"label" : "Siegesplatz 2",
 		"name_it" : "piazza Vittoria 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5034"
 	
 	},
-	"5035" : { 
-		"name_de" : "Freiheitsstr. 1",
+{ 
+		"label" : "Freiheitsstr. 1",
 		"name_it" : "corso Liberta` 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5035"
 	
 	},
-	"5036" : { 
-		"name_de" : "Freiheitsstr. 1",
+{ 
+		"label" : "Freiheitsstr. 1",
 		"name_it" : "corso Liberta` 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5036"
 	
 	},
-	"5037" : { 
-		"name_de" : "Mazzini Platz",
+{ 
+		"label" : "Mazzini Platz",
 		"name_it" : "piazza Mazzini",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5037"
 	
 	},
-	"5038" : { 
-		"name_de" : "Mazzini Platz",
+{ 
+		"label" : "Mazzini Platz",
 		"name_it" : "piazza Mazzini",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5038"
 	
 	},
-	"5039" : { 
-		"name_de" : "Romstr. 1",
+{ 
+		"label" : "Romstr. 1",
 		"name_it" : "via Roma 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5039"
 	
 	},
-	"504" : { 
-		"name_de" : "Lana Mittelschule",
+{ 
+		"label" : "Lana Mittelschule",
 		"name_it" : "Lana scuola media",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "504"
 	
 	},
-	"5040" : { 
-		"name_de" : "Romstr. 1",
+{ 
+		"label" : "Romstr. 1",
 		"name_it" : "via Roma 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5040"
 	
 	},
-	"5041" : { 
-		"name_de" : "Romstr. 2",
+{ 
+		"label" : "Romstr. 2",
 		"name_it" : "via Roma 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5041"
 	
 	},
-	"5042" : { 
-		"name_de" : "Romstr. 2",
+{ 
+		"label" : "Romstr. 2",
 		"name_it" : "via Roma 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5042"
 	
 	},
-	"5043" : { 
-		"name_de" : "Romstr. 4",
+{ 
+		"label" : "Romstr. 4",
 		"name_it" : "via Roma 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5043"
 	
 	},
-	"5044" : { 
-		"name_de" : "Romstr. 4",
+{ 
+		"label" : "Romstr. 4",
 		"name_it" : "via Roma 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5044"
 	
 	},
-	"5045" : { 
-		"name_de" : "C. Augusta Str. 3",
+{ 
+		"label" : "C. Augusta Str. 3",
 		"name_it" : "via C. Augusta 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5045"
 	
 	},
-	"5046" : { 
-		"name_de" : "C. Augusta Str. 3",
+{ 
+		"label" : "C. Augusta Str. 3",
 		"name_it" : "via C. Augusta 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5046"
 	
 	},
-	"5047" : { 
-		"name_de" : "C. Augusta Str. 4",
+{ 
+		"label" : "C. Augusta Str. 4",
 		"name_it" : "via C. Augusta 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5047"
 	
 	},
-	"5048" : { 
-		"name_de" : "C. Augusta Str. 4",
+{ 
+		"label" : "C. Augusta Str. 4",
 		"name_it" : "via C. Augusta 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5048"
 	
 	},
-	"5049" : { 
-		"name_de" : "C. Augusta Str. 5",
+{ 
+		"label" : "C. Augusta Str. 5",
 		"name_it" : "via C. Augusta 5",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5049"
 	
 	},
-	"505" : { 
-		"name_de" : "Heilig Kreuz Kirche",
+{ 
+		"label" : "Heilig Kreuz Kirche",
 		"name_it" : "Chiesa S. Croce",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "505"
 	
 	},
-	"5050" : { 
-		"name_de" : "C. Augusta Str. 5",
+{ 
+		"label" : "C. Augusta Str. 5",
 		"name_it" : "via C. Augusta 5",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5050"
 	
 	},
-	"5051" : { 
-		"name_de" : "Friedhof 2",
+{ 
+		"label" : "Friedhof 2",
 		"name_it" : "Cimitero 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5051"
 	
 	},
-	"5052" : { 
-		"name_de" : "Friedhof 2",
+{ 
+		"label" : "Friedhof 2",
 		"name_it" : "Cimitero 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5052"
 	
 	},
-	"5053" : { 
-		"name_de" : "Pfarrhof Str. 1",
+{ 
+		"label" : "Pfarrhof Str. 1",
 		"name_it" : "via Maso della Pieve 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5053"
 	
 	},
-	"5054" : { 
-		"name_de" : "Pfarrhof Str. 1",
+{ 
+		"label" : "Pfarrhof Str. 1",
 		"name_it" : "via Maso della Pieve 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5054"
 	
 	},
-	"5055" : { 
-		"name_de" : "St. Jakob Str. 4",
+{ 
+		"label" : "St. Jakob Str. 4",
 		"name_it" : "via S. Giacomo 4",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5055"
 	
 	},
-	"5056" : { 
-		"name_de" : "St. Jakob Str. 4",
+{ 
+		"label" : "St. Jakob Str. 4",
 		"name_it" : "via S. Giacomo 4",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5056"
 	
 	},
-	"5057" : { 
-		"name_de" : "St. Jakob Str. 6",
+{ 
+		"label" : "St. Jakob Str. 6",
 		"name_it" : "via S. Giacomo 6",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5057"
 	
 	},
-	"5058" : { 
-		"name_de" : "St. Jakob Str. 6",
+{ 
+		"label" : "St. Jakob Str. 6",
 		"name_it" : "via S. Giacomo 6",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5058"
 	
 	},
-	"5059" : { 
-		"name_de" : "Wurzer",
+{ 
+		"label" : "Wurzer",
 		"name_it" : "Vurza",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5059"
 	
 	},
-	"506" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "via Palade 1- Gampenstr. 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "506"
 	
 	},
-	"5060" : { 
-		"name_de" : "Wurzer",
+{ 
+		"label" : "Wurzer",
 		"name_it" : "Vurza",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5060"
 	
 	},
-	"5061" : { 
-		"name_de" : "Seit",
+{ 
+		"label" : "Seit",
 		"name_it" : "Costa",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5061"
 	
 	},
-	"5062" : { 
-		"name_de" : "Leifers IZ",
+{ 
+		"label" : "Leifers IZ",
 		"name_it" : "Laives ZI",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5062"
 	
 	},
-	"5063" : { 
-		"name_de" : "Branzoll 1",
+{ 
+		"label" : "Branzoll 1",
 		"name_it" : "Bronzolo 1",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "5063"
 	
 	},
-	"5064" : { 
-		"name_de" : "Branzoll 2",
+{ 
+		"label" : "Branzoll 2",
 		"name_it" : "Bronzolo 2",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "5064"
 	
 	},
-	"5065" : { 
-		"name_de" : "Branzoll 3",
+{ 
+		"label" : "Branzoll 3",
 		"name_it" : "Bronzolo 3",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "5065"
 	
 	},
-	"5066" : { 
-		"name_de" : "Branzoll 4",
+{ 
+		"label" : "Branzoll 4",
 		"name_it" : "Bronzolo 4",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "5066"
 	
 	},
-	"5067" : { 
-		"name_de" : "Leifers Bhf.",
+{ 
+		"label" : "Leifers Bhf.",
 		"name_it" : "Laives Staz.",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5067"
 	
 	},
-	"5068" : { 
-		"name_de" : "Leifers Schwimmbad",
+{ 
+		"label" : "Leifers Schwimmbad",
 		"name_it" : "Laives Lido",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5068"
 	
 	},
-	"5069" : { 
-		"name_de" : "Leifers Schwimmbad",
+{ 
+		"label" : "Leifers Schwimmbad",
 		"name_it" : "Laives Lido",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5069"
 	
 	},
-	"507" : { 
-		"name_de" : "Gampenstr. 2",
+{ 
+		"label" : "Gampenstr. 2",
 		"name_it" : "via Palade 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "507"
 	
 	},
-	"5070" : { 
-		"name_de" : "Marconi Str. 1",
+{ 
+		"label" : "Marconi Str. 1",
 		"name_it" : "via Marconi 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5070"
 	
 	},
-	"5071" : { 
-		"name_de" : "Marconi Str. 2",
+{ 
+		"label" : "Marconi Str. 2",
 		"name_it" : "via Marconi 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5071"
 	
 	},
-	"5072" : { 
-		"name_de" : "Diaz Str.",
+{ 
+		"label" : "Diaz Str.",
 		"name_it" : "via Diaz",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5072"
 	
 	},
-	"5073" : { 
-		"name_de" : "Sauro Str. 1",
+{ 
+		"label" : "Sauro Str. 1",
 		"name_it" : "via Sauro 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5073"
 	
 	},
-	"5074" : { 
-		"name_de" : "Sauro Str. 1",
+{ 
+		"label" : "Sauro Str. 1",
 		"name_it" : "via Sauro 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5074"
 	
 	},
-	"5075" : { 
-		"name_de" : "Sauro Str. 2",
+{ 
+		"label" : "Sauro Str. 2",
 		"name_it" : "via Sauro 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5075"
 	
 	},
-	"5076" : { 
-		"name_de" : "Sauro Str. 2",
+{ 
+		"label" : "Sauro Str. 2",
 		"name_it" : "via Sauro 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5076"
 	
 	},
-	"5077" : { 
-		"name_de" : "Weissensteiner Str. 1",
+{ 
+		"label" : "Weissensteiner Str. 1",
 		"name_it" : "via Pietralba 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5077"
 	
 	},
-	"5079" : { 
-		"name_de" : "Weissensteiner Str. 2",
+{ 
+		"label" : "Weissensteiner Str. 2",
 		"name_it" : "via Pietralba 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5079"
 	
 	},
-	"508" : { 
-		"name_de" : "St. Georgen",
+{ 
+		"label" : "St. Georgen",
 		"name_it" : "S. Giorgio",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "508"
 	
 	},
-	"5081" : { 
-		"name_de" : "Galizien Str. 1",
+{ 
+		"label" : "Galizien Str. 1",
 		"name_it" : "via Galizia 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5081"
 	
 	},
-	"5082" : { 
-		"name_de" : "Galizien Str. 2",
+{ 
+		"label" : "Galizien Str. 2",
 		"name_it" : "via Galizia 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5082"
 	
 	},
-	"5083" : { 
-		"name_de" : "Hofer Str. 1",
+{ 
+		"label" : "Hofer Str. 1",
 		"name_it" : "via Hofer 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5083"
 	
 	},
-	"5084" : { 
-		"name_de" : "Hofer Str. 2",
+{ 
+		"label" : "Hofer Str. 2",
 		"name_it" : "via Hofer 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5084"
 	
 	},
-	"5085" : { 
-		"name_de" : "Weissensteinerstr. Ipes ",
+{ 
+		"label" : "Weissensteinerstr. Ipes ",
 		"name_it" : "via Pietralba Ipes",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5085"
 	
 	},
-	"509" : { 
-		"name_de" : "Voellan 1",
+{ 
+		"label" : "Voellan 1",
 		"name_it" : "Foiana 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "509"
 	
 	},
-	"5090" : { 
-		"name_de" : "Kardaun",
+{ 
+		"label" : "Kardaun",
 		"name_it" : "Cardano",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5090"
 	
 	},
-	"5091" : { 
-		"name_de" : "Kardaun",
+{ 
+		"label" : "Kardaun",
 		"name_it" : "Cardano",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5091"
 	
 	},
-	"5092" : { 
-		"name_de" : "Rentschner Str. 4",
+{ 
+		"label" : "Rentschner Str. 4",
 		"name_it" : "via Rencio 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5092"
 	
 	},
-	"5093" : { 
-		"name_de" : "Rentschner Str. 4",
+{ 
+		"label" : "Rentschner Str. 4",
 		"name_it" : "via Rencio 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5093"
 	
 	},
-	"5094" : { 
-		"name_de" : "Rentschner Str. 3",
+{ 
+		"label" : "Rentschner Str. 3",
 		"name_it" : "via Rencio 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5094"
 	
 	},
-	"5095" : { 
-		"name_de" : "Rentschner Str. 3",
+{ 
+		"label" : "Rentschner Str. 3",
 		"name_it" : "via Rencio 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5095"
 	
 	},
-	"5096" : { 
-		"name_de" : "Rentschner Str. 2",
+{ 
+		"label" : "Rentschner Str. 2",
 		"name_it" : "via Rencio 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5096"
 	
 	},
-	"5097" : { 
-		"name_de" : "Rentschner Str. 2",
+{ 
+		"label" : "Rentschner Str. 2",
 		"name_it" : "via Rencio 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5097"
 	
 	},
-	"5098" : { 
-		"name_de" : "Rentschner Str. 1",
+{ 
+		"label" : "Rentschner Str. 1",
 		"name_it" : "via Rencio 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5098"
 	
 	},
-	"5099" : { 
-		"name_de" : "Rentschner Str. 1",
+{ 
+		"label" : "Rentschner Str. 1",
 		"name_it" : "via Rencio 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5099"
 	
 	},
-	"510" : { 
-		"name_de" : "Voellan 2",
+{ 
+		"label" : "Voellan 2",
 		"name_it" : "Foiana 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "510"
 	
 	},
-	"5100" : { 
-		"name_de" : "Brenner Str.",
+{ 
+		"label" : "Brenner Str.",
 		"name_it" : "via Brennero",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5100"
 	
 	},
-	"5101" : { 
-		"name_de" : "Brenner Str.",
+{ 
+		"label" : "Brenner Str.",
 		"name_it" : "via Brennero",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5101"
 	
 	},
-	"5102" : { 
-		"name_de" : "Rittner Seilbahn",
+{ 
+		"label" : "Rittner Seilbahn",
 		"name_it" : "Funivia del Renon",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5102"
 	
 	},
-	"5103" : { 
-		"name_de" : "Rittner Seilbahn",
+{ 
+		"label" : "Rittner Seilbahn",
 		"name_it" : "Funivia del Renon",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5103"
 	
 	},
-	"5104" : { 
-		"name_de" : "Bahnhof 2",
+{ 
+		"label" : "Bahnhof 2",
 		"name_it" : "stazione 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5104"
 	
 	},
-	"5106" : { 
-		"name_de" : "Bahnhof 3",
+{ 
+		"label" : "Bahnhof 3",
 		"name_it" : "stazione 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5106"
 	
 	},
-	"5107" : { 
-		"name_de" : "Bahnhof 3",
+{ 
+		"label" : "Bahnhof 3",
 		"name_it" : "stazione 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5107"
 	
 	},
-	"5108" : { 
-		"name_de" : "Diaz Str. 1",
+{ 
+		"label" : "Diaz Str. 1",
 		"name_it" : "via Diaz 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5108"
 	
 	},
-	"5109" : { 
-		"name_de" : "Diaz Str. 1",
+{ 
+		"label" : "Diaz Str. 1",
 		"name_it" : "via Diaz 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5109"
 	
 	},
-	"511" : { 
-		"name_de" : "Voellan 4",
+{ 
+		"label" : "Voellan 4",
 		"name_it" : "Foiana 4",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "511"
 	
 	},
-	"5110" : { 
-		"name_de" : "Cadorna Str. 3",
+{ 
+		"label" : "Cadorna Str. 3",
 		"name_it" : "via Cadorna 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5110"
 	
 	},
-	"5111" : { 
-		"name_de" : "Cadorna Str. 3",
+{ 
+		"label" : "Cadorna Str. 3",
 		"name_it" : "via Cadorna 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5111"
 	
 	},
-	"5112" : { 
-		"name_de" : "Cadorna Str. 2",
+{ 
+		"label" : "Cadorna Str. 2",
 		"name_it" : "via Cadorna 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5112"
 	
 	},
-	"5113" : { 
-		"name_de" : "Cadorna Str. 2",
+{ 
+		"label" : "Cadorna Str. 2",
 		"name_it" : "via Cadorna 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5113"
 	
 	},
-	"5114" : { 
-		"name_de" : "Cadorna Str. 1",
+{ 
+		"label" : "Cadorna Str. 1",
 		"name_it" : "via Cadorna 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5114"
 	
 	},
-	"5115" : { 
-		"name_de" : "Fagen Str. 1",
+{ 
+		"label" : "Fagen Str. 1",
 		"name_it" : "via Fago 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5115"
 	
 	},
-	"5116" : { 
-		"name_de" : "Fagen Str. 2",
+{ 
+		"label" : "Fagen Str. 2",
 		"name_it" : "via Fago 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5116"
 	
 	},
-	"5117" : { 
-		"name_de" : "Fagen Str. 3",
+{ 
+		"label" : "Fagen Str. 3",
 		"name_it" : "via Fago 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5117"
 	
 	},
-	"5118" : { 
-		"name_de" : "Prinz Eugen A.",
+{ 
+		"label" : "Prinz Eugen A.",
 		"name_it" : "v.le Principe Eugenio",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5118"
 	
 	},
-	"5119" : { 
-		"name_de" : "Diaz Str. 2",
+{ 
+		"label" : "Diaz Str. 2",
 		"name_it" : "via Diaz 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5119"
 	
 	},
-	"512" : { 
-		"name_de" : "Voellan Dorf",
+{ 
+		"label" : "Voellan Dorf",
 		"name_it" : "Foiana Paese",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "512"
 	
 	},
-	"5120" : { 
-		"name_de" : "Zollstange",
+{ 
+		"label" : "Zollstange",
 		"name_it" : "piazza Dogana",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5120"
 	
 	},
-	"5122" : { 
-		"name_de" : "De Lai Str.",
+{ 
+		"label" : "De Lai Str.",
 		"name_it" : "via De Lai",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5122"
 	
 	},
-	"5124" : { 
-		"name_de" : "Perathoner Str.",
+{ 
+		"label" : "Perathoner Str.",
 		"name_it" : "via Perathoner",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5124"
 	
 	},
-	"5125" : { 
-		"name_de" : "Perathoner Str.",
+{ 
+		"label" : "Perathoner Str.",
 		"name_it" : "via Perathoner",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5125"
 	
 	},
-	"5126" : { 
-		"name_de" : "Trienter Str. 1",
+{ 
+		"label" : "Trienter Str. 1",
 		"name_it" : "via Trento 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5126"
 	
 	},
-	"5127" : { 
-		"name_de" : "Trienter Str. 1",
+{ 
+		"label" : "Trienter Str. 1",
 		"name_it" : "via Trento 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5127"
 	
 	},
-	"5128" : { 
-		"name_de" : "Trienter Str. 2",
+{ 
+		"label" : "Trienter Str. 2",
 		"name_it" : "via Trento 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5128"
 	
 	},
-	"5129" : { 
-		"name_de" : "Trienter Str. 2",
+{ 
+		"label" : "Trienter Str. 2",
 		"name_it" : "via Trento 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5129"
 	
 	},
-	"513" : { 
-		"name_de" : "Voellan Kirche",
+{ 
+		"label" : "Voellan Kirche",
 		"name_it" : "Foiana Chiesa",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "513"
 	
 	},
-	"5130" : { 
-		"name_de" : "C. Augusta Str. 2",
+{ 
+		"label" : "C. Augusta Str. 2",
 		"name_it" : "via C. Augusta 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5130"
 	
 	},
-	"5131" : { 
-		"name_de" : "C. Augusta Str. 2",
+{ 
+		"label" : "C. Augusta Str. 2",
 		"name_it" : "via C. Augusta 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5131"
 	
 	},
-	"5132" : { 
-		"name_de" : "C. Augusta Str. 1",
+{ 
+		"label" : "C. Augusta Str. 1",
 		"name_it" : "via C. Augusta 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5132"
 	
 	},
-	"5133" : { 
-		"name_de" : "C. Augusta Str. 1",
+{ 
+		"label" : "C. Augusta Str. 1",
 		"name_it" : "via C. Augusta 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5133"
 	
 	},
-	"5134" : { 
-		"name_de" : "St. Gertraudweg 1",
+{ 
+		"label" : "St. Gertraudweg 1",
 		"name_it" : "via S. Geltrude 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5134"
 	
 	},
-	"5135" : { 
-		"name_de" : "St. Gertraudweg 1",
+{ 
+		"label" : "St. Gertraudweg 1",
 		"name_it" : "via S. Geltrude 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5135"
 	
 	},
-	"5136" : { 
-		"name_de" : "St. Vigil Str. 1",
+{ 
+		"label" : "St. Vigil Str. 1",
 		"name_it" : "via S. Vigilio 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5136"
 	
 	},
-	"5137" : { 
-		"name_de" : "St. Vigil Str. 2",
+{ 
+		"label" : "St. Vigil Str. 2",
 		"name_it" : "via S. Vigilio 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5137"
 	
 	},
-	"5138" : { 
-		"name_de" : "Weinegg Str. 1",
+{ 
+		"label" : "Weinegg Str. 1",
 		"name_it" : "via C. Weinegg 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5138"
 	
 	},
-	"5139" : { 
-		"name_de" : "Weinegg Str. 4",
+{ 
+		"label" : "Weinegg Str. 4",
 		"name_it" : "via C. Weinegg 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5139"
 	
 	},
-	"514" : { 
-		"name_de" : "Voellan Dorf",
+{ 
+		"label" : "Voellan Dorf",
 		"name_it" : "Foiana Paese",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "514"
 	
 	},
-	"5140" : { 
-		"name_de" : "Weinegg Str. 2",
+{ 
+		"label" : "Weinegg Str. 2",
 		"name_it" : "via C. Weinegg 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5140"
 	
 	},
-	"5141" : { 
-		"name_de" : "Weinegg Str. 3",
+{ 
+		"label" : "Weinegg Str. 3",
 		"name_it" : "via C. Weinegg 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5141"
 	
 	},
-	"5142" : { 
-		"name_de" : "St. Gertraudweg 2",
+{ 
+		"label" : "St. Gertraudweg 2",
 		"name_it" : "via S. Geltrude 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5142"
 	
 	},
-	"5143" : { 
-		"name_de" : "Drusus Str. 3",
+{ 
+		"label" : "Drusus Str. 3",
 		"name_it" : "via Druso 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5143"
 	
 	},
-	"5144" : { 
-		"name_de" : "Drusus Str. 3",
+{ 
+		"label" : "Drusus Str. 3",
 		"name_it" : "via Druso 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5144"
 	
 	},
-	"5145" : { 
-		"name_de" : "Drusus Str. 5",
+{ 
+		"label" : "Drusus Str. 5",
 		"name_it" : "via Druso 5",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5145"
 	
 	},
-	"5146" : { 
-		"name_de" : "Drusus Str. 5",
+{ 
+		"label" : "Drusus Str. 5",
 		"name_it" : "via Druso 5",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5146"
 	
 	},
-	"5147" : { 
-		"name_de" : "Drusus Str. 6",
+{ 
+		"label" : "Drusus Str. 6",
 		"name_it" : "via Druso 6",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5147"
 	
 	},
-	"5148" : { 
-		"name_de" : "Drusus Str. 6",
+{ 
+		"label" : "Drusus Str. 6",
 		"name_it" : "via Druso 6",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5148"
 	
 	},
-	"5149" : { 
-		"name_de" : "Drusus Str. 7",
+{ 
+		"label" : "Drusus Str. 7",
 		"name_it" : "via Druso 7",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5149"
 	
 	},
-	"515" : { 
-		"name_de" : "Voellan 4",
+{ 
+		"label" : "Voellan 4",
 		"name_it" : "Foiana 4",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "515"
 	
 	},
-	"5150" : { 
-		"name_de" : "Drusus Str. 7",
+{ 
+		"label" : "Drusus Str. 7",
 		"name_it" : "via Druso 7",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5150"
 	
 	},
-	"5151" : { 
-		"name_de" : "Drusus Str. 8",
+{ 
+		"label" : "Drusus Str. 8",
 		"name_it" : "via Druso 8",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5151"
 	
 	},
-	"5152" : { 
-		"name_de" : "Drusus Str. 8",
+{ 
+		"label" : "Drusus Str. 8",
 		"name_it" : "via Druso 8",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5152"
 	
 	},
-	"5153" : { 
-		"name_de" : "Drusus Str. 10",
+{ 
+		"label" : "Drusus Str. 10",
 		"name_it" : "via Druso 10",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5153"
 	
 	},
-	"5154" : { 
-		"name_de" : "Drusus Str. 10",
+{ 
+		"label" : "Drusus Str. 10",
 		"name_it" : "via Druso 10",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5154"
 	
 	},
-	"5155" : { 
-		"name_de" : "Krankenhaus 1",
+{ 
+		"label" : "Krankenhaus 1",
 		"name_it" : "Ospedale 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5155"
 	
 	},
-	"5156" : { 
-		"name_de" : "Krankenhaus 1",
+{ 
+		"label" : "Krankenhaus 1",
 		"name_it" : "Ospedale 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5156"
 	
 	},
-	"5158" : { 
-		"name_de" : "Krankenhaus 2",
+{ 
+		"label" : "Krankenhaus 2",
 		"name_it" : "Ospedale 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5158"
 	
 	},
-	"5159" : { 
-		"name_de" : "Moritzinger Str. 2",
+{ 
+		"label" : "Moritzinger Str. 2",
 		"name_it" : "via S. Maurizio 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5159"
 	
 	},
-	"516" : { 
-		"name_de" : "Voellan 3",
+{ 
+		"label" : "Voellan 3",
 		"name_it" : "Foiana 3",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "516"
 	
 	},
-	"5160" : { 
-		"name_de" : "Moritzinger Str. 2",
+{ 
+		"label" : "Moritzinger Str. 2",
 		"name_it" : "via S. Maurizio 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5160"
 	
 	},
-	"5161" : { 
-		"name_de" : "Moritzinger Str. 1",
+{ 
+		"label" : "Moritzinger Str. 1",
 		"name_it" : "via S. Maurizio 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5161"
 	
 	},
-	"5162" : { 
-		"name_de" : "Moritzinger Str. 1",
+{ 
+		"label" : "Moritzinger Str. 1",
 		"name_it" : "via S. Maurizio 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5162"
 	
 	},
-	"5163" : { 
-		"name_de" : "V. Veneto Str. 2",
+{ 
+		"label" : "V. Veneto Str. 2",
 		"name_it" : "via V. Veneto 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5163"
 	
 	},
-	"5164" : { 
-		"name_de" : "V. Veneto Str. 2",
+{ 
+		"label" : "V. Veneto Str. 2",
 		"name_it" : "via V. Veneto 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5164"
 	
 	},
-	"5165" : { 
-		"name_de" : "V. Veneto Str. 1",
+{ 
+		"label" : "V. Veneto Str. 1",
 		"name_it" : "via V. Veneto 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5165"
 	
 	},
-	"5166" : { 
-		"name_de" : "V. Veneto Str. 1",
+{ 
+		"label" : "V. Veneto Str. 1",
 		"name_it" : "via V. Veneto 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5166"
 	
 	},
-	"5167" : { 
-		"name_de" : "Grieser Platz",
+{ 
+		"label" : "Grieser Platz",
 		"name_it" : "piazza Gries",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5167"
 	
 	},
-	"5168" : { 
-		"name_de" : "Grieser Platz",
+{ 
+		"label" : "Grieser Platz",
 		"name_it" : "piazza Gries",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5168"
 	
 	},
-	"5169" : { 
-		"name_de" : "Freiheitsstr. 2",
+{ 
+		"label" : "Freiheitsstr. 2",
 		"name_it" : "corso Liberta` 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5169"
 	
 	},
-	"517" : { 
-		"name_de" : "Voellan 2",
+{ 
+		"label" : "Voellan 2",
 		"name_it" : "Foiana 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "517"
 	
 	},
-	"5170" : { 
-		"name_de" : "Freiheitsstr. 2",
+{ 
+		"label" : "Freiheitsstr. 2",
 		"name_it" : "corso Liberta` 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5170"
 	
 	},
-	"5171" : { 
-		"name_de" : "Stadthalle",
+{ 
+		"label" : "Stadthalle",
 		"name_it" : "Palasport",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5171"
 	
 	},
-	"5172" : { 
-		"name_de" : "Stadthalle",
+{ 
+		"label" : "Stadthalle",
 		"name_it" : "Palasport",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5172"
 	
 	},
-	"5173" : { 
-		"name_de" : "Reschen Str. 1",
+{ 
+		"label" : "Reschen Str. 1",
 		"name_it" : "via Resia 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5173"
 	
 	},
-	"5174" : { 
-		"name_de" : "Reschen Str. 1",
+{ 
+		"label" : "Reschen Str. 1",
 		"name_it" : "via Resia 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5174"
 	
 	},
-	"5175" : { 
-		"name_de" : "Reschen Str. 2",
+{ 
+		"label" : "Reschen Str. 2",
 		"name_it" : "via Resia 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5175"
 	
 	},
-	"5176" : { 
-		"name_de" : "Reschen Str. 2",
+{ 
+		"label" : "Reschen Str. 2",
 		"name_it" : "via Resia 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5176"
 	
 	},
-	"5177" : { 
-		"name_de" : "Reschen Str. 3",
+{ 
+		"label" : "Reschen Str. 3",
 		"name_it" : "via Resia 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5177"
 	
 	},
-	"5178" : { 
-		"name_de" : "Reschen Str. 3",
+{ 
+		"label" : "Reschen Str. 3",
 		"name_it" : "via Resia 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5178"
 	
 	},
-	"5179" : { 
-		"name_de" : "Reschen Str. 4",
+{ 
+		"label" : "Reschen Str. 4",
 		"name_it" : "via Resia 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5179"
 	
 	},
-	"518" : { 
-		"name_de" : "Voellan 1",
+{ 
+		"label" : "Voellan 1",
 		"name_it" : "Foiana 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "518"
 	
 	},
-	"5180" : { 
-		"name_de" : "Reschen Str. 4",
+{ 
+		"label" : "Reschen Str. 4",
 		"name_it" : "via Resia 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5180"
 	
 	},
-	"5181" : { 
-		"name_de" : "Buozzi Str. 1",
+{ 
+		"label" : "Buozzi Str. 1",
 		"name_it" : "via Buozzi 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5181"
 	
 	},
-	"5182" : { 
-		"name_de" : "Buozzi Str. 1",
+{ 
+		"label" : "Buozzi Str. 1",
 		"name_it" : "via Buozzi 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5182"
 	
 	},
-	"5183" : { 
-		"name_de" : "Buozzi Str. 2",
+{ 
+		"label" : "Buozzi Str. 2",
 		"name_it" : "via Buozzi 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5183"
 	
 	},
-	"5184" : { 
-		"name_de" : "Buozzi Str. 2",
+{ 
+		"label" : "Buozzi Str. 2",
 		"name_it" : "via Buozzi 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5184"
 	
 	},
-	"5185" : { 
-		"name_de" : "Messe",
+{ 
+		"label" : "Messe",
 		"name_it" : "Fiera",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5185"
 	
 	},
-	"5186" : { 
-		"name_de" : "Messe",
+{ 
+		"label" : "Messe",
 		"name_it" : "Fiera",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5186"
 	
 	},
-	"5187" : { 
-		"name_de" : "Buozzi Str. 3",
+{ 
+		"label" : "Buozzi Str. 3",
 		"name_it" : "via Buozzi 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5187"
 	
 	},
-	"5188" : { 
-		"name_de" : "Buozzi Str. 3",
+{ 
+		"label" : "Buozzi Str. 3",
 		"name_it" : "via Buozzi 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5188"
 	
 	},
-	"5189" : { 
-		"name_de" : "Einstein Str. 2",
+{ 
+		"label" : "Einstein Str. 2",
 		"name_it" : "via Einstein 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5189"
 	
 	},
-	"519" : { 
-		"name_de" : "St. Georgen",
+{ 
+		"label" : "St. Georgen",
 		"name_it" : "S. Giorgio",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "519"
 	
 	},
-	"5190" : { 
-		"name_de" : "Einstein Str. 2",
+{ 
+		"label" : "Einstein Str. 2",
 		"name_it" : "via Einstein 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5190"
 	
 	},
-	"5191" : { 
-		"name_de" : "Einstein Str. 3",
+{ 
+		"label" : "Einstein Str. 3",
 		"name_it" : "via Einstein 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5191"
 	
 	},
-	"5192" : { 
-		"name_de" : "Einstein Str. 3",
+{ 
+		"label" : "Einstein Str. 3",
 		"name_it" : "via Einstein 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5192"
 	
 	},
-	"5193" : { 
-		"name_de" : "Galvani Str. 4",
+{ 
+		"label" : "Galvani Str. 4",
 		"name_it" : "via Galvani 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5193"
 	
 	},
-	"5194" : { 
-		"name_de" : "Galvani Str. 4",
+{ 
+		"label" : "Galvani Str. 4",
 		"name_it" : "via Galvani 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5194"
 	
 	},
-	"5195" : { 
-		"name_de" : "Galvani Str. 3",
+{ 
+		"label" : "Galvani Str. 3",
 		"name_it" : "via Galvani 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5195"
 	
 	},
-	"5196" : { 
-		"name_de" : "Galvani Str. 3",
+{ 
+		"label" : "Galvani Str. 3",
 		"name_it" : "via Galvani 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5196"
 	
 	},
-	"5197" : { 
-		"name_de" : "Galvani Str. 2",
+{ 
+		"label" : "Galvani Str. 2",
 		"name_it" : "via Galvani 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5197"
 	
 	},
-	"5198" : { 
-		"name_de" : "Galvani Str. 2",
+{ 
+		"label" : "Galvani Str. 2",
 		"name_it" : "via Galvani 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5198"
 	
 	},
-	"5199" : { 
-		"name_de" : "Galvani Str. 1",
+{ 
+		"label" : "Galvani Str. 1",
 		"name_it" : "via Galvani 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5199"
 	
 	},
-	"520" : { 
-		"name_de" : "Gampenstr. 2",
+{ 
+		"label" : "Gampenstr. 2",
 		"name_it" : "via Palade 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "520"
 	
 	},
-	"5200" : { 
-		"name_de" : "Ortler Str.",
+{ 
+		"label" : "Ortler Str.",
 		"name_it" : "via Ortles",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5200"
 	
 	},
-	"5201" : { 
-		"name_de" : "Bari Str. 4",
+{ 
+		"label" : "Bari Str. 4",
 		"name_it" : "via Bari 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5201"
 	
 	},
-	"5202" : { 
-		"name_de" : "Bari Str. 4",
+{ 
+		"label" : "Bari Str. 4",
 		"name_it" : "via Bari 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5202"
 	
 	},
-	"5203" : { 
-		"name_de" : "Bari Str. 3",
+{ 
+		"label" : "Bari Str. 3",
 		"name_it" : "via Bari 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5203"
 	
 	},
-	"5204" : { 
-		"name_de" : "Bari Str. 2",
+{ 
+		"label" : "Bari Str. 2",
 		"name_it" : "via Bari 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5204"
 	
 	},
-	"5205" : { 
-		"name_de" : "Bari Str. 1",
+{ 
+		"label" : "Bari Str. 1",
 		"name_it" : "via Bari 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5205"
 	
 	},
-	"5207" : { 
-		"name_de" : "Montecassino Str.",
+{ 
+		"label" : "Montecassino Str.",
 		"name_it" : "via Montecassino",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5207"
 	
 	},
-	"5208" : { 
-		"name_de" : "Mailand Str. 3",
+{ 
+		"label" : "Mailand Str. 3",
 		"name_it" : "via Milano 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5208"
 	
 	},
-	"5209" : { 
-		"name_de" : "Mailand Str. 2",
+{ 
+		"label" : "Mailand Str. 2",
 		"name_it" : "via Milano 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5209"
 	
 	},
-	"521" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "via Palade 1- Gampenstr. 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "521"
 	
 	},
-	"5210" : { 
-		"name_de" : "Mailand Str. 1",
+{ 
+		"label" : "Mailand Str. 1",
 		"name_it" : "via Milano 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5210"
 	
 	},
-	"5211" : { 
-		"name_de" : "Matteotti Platz",
+{ 
+		"label" : "Matteotti Platz",
 		"name_it" : "piazza Matteotti",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5211"
 	
 	},
-	"5212" : { 
-		"name_de" : "Turin Str.",
+{ 
+		"label" : "Turin Str.",
 		"name_it" : "via Torino",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5212"
 	
 	},
-	"5213" : { 
-		"name_de" : "Dalmatien Str. 1",
+{ 
+		"label" : "Dalmatien Str. 1",
 		"name_it" : "via Dalmazia 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5213"
 	
 	},
-	"5214" : { 
-		"name_de" : "Dalmatien Str. 2",
+{ 
+		"label" : "Dalmatien Str. 2",
 		"name_it" : "via Dalmazia 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5214"
 	
 	},
-	"5215" : { 
-		"name_de" : "Palermo Str. 2",
+{ 
+		"label" : "Palermo Str. 2",
 		"name_it" : "via Palermo 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5215"
 	
 	},
-	"5216" : { 
-		"name_de" : "Palermo Str. 3",
+{ 
+		"label" : "Palermo Str. 3",
 		"name_it" : "via Palermo 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5216"
 	
 	},
-	"5217" : { 
-		"name_de" : "Cagliari Str.",
+{ 
+		"label" : "Cagliari Str.",
 		"name_it" : "via Cagliari",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5217"
 	
 	},
-	"5218" : { 
-		"name_de" : "Sassari Str. 1",
+{ 
+		"label" : "Sassari Str. 1",
 		"name_it" : "via Sassari 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5218"
 	
 	},
-	"5219" : { 
-		"name_de" : "Parmastr. 2",
+{ 
+		"label" : "Parmastr. 2",
 		"name_it" : "via Parma 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5219"
 	
 	},
-	"522" : { 
-		"name_de" : "Meranerstr. 2",
+{ 
+		"label" : "Meranerstr. 2",
 		"name_it" : "via Merano 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "522"
 	
 	},
-	"5220" : { 
-		"name_de" : "Sassari Str. 2",
+{ 
+		"label" : "Sassari Str. 2",
 		"name_it" : "via Sassari 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5220"
 	
 	},
-	"5221" : { 
-		"name_de" : "Parma Str. 1",
+{ 
+		"label" : "Parma Str. 1",
 		"name_it" : "via Parma 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5221"
 	
 	},
-	"5222" : { 
-		"name_de" : "Suedtiroler Str. 1",
+{ 
+		"label" : "Suedtiroler Str. 1",
 		"name_it" : "via Alto Adige 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5222"
 	
 	},
-	"5223" : { 
-		"name_de" : "Sarntaler Str. 2",
+{ 
+		"label" : "Sarntaler Str. 2",
 		"name_it" : "via Sarentino 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5223"
 	
 	},
-	"5224" : { 
-		"name_de" : "Sarntaler Str. 2",
+{ 
+		"label" : "Sarntaler Str. 2",
 		"name_it" : "via Sarentino 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5224"
 	
 	},
-	"5225" : { 
-		"name_de" : "Sarntaler Str. 1",
+{ 
+		"label" : "Sarntaler Str. 1",
 		"name_it" : "via Sarentino 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5225"
 	
 	},
-	"5226" : { 
-		"name_de" : "Sarntaler Str. 1",
+{ 
+		"label" : "Sarntaler Str. 1",
 		"name_it" : "via Sarentino 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5226"
 	
 	},
-	"5227" : { 
-		"name_de" : "Seilbahn Jenesien",
+{ 
+		"label" : "Seilbahn Jenesien",
 		"name_it" : "Funivia S. Genesio",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5227"
 	
 	},
-	"5229" : { 
-		"name_de" : "Volta Str. 5",
+{ 
+		"label" : "Volta Str. 5",
 		"name_it" : "via Volta 5",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5229"
 	
 	},
-	"523" : { 
-		"name_de" : "Meranerstr. 2",
+{ 
+		"label" : "Meranerstr. 2",
 		"name_it" : "via Merano 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "523"
 	
 	},
-	"5230" : { 
-		"name_de" : "Volta Str. 5",
+{ 
+		"label" : "Volta Str. 5",
 		"name_it" : "via Volta 5",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5230"
 	
 	},
-	"5232" : { 
-		"name_de" : "Giotto  Str.",
+{ 
+		"label" : "Giotto  Str.",
 		"name_it" : "via Giotto",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5232"
 	
 	},
-	"5233" : { 
-		"name_de" : "Kepler Str.",
+{ 
+		"label" : "Kepler Str.",
 		"name_it" : "via Keplero",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5233"
 	
 	},
-	"5234" : { 
-		"name_de" : "Einstein Str. 1",
+{ 
+		"label" : "Einstein Str. 1",
 		"name_it" : "via Einstein 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5234"
 	
 	},
-	"5235" : { 
-		"name_de" : "Volta Str. 2",
+{ 
+		"label" : "Volta Str. 2",
 		"name_it" : "via Volta 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5235"
 	
 	},
-	"5236" : { 
-		"name_de" : "Volta Str. 2",
+{ 
+		"label" : "Volta Str. 2",
 		"name_it" : "via Volta 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5236"
 	
 	},
-	"5237" : { 
-		"name_de" : "Pacinotti Str. 2",
+{ 
+		"label" : "Pacinotti Str. 2",
 		"name_it" : "via Pacinotti 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5237"
 	
 	},
-	"5238" : { 
-		"name_de" : "Siemens Str. 1",
+{ 
+		"label" : "Siemens Str. 1",
 		"name_it" : "via Siemens 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5238"
 	
 	},
-	"5239" : { 
-		"name_de" : "Siemens Str. 1",
+{ 
+		"label" : "Siemens Str. 1",
 		"name_it" : "via Siemens 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5239"
 	
 	},
-	"524" : { 
-		"name_de" : "Tscherms 2",
+{ 
+		"label" : "Tscherms 2",
 		"name_it" : "Cermes 2",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "524"
 	
 	},
-	"5240" : { 
-		"name_de" : "Lancia Str.",
+{ 
+		"label" : "Lancia Str.",
 		"name_it" : "via Lancia",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5240"
 	
 	},
-	"5241" : { 
-		"name_de" : "Romstr. 3",
+{ 
+		"label" : "Romstr. 3",
 		"name_it" : "via Roma 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5241"
 	
 	},
-	"5242" : { 
-		"name_de" : "Lancia Str.",
+{ 
+		"label" : "Lancia Str.",
 		"name_it" : "via Lancia",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5242"
 	
 	},
-	"525" : { 
-		"name_de" : "Tscherms 2",
+{ 
+		"label" : "Tscherms 2",
 		"name_it" : "Cermes 2",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "525"
 	
 	},
-	"5250" : { 
-		"name_de" : "Kuepachweg",
+{ 
+		"label" : "Kuepachweg",
 		"name_it" : "via Castel Flavon",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5250"
 	
 	},
-	"5253" : { 
-		"name_de" : "Schlachthof Str. 7",
+{ 
+		"label" : "Schlachthof Str. 7",
 		"name_it" : "via Macello 7",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5253"
 	
 	},
-	"5254" : { 
-		"name_de" : "Schlachthof Str. 6",
+{ 
+		"label" : "Schlachthof Str. 6",
 		"name_it" : "via Macello 6",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5254"
 	
 	},
-	"5255" : { 
-		"name_de" : "Schlachthof Str. 5",
+{ 
+		"label" : "Schlachthof Str. 5",
 		"name_it" : "via Macello 5",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5255"
 	
 	},
-	"5256" : { 
-		"name_de" : "Schlachthof Str. 4",
+{ 
+		"label" : "Schlachthof Str. 4",
 		"name_it" : "via Macello 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5256"
 	
 	},
-	"5257" : { 
-		"name_de" : "Kohlern Seilbahn",
+{ 
+		"label" : "Kohlern Seilbahn",
 		"name_it" : "Funivia del Colle",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5257"
 	
 	},
-	"5259" : { 
-		"name_de" : "Kampiller Bruecke",
+{ 
+		"label" : "Kampiller Bruecke",
 		"name_it" : "ponte Campiglio",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5259"
 	
 	},
-	"526" : { 
-		"name_de" : "Tscherms 1",
+{ 
+		"label" : "Tscherms 1",
 		"name_it" : "Cermes 1",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "526"
 	
 	},
-	"5260" : { 
-		"name_de" : "Schlachthof Str. 3",
+{ 
+		"label" : "Schlachthof Str. 3",
 		"name_it" : "via Macello 3",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5260"
 	
 	},
-	"5261" : { 
-		"name_de" : "Schlachthof Str. 2",
+{ 
+		"label" : "Schlachthof Str. 2",
 		"name_it" : "via Macello 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5261"
 	
 	},
-	"5262" : { 
-		"name_de" : "Schlachthof Str. 1",
+{ 
+		"label" : "Schlachthof Str. 1",
 		"name_it" : "via Macello 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5262"
 	
 	},
-	"5263" : { 
-		"name_de" : "Schlachthof Str. 1",
+{ 
+		"label" : "Schlachthof Str. 1",
 		"name_it" : "via Macello 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5263"
 	
 	},
-	"5264" : { 
-		"name_de" : "Bari Str. 1",
+{ 
+		"label" : "Bari Str. 1",
 		"name_it" : "via Bari 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5264"
 	
 	},
-	"5265" : { 
-		"name_de" : "Bari Str. 2",
+{ 
+		"label" : "Bari Str. 2",
 		"name_it" : "via Bari 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5265"
 	
 	},
-	"5266" : { 
-		"name_de" : "Drusus Str. 4",
+{ 
+		"label" : "Drusus Str. 4",
 		"name_it" : "via Druso 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5266"
 	
 	},
-	"5267" : { 
-		"name_de" : "Drusus Str. 4",
+{ 
+		"label" : "Drusus Str. 4",
 		"name_it" : "via Druso 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5267"
 	
 	},
-	"5268" : { 
-		"name_de" : "Leifers IZ",
+{ 
+		"label" : "Leifers IZ",
 		"name_it" : "Laives ZI",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5268"
 	
 	},
-	"5269" : { 
-		"name_de" : "Ortler Str.",
+{ 
+		"label" : "Ortler Str.",
 		"name_it" : "via Ortles",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5269"
 	
 	},
-	"527" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "Cermes 1- Tscherms 1",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "527"
 	
 	},
-	"5270" : { 
-		"name_de" : "Ortler Str.",
+{ 
+		"label" : "Ortler Str.",
 		"name_it" : "via Ortles",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5270"
 	
 	},
-	"5271" : { 
-		"name_de" : "A. Emeri Str. 1",
+{ 
+		"label" : "A. Emeri Str. 1",
 		"name_it" : "via A. Emeri 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5271"
 	
 	},
-	"5272" : { 
-		"name_de" : "A. Emeri Str. 1",
+{ 
+		"label" : "A. Emeri Str. 1",
 		"name_it" : "via A. Emeri 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5272"
 	
 	},
-	"5273" : { 
-		"name_de" : " A. Emeri Str. 2",
+{ 
+		"label" : " A. Emeri Str. 2",
 		"name_it" : "via A. Emeri 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5273"
 	
 	},
-	"5274" : { 
-		"name_de" : "Sordo Str.",
+{ 
+		"label" : "Sordo Str.",
 		"name_it" : "via Sordo",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5274"
 	
 	},
-	"5275" : { 
-		"name_de" : "Mozart Str.",
+{ 
+		"label" : "Mozart Str.",
 		"name_it" : "via Mozart",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5275"
 	
 	},
-	"528" : { 
-		"name_de" : "Marling 3",
+{ 
+		"label" : "Marling 3",
 		"name_it" : "Marlengo 3",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "528"
 	
 	},
-	"529" : { 
-		"name_de" : "Marling 3",
+{ 
+		"label" : "Marling 3",
 		"name_it" : "Marlengo 3",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "529"
 	
 	},
-	"530" : { 
-		"name_de" : "Gampenstr. 2",
+{ 
+		"label" : "Gampenstr. 2",
 		"name_it" : "via Palade 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "530"
 	
 	},
-	"5301" : { 
-		"name_de" : "Cavour Str.",
+{ 
+		"label" : "Cavour Str.",
 		"name_it" : "via Cavour",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5301"
 	
 	},
-	"5302" : { 
-		"name_de" : "Weggenstein Str. 1",
+{ 
+		"label" : "Weggenstein Str. 1",
 		"name_it" : "via Weggenstein 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5302"
 	
 	},
-	"5303" : { 
-		"name_de" : "Weggenstein Str. 2",
+{ 
+		"label" : "Weggenstein Str. 2",
 		"name_it" : "via Weggenstein 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5303"
 	
 	},
-	"5304" : { 
-		"name_de" : "Selig-Heinrich Str.",
+{ 
+		"label" : "Selig-Heinrich Str.",
 		"name_it" : "via Beato Arrigo",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5304"
 	
 	},
-	"5305" : { 
-		"name_de" : "St. Anton Str.",
+{ 
+		"label" : "St. Anton Str.",
 		"name_it" : "via S. Antonio",
 		"city_de" : "Ritten",
 		"city_it" : "Renon",
 		"id" : "5305"
 	
 	},
-	"5306" : { 
-		"name_de" : "Schloss Runkelstein",
+{ 
+		"label" : "Schloss Runkelstein",
 		"name_it" : "Castel Roncolo",
 		"city_de" : "Ritten",
 		"city_it" : "Renon",
 		"id" : "5306"
 	
 	},
-	"5307" : { 
-		"name_de" : "Verdi Platz",
+{ 
+		"label" : "Verdi Platz",
 		"name_it" : "piazza Verdi",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5307"
 	
 	},
-	"5309" : { 
-		"name_de" : "Verdi Platz",
+{ 
+		"label" : "Verdi Platz",
 		"name_it" : "piazza Verdi",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5309"
 	
 	},
-	"531" : { 
-		"name_de" : "Gampenstr. 2",
+{ 
+		"label" : "Gampenstr. 2",
 		"name_it" : "via Palade 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "531"
 	
 	},
-	"5310" : { 
-		"name_de" : "Drusus Bruecke",
+{ 
+		"label" : "Drusus Bruecke",
 		"name_it" : "ponte Druso",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5310"
 	
 	},
-	"5311" : { 
-		"name_de" : "Drusus Bruecke",
+{ 
+		"label" : "Drusus Bruecke",
 		"name_it" : "ponte Druso",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5311"
 	
 	},
-	"5312" : { 
-		"name_de" : "Drusus Str. 1",
+{ 
+		"label" : "Drusus Str. 1",
 		"name_it" : "via Druso 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5312"
 	
 	},
-	"5313" : { 
-		"name_de" : "Drusus Str. 1",
+{ 
+		"label" : "Drusus Str. 1",
 		"name_it" : "via Druso 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5313"
 	
 	},
-	"5314" : { 
-		"name_de" : "Drusus Str. 2",
+{ 
+		"label" : "Drusus Str. 2",
 		"name_it" : "via Druso 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5314"
 	
 	},
-	"5315" : { 
-		"name_de" : "Drusus Str. 2",
+{ 
+		"label" : "Drusus Str. 2",
 		"name_it" : "via Druso 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5315"
 	
 	},
-	"5317" : { 
-		"name_de" : "Seilbahn Jenesien",
+{ 
+		"label" : "Seilbahn Jenesien",
 		"name_it" : "Funivia S. Genesio",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5317"
 	
 	},
-	"5319" : { 
-		"name_de" : "Avogadro Str.",
+{ 
+		"label" : "Avogadro Str.",
 		"name_it" : "via Avogadro",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5319"
 	
 	},
-	"532" : { 
-		"name_de" : "Gampenstr. 1",
+{ 
+		"label" : "Gampenstr. 1",
 		"name_it" : "via Palade 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "532"
 	
 	},
-	"5320" : { 
-		"name_de" : "Galilei Str. 1",
+{ 
+		"label" : "Galilei Str. 1",
 		"name_it" : "via Galilei 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5320"
 	
 	},
-	"5321" : { 
-		"name_de" : "Galilei Str. 2",
+{ 
+		"label" : "Galilei Str. 2",
 		"name_it" : "via Galilei 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5321"
 	
 	},
-	"5322" : { 
-		"name_de" : "Siemens Str. 2",
+{ 
+		"label" : "Siemens Str. 2",
 		"name_it" : "via Siemens 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5322"
 	
 	},
-	"5323" : { 
-		"name_de" : "Drusus Str. 9",
+{ 
+		"label" : "Drusus Str. 9",
 		"name_it" : "via Druso 9",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5323"
 	
 	},
-	"5324" : { 
-		"name_de" : "Drusus Str. 9",
+{ 
+		"label" : "Drusus Str. 9",
 		"name_it" : "via Druso 9",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5324"
 	
 	},
-	"5325" : { 
-		"name_de" : "Duca d'Aosta Str.",
+{ 
+		"label" : "Duca d'Aosta Str.",
 		"name_it" : "via Duca d'Aosta",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5325"
 	
 	},
-	"5326" : { 
-		"name_de" : "Mitterweg",
+{ 
+		"label" : "Mitterweg",
 		"name_it" : "via Piani di Mezzo",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5326"
 	
 	},
-	"5327" : { 
-		"name_de" : "Kampiller Bruecke",
+{ 
+		"label" : "Kampiller Bruecke",
 		"name_it" : "ponte Campiglio",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5327"
 	
 	},
-	"5328" : { 
-		"name_de" : "Schlachthof Str. 2",
+{ 
+		"label" : "Schlachthof Str. 2",
 		"name_it" : "via Macello 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5328"
 	
 	},
-	"5329" : { 
-		"name_de" : "Weinegg Str. 2",
+{ 
+		"label" : "Weinegg Str. 2",
 		"name_it" : "via C. Weinegg 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5329"
 	
 	},
-	"533" : { 
-		"name_de" : "Gampenstr. 1",
+{ 
+		"label" : "Gampenstr. 1",
 		"name_it" : "via Palade 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "533"
 	
 	},
-	"5330" : { 
-		"name_de" : "Koestenweg",
+{ 
+		"label" : "Koestenweg",
 		"name_it" : "Passeggiata dei Castani",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5330"
 	
 	},
-	"5331" : { 
-		"name_de" : "Neubruchweg",
+{ 
+		"label" : "Neubruchweg",
 		"name_it" : "via Del Ronco",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5331"
 	
 	},
-	"5332" : { 
-		"name_de" : "Neubruchweg",
+{ 
+		"label" : "Neubruchweg",
 		"name_it" : "via Del Ronco",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5332"
 	
 	},
-	"5333" : { 
-		"name_de" : "Montecassino Str.",
+{ 
+		"label" : "Montecassino Str.",
 		"name_it" : "via Montecassino",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5333"
 	
 	},
-	"5334" : { 
-		"name_de" : "Sorrent Str.",
+{ 
+		"label" : "Sorrent Str.",
 		"name_it" : "via Sorrento",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5334"
 	
 	},
-	"5335" : { 
-		"name_de" : "Sorrent Str.",
+{ 
+		"label" : "Sorrent Str.",
 		"name_it" : "via Sorrento",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5335"
 	
 	},
-	"5336" : { 
-		"name_de" : "Sassari Str. 1",
+{ 
+		"label" : "Sassari Str. 1",
 		"name_it" : "via Sassari 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5336"
 	
 	},
-	"5337" : { 
-		"name_de" : "Sassari Str. 2",
+{ 
+		"label" : "Sassari Str. 2",
 		"name_it" : "via Sassari 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5337"
 	
 	},
-	"5338" : { 
-		"name_de" : "Pacinotti Str. 2",
+{ 
+		"label" : "Pacinotti Str. 2",
 		"name_it" : "via Pacinotti 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5338"
 	
 	},
-	"5339" : { 
-		"name_de" : "Fagen Str. 4",
+{ 
+		"label" : "Fagen Str. 4",
 		"name_it" : "via Fago 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5339"
 	
 	},
-	"534" : { 
-		"name_de" : "Piavestr. 1",
+{ 
+		"label" : "Piavestr. 1",
 		"name_it" : "via Piave 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "534"
 	
 	},
-	"5340" : { 
-		"name_de" : "Volta Str. 1",
+{ 
+		"label" : "Volta Str. 1",
 		"name_it" : "via Volta 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5340"
 	
 	},
-	"5341" : { 
-		"name_de" : "Volta Str. 1",
+{ 
+		"label" : "Volta Str. 1",
 		"name_it" : "via Volta 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5341"
 	
 	},
-	"5342" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "Garage SASA ",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5342"
 	
 	},
-	"5343" : { 
-		"name_de" : "Firmian",
+{ 
+		"label" : "Firmian",
 		"name_it" : "Firmiano",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5343"
 	
 	},
-	"5344" : { 
-		"name_de" : "Firmian",
+{ 
+		"label" : "Firmian",
 		"name_it" : "Firmiano",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5344"
 	
 	},
-	"5345" : { 
-		"name_de" : "Duca d'Aosta Str.",
+{ 
+		"label" : "Duca d'Aosta Str.",
 		"name_it" : "via Duca d'Aosta",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5345"
 	
 	},
-	"535" : { 
-		"name_de" : "Theater Platz",
+{ 
+		"label" : "Theater Platz",
 		"name_it" : "piazza Teatro",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "535"
 	
 	},
-	"5350" : { 
-		"name_de" : "St. Jakob Str. 2 (Endst. 4)",
+{ 
+		"label" : "St. Jakob Str. 2 (Endst. 4)",
 		"name_it" : "via S. Giacomo 2 (cap. 4)",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "5350"
 	
 	},
-	"5351" : { 
-		"name_de" : "Spitalgasse",
+{ 
+		"label" : "Spitalgasse",
 		"name_it" : "via Ospedale",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5351"
 	
 	},
-	"5352" : { 
-		"name_de" : "Bahnhof 1",
+{ 
+		"label" : "Bahnhof 1",
 		"name_it" : "stazione 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5352"
 	
 	},
-	"5353" : { 
-		"name_de" : "Sigmundskron Bhf",
+{ 
+		"label" : "Sigmundskron Bhf",
 		"name_it" : "Ponte Adige Staz.",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5353"
 	
 	},
-	"5354" : { 
-		"name_de" : "Sigmundskron Bhf 2",
+{ 
+		"label" : "Sigmundskron Bhf 2",
 		"name_it" : "Ponte Adige Staz. 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5354"
 	
 	},
-	"5359" : { 
-		"name_de" : "Handwerkerstr.",
+{ 
+		"label" : "Handwerkerstr.",
 		"name_it" : "via degli Artigiani",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5359"
 	
 	},
-	"536" : { 
-		"name_de" : "Theater Platz",
+{ 
+		"label" : "Theater Platz",
 		"name_it" : "piazza Teatro",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "536"
 	
 	},
-	"5360" : { 
-		"name_de" : "Kampill Center",
+{ 
+		"label" : "Kampill Center",
 		"name_it" : "Kampill Center",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5360"
 	
 	},
-	"5361" : { 
-		"name_de" : "St. Veit",
+{ 
+		"label" : "St. Veit",
 		"name_it" : "San Vito",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5361"
 	
 	},
-	"5362" : { 
-		"name_de" : "Stroblwiese 1",
+{ 
+		"label" : "Stroblwiese 1",
 		"name_it" : "Stroblwiese 1",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5362"
 	
 	},
-	"5363" : { 
-		"name_de" : "Stroblwiese 1",
+{ 
+		"label" : "Stroblwiese 1",
 		"name_it" : "Stroblwiese 1",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5363"
 	
 	},
-	"5364" : { 
-		"name_de" : "Kardaun Handwerkerz.",
+{ 
+		"label" : "Kardaun Handwerkerz.",
 		"name_it" : "Cardano zona Art.",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5364"
 	
 	},
-	"5365" : { 
-		"name_de" : "Kardaun Handwerkerz.",
+{ 
+		"label" : "Kardaun Handwerkerz.",
 		"name_it" : "Cardano zona Art.",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5365"
 	
 	},
-	"5366" : { 
-		"name_de" : "Mila Milkon",
+{ 
+		"label" : "Mila Milkon",
 		"name_it" : "Mila Milkon",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "5366"
 	
 	},
-	"5367" : { 
-		"name_de" : "St. Veit",
+{ 
+		"label" : "St. Veit",
 		"name_it" : "San Vito",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "5367"
 	
 	},
-	"537" : { 
-		"name_de" : "Goethe Str. 1",
+{ 
+		"label" : "Goethe Str. 1",
 		"name_it" : "via Goethe 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "537"
 	
 	},
-	"538" : { 
-		"name_de" : "Goethe Str. 1",
+{ 
+		"label" : "Goethe Str. 1",
 		"name_it" : "via Goethe 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "538"
 	
 	},
-	"539" : { 
-		"name_de" : "Goethe Str. 3",
+{ 
+		"label" : "Goethe Str. 3",
 		"name_it" : "via Goethe 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "539"
 	
 	},
-	"540" : { 
-		"name_de" : "Goethe Str. 3",
+{ 
+		"label" : "Goethe Str. 3",
 		"name_it" : "via Goethe 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "540"
 	
 	},
-	"541" : { 
-		"name_de" : "Martinsbrunn",
+{ 
+		"label" : "Martinsbrunn",
 		"name_it" : "Fonte S. Martino",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "541"
 	
 	},
-	"542" : { 
-		"name_de" : "Karl Wolf Str. 6",
+{ 
+		"label" : "Karl Wolf Str. 6",
 		"name_it" : "via Karl Wolf 6",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "542"
 	
 	},
-	"543" : { 
-		"name_de" : "Karl Wolf Str. 6",
+{ 
+		"label" : "Karl Wolf Str. 6",
 		"name_it" : "via Karl Wolf 6",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "543"
 	
 	},
-	"544" : { 
-		"name_de" : "Karl Wolf Str. 5",
+{ 
+		"label" : "Karl Wolf Str. 5",
 		"name_it" : "via Karl Wolf 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "544"
 	
 	},
-	"545" : { 
-		"name_de" : "Karl Wolf Str. 5",
+{ 
+		"label" : "Karl Wolf Str. 5",
 		"name_it" : "via Karl Wolf 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "545"
 	
 	},
-	"546" : { 
-		"name_de" : "Karl Wolf Str. 3",
+{ 
+		"label" : "Karl Wolf Str. 3",
 		"name_it" : "via Karl Wolf 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "546"
 	
 	},
-	"547" : { 
-		"name_de" : "Karl Wolf Str. 3",
+{ 
+		"label" : "Karl Wolf Str. 3",
 		"name_it" : "via Karl Wolf 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "547"
 	
 	},
-	"548" : { 
-		"name_de" : "Karl Wolf Str. 2",
+{ 
+		"label" : "Karl Wolf Str. 2",
 		"name_it" : "via Karl Wolf 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "548"
 	
 	},
-	"549" : { 
-		"name_de" : "Karl Wolf Str. 2",
+{ 
+		"label" : "Karl Wolf Str. 2",
 		"name_it" : "via Karl Wolf 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "549"
 	
 	},
-	"550" : { 
-		"name_de" : "Weingartnerstr. 3",
+{ 
+		"label" : "Weingartnerstr. 3",
 		"name_it" : "via Weingartner 3",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "550"
 	
 	},
-	"551" : { 
-		"name_de" : "Weingartnerstr. 3",
+{ 
+		"label" : "Weingartnerstr. 3",
 		"name_it" : "via Weingartner 3",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "551"
 	
 	},
-	"552" : { 
-		"name_de" : "Forst",
+{ 
+		"label" : "Forst",
 		"name_it" : "Foresta",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "552"
 	
 	},
-	"553" : { 
-		"name_de" : "Partschins ",
+{ 
+		"label" : "Partschins ",
 		"name_it" : "Parcines",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "553"
 	
 	},
-	"55351" : { 
-		"name_de" : "Josef Noldin Str.",
+{ 
+		"label" : "Josef Noldin Str.",
 		"name_it" : "via Josef Noldin",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "55351"
 	
 	},
-	"55352" : { 
-		"name_de" : "Josef Noldin Str.",
+{ 
+		"label" : "Josef Noldin Str.",
 		"name_it" : "via Josef Noldin",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "55352"
 	
 	},
-	"554" : { 
-		"name_de" : "Toell 1",
+{ 
+		"label" : "Toell 1",
 		"name_it" : "Tel 1",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "554"
 	
 	},
-	"555" : { 
-		"name_de" : "Toell 1",
+{ 
+		"label" : "Toell 1",
 		"name_it" : "Tel 1",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "555"
 	
 	},
-	"556" : { 
-		"name_de" : "Toell 3",
+{ 
+		"label" : "Toell 3",
 		"name_it" : "Tel 3",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "556"
 	
 	},
-	"557" : { 
-		"name_de" : "Toell 3",
+{ 
+		"label" : "Toell 3",
 		"name_it" : "Tel 3",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "557"
 	
 	},
-	"558" : { 
-		"name_de" : "Abzw. Oberplars",
+{ 
+		"label" : "Abzw. Oberplars",
 		"name_it" : "Bivio Plars di sopra",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "558"
 	
 	},
-	"559" : { 
-		"name_de" : "Abzw. Oberplars",
+{ 
+		"label" : "Abzw. Oberplars",
 		"name_it" : "Bivio Plars di sopra",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "559"
 	
 	},
-	"560" : { 
-		"name_de" : "Mitterplars 2",
+{ 
+		"label" : "Mitterplars 2",
 		"name_it" : "Plars di mezzo 2",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "560"
 	
 	},
-	"561" : { 
-		"name_de" : "Mitterplars 2",
+{ 
+		"label" : "Mitterplars 2",
 		"name_it" : "Plars di mezzo 2",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "561"
 	
 	},
-	"562" : { 
-		"name_de" : "Mitterplars 1",
+{ 
+		"label" : "Mitterplars 1",
 		"name_it" : "Plars di mezzo 1",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "562"
 	
 	},
-	"563" : { 
-		"name_de" : "Mitterplars 1",
+{ 
+		"label" : "Mitterplars 1",
 		"name_it" : "Plars di mezzo 1",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "563"
 	
 	},
-	"564" : { 
-		"name_de" : "Sessellift Vellau",
+{ 
+		"label" : "Sessellift Vellau",
 		"name_it" : "Seggiovia Velloi",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "564"
 	
 	},
-	"565" : { 
-		"name_de" : "Sessellift Vellau",
+{ 
+		"label" : "Sessellift Vellau",
 		"name_it" : "Seggiovia Velloi",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "565"
 	
 	},
-	"568" : { 
-		"name_de" : "Gemeinde Algund",
+{ 
+		"label" : "Gemeinde Algund",
 		"name_it" : "Lagundo Comune",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "568"
 	
 	},
-	"569" : { 
-		"name_de" : "Gemeinde Algund",
+{ 
+		"label" : "Gemeinde Algund",
 		"name_it" : "Lagundo Comune",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "569"
 	
 	},
-	"570" : { 
-		"name_de" : "Alte Landstrasse",
+{ 
+		"label" : "Alte Landstrasse",
 		"name_it" : "via Vecchia",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "570"
 	
 	},
-	"571" : { 
-		"name_de" : "Alte Landstrasse",
+{ 
+		"label" : "Alte Landstrasse",
 		"name_it" : "via Vecchia",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "571"
 	
 	},
-	"572" : { 
-		"name_de" : "Marling Bahnhof",
+{ 
+		"label" : "Marling Bahnhof",
 		"name_it" : "Marlengo stazione",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "572"
 	
 	},
-	"573" : { 
-		"name_de" : "Marling Dorf 2",
+{ 
+		"label" : "Marling Dorf 2",
 		"name_it" : "Marlengo Paese 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "573"
 	
 	},
-	"574" : { 
-		"name_de" : "Marling Dorf 2",
+{ 
+		"label" : "Marling Dorf 2",
 		"name_it" : "Marlengo Paese 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "574"
 	
 	},
-	"575" : { 
-		"name_de" : "Marling Dorf 1",
+{ 
+		"label" : "Marling Dorf 1",
 		"name_it" : "Marlengo Paese 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "575"
 	
 	},
-	"576" : { 
-		"name_de" : "Marling Dorf 1",
+{ 
+		"label" : "Marling Dorf 1",
 		"name_it" : "Marlengo Paese 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "576"
 	
 	},
-	"577" : { 
-		"name_de" : "Marling 2",
+{ 
+		"label" : "Marling 2",
 		"name_it" : "Marlengo 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "577"
 	
 	},
-	"578" : { 
-		"name_de" : "Marling 2",
+{ 
+		"label" : "Marling 2",
 		"name_it" : "Marlengo 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "578"
 	
 	},
-	"580" : { 
-		"name_de" : "Maria Himmelfahrt",
+{ 
+		"label" : "Maria Himmelfahrt",
 		"name_it" : "Maria Assunta",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "580"
 	
 	},
-	"581" : { 
-		"name_de" : "Viehmarktstr. 2",
+{ 
+		"label" : "Viehmarktstr. 2",
 		"name_it" : "via Foro Boario 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "581"
 	
 	},
-	"582" : { 
-		"name_de" : "Viehmarktstr. 2",
+{ 
+		"label" : "Viehmarktstr. 2",
 		"name_it" : "via Foro Boario 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "582"
 	
 	},
-	"583" : { 
-		"name_de" : "Viehmarktstr. 1",
+{ 
+		"label" : "Viehmarktstr. 1",
 		"name_it" : "via Foro Boario 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "583"
 	
 	},
-	"584" : { 
-		"name_de" : "Viehmarktstr. 1",
+{ 
+		"label" : "Viehmarktstr. 1",
 		"name_it" : "via Foro Boario 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "584"
 	
 	},
-	"585" : { 
-		"name_de" : "Friedhof",
+{ 
+		"label" : "Friedhof",
 		"name_it" : "Cimitero",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "585"
 	
 	},
-	"586" : { 
-		"name_de" : "Friedhof",
+{ 
+		"label" : "Friedhof",
 		"name_it" : "Cimitero",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "586"
 	
 	},
-	"587" : { 
-		"name_de" : "St. Josef Str. 1",
+{ 
+		"label" : "St. Josef Str. 1",
 		"name_it" : "via San Giuseppe 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "587"
 	
 	},
-	"588" : { 
-		"name_de" : "St. Josef Str. 1",
+{ 
+		"label" : "St. Josef Str. 1",
 		"name_it" : "via San Giuseppe 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "588"
 	
 	},
-	"589" : { 
-		"name_de" : "4. Novemberstr.",
+{ 
+		"label" : "4. Novemberstr.",
 		"name_it" : "via IV Novembre",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "589"
 	
 	},
-	"590" : { 
-		"name_de" : "4. Novemberstr.",
+{ 
+		"label" : "4. Novemberstr.",
 		"name_it" : "via IV Novembre",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "590"
 	
 	},
-	"592" : { 
-		"name_de" : "Freiheitsstr. 4",
+{ 
+		"label" : "Freiheitsstr. 4",
 		"name_it" : "corso Liberta' 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "592"
 	
 	},
-	"593" : { 
-		"name_de" : "Freiheitsstr. 4",
+{ 
+		"label" : "Freiheitsstr. 4",
 		"name_it" : "corso Liberta' 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "593"
 	
 	},
-	"594" : { 
-		"name_de" : "Freiheitsstr. 3",
+{ 
+		"label" : "Freiheitsstr. 3",
 		"name_it" : "corso Liberta' 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "594"
 	
 	},
-	"595" : { 
-		"name_de" : "Freiheitsstr. 3",
+{ 
+		"label" : "Freiheitsstr. 3",
 		"name_it" : "corso Liberta' 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "595"
 	
 	},
-	"6" : { 
-		"name_de" : "Toell 2",
+{ 
+		"label" : "Toell 2",
 		"name_it" : "Tel 2",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "6"
 	
 	},
-	"600" : { 
-		"name_de" : "St. Franziskus Str.",
+{ 
+		"label" : "St. Franziskus Str.",
 		"name_it" : "via San Francesco",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "600"
 	
 	},
-	"601" : { 
-		"name_de" : "Krankenhaus",
+{ 
+		"label" : "Krankenhaus",
 		"name_it" : "Ospedale",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "601"
 	
 	},
-	"602" : { 
-		"name_de" : "Karl Wolf Str. 1",
+{ 
+		"label" : "Karl Wolf Str. 1",
 		"name_it" : "via Karl Wolf 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "602"
 	
 	},
-	"603" : { 
-		"name_de" : "Karl Wolf Str. 1",
+{ 
+		"label" : "Karl Wolf Str. 1",
 		"name_it" : "via Karl Wolf 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "603"
 	
 	},
-	"605" : { 
-		"name_de" : "Enrico Toti Str. 1",
+{ 
+		"label" : "Enrico Toti Str. 1",
 		"name_it" : "via Enrico Toti 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "605"
 	
 	},
-	"606" : { 
-		"name_de" : "Enrico Toti Str. 2",
+{ 
+		"label" : "Enrico Toti Str. 2",
 		"name_it" : "via Enrico Toti 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "606"
 	
 	},
-	"607" : { 
-		"name_de" : "Wolkenstein Str.",
+{ 
+		"label" : "Wolkenstein Str.",
 		"name_it" : "via Wolkenstein",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "607"
 	
 	},
-	"608" : { 
-		"name_de" : "Zuegg Str. 1",
+{ 
+		"label" : "Zuegg Str. 1",
 		"name_it" : "via Zuegg 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "608"
 	
 	},
-	"609" : { 
-		"name_de" : "Marlingerstr. 1",
+{ 
+		"label" : "Marlingerstr. 1",
 		"name_it" : "via Marlengo 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "609"
 	
 	},
-	"610" : { 
-		"name_de" : "Marlingerstr. 1",
+{ 
+		"label" : "Marlingerstr. 1",
 		"name_it" : "via Marlengo 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "610"
 	
 	},
-	"611" : { 
-		"name_de" : "Marlingerstr. 2",
+{ 
+		"label" : "Marlingerstr. 2",
 		"name_it" : "via Marlengo 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "611"
 	
 	},
-	"612" : { 
-		"name_de" : "Manzoni Str. 1",
+{ 
+		"label" : "Manzoni Str. 1",
 		"name_it" : "via Manzoni 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "612"
 	
 	},
-	"615" : { 
-		"name_de" : "Innerhofer Str.",
+{ 
+		"label" : "Innerhofer Str.",
 		"name_it" : "via Innerhofer",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "615"
 	
 	},
-	"616" : { 
-		"name_de" : "Grabmayr Str.",
+{ 
+		"label" : "Grabmayr Str.",
 		"name_it" : "via Grabmayr",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "616"
 	
 	},
-	"617" : { 
-		"name_de" : "Winkel Weg 2",
+{ 
+		"label" : "Winkel Weg 2",
 		"name_it" : "via Winkel 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "617"
 	
 	},
-	"618" : { 
-		"name_de" : "Winkel Weg 1",
+{ 
+		"label" : "Winkel Weg 1",
 		"name_it" : "via Winkel 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "618"
 	
 	},
-	"621" : { 
-		"name_de" : "Winkel Weg 3",
+{ 
+		"label" : "Winkel Weg 3",
 		"name_it" : "via Winkel 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "621"
 	
 	},
-	"622" : { 
-		"name_de" : "Winkel Weg 4",
+{ 
+		"label" : "Winkel Weg 4",
 		"name_it" : "via Winkel 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "622"
 	
 	},
-	"623" : { 
-		"name_de" : "Winkel Weg 5",
+{ 
+		"label" : "Winkel Weg 5",
 		"name_it" : "via Winkel 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "623"
 	
 	},
-	"624" : { 
-		"name_de" : "Dante Str. 4",
+{ 
+		"label" : "Dante Str. 4",
 		"name_it" : "via Dante 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "624"
 	
 	},
-	"625" : { 
-		"name_de" : "Dante Str. 5",
+{ 
+		"label" : "Dante Str. 5",
 		"name_it" : "via Dante 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "625"
 	
 	},
-	"626" : { 
-		"name_de" : "St. Josef Str. 2",
+{ 
+		"label" : "St. Josef Str. 2",
 		"name_it" : "via San Giuseppe 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "626"
 	
 	},
-	"627" : { 
-		"name_de" : "Bahnhof Hofer Str.",
+{ 
+		"label" : "Bahnhof Hofer Str.",
 		"name_it" : "stazione via Hofer",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "627"
 	
 	},
-	"628" : { 
-		"name_de" : "Hofer Str. 2",
+{ 
+		"label" : "Hofer Str. 2",
 		"name_it" : "via Hofer 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "628"
 	
 	},
-	"629" : { 
-		"name_de" : "A. Hofer Str. 2",
+{ 
+		"label" : "A. Hofer Str. 2",
 		"name_it" : "via A. Hofer 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "629"
 	
 	},
-	"630" : { 
-		"name_de" : "Laurin Str. 2",
+{ 
+		"label" : "Laurin Str. 2",
 		"name_it" : "via Laurin 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "630"
 	
 	},
-	"631" : { 
-		"name_de" : "Freiheitsstr. 2",
+{ 
+		"label" : "Freiheitsstr. 2",
 		"name_it" : "corso Liberta` 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "631"
 	
 	},
-	"632" : { 
-		"name_de" : "Freiheitsstr. 2",
+{ 
+		"label" : "Freiheitsstr. 2",
 		"name_it" : "corso Liberta` 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "632"
 	
 	},
-	"633" : { 
-		"name_de" : "Freiheitsstr. 1",
+{ 
+		"label" : "Freiheitsstr. 1",
 		"name_it" : "corso Liberta' 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "633"
 	
 	},
-	"634" : { 
-		"name_de" : "Freiheitsstr. 1",
+{ 
+		"label" : "Freiheitsstr. 1",
 		"name_it" : "corso Liberta' 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "634"
 	
 	},
-	"635" : { 
-		"name_de" : "Cavour Str. 1",
+{ 
+		"label" : "Cavour Str. 1",
 		"name_it" : "via Cavour 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "635"
 	
 	},
-	"636" : { 
-		"name_de" : "Cavour Str. 1",
+{ 
+		"label" : "Cavour Str. 1",
 		"name_it" : "via Cavour 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "636"
 	
 	},
-	"637" : { 
-		"name_de" : "Cavour Str. 2",
+{ 
+		"label" : "Cavour Str. 2",
 		"name_it" : "via Cavour 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "637"
 	
 	},
-	"638" : { 
-		"name_de" : "Cavour Str. 2",
+{ 
+		"label" : "Cavour Str. 2",
 		"name_it" : "via Cavour 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "638"
 	
 	},
-	"640" : { 
-		"name_de" : "Cavour Str. 3",
+{ 
+		"label" : "Cavour Str. 3",
 		"name_it" : "via Cavour 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "640"
 	
 	},
-	"641" : { 
-		"name_de" : "Cavour Str. 3",
+{ 
+		"label" : "Cavour Str. 3",
 		"name_it" : "via Cavour 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "641"
 	
 	},
-	"642" : { 
-		"name_de" : "Cavour Str. 4",
+{ 
+		"label" : "Cavour Str. 4",
 		"name_it" : "via Cavour 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "642"
 	
 	},
-	"643" : { 
-		"name_de" : "Cavour Str. 4",
+{ 
+		"label" : "Cavour Str. 4",
 		"name_it" : "via Cavour 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "643"
 	
 	},
-	"644" : { 
-		"name_de" : "Brunnenplatz",
+{ 
+		"label" : "Brunnenplatz",
 		"name_it" : "piazza Fontana",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "644"
 	
 	},
-	"645" : { 
-		"name_de" : "Brunnenplatz",
+{ 
+		"label" : "Brunnenplatz",
 		"name_it" : "piazza Fontana",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "645"
 	
 	},
-	"647" : { 
-		"name_de" : "Villa Maria",
+{ 
+		"label" : "Villa Maria",
 		"name_it" : "Villa Maria",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "647"
 	
 	},
-	"648" : { 
-		"name_de" : "Vergil Str. 1",
+{ 
+		"label" : "Vergil Str. 1",
 		"name_it" : "via Virgilio 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "648"
 	
 	},
-	"649" : { 
-		"name_de" : "Vergil Str. 2 NON ESISTE PIU",
+{ 
+		"label" : "Vergil Str. 2 NON ESISTE PIU",
 		"name_it" : "via Virgilio 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "649"
 	
 	},
-	"650" : { 
-		"name_de" : "Vergil Str. 2",
+{ 
+		"label" : "Vergil Str. 2",
 		"name_it" : "via Virgilio 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "650"
 	
 	},
-	"651" : { 
-		"name_de" : "Schennastr. 1",
+{ 
+		"label" : "Schennastr. 1",
 		"name_it" : "via Scena 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "651"
 	
 	},
-	"652" : { 
-		"name_de" : "Schennastr. 2",
+{ 
+		"label" : "Schennastr. 2",
 		"name_it" : "via Scena 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "652"
 	
 	},
-	"653" : { 
-		"name_de" : "Schennastr. 2",
+{ 
+		"label" : "Schennastr. 2",
 		"name_it" : "via Scena 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "653"
 	
 	},
-	"654" : { 
-		"name_de" : "Schennastr. 3",
+{ 
+		"label" : "Schennastr. 3",
 		"name_it" : "via Scena 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "654"
 	
 	},
-	"655" : { 
-		"name_de" : "Rametz Bruecke",
+{ 
+		"label" : "Rametz Bruecke",
 		"name_it" : "ponte Rametz",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "655"
 	
 	},
-	"658" : { 
-		"name_de" : "Naifweg 1",
+{ 
+		"label" : "Naifweg 1",
 		"name_it" : "via Val di Nova 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "658"
 	
 	},
-	"659" : { 
-		"name_de" : "Naifweg 1",
+{ 
+		"label" : "Naifweg 1",
 		"name_it" : "via Val di Nova 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "659"
 	
 	},
-	"6590" : { 
-		"name_de" : "St. Josef Str. 2",
+{ 
+		"label" : "St. Josef Str. 2",
 		"name_it" : "via San Giuseppe 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "6590"
 	
 	},
-	"660" : { 
-		"name_de" : "Naifweg 2",
+{ 
+		"label" : "Naifweg 2",
 		"name_it" : "via Val di Nova 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "660"
 	
 	},
-	"661" : { 
-		"name_de" : "Naifweg 2",
+{ 
+		"label" : "Naifweg 2",
 		"name_it" : "via Val di Nova 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "661"
 	
 	},
-	"662" : { 
-		"name_de" : "Naifweg 3",
+{ 
+		"label" : "Naifweg 3",
 		"name_it" : "via Val di Nova 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "662"
 	
 	},
-	"663" : { 
-		"name_de" : "Naifweg 3",
+{ 
+		"label" : "Naifweg 3",
 		"name_it" : "via Val di Nova 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "663"
 	
 	},
-	"664" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "Funivia Merano 2000-Seilbahn Meran 2000",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "664"
 	
 	},
-	"666" : { 
-		"name_de" : "Laberserstr. 1",
+{ 
+		"label" : "Laberserstr. 1",
 		"name_it" : "via Labers 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "666"
 	
 	},
-	"667" : { 
-		"name_de" : "Laberserstr. 1",
+{ 
+		"label" : "Laberserstr. 1",
 		"name_it" : "via Labers 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "667"
 	
 	},
-	"668" : { 
-		"name_de" : "St. Kathrein",
+{ 
+		"label" : "St. Kathrein",
 		"name_it" : "Santa Caterina",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "668"
 	
 	},
-	"669" : { 
-		"name_de" : "St. Kathrein",
+{ 
+		"label" : "St. Kathrein",
 		"name_it" : "Santa Caterina",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "669"
 	
 	},
-	"671" : { 
-		"name_de" : "Hafling ",
+{ 
+		"label" : "Hafling ",
 		"name_it" : "Avelengo",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "671"
 	
 	},
-	"672" : { 
-		"name_de" : "Parkpl. Nussser",
+{ 
+		"label" : "Parkpl. Nussser",
 		"name_it" : "Parcheggio Nusser",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "672"
 	
 	},
-	"673" : { 
-		"name_de" : "Parkpl. Nussser",
+{ 
+		"label" : "Parkpl. Nussser",
 		"name_it" : "Parcheggio Nusser",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "673"
 	
 	},
-	"674" : { 
-		"name_de" : "Moar Wiese",
+{ 
+		"label" : "Moar Wiese",
 		"name_it" : "Moar Wiese",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "674"
 	
 	},
-	"675" : { 
-		"name_de" : "Moar Wiese",
+{ 
+		"label" : "Moar Wiese",
 		"name_it" : "Moar Wiese",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "675"
 	
 	},
-	"676" : { 
-		"name_de" : "Hafling Oberdorf",
+{ 
+		"label" : "Hafling Oberdorf",
 		"name_it" : "Avelengo di Sopra",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "676"
 	
 	},
-	"677" : { 
-		"name_de" : "Hafling Oberdorf",
+{ 
+		"label" : "Hafling Oberdorf",
 		"name_it" : "Avelengo di Sopra",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "677"
 	
 	},
-	"678" : { 
-		"name_de" : "Falzeben 1",
+{ 
+		"label" : "Falzeben 1",
 		"name_it" : "Falzeben 1",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "678"
 	
 	},
-	"679" : { 
-		"name_de" : "Falzeben 1",
+{ 
+		"label" : "Falzeben 1",
 		"name_it" : "Falzeben 1",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "679"
 	
 	},
-	"680" : { 
-		"name_de" : "Falzeben 2",
+{ 
+		"label" : "Falzeben 2",
 		"name_it" : "Falzeben 2",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "680"
 	
 	},
-	"681" : { 
-		"name_de" : "Falzeben 2",
+{ 
+		"label" : "Falzeben 2",
 		"name_it" : "Falzeben 2",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "681"
 	
 	},
-	"682" : { 
-		"name_de" : "Falzeben 3",
+{ 
+		"label" : "Falzeben 3",
 		"name_it" : "Falzeben 3",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "682"
 	
 	},
-	"683" : { 
-		"name_de" : "Falzeben 3",
+{ 
+		"label" : "Falzeben 3",
 		"name_it" : "Falzeben 3",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "683"
 	
 	},
-	"684" : { 
-		"name_de" : "Meran 2000",
+{ 
+		"label" : "Meran 2000",
 		"name_it" : "Merano 2000",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "684"
 	
 	},
-	"685" : { 
-		"name_de" : "St. Valentin Str. 2",
+{ 
+		"label" : "St. Valentin Str. 2",
 		"name_it" : "via S. Valentino 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "685"
 	
 	},
-	"686" : { 
-		"name_de" : "Naifweg 5",
+{ 
+		"label" : "Naifweg 5",
 		"name_it" : "via Val di Nova 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "686"
 	
 	},
-	"687" : { 
-		"name_de" : "Katzensteinstr. 2",
+{ 
+		"label" : "Katzensteinstr. 2",
 		"name_it" : "via Castel Gatto 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "687"
 	
 	},
-	"688" : { 
-		"name_de" : "Katzensteinstr. 1",
+{ 
+		"label" : "Katzensteinstr. 1",
 		"name_it" : "via Castel Gatto 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "688"
 	
 	},
-	"689" : { 
-		"name_de" : "Sinich 9",
+{ 
+		"label" : "Sinich 9",
 		"name_it" : "Sinigo 9",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "689"
 	
 	},
-	"690" : { 
-		"name_de" : "Sinich 8",
+{ 
+		"label" : "Sinich 8",
 		"name_it" : "Sinigo 8",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "690"
 	
 	},
-	"691" : { 
-		"name_de" : "Sinich 7",
+{ 
+		"label" : "Sinich 7",
 		"name_it" : "Sinigo 7",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "691"
 	
 	},
-	"6911" : { 
-		"name_de" : "Sankt Anna",
+{ 
+		"label" : "Sankt Anna",
 		"name_it" : "Sant'Anna",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "6911"
 	
 	},
-	"6912" : { 
-		"name_de" : "Zollstr. 2",
+{ 
+		"label" : "Zollstr. 2",
 		"name_it" : "via Dogana 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "6912"
 	
 	},
-	"6913" : { 
-		"name_de" : "Zollstr. 2",
+{ 
+		"label" : "Zollstr. 2",
 		"name_it" : "via Dogana 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "6913"
 	
 	},
-	"6919" : { 
-		"name_de" : "Naraun",
+{ 
+		"label" : "Naraun",
 		"name_it" : "Narano",
 		"city_de" : "Tisens",
 		"city_it" : "Tesimo",
 		"id" : "6919"
 	
 	},
-	"692" : { 
-		"name_de" : "Sinich 7",
+{ 
+		"label" : "Sinich 7",
 		"name_it" : "Sinigo 7",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "692"
 	
 	},
-	"6920" : { 
-		"name_de" : "Naraun",
+{ 
+		"label" : "Naraun",
 		"name_it" : "Narano",
 		"city_de" : "Tisens",
 		"city_it" : "Tesimo",
 		"id" : "6920"
 	
 	},
-	"6921" : { 
-		"name_de" : "Tisens (Tisog)",
+{ 
+		"label" : "Tisens (Tisog)",
 		"name_it" : "Tesimo (Tisog)",
 		"city_de" : "Tisens",
 		"city_it" : "Tesimo",
 		"id" : "6921"
 	
 	},
-	"6922" : { 
-		"name_de" : "Tisens (Tisog)",
+{ 
+		"label" : "Tisens (Tisog)",
 		"name_it" : "Tesimo (Tisog)",
 		"city_de" : "Tisens",
 		"city_it" : "Tesimo",
 		"id" : "6922"
 	
 	},
-	"6923" : { 
-		"name_de" : "Tisens Gemeinde",
+{ 
+		"label" : "Tisens Gemeinde",
 		"name_it" : "Tesimo Comune",
 		"city_de" : "Tisens",
 		"city_it" : "Tesimo",
 		"id" : "6923"
 	
 	},
-	"6924" : { 
-		"name_de" : "Tisens Gemeinde",
+{ 
+		"label" : "Tisens Gemeinde",
 		"name_it" : "Tesimo Comune",
 		"city_de" : "Tisens",
 		"city_it" : "Tesimo",
 		"id" : "6924"
 	
 	},
-	"6925" : { 
-		"name_de" : "Prissian Dorf",
+{ 
+		"label" : "Prissian Dorf",
 		"name_it" : "Prissiano Paese",
 		"city_de" : "Tisens",
 		"city_it" : "Tesimo",
 		"id" : "6925"
 	
 	},
-	"693" : { 
-		"name_de" : "Sinich 6",
+{ 
+		"label" : "Sinich 6",
 		"name_it" : "Sinigo 6",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "693"
 	
 	},
-	"694" : { 
-		"name_de" : "Sinich 6",
+{ 
+		"label" : "Sinich 6",
 		"name_it" : "Sinigo 6",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "694"
 	
 	},
-	"695" : { 
-		"name_de" : "Sinich 5",
+{ 
+		"label" : "Sinich 5",
 		"name_it" : "Sinigo 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "695"
 	
 	},
-	"696" : { 
-		"name_de" : "Sinich 5",
+{ 
+		"label" : "Sinich 5",
 		"name_it" : "Sinigo 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "696"
 	
 	},
-	"697" : { 
-		"name_de" : "Sinich 4",
+{ 
+		"label" : "Sinich 4",
 		"name_it" : "Sinigo 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "697"
 	
 	},
-	"698" : { 
-		"name_de" : "Sinich 4",
+{ 
+		"label" : "Sinich 4",
 		"name_it" : "Sinigo 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "698"
 	
 	},
-	"699" : { 
-		"name_de" : "Sinich 2",
+{ 
+		"label" : "Sinich 2",
 		"name_it" : "Sinigo 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "699"
 	
 	},
-	"700" : { 
-		"name_de" : "Sinich 2",
+{ 
+		"label" : "Sinich 2",
 		"name_it" : "Sinigo 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "700"
 	
 	},
-	"701" : { 
-		"name_de" : "Sinich 1",
+{ 
+		"label" : "Sinich 1",
 		"name_it" : "Sinigo 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "701"
 	
 	},
-	"702" : { 
-		"name_de" : "Sinich 1",
+{ 
+		"label" : "Sinich 1",
 		"name_it" : "Sinigo 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "702"
 	
 	},
-	"703" : { 
-		"name_de" : "Romstr. 8",
+{ 
+		"label" : "Romstr. 8",
 		"name_it" : "via Roma 8",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "703"
 	
 	},
-	"704" : { 
-		"name_de" : "Romstr. 8",
+{ 
+		"label" : "Romstr. 8",
 		"name_it" : "via Roma 8",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "704"
 	
 	},
-	"705" : { 
-		"name_de" : "Romstr. 7",
+{ 
+		"label" : "Romstr. 7",
 		"name_it" : "via Roma 7",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "705"
 	
 	},
-	"706" : { 
-		"name_de" : "Romstr. 7",
+{ 
+		"label" : "Romstr. 7",
 		"name_it" : "via Roma 7",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "706"
 	
 	},
-	"707" : { 
-		"name_de" : "Romstr. 6",
+{ 
+		"label" : "Romstr. 6",
 		"name_it" : "via Roma 6",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "707"
 	
 	},
-	"708" : { 
-		"name_de" : "Romstr. 6",
+{ 
+		"label" : "Romstr. 6",
 		"name_it" : "via Roma 6",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "708"
 	
 	},
-	"709" : { 
-		"name_de" : "Romstr. 5",
+{ 
+		"label" : "Romstr. 5",
 		"name_it" : "via Roma 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "709"
 	
 	},
-	"710" : { 
-		"name_de" : "Romstr. 5",
+{ 
+		"label" : "Romstr. 5",
 		"name_it" : "via Roma 5",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "710"
 	
 	},
-	"711" : { 
-		"name_de" : "Romstr. 4",
+{ 
+		"label" : "Romstr. 4",
 		"name_it" : "via Roma 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "711"
 	
 	},
-	"712" : { 
-		"name_de" : "Romstr. 3",
+{ 
+		"label" : "Romstr. 3",
 		"name_it" : "via Roma 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "712"
 	
 	},
-	"713" : { 
-		"name_de" : "Romstr. 3",
+{ 
+		"label" : "Romstr. 3",
 		"name_it" : "via Roma 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "713"
 	
 	},
-	"714" : { 
-		"name_de" : "Romstr. 2",
+{ 
+		"label" : "Romstr. 2",
 		"name_it" : "via Roma 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "714"
 	
 	},
-	"715" : { 
-		"name_de" : "Romstr. 2",
+{ 
+		"label" : "Romstr. 2",
 		"name_it" : "via Roma 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "715"
 	
 	},
-	"718" : { 
-		"name_de" : "Romstr. 1",
+{ 
+		"label" : "Romstr. 1",
 		"name_it" : "via Roma 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "718"
 	
 	},
-	"719" : { 
-		"name_de" : "Petrarca Str.",
+{ 
+		"label" : "Petrarca Str.",
 		"name_it" : "via Petrarca",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "719"
 	
 	},
-	"720" : { 
-		"name_de" : "Abzweigung Tirol",
+{ 
+		"label" : "Abzweigung Tirol",
 		"name_it" : "Bivio Tirolo",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "720"
 	
 	},
-	"721" : { 
-		"name_de" : "Abzweigung Tirol",
+{ 
+		"label" : "Abzweigung Tirol",
 		"name_it" : "Bivio Tirolo",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "721"
 	
 	},
-	"722" : { 
-		"name_de" : "Stemmerhof",
+{ 
+		"label" : "Stemmerhof",
 		"name_it" : "Stemmerhof",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "722"
 	
 	},
-	"723" : { 
-		"name_de" : "Stemmerhof",
+{ 
+		"label" : "Stemmerhof",
 		"name_it" : "Stemmerhof",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "723"
 	
 	},
-	"724" : { 
-		"name_de" : "Perlhof",
+{ 
+		"label" : "Perlhof",
 		"name_it" : "Perlhof",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "724"
 	
 	},
-	"725" : { 
-		"name_de" : "Segenbuehlweg",
+{ 
+		"label" : "Segenbuehlweg",
 		"name_it" : "via Monte Benedetto",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "725"
 	
 	},
-	"726" : { 
-		"name_de" : "Segenbuehlweg",
+{ 
+		"label" : "Segenbuehlweg",
 		"name_it" : "via Monte Benedetto",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "726"
 	
 	},
-	"727" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "Minigolf",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "727"
 	
 	},
-	"728" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "Minigolf",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "728"
 	
 	},
-	"729" : { 
-		"name_de" : "Dorf Tirol 2",
+{ 
+		"label" : "Dorf Tirol 2",
 		"name_it" : "Tirolo Paese 2",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "729"
 	
 	},
-	"730" : { 
-		"name_de" : "Dorf Tirol 1",
+{ 
+		"label" : "Dorf Tirol 1",
 		"name_it" : "Tirolo Paese 1",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "730"
 	
 	},
-	"731" : { 
-		"name_de" : "Tiroler Kreuz",
+{ 
+		"label" : "Tiroler Kreuz",
 		"name_it" : "Tirolo Croce",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "731"
 	
 	},
-	"732" : { 
-		"name_de" : "Haslachstr. 4",
+{ 
+		"label" : "Haslachstr. 4",
 		"name_it" : "via Aslago 4",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "732"
 	
 	},
-	"733" : { 
-		"name_de" : "Haslachstr. 3",
+{ 
+		"label" : "Haslachstr. 3",
 		"name_it" : "via Aslago 3",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "733"
 	
 	},
-	"734" : { 
-		"name_de" : "Seilbahn Hochmut",
+{ 
+		"label" : "Seilbahn Hochmut",
 		"name_it" : "Funivia Muta",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "734"
 	
 	},
-	"735" : { 
-		"name_de" : "Haslachstr. 2",
+{ 
+		"label" : "Haslachstr. 2",
 		"name_it" : "via Aslago 2",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "735"
 	
 	},
-	"736" : { 
-		"name_de" : "Haslachstr. 1",
+{ 
+		"label" : "Haslachstr. 1",
 		"name_it" : "via Aslago 1",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "736"
 	
 	},
-	"737" : { 
-		"name_de" : "Haslachstr. 1",
+{ 
+		"label" : "Haslachstr. 1",
 		"name_it" : "via Aslago 1",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "737"
 	
 	},
-	"738" : { 
-		"name_de" : "Dorf Tirol 1",
+{ 
+		"label" : "Dorf Tirol 1",
 		"name_it" : "Tirolo Paese 1",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "738"
 	
 	},
-	"739" : { 
-		"name_de" : "Segenbuehlweg 2",
+{ 
+		"label" : "Segenbuehlweg 2",
 		"name_it" : "via Benedetto 2",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "739"
 	
 	},
-	"740" : { 
-		"name_de" : "Segenbuehl",
+{ 
+		"label" : "Segenbuehl",
 		"name_it" : "Monte S.Benedetto",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "740"
 	
 	},
-	"741" : { 
-		"name_de" : "Schennastr. 3",
+{ 
+		"label" : "Schennastr. 3",
 		"name_it" : "via Scena 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "741"
 	
 	},
-	"742" : { 
-		"name_de" : "Laurin Str. 1",
+{ 
+		"label" : "Laurin Str. 1",
 		"name_it" : "via Laurin 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "742"
 	
 	},
-	"743" : { 
-		"name_de" : "Laurin Str. 1",
+{ 
+		"label" : "Laurin Str. 1",
 		"name_it" : "via Laurin 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "743"
 	
 	},
-	"744" : { 
-		"name_de" : "Mainhard Str.",
+{ 
+		"label" : "Mainhard Str.",
 		"name_it" : "via Mainardo",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "744"
 	
 	},
-	"745" : { 
-		"name_de" : "Trauttmansdorff",
+{ 
+		"label" : "Trauttmansdorff",
 		"name_it" : "Giardino Botanico",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "745"
 	
 	},
-	"746" : { 
-		"name_de" : "Naifweg 4",
+{ 
+		"label" : "Naifweg 4",
 		"name_it" : "via Val di Nova 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "746"
 	
 	},
-	"748" : { 
-		"name_de" : "Trauttmansdorff",
+{ 
+		"label" : "Trauttmansdorff",
 		"name_it" : "Giardino Botanico",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "748"
 	
 	},
-	"753" : { 
-		"name_de" : "Schafferstr. 2",
+{ 
+		"label" : "Schafferstr. 2",
 		"name_it" : "via Schaffer 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "753"
 	
 	},
-	"754" : { 
-		"name_de" : "Dante Str. 1",
+{ 
+		"label" : "Dante Str. 1",
 		"name_it" : "via Dante 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "754"
 	
 	},
-	"755" : { 
-		"name_de" : "Dante Str. 2",
+{ 
+		"label" : "Dante Str. 2",
 		"name_it" : "via Dante 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "755"
 	
 	},
-	"756" : { 
-		"name_de" : "Dante Str. 3",
+{ 
+		"label" : "Dante Str. 3",
 		"name_it" : "via Dante 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "756"
 	
 	},
-	"758" : { 
-		"name_de" : "Sinich HW Zone",
+{ 
+		"label" : "Sinich HW Zone",
 		"name_it" : "Sinigo Zona Artig.",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "758"
 	
 	},
-	"759" : { 
-		"name_de" : "Sinich HW Zone",
+{ 
+		"label" : "Sinich HW Zone",
 		"name_it" : "Sinigo Zona Artig.",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "759"
 	
 	},
-	"760" : { 
-		"name_de" : "Kravogl Kreuzung",
+{ 
+		"label" : "Kravogl Kreuzung",
 		"name_it" : "Bivio Kravogl",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "760"
 	
 	},
-	"762" : { 
-		"name_de" : "Rennstallweg 1",
+{ 
+		"label" : "Rennstallweg 1",
 		"name_it" : "via Scuderie 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "762"
 	
 	},
-	"763" : { 
-		"name_de" : "Rennstallweg 1",
+{ 
+		"label" : "Rennstallweg 1",
 		"name_it" : "via Scuderie 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "763"
 	
 	},
-	"764" : { 
-		"name_de" : "Rennstallweg 2",
+{ 
+		"label" : "Rennstallweg 2",
 		"name_it" : "via Scuderie 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "764"
 	
 	},
-	"765" : { 
-		"name_de" : "Rennstallweg 2",
+{ 
+		"label" : "Rennstallweg 2",
 		"name_it" : "via Scuderie 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "765"
 	
 	},
-	"7659" : { 
-		"name_de" : "Schulen Leifers",
+{ 
+		"label" : "Schulen Leifers",
 		"name_it" : "scuole Laives",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "7659"
 	
 	},
-	"766" : { 
-		"name_de" : "Rennstallweg 3",
+{ 
+		"label" : "Rennstallweg 3",
 		"name_it" : "via Scuderie 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "766"
 	
 	},
-	"768" : { 
-		"name_de" : "Rennstallweg 3",
+{ 
+		"label" : "Rennstallweg 3",
 		"name_it" : "via Scuderie 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "768"
 	
 	},
-	"769" : { 
-		"name_de" : "Max Valier Str. 2",
+{ 
+		"label" : "Max Valier Str. 2",
 		"name_it" : "via Max Valier 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "769"
 	
 	},
-	"770" : { 
-		"name_de" : "Max Valier Str. 2",
+{ 
+		"label" : "Max Valier Str. 2",
 		"name_it" : "via Max Valier 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "770"
 	
 	},
-	"771" : { 
-		"name_de" : "Max Valier Str. 1",
+{ 
+		"label" : "Max Valier Str. 1",
 		"name_it" : "via Max Valier 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "771"
 	
 	},
-	"772" : { 
-		"name_de" : "Max Valier Str. 1",
+{ 
+		"label" : "Max Valier Str. 1",
 		"name_it" : "via Max Valier 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "772"
 	
 	},
-	"773" : { 
-		"name_de" : "Sinich 3",
+{ 
+		"label" : "Sinich 3",
 		"name_it" : "Sinigo 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "773"
 	
 	},
-	"774" : { 
-		"name_de" : "Sinich 3",
+{ 
+		"label" : "Sinich 3",
 		"name_it" : "Sinigo 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "774"
 	
 	},
-	"775" : { 
-		"name_de" : "Burgstall 1",
+{ 
+		"label" : "Burgstall 1",
 		"name_it" : "Postal 1",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "775"
 	
 	},
-	"776" : { 
-		"name_de" : "Burgstall 1",
+{ 
+		"label" : "Burgstall 1",
 		"name_it" : "Postal 1",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "776"
 	
 	},
-	"777" : { 
-		"name_de" : "Burgstall 2",
+{ 
+		"label" : "Burgstall 2",
 		"name_it" : "Postal 2",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "777"
 	
 	},
-	"778" : { 
-		"name_de" : "Burgstall 2",
+{ 
+		"label" : "Burgstall 2",
 		"name_it" : "Postal 2",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "778"
 	
 	},
-	"779" : { 
-		"name_de" : "Burgstall 3",
+{ 
+		"label" : "Burgstall 3",
 		"name_it" : "Postal 3",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "779"
 	
 	},
-	"780" : { 
-		"name_de" : "Burgstall 3",
+{ 
+		"label" : "Burgstall 3",
 		"name_it" : "Postal 3",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "780"
 	
 	},
-	"792" : { 
-		"name_de" : "Sandplatz",
+{ 
+		"label" : "Sandplatz",
 		"name_it" : "piazza Rena",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "792"
 	
 	},
-	"794" : { 
-		"name_de" : "Cadorna Str. 1",
+{ 
+		"label" : "Cadorna Str. 1",
 		"name_it" : "via Cadorna 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "794"
 	
 	},
-	"795" : { 
-		"name_de" : "Cadorna Str. 1",
+{ 
+		"label" : "Cadorna Str. 1",
 		"name_it" : "via Cadorna 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "795"
 	
 	},
-	"796" : { 
-		"name_de" : "Cadorna Str. 2",
+{ 
+		"label" : "Cadorna Str. 2",
 		"name_it" : "via Cadorna 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "796"
 	
 	},
-	"797" : { 
-		"name_de" : "Cadorna Str. 2",
+{ 
+		"label" : "Cadorna Str. 2",
 		"name_it" : "via Cadorna 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "797"
 	
 	},
-	"798" : { 
-		"name_de" : "Sinich 8",
+{ 
+		"label" : "Sinich 8",
 		"name_it" : "Sinigo 8",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "798"
 	
 	},
-	"799" : { 
-		"name_de" : "Romstr. 4",
+{ 
+		"label" : "Romstr. 4",
 		"name_it" : "via Roma 4",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "799"
 	
 	},
-	"800" : { 
-		"name_de" : "Untermais Bahnhof",
+{ 
+		"label" : "Untermais Bahnhof",
 		"name_it" : "Maia Bassa stazione",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "800"
 	
 	},
-	"801" : { 
-		"name_de" : "Untermais Bahnhof",
+{ 
+		"label" : "Untermais Bahnhof",
 		"name_it" : "Maia Bassa stazione",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "801"
 	
 	},
-	"802" : { 
-		"name_de" : "Piavestr. 2",
+{ 
+		"label" : "Piavestr. 2",
 		"name_it" : "via Piave 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "802"
 	
 	},
-	"803" : { 
-		"name_de" : "Piavestr. 2",
+{ 
+		"label" : "Piavestr. 2",
 		"name_it" : "via Piave 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "803"
 	
 	},
-	"804" : { 
-		"name_de" : "Schennastr. 1",
+{ 
+		"label" : "Schennastr. 1",
 		"name_it" : "via Scena 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "804"
 	
 	},
-	"805" : { 
-		"name_de" : "Vergil Str. 1",
+{ 
+		"label" : "Vergil Str. 1",
 		"name_it" : "via Virgilio 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "805"
 	
 	},
-	"806" : { 
-		"name_de" : "Zueggstr. 2",
+{ 
+		"label" : "Zueggstr. 2",
 		"name_it" : "via Zuegg 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "806"
 	
 	},
-	"807" : { 
-		"name_de" : "Laurin Str. 2",
+{ 
+		"label" : "Laurin Str. 2",
 		"name_it" : "via Laurin 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "807"
 	
 	},
-	"808" : { 
-		"name_de" : "Schafferstr. 1",
+{ 
+		"label" : "Schafferstr. 1",
 		"name_it" : "via Schaffer 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "808"
 	
 	},
-	"809" : { 
-		"name_de" : "Hirzerstr.",
+{ 
+		"label" : "Hirzerstr.",
 		"name_it" : "via Monte Cervina",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "809"
 	
 	},
-	"810" : { 
-		"name_de" : "Boznerstr. 2",
+{ 
+		"label" : "Boznerstr. 2",
 		"name_it" : "via Bolzano 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "810"
 	
 	},
-	"811" : { 
-		"name_de" : "Boznerstr. 1",
+{ 
+		"label" : "Boznerstr. 1",
 		"name_it" : "via Bolzano 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "811"
 	
 	},
-	"812" : { 
-		"name_de" : "Tribusplatz",
+{ 
+		"label" : "Tribusplatz",
 		"name_it" : "piazza Tribus",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "812"
 	
 	},
-	"815" : { 
-		"name_de" : "Lana Industriezone 1",
+{ 
+		"label" : "Lana Industriezone 1",
 		"name_it" : "Lana zona Ind. 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "815"
 	
 	},
-	"817" : { 
-		"name_de" : "Lana Industriezone 2",
+{ 
+		"label" : "Lana Industriezone 2",
 		"name_it" : "Lana zona Ind. 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "817"
 	
 	},
-	"818" : { 
-		"name_de" : "Lana Industriezone 3",
+{ 
+		"label" : "Lana Industriezone 3",
 		"name_it" : "Lana zona Ind. 3",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "818"
 	
 	},
-	"819" : { 
-		"name_de" : "Weingartnerstr. 2",
+{ 
+		"label" : "Weingartnerstr. 2",
 		"name_it" : "via Weingartner 2",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "819"
 	
 	},
-	"820" : { 
-		"name_de" : "Weingartnerstr. 2",
+{ 
+		"label" : "Weingartnerstr. 2",
 		"name_it" : "via Weingartner 2",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "820"
 	
 	},
-	"821" : { 
-		"name_de" : "Segenbuehlweg 2",
+{ 
+		"label" : "Segenbuehlweg 2",
 		"name_it" : "via Benedetto 2",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "821"
 	
 	},
-	"822" : { 
-		"name_de" : "Perlhof",
+{ 
+		"label" : "Perlhof",
 		"name_it" : "Perlhof",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "822"
 	
 	},
-	"823" : { 
-		"name_de" : " Abzw. Falzeben",
+{ 
+		"label" : " Abzw. Falzeben",
 		"name_it" : "Bivio Falzeben",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "823"
 	
 	},
-	"824" : { 
-		"name_de" : "Marlingerstr. 3",
+{ 
+		"label" : "Marlingerstr. 3",
 		"name_it" : "via Marlengo 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "824"
 	
 	},
-	"825" : { 
-		"name_de" : "Meranerstr. 1",
+{ 
+		"label" : "Meranerstr. 1",
 		"name_it" : "via Merano 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "825"
 	
 	},
-	"826" : { 
-		"name_de" : "Meranerstr. 1",
+{ 
+		"label" : "Meranerstr. 1",
 		"name_it" : "via Merano 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "826"
 	
 	},
-	"840" : { 
-		"name_de" : "Sinich Reichsstr.",
+{ 
+		"label" : "Sinich Reichsstr.",
 		"name_it" : "Sinigo via Nazionale",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "840"
 	
 	},
-	"841" : { 
-		"name_de" : "Sinich Reichsstr.",
+{ 
+		"label" : "Sinich Reichsstr.",
 		"name_it" : "Sinigo via Nazionale",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "841"
 	
 	},
-	"845" : { 
-		"name_de" : "Kapuzinerstr.",
+{ 
+		"label" : "Kapuzinerstr.",
 		"name_it" : "via Cappuccini",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "845"
 	
 	},
-	"846" : { 
-		"name_de" : "Kapuzinerstr.",
+{ 
+		"label" : "Kapuzinerstr.",
 		"name_it" : "via Cappuccini",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "846"
 	
 	},
-	"849" : { 
-		"name_de" : "Sinich 9",
+{ 
+		"label" : "Sinich 9",
 		"name_it" : "Sinigo 9",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "849"
 	
 	},
-	"850" : { 
-		"name_de" : "Nals Kellerei",
+{ 
+		"label" : "Nals Kellerei",
 		"name_it" : "Nalles Cantina",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "850"
 	
 	},
-	"851" : { 
-		"name_de" : "Meranerstr.",
+{ 
+		"label" : "Meranerstr.",
 		"name_it" : "via Merano",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "851"
 	
 	},
-	"852" : { 
-		"name_de" : "Seit",
+{ 
+		"label" : "Seit",
 		"name_it" : "Costa",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "852"
 	
 	},
-	"853" : { 
-		"name_de" : "Steinmannwald Neu",
+{ 
+		"label" : "Steinmannwald Neu",
 		"name_it" : "Pineta Nuova",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "853"
 	
 	},
-	"854" : { 
-		"name_de" : "Drusus Str. 11",
+{ 
+		"label" : "Drusus Str. 11",
 		"name_it" : "via Druso 11",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "854"
 	
 	},
-	"855" : { 
-		"name_de" : "Drusus Str. 11",
+{ 
+		"label" : "Drusus Str. 11",
 		"name_it" : "via Druso 11",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "855"
 	
 	},
-	"8565" : { 
-		"name_de" : "Kardaun Karneiderstr.",
+{ 
+		"label" : "Kardaun Karneiderstr.",
 		"name_it" : "Cardano via Cornedo",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "8565"
 	
 	},
-	"8566" : { 
-		"name_de" : "Kardaun Karneiderstr.",
+{ 
+		"label" : "Kardaun Karneiderstr.",
 		"name_it" : "Cardano via Cornedo",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "8566"
 	
 	},
-	"8567" : { 
-		"name_de" : "Karneid Dorf",
+{ 
+		"label" : "Karneid Dorf",
 		"name_it" : "Cornedo Paese",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "8567"
 	
 	},
-	"8568" : { 
-		"name_de" : "Karneid Dorf",
+{ 
+		"label" : "Karneid Dorf",
 		"name_it" : "Cornedo Paese",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "8568"
 	
 	},
-	"8569" : { 
-		"name_de" : "St. Veit",
+{ 
+		"label" : "St. Veit",
 		"name_it" : "S. Vito",
 		"city_de" : "Karneid",
 		"city_it" : "Cornedo all`Isarco",
 		"id" : "8569"
 	
 	},
-	"858" : { 
-		"name_de" : "Schwanburgerstr.",
+{ 
+		"label" : "Schwanburgerstr.",
 		"name_it" : "via Schwanburg",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "858"
 	
 	},
-	"859" : { 
-		"name_de" : "Schwanburgerstr.",
+{ 
+		"label" : "Schwanburgerstr.",
 		"name_it" : "via Schwanburg",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "859"
 	
 	},
-	"860" : { 
-		"name_de" : "Nals Feuerwehr Parkplatz",
+{ 
+		"label" : "Nals Feuerwehr Parkplatz",
 		"name_it" : "Nalles parcheggio pompieri",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "860"
 	
 	},
-	"861" : { 
-		"name_de" : "G. di Vittorio Str.",
+{ 
+		"label" : "G. di Vittorio Str.",
 		"name_it" : "via G. di Vittorio",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "861"
 	
 	},
-	"862" : { 
-		"name_de" : "Braille Str./Bhf Bz Süd",
+{ 
+		"label" : "Braille Str./Bhf Bz Süd",
 		"name_it" : "via Braille/staz. Bz Sud",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "862"
 	
 	},
-	"863" : { 
-		"name_de" : "Lanciastr. 2",
+{ 
+		"label" : "Lanciastr. 2",
 		"name_it" : "via Lancia 2",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "863"
 	
 	},
-	"864" : { 
-		"name_de" : "Lanciastr. 1",
+{ 
+		"label" : "Lanciastr. 1",
 		"name_it" : "via Lancia 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "864"
 	
 	},
-	"865" : { 
-		"name_de" : "Lanciastr. 1",
+{ 
+		"label" : "Lanciastr. 1",
 		"name_it" : "via Lancia 1",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "865"
 	
 	},
-	"866" : { 
-		"name_de" : "Marling Dorf 3",
+{ 
+		"label" : "Marling Dorf 3",
 		"name_it" : "Marlengo Paese 3",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "866"
 	
 	},
-	"867" : { 
-		"name_de" : "Steinmannwald Rotwand",
+{ 
+		"label" : "Steinmannwald Rotwand",
 		"name_it" : "Pineta Rotwand",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "867"
 	
 	},
-	"869" : { 
-		"name_de" : "Mailand Str. 4",
+{ 
+		"label" : "Mailand Str. 4",
 		"name_it" : "via Milano 4",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "869"
 	
 	},
-	"870" : { 
-		"name_de" : "Lana Industriezone 1",
+{ 
+		"label" : "Lana Industriezone 1",
 		"name_it" : "Lana zona Ind.1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "870"
 	
 	},
-	"871" : { 
-		"name_de" : "Lana Industriezone 3",
+{ 
+		"label" : "Lana Industriezone 3",
 		"name_it" : "Lana zona Ind.3",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "871"
 	
 	},
-	"872" : { 
-		"name_de" : "Lana Industriezone 2",
+{ 
+		"label" : "Lana Industriezone 2",
 		"name_it" : "Lana zona Ind.2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "872"
 	
 	},
-	"873" : { 
-		"name_de" : "Branzoll 2",
+{ 
+		"label" : "Branzoll 2",
 		"name_it" : "Bronzolo 2",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "873"
 	
 	},
-	"874" : { 
-		"name_de" : "Branzoll Bhf",
+{ 
+		"label" : "Branzoll Bhf",
 		"name_it" : "Bronzolo F.S.",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "874"
 	
 	},
-	"875" : { 
-		"name_de" : "Pfattner Bruecke",
+{ 
+		"label" : "Pfattner Bruecke",
 		"name_it" : "ponte Vadena",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "875"
 	
 	},
-	"876" : { 
-		"name_de" : "Unterbergstr.",
+{ 
+		"label" : "Unterbergstr.",
 		"name_it" : "via Sottomonte",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "876"
 	
 	},
-	"877" : { 
-		"name_de" : "Leifers Dante Str.",
+{ 
+		"label" : "Leifers Dante Str.",
 		"name_it" : "Laives via Dante",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "877"
 	
 	},
-	"878" : { 
-		"name_de" : "Leifers Dante Str.",
+{ 
+		"label" : "Leifers Dante Str.",
 		"name_it" : "Laives via Dante",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "878"
 	
 	},
-	"879" : { 
-		"name_de" : "Unterbergstr.",
+{ 
+		"label" : "Unterbergstr.",
 		"name_it" : "via Sottomonte",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "879"
 	
 	},
-	"880" : { 
-		"name_de" : "Steinmannwald Neu",
+{ 
+		"label" : "Steinmannwald Neu",
 		"name_it" : "Pineta Nuova",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "880"
 	
 	},
-	"881" : { 
-		"name_de" : "Wachsbleiche",
+{ 
+		"label" : "Wachsbleiche",
 		"name_it" : "Masetta",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "881"
 	
 	},
-	"882" : { 
-		"name_de" : "Pfatten Mover",
+{ 
+		"label" : "Pfatten Mover",
 		"name_it" : "Vadena Mover",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "882"
 	
 	},
-	"883" : { 
-		"name_de" : "Wachsbleiche",
+{ 
+		"label" : "Wachsbleiche",
 		"name_it" : "Masetta",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "883"
 	
 	},
-	"884" : { 
-		"name_de" : "Stadium Europa",
+{ 
+		"label" : "Stadium Europa",
 		"name_it" : "stadio Europa",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "884"
 	
 	},
-	"885" : { 
-		"name_de" : "Stadium Europa",
+{ 
+		"label" : "Stadium Europa",
 		"name_it" : "stadio Europa",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "885"
 	
 	},
-	"886" : { 
-		"name_de" : "Algund Schulen",
+{ 
+		"label" : "Algund Schulen",
 		"name_it" : "Lagundo scuole",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "886"
 	
 	},
-	"887" : { 
-		"name_de" : "Manzoni Str. 2",
+{ 
+		"label" : "Manzoni Str. 2",
 		"name_it" : "via Manzoni 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "887"
 	
 	},
-	"888" : { 
-		"name_de" : "Laurin Str. 3",
+{ 
+		"label" : "Laurin Str. 3",
 		"name_it" : "via Laurin 3",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "888"
 	
 	},
-	"889" : { 
-		"name_de" : "Mainhard Str.",
+{ 
+		"label" : "Mainhard Str.",
 		"name_it" : "via Mainardo",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "889"
 	
 	},
-	"890" : { 
-		"name_de" : "Hafling Handwerkerz.",
+{ 
+		"label" : "Hafling Handwerkerz.",
 		"name_it" : "Avlengo zona art.",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "890"
 	
 	},
-	"891" : { 
-		"name_de" : "Hafling Handwerkerz.",
+{ 
+		"label" : "Hafling Handwerkerz.",
 		"name_it" : "Avlengo zona art.",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "891"
 	
 	},
-	"892" : { 
-		"name_de" : "Aichweg 1",
+{ 
+		"label" : "Aichweg 1",
 		"name_it" : "via Aica 1",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "892"
 	
 	},
-	"893" : { 
-		"name_de" : "Aichweg 2",
+{ 
+		"label" : "Aichweg 2",
 		"name_it" : "via Aica 2",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "893"
 	
 	},
-	"894" : { 
-		"name_de" : "Sankt Anna Str.",
+{ 
+		"label" : "Sankt Anna Str.",
 		"name_it" : "via Sant'Anna",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "894"
 	
 	},
-	"895" : { 
-		"name_de" : "Raffeingasse",
+{ 
+		"label" : "Raffeingasse",
 		"name_it" : "via Raffain",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "895"
 	
 	},
-	"896" : { 
-		"name_de" : "via Villa",
+{ 
+		"label" : "via Villa",
 		"name_it" : "Villener Weg",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "896"
 	
 	},
-	"897" : { 
-		"name_de" : "Voellan 3",
+{ 
+		"label" : "Voellan 3",
 		"name_it" : "Foiana 3",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "897"
 	
 	},
-	"898" : { 
-		"name_de" : "Lorenzerweg",
+{ 
+		"label" : "Lorenzerweg",
 		"name_it" : "via Lorenzer",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "898"
 	
 	},
-	"899" : { 
-		"name_de" : "Marling 4",
+{ 
+		"label" : "Marling 4",
 		"name_it" : "Marlengo 4",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "899"
 	
 	},
-	"900" : { 
-		"name_de" : "Marling 4",
+{ 
+		"label" : "Marling 4",
 		"name_it" : "Marlengo 4",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "900"
 	
 	},
-	"901" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "Funivia Merano 2000-Seilbahn Meran 2000",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "901"
 	
 	},
-	"902" : { 
-		"name_de" : "",
+{ 
+		"label" : "",
 		"name_it" : "Funivia Merano 2000-Seilbahn Meran 2000",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "902"
 	
 	},
-	"903" : { 
-		"name_de" : "Steinmannwald Rotw. 2",
+{ 
+		"label" : "Steinmannwald Rotw. 2",
 		"name_it" : "Pineta Rotw. 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "903"
 	
 	},
-	"904" : { 
-		"name_de" : "Kreisvk. Steinmannwald",
+{ 
+		"label" : "Kreisvk. Steinmannwald",
 		"name_it" : "Rotonda Pineta",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "904"
 	
 	},
-	"905" : { 
-		"name_de" : "Branzoll 3",
+{ 
+		"label" : "Branzoll 3",
 		"name_it" : "Bronzolo 3",
 		"city_de" : "Branzoll",
 		"city_it" : "Bronzolo",
 		"id" : "905"
 	
 	},
-	"906" : { 
-		"name_de" : "Burgstall Prantlweg",
+{ 
+		"label" : "Burgstall Prantlweg",
 		"name_it" : "Postal via Prantl",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "906"
 	
 	},
-	"907" : { 
-		"name_de" : "Burgstall Prantlweg",
+{ 
+		"label" : "Burgstall Prantlweg",
 		"name_it" : "Postal via Prantl",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "907"
 	
 	},
-	"908" : { 
-		"name_de" : "Kirchweg 1",
+{ 
+		"label" : "Kirchweg 1",
 		"name_it" : "via della Chiesa 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "908"
 	
 	},
-	"909" : { 
-		"name_de" : "Kirchweg 1",
+{ 
+		"label" : "Kirchweg 1",
 		"name_it" : "via della Chiesa 1",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "909"
 	
 	},
-	"910" : { 
-		"name_de" : "Vernuer (Gnealer)",
+{ 
+		"label" : "Vernuer (Gnealer)",
 		"name_it" : "Vernurio (Gnealer)",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "910"
 	
 	},
-	"911" : { 
-		"name_de" : "Vernuer (Hochegger)",
+{ 
+		"label" : "Vernuer (Hochegger)",
 		"name_it" : "Vernurio (Hochegger)",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "911"
 	
 	},
-	"912" : { 
-		"name_de" : "Vernuer (Hochegger)",
+{ 
+		"label" : "Vernuer (Hochegger)",
 		"name_it" : "Vernurio (Hochegger)",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "912"
 	
 	},
-	"913" : { 
-		"name_de" : "Vernuer (Brunner)",
+{ 
+		"label" : "Vernuer (Brunner)",
 		"name_it" : "Vernurio (Brunner)",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "913"
 	
 	},
-	"914" : { 
-		"name_de" : "Vernuer (Gnealer)",
+{ 
+		"label" : "Vernuer (Gnealer)",
 		"name_it" : "Vernurio (Gnealer)",
 		"city_de" : "Riffian",
 		"city_it" : "Rifiano",
 		"id" : "914"
 	
 	},
-	"915" : { 
-		"name_de" : "Nals Vilpianstr.",
+{ 
+		"label" : "Nals Vilpianstr.",
 		"name_it" : "Nalles via Vilpiano",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "915"
 	
 	},
-	"916" : { 
-		"name_de" : "Nals Vilpianstr.",
+{ 
+		"label" : "Nals Vilpianstr.",
 		"name_it" : "Nalles via Vilpiano",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "916"
 	
 	},
-	"918" : { 
-		"name_de" : "Kirchweg 2",
+{ 
+		"label" : "Kirchweg 2",
 		"name_it" : "via della Chiesa 2",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "918"
 	
 	},
-	"919" : { 
-		"name_de" : "Abzw. Kuenserhof",
+{ 
+		"label" : "Abzw. Kuenserhof",
 		"name_it" : "Bivio Kuenserhof",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "919"
 	
 	},
-	"940" : { 
-		"name_de" : "Hirzerstr.",
+{ 
+		"label" : "Hirzerstr.",
 		"name_it" : "via Monte Cervinia",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "940"
 	
 	},
-	"9403" : { 
-		"name_de" : "Sigmundskron",
+{ 
+		"label" : "Sigmundskron",
 		"name_it" : "Ponte Adige",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9403"
 	
 	},
-	"9404" : { 
-		"name_de" : "Sigmundskron",
+{ 
+		"label" : "Sigmundskron",
 		"name_it" : "Ponte Adige",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9404"
 	
 	},
-	"941" : { 
-		"name_de" : "St. Valentin Str.",
+{ 
+		"label" : "St. Valentin Str.",
 		"name_it" : "via S. Valentino",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "941"
 	
 	},
-	"942" : { 
-		"name_de" : "Sankt Anna",
+{ 
+		"label" : "Sankt Anna",
 		"name_it" : "Sant' Anna",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "942"
 	
 	},
-	"943" : { 
-		"name_de" : "Laendgasse",
+{ 
+		"label" : "Laendgasse",
 		"name_it" : "via Laend",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "943"
 	
 	},
-	"944" : { 
-		"name_de" : "Weissensteinerstr. Ipes ",
+{ 
+		"label" : "Weissensteinerstr. Ipes ",
 		"name_it" : "via Pietralba Ipes",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "944"
 	
 	},
-	"945" : { 
-		"name_de" : "Hofer Str. 1",
+{ 
+		"label" : "Hofer Str. 1",
 		"name_it" : "via Hofer 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "945"
 	
 	},
-	"946" : { 
-		"name_de" : "Galizien Str. 2",
+{ 
+		"label" : "Galizien Str. 2",
 		"name_it" : "via Galizia 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "946"
 	
 	},
-	"947" : { 
-		"name_de" : "Marconi Str. 3",
+{ 
+		"label" : "Marconi Str. 3",
 		"name_it" : "via Marconi 3",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "947"
 	
 	},
-	"948" : { 
-		"name_de" : "Marconi Str. 2",
+{ 
+		"label" : "Marconi Str. 2",
 		"name_it" : "via Marconi 2",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "948"
 	
 	},
-	"949" : { 
-		"name_de" : "Marconi Str. 1",
+{ 
+		"label" : "Marconi Str. 1",
 		"name_it" : "via Marconi 1",
 		"city_de" : "Leifers",
 		"city_it" : "Laives",
 		"id" : "949"
 	
 	},
-	"951" : { 
-		"name_de" : "Pfatten Gemeinde",
+{ 
+		"label" : "Pfatten Gemeinde",
 		"name_it" : "Vadena Comune",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "951"
 	
 	},
-	"9610" : { 
-		"name_de" : "Thalguter Str.",
+{ 
+		"label" : "Thalguter Str.",
 		"name_it" : "via Thalguter",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "9610"
 	
 	},
-	"9620" : { 
-		"name_de" : "Algund Schulen",
+{ 
+		"label" : "Algund Schulen",
 		"name_it" : "Lagundo scuole",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "9620"
 	
 	},
-	"9641" : { 
-		"name_de" : "Schennastr. 4",
+{ 
+		"label" : "Schennastr. 4",
 		"name_it" : "via Scena 4",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9641"
 	
 	},
-	"9642" : { 
-		"name_de" : "Schennastr. 4",
+{ 
+		"label" : "Schennastr. 4",
 		"name_it" : "via Scena 4",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9642"
 	
 	},
-	"9643" : { 
-		"name_de" : "Schennastr. 5",
+{ 
+		"label" : "Schennastr. 5",
 		"name_it" : "via Scena 5",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9643"
 	
 	},
-	"9644" : { 
-		"name_de" : "Schennastr. 5",
+{ 
+		"label" : "Schennastr. 5",
 		"name_it" : "via Scena 5",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9644"
 	
 	},
-	"9645" : { 
-		"name_de" : "Schennastr. 6",
+{ 
+		"label" : "Schennastr. 6",
 		"name_it" : "via Scena 6",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9645"
 	
 	},
-	"9646" : { 
-		"name_de" : "Schennastr. 6",
+{ 
+		"label" : "Schennastr. 6",
 		"name_it" : "via Scena 6",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9646"
 	
 	},
-	"9647" : { 
-		"name_de" : "Schennastr. 7",
+{ 
+		"label" : "Schennastr. 7",
 		"name_it" : "via Scena 7",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9647"
 	
 	},
-	"9648" : { 
-		"name_de" : "Schennastr. 7",
+{ 
+		"label" : "Schennastr. 7",
 		"name_it" : "via Scena 7",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9648"
 	
 	},
-	"9649" : { 
-		"name_de" : "Schennastr. 8",
+{ 
+		"label" : "Schennastr. 8",
 		"name_it" : "via Scena 8",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9649"
 	
 	},
-	"9650" : { 
-		"name_de" : "Schennastr. 8",
+{ 
+		"label" : "Schennastr. 8",
 		"name_it" : "via Scena 8",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9650"
 	
 	},
-	"9651" : { 
-		"name_de" : "Schenna Dorf",
+{ 
+		"label" : "Schenna Dorf",
 		"name_it" : "Scena Paese",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9651"
 	
 	},
-	"9653" : { 
-		"name_de" : "Verdinsstr. 1",
+{ 
+		"label" : "Verdinsstr. 1",
 		"name_it" : "via Verdins 1",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9653"
 	
 	},
-	"9654" : { 
-		"name_de" : "Verdinsstr. 1",
+{ 
+		"label" : "Verdinsstr. 1",
 		"name_it" : "via Verdins 1",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9654"
 	
 	},
-	"9655" : { 
-		"name_de" : "Verdinsstr. 2",
+{ 
+		"label" : "Verdinsstr. 2",
 		"name_it" : "via Verdins 2",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9655"
 	
 	},
-	"9656" : { 
-		"name_de" : "Verdinsstr. 2",
+{ 
+		"label" : "Verdinsstr. 2",
 		"name_it" : "via Verdins 2",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9656"
 	
 	},
-	"9657" : { 
-		"name_de" : "Verdinsstr. 3",
+{ 
+		"label" : "Verdinsstr. 3",
 		"name_it" : "via Verdins 3",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9657"
 	
 	},
-	"9658" : { 
-		"name_de" : "Verdinsstr. 3",
+{ 
+		"label" : "Verdinsstr. 3",
 		"name_it" : "via Verdins 3",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9658"
 	
 	},
-	"9659" : { 
-		"name_de" : "Verdinsstr. 4",
+{ 
+		"label" : "Verdinsstr. 4",
 		"name_it" : "via Verdins 4",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9659"
 	
 	},
-	"9660" : { 
-		"name_de" : "Verdinsstr. 4",
+{ 
+		"label" : "Verdinsstr. 4",
 		"name_it" : "via Verdins 4",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9660"
 	
 	},
-	"9661" : { 
-		"name_de" : "Verdins Dorf",
+{ 
+		"label" : "Verdins Dorf",
 		"name_it" : "Verdins Paese",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9661"
 	
 	},
-	"9662" : { 
-		"name_de" : "Verdinsstr. 5",
+{ 
+		"label" : "Verdinsstr. 5",
 		"name_it" : "via Verdins 5",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9662"
 	
 	},
-	"9663" : { 
-		"name_de" : "Verdinsstr. 5",
+{ 
+		"label" : "Verdinsstr. 5",
 		"name_it" : "via Verdins 5",
 		"city_de" : "Schenna",
 		"city_it" : "Scena",
 		"id" : "9663"
 	
 	},
-	"9664" : { 
-		"name_de" : "Noerderstr. 3",
+{ 
+		"label" : "Noerderstr. 3",
 		"name_it" : "via Tramontana 3",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9664"
 	
 	},
-	"9665" : { 
-		"name_de" : "Noerderstr. 3",
+{ 
+		"label" : "Noerderstr. 3",
 		"name_it" : "via Tramontana 3",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9665"
 	
 	},
-	"9666" : { 
-		"name_de" : "Karl Wolf Str. 1A",
+{ 
+		"label" : "Karl Wolf Str. 1A",
 		"name_it" : "via Karl Wolf 1A",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "9666"
 	
 	},
-	"9667" : { 
-		"name_de" : "Karl Wolf Str. 1A",
+{ 
+		"label" : "Karl Wolf Str. 1A",
 		"name_it" : "via Karl Wolf 1A",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "9667"
 	
 	},
-	"9694" : { 
-		"name_de" : "Kuenserstr. (Mutlechner)",
+{ 
+		"label" : "Kuenserstr. (Mutlechner)",
 		"name_it" : "via Caines (Mutlechner)",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "9694"
 	
 	},
-	"9695" : { 
-		"name_de" : "Kuenserstr. Feuerwehr",
+{ 
+		"label" : "Kuenserstr. Feuerwehr",
 		"name_it" : "via Caines Vigili del Fuoco",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "9695"
 	
 	},
-	"9696" : { 
-		"name_de" : "Kuenserstr. Feuerwehr",
+{ 
+		"label" : "Kuenserstr. Feuerwehr",
 		"name_it" : "via Caines Vigili del Fuoco",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "9696"
 	
 	},
-	"9697" : { 
-		"name_de" : "Kuenserstr. (Sonnenhof)",
+{ 
+		"label" : "Kuenserstr. (Sonnenhof)",
 		"name_it" : "via Caines (Sonnenhof)",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "9697"
 	
 	},
-	"9698" : { 
-		"name_de" : "Kuenserstr. (Ungericht)",
+{ 
+		"label" : "Kuenserstr. (Ungericht)",
 		"name_it" : "via Caines (Ungericht)",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "9698"
 	
 	},
-	"9699" : { 
-		"name_de" : "Kuenserstr. (Sonnenhof)",
+{ 
+		"label" : "Kuenserstr. (Sonnenhof)",
 		"name_it" : "via Caines (Sonnenhof)",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "9699"
 	
 	},
-	"970" : { 
-		"name_de" : "Gargazon Berghuetten",
+{ 
+		"label" : "Gargazon Berghuetten",
 		"name_it" : "Gargazzone Berghuetten",
 		"city_de" : "Gargazon",
 		"city_it" : "Gargazzone",
 		"id" : "970"
 	
 	},
-	"9700" : { 
-		"name_de" : "Kuenserstr. (Ungericht)",
+{ 
+		"label" : "Kuenserstr. (Ungericht)",
 		"name_it" : "via Caines (Ungericht)",
 		"city_de" : "Kuens",
 		"city_it" : "Caines",
 		"id" : "9700"
 	
 	},
-	"9701" : { 
-		"name_de" : "Moritzing Pircher",
+{ 
+		"label" : "Moritzing Pircher",
 		"name_it" : "S.Maurizio Pircher",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9701"
 	
 	},
-	"9702" : { 
-		"name_de" : "Moritzing Pircher",
+{ 
+		"label" : "Moritzing Pircher",
 		"name_it" : "S.Maurizio Pircher",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9702"
 	
 	},
-	"9703" : { 
-		"name_de" : "Moritzing Moosb.",
+{ 
+		"label" : "Moritzing Moosb.",
 		"name_it" : "S. Maurizio Moosb.",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9703"
 	
 	},
-	"9704" : { 
-		"name_de" : "Moritzing Moosb.",
+{ 
+		"label" : "Moritzing Moosb.",
 		"name_it" : "S. Maurizio Moosb.",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9704"
 	
 	},
-	"9705" : { 
-		"name_de" : "Schwefelbad",
+{ 
+		"label" : "Schwefelbad",
 		"name_it" : "Bagni di Zolfo",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9705"
 	
 	},
-	"9706" : { 
-		"name_de" : "Schwefelbad",
+{ 
+		"label" : "Schwefelbad",
 		"name_it" : "Bagni di Zolfo",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9706"
 	
 	},
-	"9707" : { 
-		"name_de" : "Meraner Str. 94",
+{ 
+		"label" : "Meraner Str. 94",
 		"name_it" : "via Merano 94",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9707"
 	
 	},
-	"9708" : { 
-		"name_de" : "Meraner Str. 94",
+{ 
+		"label" : "Meraner Str. 94",
 		"name_it" : "via Merano 94",
 		"city_de" : "Bozen",
 		"city_it" : "Bolzano",
 		"id" : "9708"
 	
 	},
-	"9709" : { 
-		"name_de" : "Siebeneich",
+{ 
+		"label" : "Siebeneich",
 		"name_it" : "Settequerce",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9709"
 	
 	},
-	"971" : { 
-		"name_de" : "Tscherms 5",
+{ 
+		"label" : "Tscherms 5",
 		"name_it" : "Cermes 5",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "971"
 	
 	},
-	"9710" : { 
-		"name_de" : "Siebeneich",
+{ 
+		"label" : "Siebeneich",
 		"name_it" : "Settequerce",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9710"
 	
 	},
-	"9713" : { 
-		"name_de" : "Klaus  Oberspeiser",
+{ 
+		"label" : "Klaus  Oberspeiser",
 		"name_it" : "Chiusa  Oberspeiser",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9713"
 	
 	},
-	"9714" : { 
-		"name_de" : "Klaus  Oberspeiser",
+{ 
+		"label" : "Klaus  Oberspeiser",
 		"name_it" : "Chiusa  Oberspeiser",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9714"
 	
 	},
-	"9715" : { 
-		"name_de" : "Terlan Zentrum",
+{ 
+		"label" : "Terlan Zentrum",
 		"name_it" : "Terlano Centro",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9715"
 	
 	},
-	"9716" : { 
-		"name_de" : "Terlan Zentrum",
+{ 
+		"label" : "Terlan Zentrum",
 		"name_it" : "Terlano Centro",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9716"
 	
 	},
-	"9717" : { 
-		"name_de" : "Terlan Winkler Hof",
+{ 
+		"label" : "Terlan Winkler Hof",
 		"name_it" : "Terlano Winkler Hof",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9717"
 	
 	},
-	"9718" : { 
-		"name_de" : "Terlan Winkler Hof",
+{ 
+		"label" : "Terlan Winkler Hof",
 		"name_it" : "Terlano Winkler Hof",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9718"
 	
 	},
-	"9719" : { 
-		"name_de" : "Terlan  Weinstube",
+{ 
+		"label" : "Terlan  Weinstube",
 		"name_it" : "Terlano  Weinstube",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9719"
 	
 	},
-	"972" : { 
-		"name_de" : "Tscherms 5",
+{ 
+		"label" : "Tscherms 5",
 		"name_it" : "Cermes 5",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "972"
 	
 	},
-	"9720" : { 
-		"name_de" : "Terlan  Weinstube",
+{ 
+		"label" : "Terlan  Weinstube",
 		"name_it" : "Terlano  Weinstube",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9720"
 	
 	},
-	"9721" : { 
-		"name_de" : "Vilpian Schlemmer",
+{ 
+		"label" : "Vilpian Schlemmer",
 		"name_it" : "Vilpiano Schlemmer",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9721"
 	
 	},
-	"9722" : { 
-		"name_de" : "Vilpian Schlemmer",
+{ 
+		"label" : "Vilpian Schlemmer",
 		"name_it" : "Vilpiano Schlemmer",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9722"
 	
 	},
-	"9723" : { 
-		"name_de" : "Sportzone",
+{ 
+		"label" : "Sportzone",
 		"name_it" : "Zona sportiva",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9723"
 	
 	},
-	"9724" : { 
-		"name_de" : "Sportzone",
+{ 
+		"label" : "Sportzone",
 		"name_it" : "Zona sportiva",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9724"
 	
 	},
-	"9725" : { 
-		"name_de" : "Vilpian",
+{ 
+		"label" : "Vilpian",
 		"name_it" : "Vilpiano",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9725"
 	
 	},
-	"9726" : { 
-		"name_de" : "Vilpian",
+{ 
+		"label" : "Vilpian",
 		"name_it" : "Vilpiano",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9726"
 	
 	},
-	"9727" : { 
-		"name_de" : "Seilbahn Moelten",
+{ 
+		"label" : "Seilbahn Moelten",
 		"name_it" : "Funivia Meltina",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9727"
 	
 	},
-	"9729" : { 
-		"name_de" : "Bergstr.",
+{ 
+		"label" : "Bergstr.",
 		"name_it" : "vicolo al Monte",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9729"
 	
 	},
-	"9730" : { 
-		"name_de" : "Bergstr.",
+{ 
+		"label" : "Bergstr.",
 		"name_it" : "vicolo al Monte",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9730"
 	
 	},
-	"9731" : { 
-		"name_de" : "Burgstall Winkelau",
+{ 
+		"label" : "Burgstall Winkelau",
 		"name_it" : "Postal Winkelau",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "9731"
 	
 	},
-	"9732" : { 
-		"name_de" : "Burgstall Winkelau",
+{ 
+		"label" : "Burgstall Winkelau",
 		"name_it" : "Postal Winkelau",
 		"city_de" : "Burgstall",
 		"city_it" : "Postal",
 		"id" : "9732"
 	
 	},
-	"9733" : { 
-		"name_de" : "Siebeneich HW Zone",
+{ 
+		"label" : "Siebeneich HW Zone",
 		"name_it" : "Settequerce Zona Artig.",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9733"
 	
 	},
-	"9734" : { 
-		"name_de" : "Siebeneich HW Zone",
+{ 
+		"label" : "Siebeneich HW Zone",
 		"name_it" : "Settequerce Zona Artig.",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9734"
 	
 	},
-	"9741" : { 
-		"name_de" : "Andrian  St.Urban Platz",
+{ 
+		"label" : "Andrian  St.Urban Platz",
 		"name_it" : "Andriano  p.zza.S.Urbano",
 		"city_de" : "Andrian",
 		"city_it" : "Andriano",
 		"id" : "9741"
 	
 	},
-	"9743" : { 
-		"name_de" : " Zum Hirschen",
+{ 
+		"label" : " Zum Hirschen",
 		"name_it" : "Zum Hirschen",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9743"
 	
 	},
-	"9744" : { 
-		"name_de" : "Zum Hirschen",
+{ 
+		"label" : "Zum Hirschen",
 		"name_it" : "Zum Hirschen",
 		"city_de" : "Terlan",
 		"city_it" : "Terlano",
 		"id" : "9744"
 	
 	},
-	"9745" : { 
-		"name_de" : "Nals Lichtenburg",
+{ 
+		"label" : "Nals Lichtenburg",
 		"name_it" : "Nalles Lichtenburg",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "9745"
 	
 	},
-	"9746" : { 
-		"name_de" : "Nals Lichtenburg",
+{ 
+		"label" : "Nals Lichtenburg",
 		"name_it" : "Nalles Lichtenburg",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "9746"
 	
 	},
-	"9747" : { 
-		"name_de" : "Nals Feuerwehr Parkplatz",
+{ 
+		"label" : "Nals Feuerwehr Parkplatz",
 		"name_it" : "Nalles parcheggio pompieri",
 		"city_de" : "Nals",
 		"city_it" : "Nalles",
 		"id" : "9747"
 	
 	},
-	"9752" : { 
-		"name_de" : "Dorf Tirol 2",
+{ 
+		"label" : "Dorf Tirol 2",
 		"name_it" : "Tirolo Paese 2",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "9752"
 	
 	},
-	"9753" : { 
-		"name_de" : "Haslachstr. 2",
+{ 
+		"label" : "Haslachstr. 2",
 		"name_it" : "via Aslago 2",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "9753"
 	
 	},
-	"9754" : { 
-		"name_de" : "Seilbahn Hochmut",
+{ 
+		"label" : "Seilbahn Hochmut",
 		"name_it" : "Funivia Muta",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "9754"
 	
 	},
-	"9755" : { 
-		"name_de" : "Haslachstr. 3",
+{ 
+		"label" : "Haslachstr. 3",
 		"name_it" : "via Aslago 3",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "9755"
 	
 	},
-	"9756" : { 
-		"name_de" : "Haslachstr. 4",
+{ 
+		"label" : "Haslachstr. 4",
 		"name_it" : "via Aslago 4",
 		"city_de" : "Tirol",
 		"city_it" : "Tirolo",
 		"id" : "9756"
 	
 	},
-	"9761" : { 
-		"name_de" : "Voeranstr.",
+{ 
+		"label" : "Voeranstr.",
 		"name_it" : "via Verano",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "9761"
 	
 	},
-	"9762" : { 
-		"name_de" : "Voeranstr.",
+{ 
+		"label" : "Voeranstr.",
 		"name_it" : "via Verano",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "9762"
 	
 	},
-	"9763" : { 
-		"name_de" : "Hinterkofel 1",
+{ 
+		"label" : "Hinterkofel 1",
 		"name_it" : "Hinterkofel 1",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "9763"
 	
 	},
-	"9764" : { 
-		"name_de" : "Hinterkofel 1",
+{ 
+		"label" : "Hinterkofel 1",
 		"name_it" : "Hinterkofel 1",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "9764"
 	
 	},
-	"9765" : { 
-		"name_de" : "Hinterkofel 2",
+{ 
+		"label" : "Hinterkofel 2",
 		"name_it" : "Hinterkofel 2",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "9765"
 	
 	},
-	"9766" : { 
-		"name_de" : "Hinterkofel 2",
+{ 
+		"label" : "Hinterkofel 2",
 		"name_it" : "Hinterkofel 2",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "9766"
 	
 	},
-	"9767" : { 
-		"name_de" : "Voeran Dorf 1",
+{ 
+		"label" : "Voeran Dorf 1",
 		"name_it" : "Verano  Paese 1",
 		"city_de" : "Voeran",
 		"city_it" : "Verano",
 		"id" : "9767"
 	
 	},
-	"9768" : { 
-		"name_de" : "Voeran Dorf 1",
+{ 
+		"label" : "Voeran Dorf 1",
 		"name_it" : "Verano  Paese 1",
 		"city_de" : "Voeran",
 		"city_it" : "Verano",
 		"id" : "9768"
 	
 	},
-	"9769" : { 
-		"name_de" : "Voeran Dorf 2",
+{ 
+		"label" : "Voeran Dorf 2",
 		"name_it" : "Verano  Paese 2",
 		"city_de" : "Voeran",
 		"city_it" : "Verano",
 		"id" : "9769"
 	
 	},
-	"977" : { 
-		"name_de" : "St. Valentin Str. 1",
+{ 
+		"label" : "St. Valentin Str. 1",
 		"name_it" : "via S. Valentino 1",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "977"
 	
 	},
-	"9770" : { 
-		"name_de" : "Voeran Dorf 2",
+{ 
+		"label" : "Voeran Dorf 2",
 		"name_it" : "Verano  Paese 2",
 		"city_de" : "Voeran",
 		"city_it" : "Verano",
 		"id" : "9770"
 	
 	},
-	"9771" : { 
-		"name_de" : "Gruener Baum",
+{ 
+		"label" : "Gruener Baum",
 		"name_it" : "Gruener Baum",
 		"city_de" : "Voeran",
 		"city_it" : "Verano",
 		"id" : "9771"
 	
 	},
-	"9773" : { 
-		"name_de" : "Laberserstr. 2",
+{ 
+		"label" : "Laberserstr. 2",
 		"name_it" : "via Labers 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "9773"
 	
 	},
-	"9774" : { 
-		"name_de" : "Laberserstr. 2",
+{ 
+		"label" : "Laberserstr. 2",
 		"name_it" : "via Labers 2",
 		"city_de" : "Meran",
 		"city_it" : "Merano",
 		"id" : "9774"
 	
 	},
-	"9775" : { 
-		"name_de" : "Abzw. Falzeben",
+{ 
+		"label" : "Abzw. Falzeben",
 		"name_it" : "Bivio Falzeben",
 		"city_de" : "Hafling",
 		"city_it" : "Avelengo",
 		"id" : "9775"
 	
 	},
-	"9776" : { 
-		"name_de" : "Hinterkofel 3",
+{ 
+		"label" : "Hinterkofel 3",
 		"name_it" : "Hinterkofel 3",
 		"city_de" : "Voeran",
 		"city_it" : "Verano",
 		"id" : "9776"
 	
 	},
-	"9777" : { 
-		"name_de" : "Hinterkofel 3",
+{ 
+		"label" : "Hinterkofel 3",
 		"name_it" : "Hinterkofel 3",
 		"city_de" : "Voeran",
 		"city_it" : "Verano",
 		"id" : "9777"
 	
 	},
-	"99" : { 
-		"name_de" : "Toell 2",
+{ 
+		"label" : "Toell 2",
 		"name_it" : "Tel 2",
 		"city_de" : "Partschins",
 		"city_it" : "Parcines",
 		"id" : "99"
 	
 	},
-	"9903" : { 
-		"name_de" : "Pfattner Bruecke",
+{ 
+		"label" : "Pfattner Bruecke",
 		"name_it" : "ponte Vadena",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "9903"
 	
 	},
-	"9905" : { 
-		"name_de" : "Neu Pfatten",
+{ 
+		"label" : "Neu Pfatten",
 		"name_it" : "Vadena Nuova",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "9905"
 	
 	},
-	"9906" : { 
-		"name_de" : "Neu Pfatten",
+{ 
+		"label" : "Neu Pfatten",
 		"name_it" : "Vadena Nuova",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "9906"
 	
 	},
-	"9907" : { 
-		"name_de" : "Pfatten Gemeinde",
+{ 
+		"label" : "Pfatten Gemeinde",
 		"name_it" : "Vadena Comune",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "9907"
 	
 	},
-	"9908" : { 
-		"name_de" : "Pfatten Gemeinde",
+{ 
+		"label" : "Pfatten Gemeinde",
 		"name_it" : "Vadena Comune",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "9908"
 	
 	},
-	"9909" : { 
-		"name_de" : "Pfatten Birti",
+{ 
+		"label" : "Pfatten Birti",
 		"name_it" : "Vadena Birti",
 		"city_de" : "Pfatten",
 		"city_it" : "Vadena",
 		"id" : "9909"
 	
 	},
-	"9911" : { 
-		"name_de" : "Noerderstr. 1",
+{ 
+		"label" : "Noerderstr. 1",
 		"name_it" : "via Tramontana 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9911"
 	
 	},
-	"9912" : { 
-		"name_de" : " Noerderstr. 1",
+{ 
+		"label" : " Noerderstr. 1",
 		"name_it" : "via Tramontana 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9912"
 	
 	},
-	"9913" : { 
-		"name_de" : "Kellerei Str. 2",
+{ 
+		"label" : "Kellerei Str. 2",
 		"name_it" : "via Cantina 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9913"
 	
 	},
-	"9914" : { 
-		"name_de" : "Kellerei Str. 2",
+{ 
+		"label" : "Kellerei Str. 2",
 		"name_it" : "via Cantina 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9914"
 	
 	},
-	"9915" : { 
-		"name_de" : "Kellerei Str. 1",
+{ 
+		"label" : "Kellerei Str. 1",
 		"name_it" : "via Cantina 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9915"
 	
 	},
-	"9916" : { 
-		"name_de" : "Kellerei Str. 1",
+{ 
+		"label" : "Kellerei Str. 1",
 		"name_it" : "via Cantina 1",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9916"
 	
 	},
-	"9917" : { 
-		"name_de" : "Noerderstr. 2",
+{ 
+		"label" : "Noerderstr. 2",
 		"name_it" : "via Tramontana 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9917"
 	
 	},
-	"9918" : { 
-		"name_de" : "Noerderstr. 2",
+{ 
+		"label" : "Noerderstr. 2",
 		"name_it" : "via Tramontana 2",
 		"city_de" : "Marling",
 		"city_it" : "Marlengo",
 		"id" : "9918"
 	
 	},
-	"9951" : { 
-		"name_de" : "Tscherms 4",
+{ 
+		"label" : "Tscherms 4",
 		"name_it" : "Cermes 4",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "9951"
 	
 	},
-	"9952" : { 
-		"name_de" : "Tscherms 4",
+{ 
+		"label" : "Tscherms 4",
 		"name_it" : "Cermes 4",
 		"city_de" : "Tscherms",
 		"city_it" : "Cermes",
 		"id" : "9952"
 	
 	},
-	"9953" : { 
-		"name_de" : "Weingartnerstr. 4",
+{ 
+		"label" : "Weingartnerstr. 4",
 		"name_it" : "via Weingartner 4",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "9953"
 	
 	},
-	"9954" : { 
-		"name_de" : "Weingartnerstr. 4",
+{ 
+		"label" : "Weingartnerstr. 4",
 		"name_it" : "via Weingartner 4",
 		"city_de" : "Algund",
 		"city_it" : "Lagundo",
 		"id" : "9954"
 	
 	},
-	"9980" : { 
-		"name_de" : "Ackpfeil",
+{ 
+		"label" : "Ackpfeil",
 		"name_it" : "Acquaviva",
 		"city_de" : "Lana",
 		"city_it" : "Lana",
 		"id" : "9980"
 	
 	}
-}
+]
