@@ -15,7 +15,7 @@ split_city(){
 }
 parse(){
 	export IFS=";"
-	echo {
+	echo [
 	cat fermate.csv | while read id dummy name dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummy dummydummy city dummy ;
 	do 
 		if [ "$id" != "Numero esterno" ]; then
@@ -24,7 +24,7 @@ parse(){
 			if [ "$prec" != "Numero esterno" ]; then
 				echo ","
 			fi
-	echo -n "	\"$id\" : { 
+	echo -n "{ 
 		\"name_de\" : \"$name_de\",
 		\"name_it\" : \"$name_it\",
 		\"city_de\" : \"$city_de\",
@@ -39,6 +39,6 @@ parse(){
 
 	done
 	echo
-	echo }
+	echo ]
 }
 parse > busstops.json
