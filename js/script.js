@@ -78,20 +78,22 @@ function autocom(){
  }
  function addSection(){
 	var j = 0;
-	var title = document.createElement("h3");
-	var p_name = document.createElement("p");
-	var p_city = document.createElemet("p");
+	//var title = document.createElement("h3");
+	//var p_name = document.createElement("p");
+	//var p_city = document.createElement("p");
 	var newdiv = new Array(5);
 	var new_input = document.createElement("input");
-	title.className = "blue label text-element";
-	p_name.className = "line-big chosen";
-	p_city.tclassName = "line-small chosen";
+	//title.className = "blue label text-element";
+	//title.innerHTML = "To:";
+	//p_name.className = "line-big chosen";
+	//p_city.className = "line-small chosen";
 	new_input.className = "input-element input";
 	new_input.id ="to-input";
 	new_input.setAttribute("onkeyup","autocom()");
-	document.getElementsByClassName("chose")[selected_option].appendChild(title);
-	document.getElementsByClassName("chose")[selected_option].appendChild(p_name);
-	document.getElementsByClassName("chose")[selected_option].appendChild(p_city);
+	//document.getElementsByClassName("chose")[selected_option].appendChild(title);
+	//document.getElementsByClassName("chose")[selected_option].appendChild(p_name);
+	//document.getElementsByClassName("chose")[selected_option].appendChild(p_city);
+	document.getElementsByClassName("chose")[selected_option].appendChild(new_input);
 	while ( j < 5 ){
 		newdiv[j] = document.createElement("div");
 		newdiv[j].setAttribute("onclick", "selectBusstop("+j+")");
