@@ -29,10 +29,17 @@
       
       <section class="chosen-line">
 		    <h3 class="blue label" id="to-label">To:</h3>
-		    <!--
 		    <div class="text-element">
 			    <p class="line-big chosen">Theaterplatz,</p>
 			    <p class="line-small chosen">Meran</p>
+		    </div>
+      </section>
+      <section class="chosen-line">
+		    <h3 class="blue label" id="when-label">When:</h3>
+		    <!--
+		    <div class="text-element">
+			    <p class="line-big chosen">12.03.2013,</p>
+			    <p class="line-small chosen">17:04</p>
 		    </div>
 		    -->
       </section>
@@ -47,8 +54,14 @@
       </section>
 		  -->		  
 		  
-		  <input type="text" class="input" id="to-input"
-		  
+		 <!-- <input type="text" class="input" id="to-input"> -->
+		 
+		  <div class="date">
+		    <input type="date" placeholder="21.07.14" pattern="\d\d.\d\d.(201.|1.)" class="input" id="date-input">
+		    <input type="time" placeholder="16:04" pattern="\d\d.\d\d" class="input" id="time-input">
+      </div>
+      
+      <!-- 
 		  <div class="text-element list-element suggest-element">
 			  <p class="line-big list">Forst,</p>
 			  <p class="line-small list">Algund</p>
@@ -63,6 +76,8 @@
 			  <p class="line-big list">Rennweg,</p>
 			  <p class="line-small list">Meran</p>
 		  </div>
+		  -->
+		  
 		</section>
   </body>
 </html>
