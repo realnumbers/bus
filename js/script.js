@@ -25,7 +25,7 @@ if ( navigator.language === "de" ){
 
 function autocom(){
 		var i = 0;
-		var value = document.getElementById("to-input").value;
+		var value = document.getElementsByClassName("input-element")[0].value;
 		var value_list = value.split(' ');
 
 		document.getElementsByClassName("suggest-element")[0].innerHTML = "";
@@ -83,12 +83,12 @@ function autocom(){
 	new_input.className = "input-element input";
 	new_input.id ="to-input";
 	new_input.setAttribute("onkeyup","autocom()");
-	document.getElementsByClassName("chosen-line")[selected_option].appendChild(new_input);
+	document.getElementsByClassName("chose")[selected_option].appendChild(new_input);
 	while ( j < 5 ){
 		newdiv[j] = document.createElement("div");
 		newdiv[j].setAttribute("onclick", "selectBusstop("+j+")");
 		newdiv[j].className = "input-element text-element list-element suggest-element";
-		document.getElementsByClassName("chosen-line")[selected_option].appendChild(newdiv[j]);
+		document.getElementsByClassName("chose")[selected_option].appendChild(newdiv[j]);
 		j++;
 	}
 	
