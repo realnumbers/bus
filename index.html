@@ -19,8 +19,8 @@
 
 <body>
 <section class="container">
-<section class="chosen-line">
-<h3 class="blue label" id="from-label">From:</h3>
+<section class="chose from" >
+<h3 class="blue label text-element" id="from-label"onclick="changeSection(0)">From:</h3>
 <div class="text-element" onclick="changeSection(0)">
 <p class="line-big chosen"></p>
 <p class="line-small chosen"></p>
@@ -33,12 +33,14 @@
 <div class="input-element text-element list-element suggest-element" onclick="selectBusstop(4)"></div>
 </section>
 
-<section class="chosen-line">
-<h3 class="blue label" id="to-label">To:</h3>
+<section class="chose to">
+<h3 class="blue label text-element" id="to-label" onclick="changeSection(1)">To:</h3>
 <div class="text-element"  onclick="changeSection(1)">
 <p class="line-big chosen"></p>
 <p class="line-small chosen"></p>
 </div>
+</section>
+<section class="chose time">
 </section>
 </section>
 </body>
