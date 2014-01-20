@@ -1,5 +1,6 @@
 var data_ready = false;
 var lang = "it";
+var selected_option = 0;
 var selected_busstop = new Array(5);
 var busstops = $.getJSON( "js/busstops.json", function(data){
 		//console.log("success");
@@ -63,5 +64,37 @@ function autocom(){
 		str.every(tryMatch);
  }
  function selectBusstop(div_number){
-		 alert(selected_busstop[div_number].name);
+	document.getElementsByClassName("line-big chosen")[selected_option].innerHTML = selected_busstop[div_number].name+", ";
+	document.getElementsByClassName("line-small chosen")[selected_option].innerHTML = selected_busstop[div_number].city;
+	removeSection();
+	selected_option++;
+	addSection();
  }
+ function removeSection(){
+	var input_element = document.getElementsByClassName("input-element");
+	while ( input_element[0] ){
+		input_element[0].remove();
+	}
+ }
+ function addSection(){
+	var j = 0;
+	var newdiv = new Array(5);
+	var new_input = document.createElement("input");
+	new_input.className = "input-element input";
+	new_input.id ="to-input";
+	new_input.setAttribute("onkeyup","autocom()");
+	document.getElementsByClassName("chosen-line")[selected_option].appendChild(new_input);
+	while ( j < 5 ){
+		newdiv[j] = document.createElement("div");
+		newdiv[j].setAttribute("onclick", "selectBusstop("+j+")");
+		newdiv[j].className = "input-element text-element list-element suggest-element";
+		document.getElementsByClassName("chosen-line")[selected_option].appendChild(newdiv[j]);
+		j++;
+	}
+	
+}
+function changeSection(to_section){
+		removeSection();
+		selected_option = to_section;
+		addSection();
+}
