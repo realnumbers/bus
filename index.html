@@ -19,25 +19,35 @@
 
 <body>
 <section class="container">
-<section class="chose from" >
-<h3 class="blue label text-element" id="from-label"onclick="changeSection(0)">From:</h3>
-<div class="text-element" onclick="changeSection(0)">
-<p class="line-big chosen"></p>
-<p class="line-small chosen"></p>
+<section class="section-input" >
+<div class="text-element" onclick="showInput(0)">
+<h3  class="blue label text-element">From:</h3>
+<p class="line-big"></p>
+<p class="line-small"></p>
 </div>
-<input type="text" class="input-element input" id="to-input" onkeyup="autocom()">
+<div id="input-0">
+<input type="text" class="input-element input" onkeyup="autocom()">
 <div class="input-element text-element list-element suggest-element" onclick="selectBusstop(0)"></div>
 <div class="input-element text-element list-element suggest-element" onclick="selectBusstop(1)"></div>
 <div class="input-element text-element list-element suggest-element" onclick="selectBusstop(2)"></div>
 <div class="input-element text-element list-element suggest-element" onclick="selectBusstop(3)"></div>
 <div class="input-element text-element list-element suggest-element" onclick="selectBusstop(4)"></div>
+</div>
 </section>
 
-<section class="chose to">
-<h3 class="blue label text-element" id="to-label" onclick="changeSection(1)">To:</h3>
-<div class="text-element"  onclick="changeSection(1)">
-<p class="line-big chosen"></p>
-<p class="line-small chosen"></p>
+<section class="section-input">
+<div class="text-element" onclick="showInput(1)">
+<h3  class="blue label text-element">To:</h3>
+<p class="line-big"></p>
+<p class="line-small"></p>
+</div>
+<div id="input-1">
+<input type="text" class="input-element input" onkeyup="autocom()">
+<div class="input-element text-element list-element suggest-element" onclick="selectBusstop(0)"></div>
+<div class="input-element text-element list-element suggest-element" onclick="selectBusstop(1)"></div>
+<div class="input-element text-element list-element suggest-element" onclick="selectBusstop(2)"></div>
+<div class="input-element text-element list-element suggest-element" onclick="selectBusstop(3)"></div>
+<div class="input-element text-element list-element suggest-element" onclick="selectBusstop(4)"></div>
 </div>
 </section>
 <section class="chose time">

@@ -9,6 +9,16 @@ var busstops = $.getJSON( "js/busstops.json", function(data){
 		autocom();
 	});
 //console.log(busstops);
+var i = 1;
+while ( i < 2 ){
+	document.getElementById("input-"+i).style.display = "none";
+	i++;
+}
+i = selected_option +1;
+while ( i < 2 ){
+	document.getElementsByClassName("section-input")[i].style.display = "none";
+	i++;
+}
 if ( navigator.language === "de" ){
 		lang = de;
 }
@@ -64,44 +74,17 @@ function autocom(){
 		str.every(tryMatch);
  }
  function selectBusstop(div_number){
-	document.getElementsByClassName("line-big chosen")[selected_option].innerHTML = selected_busstop[div_number].name+", ";
-	document.getElementsByClassName("line-small chosen")[selected_option].innerHTML = selected_busstop[div_number].city;
-	removeSection();
+	document.getElementsByClassName("line-big")[selected_option].innerHTML = selected_busstop[div_number].name+", ";
+	document.getElementsByClassName("line-small")[selected_option].innerHTML = selected_busstop[div_number].city;
 	selected_option++;
-	addSection();
+	showInput(selected_option, selected_option -1);
  }
- function removeSection(){
-	var input_element = document.getElementsByClassName("input-element");
-	while ( input_element[0] ){
-		input_element[0].remove();
-	}
- }
- function addSection(){
-	var j = 0;
-	//var title = document.createElement("h3");
-	//var p_name = document.createElement("p");
-	//var p_city = document.createElement("p");
-	var newdiv = new Array(5);
-	var new_input = document.createElement("input");
-	//title.className = "blue label text-element";
-	//title.innerHTML = "To:";
-	//p_name.className = "line-big chosen";
-	//p_city.className = "line-small chosen";
-	new_input.className = "input-element input";
-	new_input.id ="to-input";
-	new_input.setAttribute("onkeyup","autocom()");
-	//document.getElementsByClassName("chose")[selected_option].appendChild(title);
-	//document.getElementsByClassName("chose")[selected_option].appendChild(p_name);
-	//document.getElementsByClassName("chose")[selected_option].appendChild(p_city);
-	document.getElementsByClassName("chose")[selected_option].appendChild(new_input);
-	while ( j < 5 ){
-		newdiv[j] = document.createElement("div");
-		newdiv[j].setAttribute("onclick", "selectBusstop("+j+")");
-		newdiv[j].className = "input-element text-element list-element suggest-element";
-		document.getElementsByClassName("chose")[selected_option].appendChild(newdiv[j]);
-		j++;
-	}
-	
+ function showInput(section, pre_section){
+
+	document.getElementsByClassName("section-input")[section].style.display = "block";
+	document.getElementById("input-"+section).style.display = "block";
+	document.getElementById("input-"+pre_section).style.display = "none";
+	selected_option = section;
 }
 function changeSection(to_section){
 		removeSection();
