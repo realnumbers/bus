@@ -35,7 +35,7 @@ if ( navigator.language === "de" ){
 
 function autocom(){
 		var i = 0;
-		var value = document.getElementsByClassName("input-element")[0].value;
+		var value = document.getElementsByClassName("input-element input-"+selected_option)[0].value;
 		var value_list = value.split(' ');
 		console.log(selected_option);
 		document.getElementsByClassName("suggest-element input-"+selected_option)[0].innerHTML = "";
@@ -80,7 +80,7 @@ function autocom(){
 	showInput(selected_option, selected_option -1);
  }
  function showInput(section, pre_section){
-
+console.log(section);
 	document.getElementsByClassName("section-input")[section].style.display = "block";
 	document.getElementById("input-"+section).style.display = "block";
 	document.getElementById("input-"+pre_section).style.display = "none";
