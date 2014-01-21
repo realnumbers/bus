@@ -37,19 +37,19 @@ function autocom(){
 		var i = 0;
 		var value = document.getElementsByClassName("input-element")[0].value;
 		var value_list = value.split(' ');
-
-		document.getElementsByClassName("suggest-element")[0].innerHTML = "";
-		document.getElementsByClassName("suggest-element")[1].innerHTML = "";
-		document.getElementsByClassName("suggest-element")[2].innerHTML = "";
-		document.getElementsByClassName("suggest-element")[3].innerHTML = "";
-		document.getElementsByClassName("suggest-element")[4].innerHTML = "";
+		console.log(selected_option);
+		document.getElementsByClassName("suggest-element input-"+selected_option)[0].innerHTML = "";
+		document.getElementsByClassName("suggest-element input-"+selected_option)[1].innerHTML = "";
+		document.getElementsByClassName("suggest-element input-"+selected_option)[2].innerHTML = "";
+		document.getElementsByClassName("suggest-element input-"+selected_option)[3].innerHTML = "";
+		document.getElementsByClassName("suggest-element input-"+selected_option)[4].innerHTML = "";
 		data = busstops.responseJSON;
 		//console.log("Change");
 		function tryMatch(element, index, array) {
 		var respons = value_list.every(tryPattern);
 			if ( i < 5 && respons){
 				selected_busstop[i] = element;
-				document.getElementsByClassName("suggest-element")[i].innerHTML = "<p class=\"line-big list\">"+element.name+",</p> <p class=\"line-small list\">"+element.city+"</p>";
+				document.getElementsByClassName("suggest-element input-"+selected_option)[i].innerHTML = "<p class=\"line-big list\">"+element.name+",</p> <p class=\"line-small list\">"+element.city+"</p>";
 				i++;
 			}
 			if ( i > 4 )
