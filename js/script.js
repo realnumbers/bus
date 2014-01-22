@@ -1,9 +1,8 @@
 var SECTION = document.getElementsByClassName("js-section");
-var current_section = 0;
 var lang = "it";
-var selected_busstop = new Array(5);
+var matching_busstops = new Array(5);
 var busstops = $.getJSON( "js/busstops.json", function(data){
-		autocom();
+		autocom(0);
 	});
 if ( navigator.language === "de" ){
 		lang = de;
@@ -27,7 +26,7 @@ function clearPage(){
 });*/
 
 
-function autocom(){
+function autocom(current_section){
 	var i;
 	var children = SECTION[current_section].children;
 	var input_string = children[1].value;
@@ -35,11 +34,11 @@ function autocom(){
 
 	i = 2
 	while ( i < children.length ){
-			children[i].innerHTML = "";
+			children[i].children[0].innerHTML = "";
+			children[i].children[1].innerHTML = "";
 			i++;
 	}
 		
-	console.log("Input Changed");
 	data = busstops.responseJSON;
 	i = 2;
 	data[lang].every( function (element, index, array){
@@ -58,32 +57,52 @@ function autocom(){
 
 			if ( res && i < children.length ){
 
-					console.log(element);
-					children[i].innerHTML = element.name+", "+element.city;
+					matching_busstops[i-2] = element;
+					children[i].children[0].innerHTML = element.name+", ";
+					children[i].children[1].innerHTML = element.city;
 					i++;
 			}
-			if ( i >= children.length )
+			if ( i >= children.length ){
 					return false;
-			else
+			}
+			else{
 					return true;
+			}
 
 });
 }
- function selectBusstop(div_number){
-	document.getElementsByClassName("line-big")[selected_option].innerHTML = selected_busstop[div_number].name+", ";
-	document.getElementsByClassName("line-small")[selected_option].innerHTML = selected_busstop[div_number].city;
-	selected_option++;
-	showInput(selected_option, selected_option -1);
- }
- function showInput(section, pre_section){
-console.log(section);
-	document.getElementsByClassName("section-input")[section].style.display = "block";
-	document.getElementById("input-"+section).style.display = "block";
-	document.getElementById("input-"+pre_section).style.display = "none";
-	selected_option = section;
+function selectBusstop(current_section, div_number){
+	SECTION[current_section].children[0].children[1].innerHTML = matching_busstops[div_number].name+", ";
+	SECTION[current_section].children[0].children[2].innerHTML = matching_busstops[div_number].city;
+	makeBlank(current_section);
+	unBlank(current_section+1);
+	if (current_section < 2){
+		autocom(1);
+	}
 }
-function changeSection(to_section){
-		removeSection();
-		selected_option = to_section;
-		addSection();
+function makeBlank(current_section){
+	var i = 1;
+	while ( i < SECTION[current_section].children.length ){
+			SECTION[current_section].children[i].style.display = "none";
+			i++;
+	}
+}
+function unBlank(current_section){
+	var i = 0;
+	while ( i < SECTION.length ){
+			makeBlank(i);
+			i++;
+	}
+	SECTION[current_section].style.display = "block";
+	i = 0;
+	while ( i < SECTION[current_section].children.length ){
+			SECTION[current_section].children[i].style.display = "block";
+			i++;
+	}
+}
+function selectTime(current_section){
+		var data = SECTION[current_section].children[1].value;
+		var time = SECTION[current_section].children[2].value;
+		SECTION[current_section].children[0].children[1].innerHTML = data;
+		SECTION[current_section].children[0].children[2].innerHTML = time;
 }

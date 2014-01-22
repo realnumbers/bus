@@ -19,50 +19,77 @@
       
       <section class="js-section">
         
-        <div class="text-element" onclick="showInput(0)">
+        <div class="text-element" onclick="unBlank(0)">
           <h3 class="blue label text-element">From:</h3>
-          <p class="line-big js-name"></p>
-          <p class="line-small js-city"></p>
+          <p class="line-big"></p>
+          <p class="line-small"></p>
         </div>
         
-          <input type="text" class="input js-input" onkeyup="autocom()">
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(2)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(3)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(4)"></div>
+          <input type="text" class="input js-input" onkeyup="autocom(0)">
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0, 0)">
+		  	<p class="line-big"></p>
+		  	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0, 1)">
+		  	<p class="line-big"></p>
+		  	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0, 2)">
+		  	<p class="line-big"></p>
+          	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0, 3)">
+		  	<p class="line-big"></p>
+          	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0, 4)">
+		  	<p class="line-big"></p>
+          	<p class="line-small"></p>
+		  </div>
         
       </section>
 
       <section class="js-section">
         
-        <div class="text-element" onclick="showInput(1)">
+        <div class="text-element" onclick="unBlank(1)">
           <h3 class="blue label text-element">To:</h3>
-          <p class="line-big js-name"></p>
-          <p class="line-small js-city"></p>
+          <p class="line-big"></p>
+          <p class="line-small"></p>
         </div>
         
-          <input type="text" class="input js-input" onkeyup="autocom()">
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(2)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(3)"></div>
-          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(4)"></div>
-        
+          <input type="text" class="input js-input" onkeyup="autocom(1)">
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1, 0)">
+		  	<p class="line-big"></p>
+		  	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1, 1)">
+		  	<p class="line-big"></p>
+		  	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1, 2)">
+		  	<p class="line-big"></p>
+          	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1, 3)">
+		  	<p class="line-big"></p>
+          	<p class="line-small"></p>
+		  </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1, 4)">
+		  	<p class="line-big"></p>
+          	<p class="line-small"></p>
+		  </div>
       </section>
       
       <section class="js-section">
       
-        <div class="text-element" onclick="showInput(2)">
+        <div class="text-element" onclick="unBlank(2)">
           <h3 class="blue label text-element">When:</h3>
           <p class="line-big"></p>
           <p class="line-small"></p>
         </div>
         
-        <div id="js-input">
-          <input class="input" id="date-input" type="date" placeholder="21.07.14" pattern="\d\d.\d\d.(201\d|1\d)" >
-		      <input class="input" id="time-input"type="time" placeholder="16:04" pattern="\d\d.\d\d" >
-        </div>
+          <input class="input" id="date-input" type="date" placeholder="21.07.14" pattern="\d\d.\d\d.(201\d|1\d)" onkeyup="selectTime(2)">
+		  <input class="input" id="time-input"type="time" placeholder="16:04" pattern="\d\d.\d\d" onkeyup="selectTime(2)">
       
       </section>
       
