@@ -3,18 +3,18 @@ var current_section = 0;
 var lang = "it";
 var selected_busstop = new Array(5);
 var busstops = $.getJSON( "js/busstops.json", function(data){
-		autocom();
+	autocom();
 	});
 if ( navigator.language === "de" ){
-		lang = de;
+	lang = de;
 }
 clearPage();
 
 function clearPage(){
 	var i = 1;
 	while ( i < SECTION.length ){
-			SECTION[i].style.display = "none";
-			i++;
+		SECTION[i].style.display = "none";
+		i++;
 	}
 }
 /*$.ajax({
@@ -35,37 +35,35 @@ function autocom(){
 
 	i = 2
 	while ( i < children.length ){
-			children[i].innerHTML = "";
-			i++;
+		children[i].innerHTML = "";
+		i++;
 	}
 		
 	console.log("Input Changed");
 	data = busstops.responseJSON;
 	i = 2;
 	data[lang].every( function (element, index, array){
-			var res = input_string.every( function (item, index, array){
-					var pattern = new RegExp(item, "i");
-					var found_match = element.label.match(pattern);
+		var res = input_string.every( function (item, index, array){
+			var pattern = new RegExp(item, "i");
+			var found_match = element.label.match(pattern);
 
-					if ( found_match != null ){
-							return true;
-					}
-					else{
-							return false;
-					}
-
-			});
+			if ( found_match != null ){
+				return true;
+			}
+			else{
+				return false;
+			}
+		});
 
 			if ( res && i < children.length ){
-
-					console.log(element);
-					children[i].innerHTML = element.name+", "+element.city;
-					i++;
+				console.log(element);
+				children[i].innerHTML = element.name+", "+element.city;
+				i++;
 			}
 			if ( i >= children.length )
-					return false;
+				return false;
 			else
-					return true;
+				return true;
 
 });
 }
@@ -83,7 +81,7 @@ console.log(section);
 	selected_option = section;
 }
 function changeSection(to_section){
-		removeSection();
-		selected_option = to_section;
-		addSection();
+	removeSection();
+	selected_option = to_section;
+	addSection();
 }
