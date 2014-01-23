@@ -104,7 +104,7 @@ function unBlank(current_section){
 function selectTime(current_section){
 		var data = SECTION[current_section].children[1].value;
 		var time = SECTION[current_section].children[2].value;
-		SECTION[current_section].children[0].children[1].innerHTML = data;
+		SECTION[current_section].children[0].children[1].innerHTML = data + ", ";
 		SECTION[current_section].children[0].children[2].innerHTML = time;
 		getRoute(data,time);
 }
