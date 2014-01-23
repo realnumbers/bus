@@ -1,5 +1,7 @@
 var SECTION = document.getElementsByClassName("js-section");
 var lang = "it";
+var form_stop;
+var to_stop;
 var matching_busstops = new Array(5);
 var busstops = $.getJSON( "js/busstops.json", function(data){
 		autocom(0);
@@ -16,21 +18,13 @@ function clearPage(){
 			i++;
 	}
 }
-/*$.ajax({
-		dataType: "jsonp",
-		jsonpCallback: 'jsonCallback',
-		url: 'http://html5.sasabus.org/backend/sasabusdb/calcRoute?startBusStationId=:1213:1214:&endBusStationId=:851:&yyyymmddhhmm=201401191724&callback=jsonCallback',
-		success: function(data){
-				console.log(data);
-		}
-});*/
+
 
 
 function autocom(current_section){
 	var i;
 	var children = SECTION[current_section].children;
 	var input_string = children[1].value;
-	input_string = input_string.split(' ');
 
 	i = 2
 	while ( i < children.length ){
@@ -38,7 +32,8 @@ function autocom(current_section){
 			children[i].children[1].innerHTML = "";
 			i++;
 	}
-		
+	if ( input_string != "" ){
+	input_string = input_string.split(" ");
 	data = busstops.responseJSON;
 	i = 2;
 	data[lang].every( function (element, index, array){
@@ -71,13 +66,19 @@ function autocom(current_section){
 
 });
 }
+}
 function selectBusstop(current_section, div_number){
 	SECTION[current_section].children[0].children[1].innerHTML = matching_busstops[div_number].name+", ";
 	SECTION[current_section].children[0].children[2].innerHTML = matching_busstops[div_number].city;
+	SECTION[current_section].children[1].value = "";
 	makeBlank(current_section);
 	unBlank(current_section+1);
-	if (current_section < 2){
-		autocom(1);
+	autocom(current_section);
+	if ( current_section === 0 ){
+			from_stop = matching_busstops[div_number].id;
+	}
+	if ( current_section === 1 ){
+			to_stop = matching_busstops[div_number].id;
 	}
 }
 function makeBlank(current_section){
@@ -105,4 +106,23 @@ function selectTime(current_section){
 		var time = SECTION[current_section].children[2].value;
 		SECTION[current_section].children[0].children[1].innerHTML = data;
 		SECTION[current_section].children[0].children[2].innerHTML = time;
+		getRoute(data,time);
+}
+function getRoute(data, time){
+	data = data.replace(/\//g, ":");
+	data = data.split(":");
+	console.log(data);
+	time = time.replace(":", "");
+	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
+	url = url + "startBusStationId=:" + from_stop + ":";
+	url = url + "&endBusStationId=:" + to_stop + ":";
+	url = url + "&yyyymmddhhmm=" + data[2] + data[1] + data[0] + time;
+$.ajax({
+		dataType: "jsonp",
+		jsonpCallback: 'jsonCallback',
+		url: url,
+	 	success: function(data){
+				console.log(data);
+		}
+});
 }
