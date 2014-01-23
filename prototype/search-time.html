@@ -61,8 +61,8 @@
 		 <!-- <input type="text" class="input" id="to-input"> -->
 		 
 		  <div class="date">
-		    <input type="date" placeholder="21.07.14" pattern="\d\d.\d\d.(201.|1.)" class="input" id="date-input">
-		    <input type="time" placeholder="16:04" pattern="\d\d.\d\d" class="input" id="time-input">
+		    <input class="input" id="date-input" type="date" placeholder="21.07.14" pattern="\d\d.\d\d.(201\d|1[4,9])" onclick="selectTime(2)">
+		    <input class="input" id="time-input" type="time" placeholder="16:04" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" onclick="selectTime(2)">
       </div>
       
       <!-- 
