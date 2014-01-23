@@ -63,12 +63,11 @@ a:focus {
 /* GENERIC */
 
 .container {
-  padding: 1em;
-  width: 95%;
+  padding: 0 1em 1em;
+  width: 97%;
   margin: 0 auto;
 }
 .text-element {
-  cursor: pointer;
   display: inline-block;
   margin: 0.1em 0;
 }
@@ -92,6 +91,20 @@ a:focus {
 }
 .thin {
   font-weight: 400;
+}
+
+/* HEADER */
+.topbar {
+  position: absolute;
+  background-color: none;
+  top: 0;
+  height: 3.5em;
+  width: 100%;
+}
+.menu {
+  margin-right: 3.5%;
+  text-align: right;
+  font-size: 2.2em;
 }
 
 /* SEARCH */
