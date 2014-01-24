@@ -100,6 +100,9 @@ a:focus {
     width: 60%;
   }
 }
+.active-section {
+  margin-bottom: 2.5em;
+}
 .text-element {
   display: inline-block;
   margin: 0.1em 0;
