@@ -100,6 +100,9 @@ a:focus {
     width: 60%;
   }
 }
+.active-section {
+  margin-bottom: 2.5em;
+}
 .text-element {
   display: inline-block;
   margin: 0.1em 0;
@@ -133,16 +136,20 @@ a:focus {
   height: 3.5em;
   width: 100%;
 }
-.menu {
-  float: right;
-  text-align: right;
-  height: 2.35em;
-  
+.icon {
   /* vertical centering */
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-
+  
+  height: 2.35em;
+  cursor: pointer;
+}
+.menu {
+  float: right;
+}
+.back {
+  float: left;
 }
 @media (min-width: 450px) {
   .topbar {
@@ -166,6 +173,7 @@ a:focus {
   font-weight: bold;
   text-transform: uppercase;
   width: 3.2em;
+  cursor: pointer;
 }
 .input {
   width: 100%;
@@ -186,6 +194,7 @@ a:focus {
 }
 .suggest-element {
   margin: 0.3em 0 0 0.8em;
+  cursor: pointer;
 }
 
 /* SEARCH RESULTS */
