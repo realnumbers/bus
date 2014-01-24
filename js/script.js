@@ -117,12 +117,13 @@ function removeClass(current_section) {
 }
 function getRoute(data, time) {
 	data = data.replace(/\//g, ":");
+	data = data.replace(/\./g, ":");
 	data = data.split(":");
 	console.log(data);
 	time = time.replace(":", "");
 	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
-	url = url + "startBusStationId=:" + from_stop + ":";
-	url = url + "&endBusStationId=:" + to_stop + ":";
+	url = url + "startBusStationId=" + from_stop;
+	url = url + "&endBusStationId=" + to_stop;
 	url = url + "&yyyymmddhhmm=" + data[2] + data[1] + data[0] + time;
 $.ajax({
 		dataType: "jsonp",
