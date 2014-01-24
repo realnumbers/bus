@@ -114,15 +114,19 @@ function addClass(current_section) {
 function removeClass(current_section) {
 	SECTION[current_section].className = "js-section";
 }
-function getRoute(data, time) {
-	data = data.replace(/\//g, ":");
-	data = data.replace(/\./g, ":");
-	data = data.split(":");
+function getRoute(date, time) {
+	date = date.replace(/\//g, ":");
+	date = date.replace(/\./g, ":");
+	date = date.split(":");
 	time = time.replace(":", "");
+	count_date = date[2].split("");
+	if (count_date.length == 2) {
+		date[2] = "20" + date[2];
+	}
 	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
 	url = url + "startBusStationId=" + from_stop;
 	url = url + "&endBusStationId=" + to_stop;
-	url = url + "&yyyymmddhhmm=" + data[2] + data[1] + data[0] + time;
+	url = url + "&yyyymmddhhmm=" + date[2] + date[1] + date[0] + time;
 $.ajax({
 		dataType: "jsonp",
 		jsonpCallback: "Callback",
