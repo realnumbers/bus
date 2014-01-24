@@ -26,7 +26,6 @@ function autocom(current_section) {
 
 	i = 2
 	while (i < children.length) {
-			console.log(i);
 			children[i].children[0].innerHTML = "";
 			children[i].children[1].innerHTML = "";
 			i++;
@@ -119,7 +118,6 @@ function getRoute(data, time) {
 	data = data.replace(/\//g, ":");
 	data = data.replace(/\./g, ":");
 	data = data.split(":");
-	console.log(data);
 	time = time.replace(":", "");
 	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
 	url = url + "startBusStationId=" + from_stop;
