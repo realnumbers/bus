@@ -167,13 +167,15 @@ a:focus {
 .chosen-line {
   margin: 0.1em 0 0;
 }
+.chosen-data {
+  cursor: pointer;
+}
 .label {
   display: inline-block;
   font-size: 1.4em;
   font-weight: bold;
   text-transform: uppercase;
   width: 3.2em;
-  cursor: pointer;
 }
 .input {
   width: 100%;
