@@ -26,6 +26,7 @@ function autocom(current_section) {
 
 	i = 2
 	while (i < children.length) {
+			console.log(i);
 			children[i].children[0].innerHTML = "";
 			children[i].children[1].innerHTML = "";
 			i++;
@@ -85,6 +86,7 @@ function makeBlank(current_section) {
 			SECTION[current_section].children[i].style.display = "none";
 			i++;
 	}
+	SECTION[current_section].className = "js-section";
 }
 function unBlank(current_section) {
 	var i = 0;
@@ -98,6 +100,7 @@ function unBlank(current_section) {
 			SECTION[current_section].children[i].style.display = "block";
 			i++;
 	}
+	addClass(current_section);
 }
 function selectTime(current_section) {
 		var data = SECTION[current_section].children[1].value;
@@ -105,6 +108,12 @@ function selectTime(current_section) {
 		SECTION[current_section].children[0].children[1].innerHTML = data + ", ";
 		SECTION[current_section].children[0].children[2].innerHTML = time;
 		getRoute(data,time);
+}
+function addClass(current_section) {
+	SECTION[current_section].className += " active-section";
+}
+function removeClass(current_section) {
+	SECTION[current_section].className = "js-section";
 }
 function getRoute(data, time) {
 	data = data.replace(/\//g, ":");
