@@ -31,6 +31,7 @@ function autocom(current_section) {
 			i++;
 	}
 	if (input_string != "") {
+	children[2].children[1].innerHTML = "Couldn't find any matches...";
 	input_string = input_string.split(" ");
 	data = busstops.responseJSON;
 	i = 2;
