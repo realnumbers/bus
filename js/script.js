@@ -105,11 +105,15 @@ function unBlank(current_section) {
 }
 function selectTime(current_section) {
 		console.log(SECTION[current_section]);
-		var data = SECTION[current_section].children[1].value;
-		var time = SECTION[current_section].children[2].value;
-		SECTION[current_section].children[0].children[1].innerHTML = data + ", ";
-		SECTION[current_section].children[0].children[2].innerHTML = time;
-		getRoute(data,time);
+		var date_element = SECTION[current_section].children[1];
+		var date = date_element.value;
+		var time_element = SECTION[current_section].children[2];
+		var time = time_element.value;
+		if (date_element.validity.valid && date_element.validity.valid){ 
+			SECTION[current_section].children[0].children[1].innerHTML = date + ", ";
+			SECTION[current_section].children[0].children[2].innerHTML = time;
+			getRoute(date,time);
+		}
 }
 function addClass(current_section) {
 	SECTION[current_section].className += " active-section";
