@@ -109,10 +109,15 @@ function selectTime(current_section) {
 		var date = date_element.value;
 		var time_element = SECTION[current_section].children[2];
 		var time = time_element.value;
-		if (date_element.validity.valid && date_element.validity.valid){ 
+
+		if (date_element.validity.valid && time_element.validity.valid){ 
 			SECTION[current_section].children[0].children[1].innerHTML = date + ", ";
 			SECTION[current_section].children[0].children[2].innerHTML = time;
+			makeBlank(current_section);
 			getRoute(date,time);
+			date = "";
+			time = "";
+			unBlank(current_section + 1);
 		}
 }
 function addClass(current_section) {
