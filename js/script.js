@@ -100,11 +100,11 @@ function unBlank(current_section) {
 			SECTION[current_section].children[i].style.display = "block";
 			i++;
 	}
-	SECTION[current_section].children[1].focus();
+	if (SECTION[current_section].children[1] != null)
+		SECTION[current_section].children[1].focus();
 	addClass(current_section);
 }
 function selectTime(current_section) {
-		console.log(SECTION[current_section]);
 		var date_element = SECTION[current_section].children[1];
 		var date = date_element.value;
 		var time_element = SECTION[current_section].children[2];
@@ -115,9 +115,8 @@ function selectTime(current_section) {
 			SECTION[current_section].children[0].children[2].innerHTML = time;
 			makeBlank(current_section);
 			getRoute(date,time);
-			date = "";
-			time = "";
-			unBlank(current_section + 1);
+			time_element.value = "";
+			date_element.value = "";
 		}
 }
 function addClass(current_section) {
@@ -144,7 +143,37 @@ $.ajax({
 		jsonpCallback: "Callback",
 		url: url,
 	 	success: function(data) {
-				console.log(data);
+			console.log(data);
+			loadConnection(data);
 		}
 });
+}
+function loadConnection(data) {
+	var con = data.ConnectionList.Connection[0].Overview;
+	var arr_time = con.Arrival.BasicStop.Arr.Time;
+	var dep_time = con.Departure.BasicStop.Dep.Time;
+	var duration = con.Duration.Time;
+	var transfers = con.Transfers;
+	var ovverview_section = SECTION[3].children[0];
+
+	arr_time = arr_time.split("d");
+	arr_time = arr_time[1].split(":");
+	arr_time = arr_time[0] + ":" + arr_time[1];
+	dep_time = dep_time.split("d");
+	dep_time = dep_time[1].split(":");
+	dep_time = dep_time[0] + ":" + dep_time[1];
+	duration = duration.split("d");
+	duration = duration[1].split(":");
+	duration = duration[0] + ":" + duration[1];
+
+	if (transfers == 0)
+		transfers = "no transfer";
+	if (transfers == 1)
+		transfers = "1 transfer";
+	if (transfers > 1)
+		transfers += " transfers ";
+
+	ovverview_section.children[0].children[0].innerHTML = arr_time + " - " + dep_time;
+	ovverview_section.children[0].children[1].innerHTML = duration + ", " + transfers;
+	unBlank(3);
 }
