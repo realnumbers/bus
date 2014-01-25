@@ -32,7 +32,7 @@
           <p class="line-small"></p>
         </div>
         
-        <input class="input js-input" type="text"  placeholder="Start location..." onkeyup="autocom(0)">
+        <input class="input js-input" type="text"  placeholder="Start location..." autofocus oninput="autocom(0)">
         <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(0, 0)">
 		  	  <p class="line-big"></p>
 		  	  <p class="line-small"></p>
@@ -64,7 +64,7 @@
           <p class="line-small"></p>
         </div>
         
-        <input class="input js-input" type="text" placeholder="Destination..." onkeyup="autocom(1)">
+        <input class="input js-input" type="text" placeholder="Destination..." oninput="autocom(1)">
         <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(1, 0)">
 		  	  <p class="line-big"></p>
 		  	  <p class="line-small"></p>
@@ -95,8 +95,8 @@
           <p class="line-small"></p>
         </div>
         
-        <input class="input" id="date-input" type="date" placeholder="21.07.14" pattern="\d\d.\d\d.(201\d|1[4,9])" onclick="selectTime(2)">
-		    <input class="input" id="time-input" type="time" placeholder="16:04" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" onclick="selectTime(2)">
+        <input class="input" id="date-input" type="date" placeholder="21.07.14" pattern="\d\d.\d\d.(201\d|1[4,9])" >
+		    <input class="input" id="time-input" type="time" placeholder="16:04" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" oninput="selectTime(2)">
 		    
       </section>
       

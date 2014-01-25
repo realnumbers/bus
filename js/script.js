@@ -100,9 +100,11 @@ function unBlank(current_section) {
 			SECTION[current_section].children[i].style.display = "block";
 			i++;
 	}
+	SECTION[current_section].children[1].focus();
 	addClass(current_section);
 }
 function selectTime(current_section) {
+		console.log(SECTION[current_section]);
 		var data = SECTION[current_section].children[1].value;
 		var time = SECTION[current_section].children[2].value;
 		SECTION[current_section].children[0].children[1].innerHTML = data + ", ";
