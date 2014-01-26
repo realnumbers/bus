@@ -142,6 +142,7 @@ function getRoute(date, time) {
 	date = date.split(":");
 	time = time.replace(":", "");
 	count_date = date[2].split("");
+	unBlank(3);
 	if (count_date.length == 2) {
 		date[2] = "20" + date[2];
 	}
@@ -167,6 +168,7 @@ function loadConnection(data) {
 	var transfers = con.Transfers;
 	var overview_section = SECTION[3].children[0];
 
+	console.log(SECTION[3].children[1]);
 	arr_time = arr_time.split("d");
 	arr_time = arr_time[1].split(":");
 	arr_time = arr_time[0] + ":" + arr_time[1];
@@ -186,5 +188,6 @@ function loadConnection(data) {
 
 	overview_section.children[0].children[0].innerHTML = dep_time + " - " + arr_time;
 	overview_section.children[0].children[1].innerHTML = duration + ", " + transfers;
-	unBlank(3);
+
+	SECTION[3].children[1].style.display = "none";
 }
