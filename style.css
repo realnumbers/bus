@@ -237,3 +237,20 @@ a:focus {
 .intermediate-block {
   margin: 1.3em 0;
 }
+
+/* SETTINGS */
+
+.settings-title {
+  font-size: 3.2em;
+  font-weight: 200;
+  text-transform: uppercase;  
+}
+.settings-element {
+  margin: 1em 0;
+}
+.about-section {
+  margin-top: 1em;
+}
+.about-section p {
+  margin-bottom: 1em;
+}
