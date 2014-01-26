@@ -210,6 +210,17 @@ a:focus {
   margin-bottom: 0.3em;
 }
 
+/* Loading icon */
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+.spinner {
+	width: 6em;
+	margin: 3em auto;
+	animation: spin 1s infinite linear;
+}
+
 /* ROUTE DETAILS */
 
 .timestamp {
