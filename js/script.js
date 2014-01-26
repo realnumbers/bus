@@ -78,6 +78,7 @@ function selectBusstop(current_section, div_number) {
 	}
 	if (current_section === 1) {
 			to_stop = matching_busstops[div_number].id;
+			autoSetTime();
 	}
 }
 function makeBlank(current_section) {
@@ -103,6 +104,16 @@ function unBlank(current_section) {
 	if (SECTION[current_section].children[1] != null)
 		SECTION[current_section].children[1].focus();
 	addClass(current_section);
+}
+function autoSetTime() {
+	var currentdate = new Date();
+	console.log(currentdate);
+	//SECTION[2].children[1].value = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/"  + currentdate.getFullYear();
+  //SECTION[2].children[2].value = currentdate.getHours() + ":" + currentdate.getMinutes();
+
+	SECTION[2].children[1].value = "27/02/2014";
+  SECTION[2].children[2].value = "13:20";
+	selectTime(2);
 }
 function selectTime(current_section) {
 		var date_element = SECTION[current_section].children[1];
