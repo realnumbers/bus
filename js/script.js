@@ -154,7 +154,7 @@ function loadConnection(data) {
 	var dep_time = con.Departure.BasicStop.Dep.Time;
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
-	var ovverview_section = SECTION[3].children[0];
+	var overview_section = SECTION[3].children[0];
 
 	arr_time = arr_time.split("d");
 	arr_time = arr_time[1].split(":");
@@ -173,7 +173,7 @@ function loadConnection(data) {
 	if (transfers > 1)
 		transfers += " transfers ";
 
-	ovverview_section.children[0].children[0].innerHTML = dep_time + " - " + arr_time;
-	ovverview_section.children[0].children[1].innerHTML = duration + ", " + transfers;
+	overview_section.children[0].children[0].innerHTML = dep_time + " - " + arr_time;
+	overview_section.children[0].children[1].innerHTML = duration + ", " + transfers;
 	unBlank(3);
 }
