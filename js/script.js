@@ -173,7 +173,7 @@ function loadConnection(data) {
 	if (transfers > 1)
 		transfers += " transfers ";
 
-	ovverview_section.children[0].children[0].innerHTML = arr_time + " - " + dep_time;
+	ovverview_section.children[0].children[0].innerHTML = dep_time + " - " + arr_time;
 	ovverview_section.children[0].children[1].innerHTML = duration + ", " + transfers;
 	unBlank(3);
 }
