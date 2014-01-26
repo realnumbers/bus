@@ -167,7 +167,7 @@ function loadConnection(data) {
 	duration = duration[0] + ":" + duration[1];
 
 	if (transfers == 0)
-		transfers = "no transfer";
+		transfers = "no transfers";
 	if (transfers == 1)
 		transfers = "1 transfer";
 	if (transfers > 1)
