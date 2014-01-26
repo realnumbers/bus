@@ -78,6 +78,7 @@ function selectBusstop(current_section, div_number) {
 	}
 	if (current_section === 1) {
 			to_stop = matching_busstops[div_number].id;
+			autoSetTime();
 	}
 }
 function makeBlank(current_section) {
@@ -103,6 +104,16 @@ function unBlank(current_section) {
 	if (SECTION[current_section].children[1] != null)
 		SECTION[current_section].children[1].focus();
 	addClass(current_section);
+}
+function autoSetTime() {
+	var currentdate = new Date();
+	console.log(currentdate);
+	//SECTION[2].children[1].value = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/"  + currentdate.getFullYear();
+  //SECTION[2].children[2].value = currentdate.getHours() + ":" + currentdate.getMinutes();
+
+	SECTION[2].children[1].value = "27/02/2014";
+  SECTION[2].children[2].value = "13:20";
+	selectTime(2);
 }
 function selectTime(current_section) {
 		var date_element = SECTION[current_section].children[1];
@@ -131,6 +142,7 @@ function getRoute(date, time) {
 	date = date.split(":");
 	time = time.replace(":", "");
 	count_date = date[2].split("");
+	unBlank(3);
 	if (count_date.length == 2) {
 		date[2] = "20" + date[2];
 	}
@@ -156,6 +168,7 @@ function loadConnection(data) {
 	var transfers = con.Transfers;
 	var overview_section = SECTION[3].children[0];
 
+	console.log(SECTION[3].children[1]);
 	arr_time = arr_time.split("d");
 	arr_time = arr_time[1].split(":");
 	arr_time = arr_time[0] + ":" + arr_time[1];
@@ -175,5 +188,6 @@ function loadConnection(data) {
 
 	overview_section.children[0].children[0].innerHTML = dep_time + " - " + arr_time;
 	overview_section.children[0].children[1].innerHTML = duration + ", " + transfers;
-	unBlank(3);
+
+	SECTION[3].children[1].style.display = "none";
 }
