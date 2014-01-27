@@ -172,7 +172,7 @@ function getRoute(date, time) {
 	});	
 }
 function nextData(data, requestId, count) {
-	if (count <= 5) {
+	if (count < 5) {
 		console.log(requestId);
 
 		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
