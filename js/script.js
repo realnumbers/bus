@@ -165,7 +165,6 @@ function getRoute(date, time) {
 			requestId = data.ConResCtxt[0];
 			console.log(requestId);
 			
-			//requestId = requestId.substring(0, requestId.length - 2);
 			requestId = requestId.split("#")[0];
 			nextData(data, requestId, 1);
 		}
@@ -188,7 +187,6 @@ function nextData(data, requestId, count) {
 		 	success: function(data) {
 				console.log(data);
 				loadConnection(data, count);
-				//requestId = data.ConResCtxt[0];
 				console.log(requestId);
 				nextData(data, requestId, parseInt(count) + 1);
 			}
