@@ -152,15 +152,80 @@ function getRoute(date, time) {
 	url = url + "startBusStationId=" + from_stop;
 	url = url + "&endBusStationId=" + to_stop;
 	url = url + "&yyyymmddhhmm=" + date[2] + date[1] + date[0] + time;
-$.ajax({
+	var results = 3;
+	var requestId;
+	$.ajax({
 		dataType: "jsonp",
 		jsonpCallback: "Callback",
 		url: url,
 	 	success: function(data) {
 			console.log(data);
 			loadConnection(data);
+			
+			requestId = data.ConResCtxt[0];
+			console.log(requestId);
+			
+			requestId = requestId.substring(0, requestId.length - 2);
+			nextData(data, requestId, 1);
 		}
-});
+	});	
+}
+function nextData(data, requestId, count) {
+	if (count <= ) {	
+		//console.log(reqId);
+		//var requestId = reqId.replace(/#/g, "%");
+		console.log(requestId);
+
+		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
+		nextUrl = nextUrl + requestId;
+		nextUrl = nextUrl + "%23";
+		nextUrl = nextUrl + count;
+	
+		console.log(nextUrl);
+		$.ajax({
+			dataType: "jsonp",
+			jsonpCallback: "Callback",
+			url: nextUrl,
+		 	success: function(data) {
+				console.log(data);
+				loadTehConnection(data, count);
+				//requestId = data.ConResCtxt[0];
+				console.log(requestId);
+				nextData(data, requestId, parseInt(count) + 1);
+			}
+		});		
+	}
+}
+function loadTehConnection(data, resultPointer) {
+	var con = data.ConnectionList.Connection[0].Overview;
+	var arr_time = con.Arrival.BasicStop.Arr.Time;
+	var dep_time = con.Departure.BasicStop.Dep.Time;
+	var duration = con.Duration.Time;
+	var transfers = con.Transfers;
+	var overview_section = SECTION[3].children[0];
+
+	console.log(SECTION[3].children[1]);
+	arr_time = arr_time.split("d");
+	arr_time = arr_time[1].split(":");
+	arr_time = arr_time[0] + ":" + arr_time[1];
+	dep_time = dep_time.split("d");
+	dep_time = dep_time[1].split(":");
+	dep_time = dep_time[0] + ":" + dep_time[1];
+	duration = duration.split("d");
+	duration = duration[1].split(":");
+	duration = duration[0] + ":" + duration[1];
+
+	if (transfers == 0)
+		transfers = "no transfers";
+	if (transfers == 1)
+		transfers = "1 transfer";
+	if (transfers > 1)
+		transfers += " transfers ";
+
+	overview_section.children[resultPointer].children[0].innerHTML = dep_time + " - " + arr_time;
+	overview_section.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
+
+	SECTION[3].children[1].style.display = "none";
 }
 function loadConnection(data) {
 	var con = data.ConnectionList.Connection[0].Overview;
