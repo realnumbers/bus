@@ -32,6 +32,7 @@ function autocom(current_section) {
 	}
 	if (input_string != "") {
 	children[2].children[1].innerHTML = "Couldn't find any matches...";
+	children[2].children[1].className += " no-matches";
 	input_string = input_string.split(" ");
 	data = busstops.responseJSON;
 	i = 2;
@@ -54,6 +55,7 @@ function autocom(current_section) {
 					matching_busstops[i-2] = element;
 					children[i].children[0].innerHTML = element.name+", ";
 					children[i].children[1].innerHTML = element.city;
+					children[2].children[1].className = "line-small";
 					i++;
 			}
 			if (i >= children.length) {

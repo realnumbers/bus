@@ -198,6 +198,11 @@ a:focus {
   margin: 0 0 0 0.8em;
   cursor: pointer;
 }
+.no-matches {
+  font-size: 1.3em;
+  font-style: italic;
+  color: #666;
+}
 
 /* SEARCH RESULTS */
 
