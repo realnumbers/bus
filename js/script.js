@@ -7,7 +7,7 @@ var busstops = $.getJSON( "js/busstops.json", function(data) {
 		autocom(0);
 	});
 if (navigator.language === "de") {
-		lang = de;
+		lang = "de";
 }
 clearPage();
 
