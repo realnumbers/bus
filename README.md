@@ -1,7 +1,7 @@
 bus
 ===
 
-A simple bus routing web app using the [http://sasabus.org](sasabus.org) API.
+A simple bus routing web app using the [sasabus.org](http://sasabus.org) API.
 
 Works for all SASA bus connections in South Tyrol (i.e. city buses in the areas around Merano and Bolzano). This app is a cleaner, simpler alternative to the routing component of the [official SASA web app](http://html5.sasabus.org).
 
