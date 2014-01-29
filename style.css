@@ -214,6 +214,9 @@ a:focus {
   width: 5.7em;
   margin-bottom: 0.3em;
 }
+.text-element.list-element {
+  cursor: pointer;
+}
 
 /* Loading icon */
 @keyframes spin {

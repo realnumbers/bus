@@ -9,10 +9,10 @@ var busstops = $.getJSON( "js/busstops.json", function(data) {
 if (navigator.language === "de") {
 		lang = "de";
 }
-clearPage();
+clearPage(1);
 
-function clearPage() {
-	var i = 1;
+function clearPage(startSection) {
+	var i = startSection;
 	while (i < SECTION.length) {
 		SECTION[i].style.display = "none";
 		i++;
@@ -221,6 +221,20 @@ function loadConnection(data, resultPointer) {
 
 	overview_section.children[resultPointer].children[0].innerHTML = dep_time + " - " + arr_time;
 	overview_section.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
-
+	
+	hideSpinner();
+}
+function hideSpinner() {
 	SECTION[3].children[1].style.display = "none";
+}
+function showDetails(resultNumber) {
+	clearPage(0);
+	unBlank(4);
+}
+function back() {
+	clearPage(0);
+	unBlank(1);
+	unBlank(2);
+	unBlank(3);
+	hideSpinner();
 }
