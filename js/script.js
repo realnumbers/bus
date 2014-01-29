@@ -240,7 +240,7 @@ function showDetails(resultNumber) {
 	unBlank(4);
 	showBackButton();
 }
-function back() {
+function goback() {
 	clearPage(0);
 	unBlank(0);
 	unBlank(1);
