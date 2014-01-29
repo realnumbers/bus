@@ -1,4 +1,5 @@
 var SECTION = document.getElementsByClassName("js-section");
+var BACKBTN = document.getElementById("back");
 var lang = "it";
 var form_stop;
 var to_stop;
@@ -10,6 +11,7 @@ if (navigator.language === "de") {
 		lang = "de";
 }
 clearPage(1);
+hideBackButton();
 
 function clearPage(startSection) {
 	var i = startSection;
@@ -227,14 +229,23 @@ function loadConnection(data, resultPointer) {
 function hideSpinner() {
 	SECTION[3].children[1].style.display = "none";
 }
+function hideBackButton() {
+	BACKBTN.style.display = "none";
+}
+function showBackButton() {
+	BACKBTN.style.display = "block";
+}
 function showDetails(resultNumber) {
 	clearPage(0);
 	unBlank(4);
+	showBackButton();
 }
 function back() {
 	clearPage(0);
+	unBlank(0);
 	unBlank(1);
 	unBlank(2);
 	unBlank(3);
+	hideBackButton();
 	hideSpinner();
 }
