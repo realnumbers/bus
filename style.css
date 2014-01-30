@@ -145,11 +145,11 @@ a:focus {
   height: 2.35em;
   cursor: pointer;
 }
-.menu {
+.right {
   float: right;
 }
-.back {
-  float: left;
+.left {
+  left: left;
 }
 @media (min-width: 450px) {
   .topbar {

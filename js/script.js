@@ -1,5 +1,7 @@
 var SECTION = document.getElementsByClassName("js-section");
-var BACKBTN = document.getElementById("back");
+var back = document.getElementById("back");
+var cancel = document.getElementById("cancel");
+
 var lang = "it";
 var form_stop;
 var to_stop;
@@ -11,7 +13,8 @@ if (navigator.language === "de") {
 		lang = "de";
 }
 clearPage(1);
-hideBackButton();
+hideIcon(back);
+hideIcon(cancel);
 
 function clearPage(startSection) {
 	var i = startSection;
@@ -229,18 +232,18 @@ function loadConnection(data, resultPointer) {
 function hideSpinner() {
 	SECTION[3].children[1].style.display = "none";
 }
-function hideBackButton() {
-	BACKBTN.style.display = "none";
+function hideIcon(icon) {
+	icon.style.display = "none";
 }
-function showBackButton() {
-	BACKBTN.style.display = "block";
+function showIcon(icon) {
+	icon.style.display = "block";
 }
 function showDetails(resultNumber) {
 	clearPage(0);
 	unBlank(4);
-	showBackButton();
+	showIcon("back");
 }
-function goback() {
+function goBack() {
 	clearPage(0);
 	unBlank(0);
 	unBlank(1);

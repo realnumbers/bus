@@ -15,7 +15,7 @@
    version="1.1"
    inkscape:version="0.48+devel r12836 custom"
    viewBox="0 0 40.000026 40.000027"
-   sodipodi:docname="back.svg">
+   sodipodi:docname="newquery.svg">
   <defs
      id="defs5950" />
   <sodipodi:namedview
@@ -68,7 +68,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -79,54 +79,31 @@
      transform="translate(-60.000001,-192.36217)">
     <rect
        style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
-       id="rect5897"
+       id="rect6275"
        width="40.000027"
        height="40.000027"
-       x="59.999989"
-       y="142.36217" />
+       x="-40.000061"
+       y="192.36217"
+       transform="scale(-1,1)" />
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#1e85fe;fill-opacity:1;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+       d="M 29.939453 7.9414062 L 20 17.880859 L 10.0625 7.9433594 L 7.9414062 10.064453 L 17.878906 20.001953 L 7.9394531 29.941406 L 10.060547 32.0625 L 20.001953 22.123047 L 29.939453 32.060547 L 32.060547 29.939453 L 22.123047 20.001953 L 32.0625 10.0625 L 29.939453 7.9414062 z "
+       transform="translate(60.000001,192.36217)"
+       id="path6314" />
     <g
-       id="g5899"
-       transform="translate(-3745,-4835.0004)">
-      <rect
-         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#1e85fe;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
-         id="rect5901"
-         width="29.999994"
-         height="3.0001056"
-         x="3810"
-         y="4995.8623" />
-      <rect
-         y="4985.8623"
-         x="3810"
-         height="3.0001059"
-         width="29.999994"
-         id="rect5903"
-         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#1e85fe;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
-      <rect
-         y="5005.8623"
-         x="3810"
-         height="3.0001056"
-         width="29.999994"
-         id="rect5905"
-         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#1e85fe;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+       id="g3292">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3288"
+         d="M 30.9996,223.36179 9.0021999,201.36439"
+         style="fill:none;stroke:#1e85fe;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#1e85fe;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 9.0007999,223.36319 31.001,201.36299"
+         id="path3290"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
     </g>
-    <rect
-       y="192.36218"
-       x="-9.8797684"
-       height="40.000027"
-       width="40.000027"
-       id="rect5921"
-       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
-    <path
-       style="fill:none;stroke:#1e85fe;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 79.121308,224.36169 -12,-12 12,-12"
-       id="path5931"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc" />
-    <path
-       sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#1e85fe;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 68.120508,212.36209 27,0"
-       id="path5935"
-       inkscape:connector-curvature="0" />
   </g>
 </svg>
