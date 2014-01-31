@@ -241,7 +241,7 @@ function showIcon(icon) {
 function showDetails(resultNumber) {
 	clearPage(0);
 	unBlank(4);
-	showIcon("back");
+	showIcon(back);
 }
 function goBack() {
 	clearPage(0);
@@ -249,6 +249,6 @@ function goBack() {
 	unBlank(1);
 	unBlank(2);
 	unBlank(3);
-	hideBackButton();
+	hideIcon(back);
 	hideSpinner();
 }
