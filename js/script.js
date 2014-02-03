@@ -103,8 +103,22 @@ function makeBlank(current_section) {
 }
 function activateInput(current_section) {
 	unBlank(current_section);
+	var i = 0;
+	while (i < SECTION.length) {
+		SECTION[i].children[0].children[1].style.display = "inline-block";
+		SECTION[i].children[0].children[2].style.display = "inline-block";
+		i++;
+	}
 	SECTION[current_section].children[0].children[1].style.display =  "none";
 	SECTION[current_section].children[0].children[2].style.display = "none";
+}
+function showAllLabels() {
+	var i = 0;
+	while (i < SECTION.length) {
+		SECTION[i].children[0].children[1].style.display = "inline-block";
+		SECTION[i].children[0].children[2].style.display = "inline-block";
+		i++;
+	}
 }
 function unBlank(current_section) {
 	var i = 0;
@@ -271,6 +285,7 @@ function goBack() {
 	unBlank(1);
 	unBlank(2);
 	unBlank(3);
+	showAllLabels()
 	hideIcon(back);
 	showIcon(cancel);
 	hideSpinner();
