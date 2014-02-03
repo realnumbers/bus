@@ -86,7 +86,14 @@ function selectBusstop(current_section, div_number) {
 	makeBlank(current_section);
 	
 	if (queryComplete) {
-		//TODO: Automatically send a query as soon as the new value has been set
+		if (current_section === 0) {
+				from_stop = matching_busstops[div_number].id;
+				autoSetTime();
+		}
+		if (current_section === 1) {
+				to_stop = matching_busstops[div_number].id;
+				autoSetTime();
+		}
 	}
 	else {	
 		activateInput(current_section + 1);
@@ -110,12 +117,7 @@ function makeBlank(current_section) {
 }
 function activateInput(current_section) {
 	unBlank(current_section);
-	var i = 0;
-	while (i < 3) {
-		SECTION[i].children[0].children[1].style.display = "inline-block";
-		SECTION[i].children[0].children[2].style.display = "inline-block";
-		i++;
-	}
+	showAllLabels();
 	SECTION[current_section].children[0].children[1].style.display =  "none";
 	SECTION[current_section].children[0].children[2].style.display = "none";
 }
