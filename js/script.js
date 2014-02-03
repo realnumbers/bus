@@ -79,6 +79,8 @@ function selectBusstop(current_section, div_number) {
 	SECTION[current_section].children[1].value = "";
 	makeBlank(current_section);
 	unBlank(current_section + 1);
+	SECTION[current_section + 1].children[0].children[1].innerHTML = "";
+	SECTION[current_section + 1].children[0].children[2].innerHTML = "";
 	autocom(current_section);
 	if (current_section === 0) {
 			from_stop = matching_busstops[div_number].id;
@@ -95,6 +97,11 @@ function makeBlank(current_section) {
 			i++;
 	}
 	SECTION[current_section].className = "js-section";
+}
+function activateInput(current_section) {
+	unBlank(current_section);
+	SECTION[current_section].children[0].children[1].innerHTML = "";
+	SECTION[current_section].children[0].children[2].innerHTML = "";	
 }
 function unBlank(current_section) {
 	var i = 0;
@@ -260,5 +267,6 @@ function goBack() {
 	unBlank(2);
 	unBlank(3);
 	hideIcon(back);
+	showIcon(cancel);
 	hideSpinner();
 }
