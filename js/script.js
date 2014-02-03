@@ -12,6 +12,8 @@ var busstops = $.getJSON( "js/busstops.json", function(data) {
 if (navigator.language === "de") {
 		lang = "de";
 }
+var queryComplete = false;
+
 clearPage(1);
 hideIcon(back);
 hideIcon(cancel);
@@ -82,15 +84,20 @@ function selectBusstop(current_section, div_number) {
 	SECTION[current_section].children[0].children[2].style.display = "inline-block";
 	
 	makeBlank(current_section);
-	activateInput(current_section + 1);
 	
-	autocom(current_section);
-	if (current_section === 0) {
-			from_stop = matching_busstops[div_number].id;
+	if (queryComplete) {
+		//TODO: Automatically send a query as soon as the new value has been set
 	}
-	if (current_section === 1) {
-			to_stop = matching_busstops[div_number].id;
-			autoSetTime();
+	else {	
+		activateInput(current_section + 1);
+		autocom(current_section);
+		if (current_section === 0) {
+				from_stop = matching_busstops[div_number].id;
+		}
+		if (current_section === 1) {
+				to_stop = matching_busstops[div_number].id;
+				autoSetTime();
+		}
 	}
 }
 function makeBlank(current_section) {
@@ -104,7 +111,7 @@ function makeBlank(current_section) {
 function activateInput(current_section) {
 	unBlank(current_section);
 	var i = 0;
-	while (i < SECTION.length) {
+	while (i < 3) {
 		SECTION[i].children[0].children[1].style.display = "inline-block";
 		SECTION[i].children[0].children[2].style.display = "inline-block";
 		i++;
@@ -114,7 +121,7 @@ function activateInput(current_section) {
 }
 function showAllLabels() {
 	var i = 0;
-	while (i < SECTION.length) {
+	while (i < 3) {
 		SECTION[i].children[0].children[1].style.display = "inline-block";
 		SECTION[i].children[0].children[2].style.display = "inline-block";
 		i++;
@@ -274,6 +281,7 @@ function showIcon(icon) {
 	icon.style.display = "block";
 }
 function showDetails(resultNumber) {
+	
 	clearPage(0);
 	unBlank(4);
 	hideIcon(cancel);
@@ -285,7 +293,7 @@ function goBack() {
 	unBlank(1);
 	unBlank(2);
 	unBlank(3);
-	showAllLabels()
+	showAllLabels();
 	hideIcon(back);
 	showIcon(cancel);
 	hideSpinner();
