@@ -164,6 +164,8 @@ function getRoute(date, time) {
 		jsonpCallback: "Callback",
 		url: url,
 	 	success: function(data) {
+			showIcon(cancel);
+			
 			console.log(data);
 			loadConnection(data, 0);
 			
@@ -229,6 +231,13 @@ function loadConnection(data, resultPointer) {
 	
 	hideSpinner();
 }
+function cancelQuery() {
+	hideIcon(cancel);
+	clearPage(0);
+	unBlank(0);
+	SECTION[0].children[0].children[1].innerHTML = "";
+	SECTION[0].children[0].children[2].innerHTML = "";
+}
 function hideSpinner() {
 	SECTION[3].children[1].style.display = "none";
 }
@@ -241,6 +250,7 @@ function showIcon(icon) {
 function showDetails(resultNumber) {
 	clearPage(0);
 	unBlank(4);
+	hideIcon(cancel);
 	showIcon(back);
 }
 function goBack() {
