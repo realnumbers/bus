@@ -77,10 +77,13 @@ function selectBusstop(current_section, div_number) {
 	SECTION[current_section].children[0].children[1].innerHTML = matching_busstops[div_number].name + ", ";
 	SECTION[current_section].children[0].children[2].innerHTML = matching_busstops[div_number].city;
 	SECTION[current_section].children[1].value = "";
+	
+	SECTION[current_section].children[0].children[1].style.display =  "inline-block";
+	SECTION[current_section].children[0].children[2].style.display = "inline-block";
+	
 	makeBlank(current_section);
-	unBlank(current_section + 1);
-	SECTION[current_section + 1].children[0].children[1].innerHTML = "";
-	SECTION[current_section + 1].children[0].children[2].innerHTML = "";
+	activateInput(current_section + 1);
+	
 	autocom(current_section);
 	if (current_section === 0) {
 			from_stop = matching_busstops[div_number].id;
@@ -100,8 +103,8 @@ function makeBlank(current_section) {
 }
 function activateInput(current_section) {
 	unBlank(current_section);
-	SECTION[current_section].children[0].children[1].innerHTML = "";
-	SECTION[current_section].children[0].children[2].innerHTML = "";	
+	SECTION[current_section].children[0].children[1].style.display =  "none";
+	SECTION[current_section].children[0].children[2].style.display = "none";
 }
 function unBlank(current_section) {
 	var i = 0;
@@ -126,7 +129,9 @@ function autoSetTime() {
   //SECTION[2].children[2].value = currentdate.getHours() + ":" + currentdate.getMinutes();
 
 	SECTION[2].children[1].value = "27/02/2014";
-  SECTION[2].children[2].value = "13:20";
+  	SECTION[2].children[2].value = "13:20";
+  	SECTION[2].children[0].children[1].style.display =  "inline-block";
+	SECTION[2].children[0].children[2].style.display = "inline-block";
 	selectTime(2);
 }
 function selectTime(current_section) {
