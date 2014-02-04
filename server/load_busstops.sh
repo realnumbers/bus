@@ -51,7 +51,8 @@ parse(){
 
 	done
 }
-TARGET=../js/busstops.json
+find_secound()
+sTARGET=../js/busstops.json
 rm $TARGET 
 parse
 echo "{
@@ -66,3 +67,4 @@ echo "}" >> $TARGET
 cat $TARGET | json_verify -u
 rm de.json
 rm it.json
+

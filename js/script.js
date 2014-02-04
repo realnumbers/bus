@@ -1,7 +1,7 @@
 var SECTION = document.getElementsByClassName("js-section");
 var back = document.getElementById("back");
 var cancel = document.getElementById("cancel");
-
+var con_data = new Array(5);
 var lang = "it";
 var form_stop;
 var to_stop;
@@ -146,7 +146,7 @@ function unBlank(current_section) {
 }
 function autoSetTime() {
 	var currentdate = new Date();
-	console.log(currentdate);
+	//console.log(currentdate);
 	//SECTION[2].children[1].value = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/"  + currentdate.getFullYear();
   //SECTION[2].children[2].value = currentdate.getHours() + ":" + currentdate.getMinutes();
 
@@ -200,11 +200,11 @@ function getRoute(date, time) {
 	 	success: function(data) {
 			showIcon(cancel);
 			
-			console.log(data);
+			//console.log(data);
 			loadConnection(data, 0);
 			
 			requestId = data.ConResCtxt[0];
-			console.log(requestId);
+			//console.log(requestId);
 			
 			requestId = requestId.split("#")[0];
 			nextData(data, requestId, 1);
@@ -213,22 +213,22 @@ function getRoute(date, time) {
 }
 function nextData(data, requestId, count) {
 	if (count < 5) {
-		console.log(requestId);
+		//console.log(requestId);
 
 		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
 		nextUrl = nextUrl + requestId;
 		nextUrl = nextUrl + "%23";
 		nextUrl = nextUrl + count;
 	
-		console.log(nextUrl);
+		//console.log(nextUrl);
 		$.ajax({
 			dataType: "jsonp",
 			jsonpCallback: "Callback",
 			url: nextUrl,
 		 	success: function(data) {
-				console.log(data);
+				//console.log(data);
 				loadConnection(data, count);
-				console.log(requestId);
+				//console.log(requestId);
 				nextData(data, requestId, parseInt(count) + 1);
 			}
 		});		
@@ -241,8 +241,8 @@ function loadConnection(data, resultPointer) {
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
 	var overview_section = SECTION[3].children[0];
-
-	console.log(SECTION[3].children[1]);
+	con_data[resultPointer]	= data;
+	//console.log(con_data);
 	arr_time = arr_time.split("d");
 	arr_time = arr_time[1].split(":");
 	arr_time = arr_time[0] + ":" + arr_time[1];
@@ -287,6 +287,34 @@ function showDetails(resultNumber) {
 	unBlank(4);
 	hideIcon(cancel);
 	showIcon(back);
+
+	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
+	var i = 0;
+	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
+	while (i < connection.length) {
+//		console.log(connection[i]);
+		if (connection[0].Journey.length > 0) {
+			console.log("Journy");
+			console.log(connection[i]);
+			var lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
+			var stops = connection[i].Journey[0].PassList.BasicStop;
+			var dep = stops[0].Dep.Time;
+			var arr = stops[0].Arr.Time;
+			//console.log("dep");
+			//console.log(dep);
+			console.log("stop");
+			console.loq(stops);
+			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
+			
+		}
+		else if (connection[0].Walk.length > 0) {
+			console.log("Walk");
+			console.log(connection[i].Walk);
+			var waitTime = connection[i].y[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
+			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
+		}
+		i++;
+	}
 }
 function goBack() {
 	clearPage(0);
