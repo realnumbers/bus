@@ -291,21 +291,18 @@ function showDetails(resultNumber) {
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
 	var i = 0;
 	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
+	var W_BLOCK = document.getElementsByClassName("intermediate-block");
 	while (i < connection.length) {
-//		console.log(connection[i]);
-		if (connection[0].Journey.length > 0) {
-			console.log("Journy");
-			console.log(connection[i]);
+		if (connection[i].Journey.length > 0) {
 			var lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
 			var stops = connection[i].Journey[0].PassList.BasicStop;
 			var dep = stops[0].Dep.Time;
-			var arr = stops[0].Arr.Time;
-			//console.log("dep");
-			//console.log(dep);
-			console.log("stop");
-			console.loq(stops);
+			var arr = stops[stops.length - 1].Arr.Time;
+			TRANS_BLOCK[i].children[0].children[0].innerHTML = dep;
+			TRANS_BLOCK[i].children[2].children[0].innerHTML = arr;
 			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
 			
+			i++;
 		}
 		else if (connection[0].Walk.length > 0) {
 			console.log("Walk");
@@ -313,6 +310,13 @@ function showDetails(resultNumber) {
 			var waitTime = connection[i].y[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
 			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
 		}
+	}
+	console.log(TRANS_BLOCK);
+	while (i < TRANS_BLOCK.length) {
+		TRANS_BLOCK[i].style.display = "none";
+
+		console.log(i);
+			W_BLOCK[i-1].style.display = "none";
 		i++;
 	}
 }
