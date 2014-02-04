@@ -33,54 +33,53 @@ function autocom(current_section) {
 
 	i = 2
 	while (i < children.length) {
-			children[i].children[0].innerHTML = "";
-			children[i].children[1].innerHTML = "";
-			i++;
+		children[i].children[0].innerHTML = "";
+		children[i].children[1].innerHTML = "";
+		i++;
 	}
 	if (input_string != "") {
-	children[2].children[1].innerHTML = "Couldn't find any matches...";
-	children[2].children[1].className += " no-matches";
-	input_string = input_string.split(" ");
-	data = busstops.responseJSON;
-	i = 2;
-	data[lang].every( function (element, index, array) {
+		children[2].children[1].innerHTML = "Couldn't find any matches...";
+		children[2].children[1].className += " no-matches";
+		input_string = input_string.split(" ");
+		data = busstops.responseJSON;
+		i = 2;
+		data[lang].every( function (element, index, array) {
 			var res = input_string.every( function (item, index, array) {
-					var pattern = new RegExp(item, "i");
-					var found_match = element.label.match(pattern);
+				var pattern = new RegExp(item, "i");
+				var found_match = element.label.match(pattern);
 
-					if (found_match != null) {
-							return true;
-					}
-					else{
-							return false;
-					}
+				if (found_match != null) {
+						return true;
+				}
+				else{
+						return false;
+				}
 
 			});
 
 			if (res && i < children.length) {
 
-					matching_busstops[i-2] = element;
-					children[i].children[0].innerHTML = element.name+", ";
-					children[i].children[1].innerHTML = element.city;
-					children[2].children[1].className = "line-small";
-					i++;
+				matching_busstops[i-2] = element;
+				children[i].children[0].innerHTML = element.name+", ";
+				children[i].children[1].innerHTML = element.city;
+				children[2].children[1].className = "line-small";
+				i++;
 			}
 			if (i >= children.length) {
-					return false;
+				return false;
 			}
 			else{
-					return true;
+				return true;
 			}
-
-});
-}
+		});
+	}
 }
 function selectBusstop(current_section, div_number) {
 	SECTION[current_section].children[0].children[1].innerHTML = matching_busstops[div_number].name + ", ";
 	SECTION[current_section].children[0].children[2].innerHTML = matching_busstops[div_number].city;
 	SECTION[current_section].children[1].value = "";
 	
-	SECTION[current_section].children[0].children[1].style.display =  "inline-block";
+	SECTION[current_section].children[0].children[1].style.display = "inline-block";
 	SECTION[current_section].children[0].children[2].style.display = "inline-block";
 	
 	makeBlank(current_section);
@@ -95,7 +94,7 @@ function selectBusstop(current_section, div_number) {
 				autoSetTime();
 		}
 	}
-	else {	
+	else {
 		activateInput(current_section + 1);
 		autocom(current_section);
 		if (current_section === 0) {
