@@ -131,14 +131,14 @@ function showAllLabels() {
 function unBlank(current_section) {
 	var i = 0;
 	while (i < SECTION.length) {
-			makeBlank(i);
-			i++;
+		makeBlank(i);
+		i++;
 	}
 	SECTION[current_section].style.display = "block";
 	i = 0;
 	while (i < SECTION[current_section].children.length) {
-			SECTION[current_section].children[i].style.display = "block";
-			i++;
+		SECTION[current_section].children[i].style.display = "block";
+		i++;
 	}
 	if (SECTION[current_section].children[1] != null)
 		SECTION[current_section].children[1].focus();
@@ -152,24 +152,24 @@ function autoSetTime() {
 
 	SECTION[2].children[1].value = "27/02/2014";
   	SECTION[2].children[2].value = "13:20";
-  	SECTION[2].children[0].children[1].style.display =  "inline-block";
-	SECTION[2].children[0].children[2].style.display = "inline-block";
+	showAllLabels();
 	selectTime(2);
 }
 function selectTime(current_section) {
-		var date_element = SECTION[current_section].children[1];
-		var date = date_element.value;
-		var time_element = SECTION[current_section].children[2];
-		var time = time_element.value;
-
-		if (date_element.validity.valid && time_element.validity.valid){ 
-			SECTION[current_section].children[0].children[1].innerHTML = date + ", ";
-			SECTION[current_section].children[0].children[2].innerHTML = time;
-			makeBlank(current_section);
-			getRoute(date,time);
-			time_element.value = "";
-			date_element.value = "";
-		}
+	var date_element = SECTION[current_section].children[1];
+	var date = date_element.value;
+	var time_element = SECTION[current_section].children[2];
+	var time = time_element.value;
+	
+	if (date_element.validity.valid && time_element.validity.valid){ 
+		SECTION[current_section].children[0].children[1].innerHTML = date + ", ";
+		SECTION[current_section].children[0].children[2].innerHTML = time;
+		makeBlank(current_section);
+		showAllLabels();
+		getRoute(date,time);
+		time_element.value = "";
+		date_element.value = "";
+	}
 }
 function addClass(current_section) {
 	SECTION[current_section].className += " active-section";
