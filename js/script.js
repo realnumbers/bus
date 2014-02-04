@@ -340,4 +340,5 @@ function calculateWaitingTime(timepstamp1, timepstamp2) {
 function formatTime(time) {
 	if (time[0] < 10) time[0] = "0" + time[0];
 	if (time[1] < 10) time[1] = "0" + time[1];
+	return time;
 }
