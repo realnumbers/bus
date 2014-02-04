@@ -298,8 +298,8 @@ function showDetails(resultNumber) {
 			var stops = connection[i].Journey[0].PassList.BasicStop;
 			var dep = stops[0].Dep.Time;
 			var arr = stops[stops.length - 1].Arr.Time;
-			depTime = extractTime(dep);
-			arrTime = extractTime(arr);
+			var depTime = extractTime(dep);
+			var arrTime = extractTime(arr);
 			TRANS_BLOCK[i].children[0].children[0].innerHTML = depTime[0] + ":" + depTime[1];
 			TRANS_BLOCK[i].children[2].children[0].innerHTML = arrTime[0] + ":" + arrTime[1];
 			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
