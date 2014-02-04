@@ -169,6 +169,7 @@ a:focus {
 }
 .chosen-data {
   cursor: pointer;
+  width: 100%;
 }
 .label {
   display: inline-block;
@@ -202,6 +203,10 @@ a:focus {
   font-size: 1.3em;
   font-style: italic;
   color: #666;
+}
+.cancel-input {
+  height: 2em;
+  float: right;
 }
 
 /* SEARCH RESULTS */

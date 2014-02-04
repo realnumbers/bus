@@ -1,6 +1,7 @@
 var SECTION = document.getElementsByClassName("js-section");
 var back = document.getElementById("back");
 var cancel = document.getElementById("cancel");
+var CANCEL_INPUT_ICONS = document.getElementsByClassName("cancel-input");
 
 var lang = "it";
 var form_stop;
@@ -17,6 +18,9 @@ var queryComplete = false;
 clearPage(1);
 hideIcon(back);
 hideIcon(cancel);
+hideCancelInputIcon(0);
+hideCancelInputIcon(1);
+hideCancelInputIcon(2);
 
 function clearPage(startSection) {
 	var i = startSection;
@@ -83,6 +87,7 @@ function selectBusstop(current_section, div_number) {
 	SECTION[current_section].children[0].children[2].style.display = "inline-block";
 	
 	makeBlank(current_section);
+	hideCancelInputIcon(current_section);
 	
 	if (queryComplete) {
 		if (current_section === 0) {
@@ -115,10 +120,26 @@ function makeBlank(current_section) {
 	SECTION[current_section].className = "js-section";
 }
 function activateInput(current_section) {
+	if (queryComplete) {
+		hideCancelInputIcon(0);
+		hideCancelInputIcon(1);
+		hideCancelInputIcon(2);
+		showCancelInputIcon(current_section);
+	}
 	unBlank(current_section);
 	showAllLabels();
-	SECTION[current_section].children[0].children[1].style.display =  "none";
+	SECTION[current_section].children[0].children[1].style.display = "none";
 	SECTION[current_section].children[0].children[2].style.display = "none";
+}
+function deactivateLabel(current_section) {
+	console.log("deactivating input " + current_section);
+	console.log(SECTION[current_section].children[0].children[1].innerHTML);
+	
+	SECTION[current_section].children[0].children[1].style.display = "inline-block";
+	SECTION[current_section].children[0].children[2].style.display = "inline-block";
+	console.log("labels should be visible now");
+	makeBlank(current_section);
+	hideCancelInputIcon(current_section);
 }
 function showAllLabels() {
 	var i = 0;
@@ -199,6 +220,7 @@ function getRoute(date, time) {
 		url: url,
 	 	success: function(data) {
 			showIcon(cancel);
+			queryComplete = true;
 			
 			console.log(data);
 			loadConnection(data, 0);
@@ -266,6 +288,7 @@ function loadConnection(data, resultPointer) {
 	hideSpinner();
 }
 function cancelQuery() {
+	queryComplete = false;
 	hideIcon(cancel);
 	clearPage(0);
 	unBlank(0);
@@ -281,8 +304,13 @@ function hideIcon(icon) {
 function showIcon(icon) {
 	icon.style.display = "block";
 }
+function hideCancelInputIcon(sectionNo) {
+	CANCEL_INPUT_ICONS[sectionNo].style.display = "none";
+}
+function showCancelInputIcon(sectionNo) {
+	CANCEL_INPUT_ICONS[sectionNo].style.display = "block";
+}
 function showDetails(resultNumber) {
-	
 	clearPage(0);
 	unBlank(4);
 	hideIcon(cancel);
@@ -342,3 +370,4 @@ function formatTime(time) {
 	if (time[1] < 10) time[1] = "0" + time[1];
 	return time;
 }
+
