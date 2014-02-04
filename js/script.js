@@ -254,11 +254,11 @@ function loadConnection(data, resultPointer) {
 	duration = duration[0] + ":" + duration[1];
 
 	if (transfers == 0)
-		transfers = "no transfers";
+		transfers = "";
 	if (transfers == 1)
-		transfers = "1 transfer";
+		transfers = "1 change";
 	if (transfers > 1)
-		transfers += " transfers ";
+		transfers += " changes ";
 
 	overview_section.children[resultPointer].children[0].innerHTML = dep_time + " - " + arr_time;
 	overview_section.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
@@ -299,14 +299,14 @@ function goBack() {
 	showIcon(cancel);
 	hideSpinner();
 }
-function extractTime (timestamp) {
+function extractTime(timestamp) {
 	// 00d10:20:00
 	var all = timestamp.split("d");
 	var time = all[1].split(":");
 	time[0] = parseInt(time[0]);
 	time[1] = parseInt(time[1]);
 	time[2] = parseInt(all[0]);
-	return time;					// mins, hours, days 
+	return time;					// hours, mins, days 
 }
 function calculateWaitingTime(timepstamp1, timepstamp2) {
 	var time1 = extractTime(timestamp1);
@@ -336,4 +336,8 @@ function calculateWaitingTime(timepstamp1, timepstamp2) {
 		waitTime = firstDay + fullDays + lastDay;
 	}
 	return waitTime;
+}
+function formatTime(time) {
+	if (time[0] < 10) time[0] = "0" + time[0];
+	if (time[1] < 10) time[1] = "0" + time[1];
 }
