@@ -299,3 +299,41 @@ function goBack() {
 	showIcon(cancel);
 	hideSpinner();
 }
+function extractTime (timestamp) {
+	// 00d10:20:00
+	var all = timestamp.split("d");
+	var time = all[1].split(":");
+	time[0] = parseInt(time[0]);
+	time[1] = parseInt(time[1]);
+	time[2] = parseInt(all[0]);
+	return time;					// mins, hours, days 
+}
+function calculateWaitingTime(timepstamp1, timepstamp2) {
+	var time1 = extractTime(timestamp1);
+	var time2 = extractTime(timestamp2);
+
+	var startMin  = time1[0];
+	var endMin    = time2[0];
+	var startHour = time1[1];
+	var endHour   = time2[1];
+	var startDay  = time1[2];
+	var endDay    = time2[2];
+
+	if (startDay === endDay) {
+		if (startHour === endHour) {
+			waitTime = endMin - startMin;
+		}
+		else {
+			var hourDifference = endHour - startHour;
+			waitTime = hourDifference * 60 + stopMin - startMin;
+		}
+	}
+	else {
+		var dayDifference = endDay - startDay;
+		var firstDay = (12 - startHour) * 60 - startMin;
+		var fullDays = (dayDifference - 1) * 12 * 60;
+		var lastDay = endHour * 60 + endMin;
+		waitTime = firstDay + fullDays + lastDay;
+	}
+	return waitTime;
+}
