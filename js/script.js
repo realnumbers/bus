@@ -168,11 +168,17 @@ function unBlank(current_section) {
 function autoSetTime() {
 	var currentdate = new Date();
 	console.log(currentdate);
-	//SECTION[2].children[1].value = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/"  + currentdate.getFullYear();
-  //SECTION[2].children[2].value = currentdate.getHours() + ":" + currentdate.getMinutes();
-
-	SECTION[2].children[1].value = "27/02/2014";
-  	SECTION[2].children[2].value = "13:20";
+	var day = addZero(currentdate.getDate());
+	var month = addZero(currentdate.getMonth() + 1);
+	var year = currentdate.getFullYear();
+	var hours = addZero(currentdate.getHours());
+	var minutes = addZero(currentdate.getMinutes());
+	
+	SECTION[2].children[1].value = day + "/" + month + "/"  + year;
+	SECTION[2].children[2].value = hours + ":" + minutes;
+	
+	//SECTION[2].children[1].value = "27/02/2014";
+  	//SECTION[2].children[2].value = "13:20";
 	showAllLabels();
 	selectTime(2);
 }
@@ -370,4 +376,9 @@ function formatTime(time) {
 	if (time[1] < 10) time[1] = "0" + time[1];
 	return time;
 }
-
+function addZero(number) {
+	if (number < 10) {
+		number = "0" + number;
+	}
+	return number;
+}
