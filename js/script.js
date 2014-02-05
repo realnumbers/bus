@@ -174,7 +174,7 @@ function autoSetTime() {
 	var hours = addZero(currentdate.getHours());
 	var minutes = addZero(currentdate.getMinutes());
 	
-	SECTION[2].children[1].value = day + "/" + month + "/"  + year;
+	SECTION[2].children[1].value = day + "." + month + "."  + year;
 	SECTION[2].children[2].value = hours + ":" + minutes;
 	
 	//SECTION[2].children[1].value = "27/02/2014";
@@ -183,14 +183,35 @@ function autoSetTime() {
 	selectTime(2);
 }
 function selectTime(current_section) {
+	var dateElement = SECTION[current_section].children[1];
+	var timeElement = SECTION[current_section].children[2];
+	var date = dateElement.value;
+	var time = timeElement.value;
+	var dateArray = date.split(/[\.\/\-,;:]/);
+	var timeArray = time.split(/\D/);
+	
+	console.log("date elem. 1: " + dateArray[0]);
+	console.log("date elem. 2: " + dateArray[1]);
+	console.log("date elem. 3: " + dateArray[2]);
+	
+	var correctDateArray = formatDate(dateArray);
+	var day = addZero(correctDateArray[0]);
+	var month = addZero(correctDateArray[1]);
+	var year = correctDateArray[2];
+	
+	var correctTimeArray = formatTime(timeArray);
+	var hours = correctTimeArray[0];
+	var minutes = correctTimeArray[1];
+	/*
 	var date_element = SECTION[current_section].children[1];
 	var date = date_element.value;
 	var time_element = SECTION[current_section].children[2];
 	var time = time_element.value;
-	
-	if (date_element.validity.valid && time_element.validity.valid){ 
-		SECTION[current_section].children[0].children[1].innerHTML = date + ", ";
-		SECTION[current_section].children[0].children[2].innerHTML = time;
+	*/
+	if (dateElement.validity.valid && timeElement.validity.valid){ 
+		SECTION[current_section].children[0].children[1].innerHTML = day + "." + month + "." + year + ", ";
+		SECTION[current_section].children[0].children[2].innerHTML = hours + ":" + minutes;
+		hideCancelInputIcon(current_section);
 		makeBlank(current_section);
 		showAllLabels();
 		getRoute(date,time);
@@ -371,14 +392,35 @@ function calculateWaitingTime(timepstamp1, timepstamp2) {
 	}
 	return waitTime;
 }
-function formatTime(time) {
-	if (time[0] < 10) time[0] = "0" + time[0];
-	if (time[1] < 10) time[1] = "0" + time[1];
-	return time;
-}
 function addZero(number) {
-	if (number < 10) {
+	string = number.toString();
+	if (number < 10 && string.substring(0,1) != "0") {
 		number = "0" + number;
 	}
 	return number;
+}
+function formatTime(time) {
+	string1 = time[0].toString();
+	string2 = time[1].toString();
+	if (time[0] < 10 && string1.substring(0,1) != "0") time[0] = "0" + time[0];
+	if (time[1] < 10 && string2.substring(0,1) != "0") time[1] = "0" + time[1];
+	return time;
+}
+function formatDate(date) {
+	var yearPosition;
+	for (var i = 0; i < 3; i++) {
+		if (/201\d/.test(date[i])) {
+			yearPosition = i;
+		}
+	}
+	console.log("Year is in position " + (yearPosition + 1));
+	if (yearPosition != 2) {
+		var tmp = date[2];
+		date[2] = date[yearPosition];
+		date[yearPosition] = tmp;
+	}
+	console.log("day: " + date[0]);
+	console.log("month: " + date[1]);
+	console.log("year: " + date[2]);
+	return date;
 }
