@@ -400,7 +400,7 @@ function calculateWaitingTime(timepstamp1, timepstamp2) {
 }
 function addZero(number) {
 	string = number.toString();
-	if (number < 10 && string.substring(0,1) != "0") {
+	if ((number < 10 && string.substring(0,1) != "0") || (string.length === 1)) {
 		number = "0" + number;
 	}
 	return number;
@@ -408,8 +408,11 @@ function addZero(number) {
 function formatTime(time) {
 	string1 = time[0].toString();
 	string2 = time[1].toString();
-	if (time[0] < 10 && string1.substring(0,1) != "0") time[0] = "0" + time[0];
-	if (time[1] < 10 && string2.substring(0,1) != "0") time[1] = "0" + time[1];
+	console.log("String1 length: " + string1.length + "     String2 length: " + string2.length)
+	if ((time[0] < 10 && string1.substring(0,1) != "0") || string1.length === 1) time[0] = "0" + time[0];
+	if ((time[1] < 10 && string2.substring(0,1) != "0") || string2.length === 1) time[1] = "0" + time[1];
+	console.log(time[0])
+	console.log(time[1])
 	return time;
 }
 function formatDate(date) {

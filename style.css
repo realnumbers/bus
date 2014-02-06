@@ -16,8 +16,6 @@ body {
   line-height: 1.5;
   color: #454441;
   background-color: #eee;
-  width: 100%;
-  height: 100%;
 }
 @media (min-width: 700px) {
   body {
@@ -27,6 +25,11 @@ body {
 @media (min-width: 1200px) {
   body {
     font-size: 20px;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    font-size: 24px;
   }
 }
 
