@@ -1,3 +1,5 @@
+var SEARCH = document.getElementById("search");
+var DETAILS = document.getElementById("details");
 var SECTION = document.getElementsByClassName("js-section");
 var back = document.getElementById("back");
 var cancel = document.getElementById("cancel");
@@ -215,8 +217,6 @@ function selectTime(current_section) {
 		makeBlank(current_section);
 		showAllLabels();
 		getRoute(date,time);
-		time_element.value = "";
-		date_element.value = "";
 	}
 }
 function addClass(current_section) {
@@ -338,23 +338,27 @@ function showCancelInputIcon(sectionNo) {
 	CANCEL_INPUT_ICONS[sectionNo].style.display = "block";
 }
 function showDetails(resultNumber) {
-	clearPage(0);
+	//clearPage(0);
 	unBlank(4);
-	SECTION[4].className += " details-section-visible";
+	
+	$(SEARCH).removeClass("search-visible");
+	$(SEARCH).addClass("search-hidden");
+	$(DETAILS).removeClass("details-hidden");
+	$(DETAILS).addClass("details-visible");
+	
 	hideIcon(cancel);
 	showIcon(back);
 }
 function goBack() {
-	clearPage(0);
-	unBlank(0);
-	unBlank(1);
-	unBlank(2);
-	unBlank(3);
+	$(DETAILS).removeClass("details-visible");
+	$(DETAILS).addClass("details-hidden");
+	$(SEARCH).removeClass("search-hidden");
+	$(SEARCH).addClass("search-visible");
+	
 	showAllLabels();
 	hideIcon(back);
 	showIcon(cancel);
 	hideSpinner();
-	$(SECTION[4]).removeClass("details-section-visible");
 }
 function extractTime(timestamp) {
 	// 00d10:20:00

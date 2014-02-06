@@ -12,12 +12,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-}
-body {
   font-size: 16px;
   line-height: 1.5;
   color: #454441;
   background-color: #eee;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 @media (min-width: 700px) {
   body {
@@ -81,10 +82,14 @@ a:focus {
 /* GENERIC */
 
 .container {
+  position: relative;
   padding: 0 1em 1em;
-  width: 97%;
+  //padding: 0 1em 1em;
   margin: 0 auto;
-  overflow: hidden;
+  //overflow: hidden;
+}
+.container {
+  width: 97%;
 }
 @media (min-width: 450px) {
   .container {
@@ -103,6 +108,34 @@ a:focus {
 }
 .active-section {
   margin-bottom: 2.5em;
+}
+.main-section {
+  position: absolute;
+  //top: 0;
+  //left: 0;
+  //right: 0;
+}
+.search-visible {
+    right: 0;
+    -moz-transition: right 0.2s ease-out 0.2s;
+    -webkit-transition: right 0.2s ease-out 0.2s;
+}
+.search-hidden {
+    right: 200%;
+    -moz-transition: right 0.2s ease-in;
+    -webkit-transition: right 0.2s ease-in;
+}
+.details-hidden {
+  left: 200%;
+  //margin-left: 200%;
+  -moz-transition: left 0.2s ease-in;
+  -webkit-transition: left 0.2s ease-in;
+}
+.details-visible {
+  left: 1em;
+  -moz-transition: left 0.2s ease-out 0.2s;
+  //margin-left: 0;
+  -webkit-transition: left 0.2s ease-out 0.2s;
 }
 .text-element {
   display: inline-block;
@@ -237,15 +270,6 @@ a:focus {
 
 /* ROUTE DETAILS */
 
-.details-section {
-  width: 100% !important;
-  margin-left: 200%;
-}
-.details-section-visible {
-  margin-left: 0;
-  -moz-transition: margin 0.5s ease-out;
-  -webkit-transition: margin 0.5s ease-out;
-}
 .left-column {
   display: inline-block;
   width: 3em;
