@@ -117,7 +117,7 @@ function makeBlank(current_section) {
 			SECTION[current_section].children[i].style.display = "none";
 			i++;
 	}
-	SECTION[current_section].className = "js-section";
+	$(SECTION[current_section]).removeClass("active-section"); //className = "js-section";
 }
 function activateInput(current_section) {
 	if (queryComplete) {
@@ -223,7 +223,7 @@ function addClass(current_section) {
 	SECTION[current_section].className += " active-section";
 }
 function removeClass(current_section) {
-	SECTION[current_section].className = "js-section";
+	$(SECTION[current_section]).removeClass("active-section");
 }
 function getRoute(date, time) {
 	date = date.replace(/\//g, ":");
@@ -340,6 +340,7 @@ function showCancelInputIcon(sectionNo) {
 function showDetails(resultNumber) {
 	clearPage(0);
 	unBlank(4);
+	SECTION[4].className += " details-section-visible";
 	hideIcon(cancel);
 	showIcon(back);
 }
@@ -353,6 +354,7 @@ function goBack() {
 	hideIcon(back);
 	showIcon(cancel);
 	hideSpinner();
+	$(SECTION[4]).removeClass("details-section-visible");
 }
 function extractTime(timestamp) {
 	// 00d10:20:00
