@@ -111,9 +111,11 @@ a:focus {
 }
 .main-section {
   position: absolute;
+  padding: 0 1em;
   //top: 0;
   //left: 0;
   //right: 0;
+  width: 100%;
 }
 .search-visible {
     right: 0;
