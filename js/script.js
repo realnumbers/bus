@@ -16,6 +16,7 @@ if (navigator.language === "de") {
 		lang = "de";
 }
 var queryComplete = false;
+var details;
 
 clearPage(1);
 hideIcon(back);
@@ -338,9 +339,10 @@ function showCancelInputIcon(sectionNo) {
 	CANCEL_INPUT_ICONS[sectionNo].style.display = "block";
 }
 function showDetails(resultNumber) {
+	details = true;
 	//clearPage(0);
+	DETAILS.style.display = "block";
 	unBlank(4);
-	
 	$(SEARCH).removeClass("search-visible");
 	$(SEARCH).addClass("search-hidden");
 	$(DETAILS).removeClass("details-hidden");
@@ -350,6 +352,8 @@ function showDetails(resultNumber) {
 	showIcon(back);
 }
 function goBack() {
+	details = false;
+	SEARCH.style.display = "block";
 	$(DETAILS).removeClass("details-visible");
 	$(DETAILS).addClass("details-hidden");
 	$(SEARCH).removeClass("search-hidden");
@@ -360,6 +364,11 @@ function goBack() {
 	showIcon(cancel);
 	hideSpinner();
 }
+$(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+	if (!details) {
+		DETAILS.style.display = "none";
+	}
+});
 function extractTime(timestamp) {
 	// 00d10:20:00
 	var all = timestamp.split("d");

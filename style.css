@@ -4,7 +4,7 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Roboto Condensed", Helvetica, Segoe, Arial, sans-serif;
+  font-family: "Roboto Condensed", Roboto, Helvetica, Segoe, Arial, sans-serif;
   color: #333;
 }
 
@@ -95,12 +95,12 @@ a:focus {
 }
 @media (min-width: 450px) {
   .container {
-    width: 90%;
+    width: 80%;
   }
 }
 @media (min-width: 900px) {
   .container {
-    width: 75%;
+    width: 65%;
   }
 }
 @media (min-width: 1100px) {
@@ -122,15 +122,14 @@ a:focus {
   width: 100%;
 }
 .search-visible {
-  right: 0;
-  opacity: 100%;
-  transition: right 0.1s ease-out 0.1s;
-  -webkit-transition: right 0.1s ease-out 0.1s;
+  left: 0;
+  transition: left 0.1s ease-out 0.1s;
+  -webkit-transition: left 0.1s ease-out 0.1s;
 }
 .search-hidden {
-  right: 200%;
-  transition: right 0.1s ease-in;
-  -webkit-transition: right 0.1s ease-in;
+  left: -200%;
+  transition: left 0.1s ease-in;
+  -webkit-transition: left 0.1s ease-in;
 }
 .details-hidden {
   left: 200%;
@@ -138,7 +137,7 @@ a:focus {
   -webkit-transition: left 0.1s ease-in;
 }
 .details-visible {
-  left: 1em;
+  left: 0;
   transition: left 0.1s ease-out 0.1s;
   -webkit-transition: left 0.1s ease-out 0.1s;
 }
