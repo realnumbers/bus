@@ -95,7 +95,7 @@ a:focus {
 }
 @media (min-width: 450px) {
   .container {
-    width: 80%;
+    width: 85%;
   }
 }
 @media (min-width: 900px) {
@@ -118,28 +118,47 @@ a:focus {
 }
 .main-section {
   position: absolute;
+  left: 0;
   padding: 0 1em;
   width: 100%;
 }
 .search-visible {
   left: 0;
-  transition: left 0.1s ease-out 0.1s;
-  -webkit-transition: left 0.1s ease-out 0.1s;
+  transition: left 0.3s ease-out 0.03s;
+  -webkit-transition: left 0.3s ease-out 0.03s;
 }
 .search-hidden {
   left: -200%;
-  transition: left 0.1s ease-in;
-  -webkit-transition: left 0.1s ease-in;
+  transition: left 0.3s ease-out;
+  -webkit-transition: left 0.3s ease-out;
 }
 .details-hidden {
   left: 200%;
-  transition: left 0.1s ease-in;
-  -webkit-transition: left 0.1s ease-in;
+  transition: left 0.3s ease-out;
+  -webkit-transition: left 0.3s ease-out;
 }
 .details-visible {
   left: 0;
-  transition: left 0.1s ease-out 0.1s;
-  -webkit-transition: left 0.1s ease-out 0.1s;
+  transition: left 0.3s ease-out 0.03s;
+  -webkit-transition: left 0.3s ease-out 0.03s;
+}
+@media (min-width: 1000px) {
+  .search-visible {
+    transition: left 0.15s ease-out 0.01s;
+    -webkit-transition: left 0.15s ease-out 0.01s;
+  }
+  .search-hidden {
+    transition: left 0.15s ease-out;
+    -webkit-transition: left 0.15s ease-out;
+  }
+  .details-hidden {
+    transition: left 0.15s ease-out;
+    -webkit-transition: left 0.15s ease-out;
+  }
+  .details-visible {
+    transition: left 0.15s ease-out 0.01s;
+    -webkit-transition: left 0.15s ease-out 0.01s;
+  }
 }
 .text-element {
   display: inline-block;
@@ -170,13 +189,14 @@ a:focus {
 /* HEADER */
 
 .topbar { 
+  position: relative;
   background-color: none;
   height: 4em;
   width: 100%;
 }
 .icon {
   /* vertical centering */
-  position: relative;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   
@@ -184,10 +204,10 @@ a:focus {
   cursor: pointer;
 }
 .right {
-  float: right;
+  right: 0;
 }
 .left {
-  left: left;
+  left: 0;
 }
 @media (min-width: 450px) {
   .topbar {

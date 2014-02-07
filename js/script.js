@@ -1,8 +1,8 @@
 var SEARCH = document.getElementById("search");
 var DETAILS = document.getElementById("details");
 var SECTION = document.getElementsByClassName("js-section");
-var back = document.getElementById("back");
-var cancel = document.getElementById("cancel");
+var BACK = document.getElementById("back");
+var CANCEL = document.getElementById("cancel");
 var CANCEL_INPUT_ICONS = document.getElementsByClassName("cancel-input");
 
 var lang = "it";
@@ -16,11 +16,11 @@ if (navigator.language === "de") {
 		lang = "de";
 }
 var queryComplete = false;
-var details;
+var details = false;
 
 clearPage(1);
-hideIcon(back);
-hideIcon(cancel);
+hideIcon(BACK);
+hideIcon(CANCEL);
 hideCancelInputIcon(0);
 hideCancelInputIcon(1);
 hideCancelInputIcon(2);
@@ -247,7 +247,7 @@ function getRoute(date, time) {
 		jsonpCallback: "Callback",
 		url: url,
 	 	success: function(data) {
-			showIcon(cancel);
+			showIcon(CANCEL);
 			queryComplete = true;
 			
 			console.log(data);
@@ -317,7 +317,7 @@ function loadConnection(data, resultPointer) {
 }
 function cancelQuery() {
 	queryComplete = false;
-	hideIcon(cancel);
+	hideIcon(CANCEL);
 	clearPage(0);
 	unBlank(0);
 	SECTION[0].children[0].children[1].innerHTML = "";
@@ -342,31 +342,40 @@ function showDetails(resultNumber) {
 	details = true;
 	//clearPage(0);
 	DETAILS.style.display = "block";
+	showIcon(BACK);
 	unBlank(4);
 	$(SEARCH).removeClass("search-visible");
 	$(SEARCH).addClass("search-hidden");
 	$(DETAILS).removeClass("details-hidden");
 	$(DETAILS).addClass("details-visible");
 	
-	hideIcon(cancel);
-	showIcon(back);
+	$(CANCEL).removeClass("search-visible");
+	$(CANCEL).addClass("search-hidden");
+	$(BACK).removeClass("details-hidden");
+	$(BACK).addClass("details-visible");
 }
 function goBack() {
 	details = false;
 	SEARCH.style.display = "block";
+	showIcon(CANCEL);
+	
 	$(DETAILS).removeClass("details-visible");
 	$(DETAILS).addClass("details-hidden");
 	$(SEARCH).removeClass("search-hidden");
 	$(SEARCH).addClass("search-visible");
 	
+	$(BACK).removeClass("details-visible");
+	$(BACK).addClass("details-hidden");
+	$(CANCEL).removeClass("search-hidden");
+	$(CANCEL).addClass("search-visible");
+	
 	showAllLabels();
-	hideIcon(back);
-	showIcon(cancel);
 	hideSpinner();
 }
 $(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
 	if (!details) {
 		DETAILS.style.display = "none";
+		BACK.style.display = "none";
 	}
 });
 function extractTime(timestamp) {
