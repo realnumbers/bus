@@ -380,6 +380,9 @@ function goBack() {
 	$(CANCEL).removeClass("search-hidden");
 	$(CANCEL).addClass("search-visible");
 	
+	hideCancelInputIcon(0);
+	hideCancelInputIcon(1);
+	hideCancelInputIcon(2);
 	showAllLabels();
 	hideSpinner();
 }
