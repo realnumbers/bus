@@ -168,6 +168,16 @@ function unBlank(current_section) {
 		SECTION[current_section].children[1].focus();
 	addClass(current_section);
 }
+function makeVisible(current_section) {
+	SECTION[current_section].style.display = "block";
+	i = 0;
+	while (i < SECTION[current_section].children.length) {
+		SECTION[current_section].children[i].style.display = "block";
+		i++;
+	}
+	//if (SECTION[current_section].children[1] != null) SECTION[current_section].children[1].focus();
+	addClass(current_section);
+}
 function autoSetTime() {
 	var currentdate = new Date();
 	console.log(currentdate);
@@ -344,6 +354,7 @@ function showDetails(resultNumber) {
 	DETAILS.style.display = "block";
 	showIcon(BACK);
 	unBlank(4);
+	//makeVisible(4);
 	$(SEARCH).removeClass("search-visible");
 	$(SEARCH).addClass("search-hidden");
 	$(DETAILS).removeClass("details-hidden");
