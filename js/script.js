@@ -321,7 +321,13 @@ function loadConnection(data, resultPointer) {
 		transfers += " changes ";
 
 	overview_section.children[resultPointer].children[0].innerHTML = dep_time + " - " + arr_time;
-	overview_section.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
+	if (transfers == 0) {
+		overview_section.children[resultPointer].children[1].innerHTML = duration;
+	}
+	else {
+		overview_section.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
+	}
+	
 	
 	hideSpinner();
 }
