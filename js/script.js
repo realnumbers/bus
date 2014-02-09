@@ -243,6 +243,9 @@ function getRoute(date, time) {
 	time = time.replace(":", "");
 	count_date = date[2].split("");
 	unBlank(3);
+	hideResultList();
+	//alert("now hiding results");
+	
 	if (count_date.length == 2) {
 		date[2] = "20" + date[2];
 	}
@@ -296,19 +299,19 @@ function nextData(data, requestId, count) {
 }
 function loadConnection(data, resultPointer) {
 	var con = data.ConnectionList.Connection[0].Overview;
-	var arr_time = con.Arrival.BasicStop.Arr.Time;
-	var dep_time = con.Departure.BasicStop.Dep.Time;
+	var arrTime = con.Arrival.BasicStop.Arr.Time;
+	var depTime = con.Departure.BasicStop.Dep.Time;
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
-	var overview_section = SECTION[3].children[0];
+	var overviewSection = SECTION[3].children[0];
 
 	console.log(SECTION[3].children[1]);
-	arr_time = arr_time.split("d");
-	arr_time = arr_time[1].split(":");
-	arr_time = arr_time[0] + ":" + arr_time[1];
-	dep_time = dep_time.split("d");
-	dep_time = dep_time[1].split(":");
-	dep_time = dep_time[0] + ":" + dep_time[1];
+	arrTime = arrTime.split("d");
+	arrTime = arrTime[1].split(":");
+	arrTime = arrTime[0] + ":" + arrTime[1];
+	depTime = depTime.split("d");
+	depTime = depTime[1].split(":");
+	depTime = depTime[0] + ":" + depTime[1];
 	duration = duration.split("d");
 	duration = duration[1].split(":");
 	duration = duration[0] + ":" + duration[1];
@@ -319,15 +322,16 @@ function loadConnection(data, resultPointer) {
 		transfers = "1 change";
 	if (transfers > 1)
 		transfers += " changes ";
-
-	overview_section.children[resultPointer].children[0].innerHTML = dep_time + " - " + arr_time;
+	
+	overviewSection.children[resultPointer].style.display = "block";
+	
+	overviewSection.children[resultPointer].children[0].innerHTML = depTime + " - " + arrTime;
 	if (transfers == 0) {
-		overview_section.children[resultPointer].children[1].innerHTML = duration;
+		overviewSection.children[resultPointer].children[1].innerHTML = duration;
 	}
 	else {
-		overview_section.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
+		overviewSection.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
 	}
-	
 	
 	hideSpinner();
 }
@@ -339,8 +343,20 @@ function cancelQuery() {
 	SECTION[0].children[0].children[1].innerHTML = "";
 	SECTION[0].children[0].children[2].innerHTML = "";
 }
+function hideResultList() {
+	var list = SECTION[3].children[0].children;
+	//alert("length:" + SECTION[3].children[0].children.length);
+	for (var i = 0; i < list.length; i++) {
+		//alert(i);
+		list[i].style.display = "none";
+		//alert(list[i].innerHTML);
+	}
+}
 function hideSpinner() {
 	SECTION[3].children[1].style.display = "none";
+}
+function showSpinner() {
+	SECTION[3].children[1].style.display = "block";
 }
 function hideIcon(icon) {
 	icon.style.display = "none";
