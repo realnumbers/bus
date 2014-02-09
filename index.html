@@ -21,7 +21,7 @@
       
       <header class="topbar">
         <img class="icon right" id="menu" src="img/menu.svg" onclick="menu()" alt="Menu">
-        <img class="icon details-hidden" id="back" src="img/back.svg" onclick="goBack()" alt="Back">
+        <img class="icon details-hidden" id="back" src="img/back.svg" onClick="goBack()" alt="Back">
         <img class="icon search-visible" id="cancel" src="img/x.svg" onclick="cancelQuery()" alt="Cancel">
       </header>
       
@@ -32,7 +32,7 @@
             <h3 class="blue label text-element" onclick="activateInput(0)">From:</h3>
             <p class="line-big" onclick="activateInput(0)"></p>
             <p class="line-small" onclick="activateInput(0)"></p>
-            <img class="cancel-input" id="cancelInput" src="img/x.svg" onclick="deactivateLabel(0)" alt="Cancel input">
+            <img class="cancel-input" id="cancelInput" src="img/x-small.svg" onclick="deactivateLabel(0)" alt="Cancel input">
           </div>
           
           <input class="input js-input" type="text" placeholder="Start location..." autofocus oninput="autocom(0)">
@@ -65,7 +65,7 @@
             <h3 class="blue label text-element" onclick="activateInput(1)">To:</h3>
             <p class="line-big" onclick="activateInput(1)"></p>
             <p class="line-small" onclick="activateInput(1)"></p>
-            <img class="cancel-input" id="cancelInput" src="img/x.svg" onclick="deactivateLabel(1)" alt="Cancel input">
+            <img class="cancel-input" id="cancelInput" src="img/x-small.svg" onclick="deactivateLabel(1)" alt="Cancel input">
           </div>
           
           <input class="input js-input" type="text" placeholder="Destination..." oninput="autocom(1)">
@@ -97,7 +97,7 @@
             <h3 class="blue label text-element" onclick="activateInput(2)">When:</h3>
             <p class="line-big" onclick="activateInput(2)"></p>
             <p class="line-small" onclick="activateInput(2)"></p>
-            <img class="cancel-input" id="cancelInput" src="img/x.svg" onclick="deactivateLabel(2)" alt="Cancel input">
+            <img class="cancel-input" id="cancelInput" src="img/x-small.svg" onclick="deactivateLabel(2)" alt="Cancel input">
           </div>
           
           <input class="input" id="date-input" type="text" placeholder="21.07.14" pattern="(\d\d.\d\d.(201\d|1[4,9]))|((201\d|1[4,9]).\d\d.\d\d)" >

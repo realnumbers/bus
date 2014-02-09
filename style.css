@@ -226,8 +226,10 @@ a:focus {
   margin: 0.1em 0 0;
 }
 .chosen-data {
-  cursor: pointer;
   width: 100%;
+}
+.chosen-data > * {
+  cursor: pointer;
 }
 .label {
   display: inline-block;
@@ -263,8 +265,9 @@ a:focus {
   color: #666;
 }
 .cancel-input {
-  height: 2em;
   float: right;
+  height: 1.6em;
+  margin-top: 0.2em;
 }
 
 /* SEARCH RESULTS */
