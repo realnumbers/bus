@@ -25,6 +25,11 @@ hideCancelInputIcon(0);
 hideCancelInputIcon(1);
 hideCancelInputIcon(2);
 
+// Eliminates 300ms click delay on mobile 
+window.addEventListener('load', function() {
+     new FastClick(document.body);
+}, false);
+
 function clearPage(startSection) {
 	var i = startSection;
 	while (i < SECTION.length) {
@@ -38,13 +43,13 @@ function autocom(current_section) {
 	var children = SECTION[current_section].children;
 	var input_string = children[1].value;
 
-	i = 2
+	i = 2;
 	while (i < children.length) {
 		children[i].children[0].innerHTML = "";
 		children[i].children[1].innerHTML = "";
 		i++;
 	}
-	if (input_string != "") {
+	if (input_string !== "") {
 		children[2].children[1].innerHTML = "Couldn't find any matches...";
 		children[2].children[1].className += " no-matches";
 		input_string = input_string.split(" ");
@@ -55,7 +60,7 @@ function autocom(current_section) {
 				var pattern = new RegExp(item, "i");
 				var found_match = element.label.match(pattern);
 
-				if (found_match != null) {
+				if (found_match !== null) {
 						return true;
 				}
 				else{
@@ -164,7 +169,7 @@ function unBlank(current_section) {
 		SECTION[current_section].children[i].style.display = "block";
 		i++;
 	}
-	if (SECTION[current_section].children[1] != null)
+	if (SECTION[current_section].children[1] !== null)
 		SECTION[current_section].children[1].focus();
 	addClass(current_section);
 }
@@ -175,7 +180,7 @@ function makeVisible(current_section) {
 		SECTION[current_section].children[i].style.display = "block";
 		i++;
 	}
-	//if (SECTION[current_section].children[1] != null) SECTION[current_section].children[1].focus();
+	//if (SECTION[current_section].children[1] !== null) SECTION[current_section].children[1].focus();
 	addClass(current_section);
 }
 function autoSetTime() {
@@ -244,7 +249,6 @@ function getRoute(date, time) {
 	count_date = date[2].split("");
 	unBlank(3);
 	hideResultList();
-	//alert("now hiding results");
 	
 	if (count_date.length == 2) {
 		date[2] = "20" + date[2];
@@ -262,6 +266,7 @@ function getRoute(date, time) {
 	 	success: function(data) {
 			showIcon(CANCEL);
 			queryComplete = true;
+			hideKeyboard();
 			
 			console.log(data);
 			loadConnection(data, 0);
@@ -414,6 +419,21 @@ $(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend M
 		BACK.style.display = "none";
 	}
 });
+function hideKeyboard() {
+	$(document.activeElement).filter(':input:focus').blur();
+}
+/*
+function hideKeyboard(element) {
+    element.attr('readonly', 'readonly'); // Force keyboard to hide on input field.
+    element.attr('disabled', 'true'); // Force keyboard to hide on textarea field.
+    setTimeout(function() {
+        element.blur();  //actually close the keyboard
+        // Remove readonly attribute after keyboard is hidden.
+        element.removeAttr('readonly');
+        element.removeAttr('disabled');
+    }, 100);
+}
+*/
 function extractTime(timestamp) {
 	// 00d10:20:00
 	var all = timestamp.split("d");
