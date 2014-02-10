@@ -199,6 +199,7 @@ a:focus {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
   
   height: 2.35em;
   cursor: pointer;
