@@ -248,6 +248,20 @@ a:focus {
   border: none;
   background-color: #fff;
 }
+.clearfix {
+  overflow: auto;
+}
+@media (min-width: 480px) {
+  .input.date {
+    margin-right: 3%;
+    width: 66%;
+    float: left;
+  }
+  .input.time {
+    width: 30%;
+    float: right;
+  }
+}
 .input::-moz-selection {
     background-color: #1e85fe;
     color: white;
@@ -315,7 +329,7 @@ a:focus {
 .settings-title {
   font-size: 3.2em;
   font-weight: 200;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 .settings-element {
   margin: 1em 0;

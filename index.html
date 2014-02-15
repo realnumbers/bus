@@ -91,7 +91,7 @@
 		      </div>
         </section>
         
-        <section class="js-section">
+        <section class="js-section clearfix">
         
           <div class="text-element chosen-data">
             <h3 class="blue label text-element" onclick="activateInput(2)">When:</h3>
@@ -100,8 +100,9 @@
             <img class="cancel-input" id="cancelInput" src="img/x-small.svg" onclick="deactivateLabel(2)" alt="Cancel input">
           </div>
           
-          <input class="input" id="date-input" type="text" placeholder="21.07.14" pattern="(\d\d.\d\d.(201\d|1[4,9]))|((201\d|1[4,9]).\d\d.\d\d)" >
-		      <input class="input" id="time-input" type="time" placeholder="16:04" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" onchange="selectTime(2)">
+          <input class="input date" id="date-input" type="text" placeholder="21.07.14" pattern="(\d\d.\d\d.(201\d|1[4,9]))|((201\d|1[4,9]).\d\d.\d\d)" >
+		      <input class="input time" id="time-input" type="time" placeholder="16:04" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" onchange="selectTime(2)">
+		      
 		      
         </section>
         
