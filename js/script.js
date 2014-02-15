@@ -507,3 +507,6 @@ function formatDate(date) {
 	console.log("year: " + date[2]);
 	return date;
 }
+function resendQuery() {
+	selectTime(2);
+}
