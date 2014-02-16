@@ -1,10 +1,10 @@
 var SEARCH = document.getElementById("search");
 var DETAILS = document.getElementById("details");
 var SECTION = document.getElementsByClassName("js-section");
+var con_data = new Array(5);
 var BACK = document.getElementById("back");
 var CANCEL = document.getElementById("cancel");
 var CANCEL_INPUT_ICONS = document.getElementsByClassName("cancel-input");
-
 var lang = "it";
 var form_stop;
 var to_stop;
@@ -268,11 +268,11 @@ function getRoute(date, time) {
 			queryComplete = true;
 			hideKeyboard();
 			
-			console.log(data);
+			//console.log(data);
 			loadConnection(data, 0);
 			
 			requestId = data.ConResCtxt[0];
-			console.log(requestId);
+			//console.log(requestId);
 			
 			requestId = requestId.split("#")[0];
 			nextData(data, requestId, 1);
@@ -281,22 +281,22 @@ function getRoute(date, time) {
 }
 function nextData(data, requestId, count) {
 	if (count < 5) {
-		console.log(requestId);
+		//console.log(requestId);
 
 		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
 		nextUrl = nextUrl + requestId;
 		nextUrl = nextUrl + "%23";
 		nextUrl = nextUrl + count;
 	
-		console.log(nextUrl);
+		//console.log(nextUrl);
 		$.ajax({
 			dataType: "jsonp",
 			jsonpCallback: "Callback",
 			url: nextUrl,
 		 	success: function(data) {
-				console.log(data);
+				//console.log(data);
 				loadConnection(data, count);
-				console.log(requestId);
+				//console.log(requestId);
 				nextData(data, requestId, parseInt(count) + 1);
 			}
 		});		
@@ -308,6 +308,8 @@ function loadConnection(data, resultPointer) {
 	var depTime = con.Departure.BasicStop.Dep.Time;
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
+	con_data[resultPointer]	= data;
+	//console.log(con_data);
 	var overviewSection = SECTION[3].children[0];
 
 	console.log(SECTION[3].children[1]);
@@ -369,6 +371,10 @@ function hideIcon(icon) {
 function showIcon(icon) {
 	icon.style.display = "block";
 }
+function splitBusstopName(busstopName) {
+	busstopName = busstopName.split("(")[1].split(") ");
+	return busstopName;
+}
 function hideCancelInputIcon(sectionNo) {
 	CANCEL_INPUT_ICONS[sectionNo].style.display = "none";
 }
@@ -381,6 +387,85 @@ function showDetails(resultNumber) {
 	DETAILS.style.display = "block";
 	showIcon(BACK);
 	unBlank(4);
+	hideIcon(CANCEL);
+	showIcon(BACK);
+	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
+	var i = 0;
+	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
+	var W_BLOCK = document.getElementsByClassName("intermediate-block");
+	var walkTime = "";
+	var waitTime = "";
+	var lineNo;
+	var stops;
+	var arrBusstop;
+	var depBusstop;
+	var dep;
+	var arr;
+	var depTime;
+	var arrTime;
+	var nextDepTime;
+	console.log(connection);
+	while (i < TRANS_BLOCK.length) {
+		TRANS_BLOCK[i].style.display = "none";
+
+		//console.log(i);
+			W_BLOCK[i].style.display = "none";
+		i++;
+	}
+	i = 0;
+	while (i < connection.length) {
+		walkTime = "";
+		console.log(i);
+		if (connection[i].Walk.length > 0) {
+			console.log("Walk");
+			console.log(connection[i].Walk);
+			walkTime = "alk " + timeString(calculateWaitingTime("00d00:00:00:00", connection[i].Walk[0].Duration.Time));
+			if (connection[i].Journey.length > 0){
+				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
+				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
+			}
+			W_BLOCK[i].style.display = "block";
+		}	
+		else if (connection[i].Journey.length > 0) {
+			lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
+			stops = connection[i].Journey[0].PassList.BasicStop;
+			arrBusstop = stops[stops.length -1].Station.name.split(" - ");
+			depBusstop = stops[0].Station.name.split(" - ");
+			dep = stops[0].Dep.Time;
+			arr = stops[stops.length - 1].Arr.Time;
+			depTime = extractTime(dep);
+			arrTime = extractTime(arr);
+			TRANS_BLOCK[i].children[0].children[0].innerHTML = depTime[0] + ":" + depTime[1];
+			TRANS_BLOCK[i].children[2].children[0].innerHTML = arrTime[0] + ":" + arrTime[1];
+			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
+			console.log(connection);
+			if (lang === "de") {
+				arrBusstop = splitBusstopName(arrBusstop[1]);
+				depBusstop = splitBusstopName(depBusstop[1]);
+			}
+			else {
+				arrBusstop = splitBusstopName(arrBusstop[0]);
+				depBusstop = splitBusstopName(depBusstop[0]);
+			}
+			TRANS_BLOCK[i].children[0].children[1].children[0].innerHTML  = depBusstop[1] + ", ";
+			TRANS_BLOCK[i].children[0].children[1].children[1].innerHTML  = depBusstop[0];
+			TRANS_BLOCK[i].children[2].children[1].children[0].innerHTML  = arrBusstop[1] + ", ";
+			TRANS_BLOCK[i].children[2].children[1].children[1].innerHTML  = arrBusstop[0];
+		
+			if ((i+1) < connection.length && connection[i + 1].Journey.length > 0) {
+				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
+				console.log(nextDepTime);
+				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
+				W_BLOCK[i].style.display = "block";
+			}
+		TRANS_BLOCK[i].style.display = "block";
+		}
+		W_BLOCK[i].children[1].innerHTML = waitTime + ((waitTime != "" && walkTime != "") ? ", w" : "") + ((waitTime == "") ? "W" : "") + walkTime;
+		waitTime = "";
+		walkTime = "";
+	i++;	
+	}
+	
 	//makeVisible(4);
 	$(SEARCH).removeClass("search-visible");
 	$(SEARCH).addClass("search-hidden");
@@ -438,39 +523,61 @@ function extractTime(timestamp) {
 	// 00d10:20:00
 	var all = timestamp.split("d");
 	var time = all[1].split(":");
+	time[0] = time[0];
+	time[1] = time[1];
+	time[2] = all[0];
+	return time;					// hours, mins, days 
+}
+function extractTimeToInt (timestamp) {
+	// 00d10:20:00
+	var all = timestamp.split("d");
+	var time = all[1].split(":");
 	time[0] = parseInt(time[0]);
 	time[1] = parseInt(time[1]);
 	time[2] = parseInt(all[0]);
 	return time;					// hours, mins, days 
 }
-function calculateWaitingTime(timepstamp1, timepstamp2) {
-	var time1 = extractTime(timestamp1);
-	var time2 = extractTime(timestamp2);
+function calculateWaitingTime(timestamp1, timestamp2) {
+	var time1 = extractTimeToInt(timestamp1);
+	var time2 = extractTimeToInt(timestamp2);
 
-	var startMin  = time1[0];
-	var endMin    = time2[0];
-	var startHour = time1[1];
-	var endHour   = time2[1];
+	var startMin  = time1[1];
+	var endMin    = time2[1];
+	var startHour = time1[0];
+	var endHour   = time2[0];
 	var startDay  = time1[2];
 	var endDay    = time2[2];
-
-	if (startDay === endDay) {
-		if (startHour === endHour) {
-			waitTime = endMin - startMin;
-		}
-		else {
-			var hourDifference = endHour - startHour;
-			waitTime = hourDifference * 60 + stopMin - startMin;
-		}
-	}
-	else {
-		var dayDifference = endDay - startDay;
-		var firstDay = (12 - startHour) * 60 - startMin;
-		var fullDays = (dayDifference - 1) * 12 * 60;
-		var lastDay = endHour * 60 + endMin;
-		waitTime = firstDay + fullDays + lastDay;
-	}
+	
+	startMin += (startHour * 60 + startDay * 1440);
+	endMin += (endHour * 60 + endDay * 1440);
+	waitTime = (endMin - startMin);
 	return waitTime;
+}
+
+function timeString(waitTime) {
+	var waitTimeDays = 0;
+	var waitTimeHours = 0;
+	var waitTimeMinuts = 0;
+	var waitTimeString = "";
+	if (waitTime / 60 >= 1) {
+		if (waitTime / 1440 >= 1) {
+			waitTimeDays = parseInt(waitTime / 1440);
+		}
+		waitTimeHours = parseInt(waitTime / 60 - waitTimeDays * 1440);
+	}
+	waitTimeMinuts = waitTime - waitTimeHours * 60;
+
+	waitTimeString = "";
+	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " day" : "";
+	waitTimeString += (waitTimeDays > 1) ? "s" : "";
+	waitTimeString += (waitTimeString != "") ? ", " : "";
+	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " hour" : "";
+	waitTimeString += (waitTimeHours > 1) ? "s" : "";
+	waitTimeString += (waitTimeString != "") ? ", " : "";
+	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " minute" : "";
+	waitTimeString += (waitTimeMinuts > 1) ? "s" : "";
+
+	return waitTimeString;
 }
 function addZero(number) {
 	string = number.toString();
