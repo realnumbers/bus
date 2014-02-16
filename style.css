@@ -17,9 +17,14 @@ body {
   color: #454441;
   background-color: #eee;
 }
-@media (min-width: 700px) {
+@media (min-width: 500px) {
   body {
     font-size: 18px;
+  }
+}
+@media (min-width: 600px) {
+  body {
+    font-size: 19px;
   }
 }
 @media (min-width: 1200px) {
@@ -67,6 +72,14 @@ a:hover,
 a:focus {
   text-decoration: underline;
 }
+button, input {
+  border-radius: 0;
+  border: none;
+  box-shadow:none;
+  background-image: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     font-style: italic;
@@ -94,6 +107,11 @@ a:focus {
 @media (min-width: 450px) {
   .container {
     width: 85%;
+  }
+}
+@media (min-width: 600px) {
+  .container {
+    width: 75%;
   }
 }
 @media (min-width: 900px) {
@@ -250,8 +268,6 @@ a:focus {
   margin: 0.3em 0 0em;
   padding: 0.2em 0.3em;
   font-size: 2.2em;
-  border-radius: 0;
-  border: none;
   background-color: #fff;
 }
 .input.time {
@@ -268,11 +284,12 @@ a:focus {
   cursor: pointer;
 }
 .submit-icon {
-  height: 1.2em;
+  height: 1.1em;
+  margin-top: 0.15em;
 }
 @media (min-width: 540px) {
   .input.date {
-    width: 55%;
+    width: 54%;
     float: left;
     margin-right: 3%;
   }
@@ -285,7 +302,7 @@ a:focus {
 }
 @media (min-width: 600px) {
   .input.date {
-    width: 56%;
+    width: 54%;
   }
   .input.time {
     width: 30%;
