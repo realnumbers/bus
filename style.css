@@ -4,7 +4,7 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Roboto Condensed", Helvetica, Segoe, Arial, sans-serif;
+  font-family: "Roboto Condensed", Roboto, Helvetica, Segoe, Arial, sans-serif;
   color: #333;
 }
 
@@ -12,21 +12,29 @@ html,
 body {
   margin: 0;
   padding: 0;
-}
-body {
   font-size: 16px;
   line-height: 1.5;
   color: #454441;
   background-color: #eee;
 }
-@media (min-width: 700px) {
+@media (min-width: 500px) {
   body {
     font-size: 18px;
+  }
+}
+@media (min-width: 600px) {
+  body {
+    font-size: 19px;
   }
 }
 @media (min-width: 1200px) {
   body {
     font-size: 20px;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    font-size: 24px;
   }
 }
 
@@ -64,6 +72,14 @@ a:hover,
 a:focus {
   text-decoration: underline;
 }
+button, input {
+  border-radius: 0;
+  border: none;
+  box-shadow:none;
+  background-image: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     font-style: italic;
@@ -81,18 +97,26 @@ a:focus {
 /* GENERIC */
 
 .container {
+  position: relative;
   padding: 0 1em 1em;
-  width: 97%;
   margin: 0 auto;
+}
+.container {
+  width: 97%;
 }
 @media (min-width: 450px) {
   .container {
-    width: 90%;
+    width: 85%;
+  }
+}
+@media (min-width: 600px) {
+  .container {
+    width: 75%;
   }
 }
 @media (min-width: 900px) {
   .container {
-    width: 75%;
+    width: 65%;
   }
 }
 @media (min-width: 1100px) {
@@ -100,8 +124,62 @@ a:focus {
     width: 50%;
   }
 }
+@media (min-width: 1400px) {
+  .container {
+    width: 45%;
+  }
+}
+@media (min-width: 1700px) {
+  .container {
+    width: 35%;
+  }
+}
 .active-section {
   margin-bottom: 2.5em;
+}
+.main-section {
+  position: absolute;
+  left: 0;
+  padding: 0 1em;
+  width: 100%;
+}
+.search-visible {
+  left: 0;
+  transition: left 0.3s ease-out 0.03s;
+  -webkit-transition: left 0.3s ease-out 0.03s;
+}
+.search-hidden {
+  left: -200%;
+  transition: left 0.3s ease-out;
+  -webkit-transition: left 0.3s ease-out;
+}
+.details-hidden {
+  left: 200%;
+  transition: left 0.3s ease-out;
+  -webkit-transition: left 0.3s ease-out;
+}
+.details-visible {
+  left: 0;
+  transition: left 0.3s ease-out 0.03s;
+  -webkit-transition: left 0.3s ease-out 0.03s;
+}
+@media (min-width: 1000px) {
+  .search-visible {
+    transition: left 0.15s ease-out 0.01s;
+    -webkit-transition: left 0.15s ease-out 0.01s;
+  }
+  .search-hidden {
+    transition: left 0.15s ease-out;
+    -webkit-transition: left 0.15s ease-out;
+  }
+  .details-hidden {
+    transition: left 0.15s ease-out;
+    -webkit-transition: left 0.15s ease-out;
+  }
+  .details-visible {
+    transition: left 0.15s ease-out 0.01s;
+    -webkit-transition: left 0.15s ease-out 0.01s;
+  }
 }
 .text-element {
   display: inline-block;
@@ -128,28 +206,33 @@ a:focus {
 .thin {
   font-weight: 400;
 }
+.clearfix {
+  overflow: auto;
+}
 
 /* HEADER */
 
 .topbar { 
+  position: relative;
   background-color: none;
   height: 4em;
   width: 100%;
 }
 .icon {
   /* vertical centering */
-  position: relative;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
   
   height: 2.35em;
   cursor: pointer;
 }
 .right {
-  float: right;
+  right: 0;
 }
 .left {
-  left: left;
+  left: 0;
 }
 @media (min-width: 450px) {
   .topbar {
@@ -168,6 +251,9 @@ a:focus {
   margin: 0.1em 0 0;
 }
 .chosen-data {
+  width: 100%;
+}
+.chosen-data > * {
   cursor: pointer;
 }
 .label {
@@ -182,9 +268,56 @@ a:focus {
   margin: 0.3em 0 0em;
   padding: 0.2em 0.3em;
   font-size: 2.2em;
-  border-radius: 0;
-  border: none;
   background-color: #fff;
+}
+.input.time {
+  width: 80%;
+  float: left;
+}
+.submit-btn {
+  width: 17%;
+  float: left;
+  margin: 0.3em 0 0;
+  padding: 0.2em 0 0.2em 0.3em;
+  font-size: 2.2em;
+  background-color: #eee;
+  cursor: pointer;
+}
+.submit-icon {
+  height: 1.1em;
+  margin-top: 0.15em;
+}
+@media (min-width: 540px) {
+  .input.date {
+    width: 54%;
+    float: left;
+    margin-right: 3%;
+  }
+  .input.time {
+    width: 30%;
+  }
+  .submit-btn {
+    width: 12%;
+  }
+}
+@media (min-width: 600px) {
+  .input.date {
+    width: 54%;
+  }
+  .input.time {
+    width: 30%;
+  }
+  .submit-btn {
+    width: 11%;
+  }
+}
+@media (min-width: 1100px) {
+  .input.time {
+    width: 28%;
+  }
+  .submit-btn {
+    width: 11%;
+  }
 }
 .input::-moz-selection {
     background-color: #1e85fe;
@@ -202,6 +335,11 @@ a:focus {
   font-size: 1.3em;
   font-style: italic;
   color: #666;
+}
+.cancel-input {
+  float: right;
+  height: 1.6em;
+  margin-top: 0.2em;
 }
 
 /* SEARCH RESULTS */
@@ -231,9 +369,6 @@ a:focus {
 
 /* ROUTE DETAILS */
 
-.timestamp {
-  
-}
 .left-column {
   display: inline-block;
   width: 3em;
@@ -251,7 +386,7 @@ a:focus {
 .settings-title {
   font-size: 3.2em;
   font-weight: 200;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 .settings-element {
   margin: 1em 0;
