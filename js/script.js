@@ -561,10 +561,9 @@ function timeString(waitTime) {
 	var waitTimeString = "";
 	if (waitTime / 60 >= 1) {
 		if (waitTime / 1440 >= 1) {
-			waitTimeDays = waitTime / 1440;
-			waitTimeDays = waitTimeDays.toFixed(0);
+			waitTimeDays = parseInt(waitTime / 1440);
 		}
-		waitTimeHours = waitTime / 60 - waitTimeDays * 1440;
+		waitTimeHours = parseInt(waitTime / 60 - waitTimeDays * 1440);
 	}
 	waitTimeMinuts = waitTime - waitTimeHours * 60;
 
