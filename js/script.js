@@ -429,13 +429,13 @@ function timeString(waitTime) {
 	waitTimeMinuts = waitTime - waitTimeHours * 60;
 
 	waitTimeString = "";
-	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " Day" : "";
+	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " day" : "";
 	waitTimeString += (waitTimeDays > 1) ? "s" : "";
 	waitTimeString += (waitTimeString != "") ? ", " : "";
-	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " Hour" : "";
+	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " hour" : "";
 	waitTimeString += (waitTimeHours > 1) ? "s" : "";
 	waitTimeString += (waitTimeString != "") ? ", " : "";
-	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " Minute" : "";
+	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " minute" : "";
 	waitTimeString += (waitTimeMinuts > 1) ? "s" : "";
 
 	return waitTimeString;
