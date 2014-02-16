@@ -265,7 +265,7 @@ button, input {
 }
 .input {
   width: 100%;
-  margin: 0.3em 0 0em;
+  margin: 0.1em 0 0.1em;
   padding: 0.2em 0.3em;
   font-size: 2.2em;
   background-color: #fff;
@@ -277,7 +277,7 @@ button, input {
 .submit-btn {
   width: 17%;
   float: left;
-  margin: 0.3em 0 0;
+  margin: 0;
   padding: 0.2em 0 0.2em 0.3em;
   font-size: 2.2em;
   background-color: #eee;
@@ -285,7 +285,7 @@ button, input {
 }
 .submit-icon {
   height: 1.1em;
-  margin-top: 0.15em;
+  margin-top: 0.2em;
 }
 @media (min-width: 540px) {
   .input.date {
