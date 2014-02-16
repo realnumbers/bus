@@ -297,17 +297,45 @@ function showDetails(resultNumber) {
 	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
 	var W_BLOCK = document.getElementsByClassName("intermediate-block");
 	var walkTime = "";
+	var waitTime = "";
+	var lineNo;
+	var stops;
+	var arrBusstop;
+	var depBusstop;
+	var dep;
+	var arr;
+	var depTime;
+	var arrTime;
+	var nextDepTime;
+	//console.log(TRANS_BLOCK);
+	while (i < TRANS_BLOCK.length) {
+		TRANS_BLOCK[i].style.display = "none";
+
+		//console.log(i);
+			W_BLOCK[i].style.display = "none";
+		i++;
+	}
+	i = 0;
 	while (i < connection.length) {
 		walkTime = "";
-		if (connection[i].Journey.length > 0) {
-			var lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
-			var stops = connection[i].Journey[0].PassList.BasicStop;
-			var arrBusstop = stops[stops.length -1].Station.name.split(" - ");
-			var depBusstop = stops[0].Station.name.split(" - ");
-			var dep = stops[0].Dep.Time;
-			var arr = stops[stops.length - 1].Arr.Time;
-			var depTime = extractTime(dep);
-			var arrTime = extractTime(arr);
+		console.log(i);
+		if (connection[i].Walk.length > 0) {
+			console.log("Walk");
+			console.log(connection[i].Walk);
+			walkTime = "alk " + timeString(calculateWaitingTime("00d00:00:00:00", connection[i].Walk[0].Duration.Time));
+			nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
+			waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
+			W_BLOCK[i].style.display = "block";
+		}	
+		else if (connection[i].Journey.length > 0) {
+			lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
+			stops = connection[i].Journey[0].PassList.BasicStop;
+			arrBusstop = stops[stops.length -1].Station.name.split(" - ");
+			depBusstop = stops[0].Station.name.split(" - ");
+			dep = stops[0].Dep.Time;
+			arr = stops[stops.length - 1].Arr.Time;
+			depTime = extractTime(dep);
+			arrTime = extractTime(arr);
 			TRANS_BLOCK[i].children[0].children[0].innerHTML = depTime[0] + ":" + depTime[1];
 			TRANS_BLOCK[i].children[2].children[0].innerHTML = arrTime[0] + ":" + arrTime[1];
 			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
@@ -324,32 +352,21 @@ function showDetails(resultNumber) {
 			TRANS_BLOCK[i].children[0].children[1].children[1].innerHTML  = depBusstop[0];
 			TRANS_BLOCK[i].children[2].children[1].children[0].innerHTML  = arrBusstop[1] + ", ";
 			TRANS_BLOCK[i].children[2].children[1].children[1].innerHTML  = arrBusstop[0];
+		
+			if ((i+1) < connection.length && connection[i + 1].Journey.length > 0) {
+				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
+				console.log(nextDepTime);
+				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
+				W_BLOCK[i].style.display = "block";
+			}
+		TRANS_BLOCK[i].style.display = "block";
 		}
-		else if (connection[0].Walk.length > 0) {
-			console.log("Walk");
-			console.log(connection[i].Walk);
-			walkTime = ", Walk " + connection[i].Walk;
-
-		}
-		if (i < connection.length - 1) {
-			var nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
-			console.log(arr);
-			console.log(nextDepTime);
-			var waitTime = calculateWaitingTime(arr, nextDepTime);
-			W_BLOCK[i].children[1].innerHTML = waitTime + walkTime;
-		}
-
-
+		W_BLOCK[i].children[1].innerHTML = waitTime + ((waitTime != "" && walkTime != "") ? ", w" : "") + ((waitTime == "") ? "W" : "") + walkTime;
+		waitTime = "";
+		walkTime = "";
 	i++;	
 	}
-	//console.log(TRANS_BLOCK);
-	while (i < TRANS_BLOCK.length) {
-		TRANS_BLOCK[i].style.display = "none";
-
-		//console.log(i);
-			W_BLOCK[i-1].style.display = "none";
-		i++;
-	}
+	
 }
 function goBack() {
 	clearPage(0);
@@ -391,13 +408,17 @@ function calculateWaitingTime(timestamp1, timestamp2) {
 	var startDay  = time1[2];
 	var endDay    = time2[2];
 	
+	startMin += (startHour * 60 + startDay * 1440);
+	endMin += (endHour * 60 + endDay * 1440);
+	waitTime = (endMin - startMin);
+	return waitTime;
+}
+
+function timeString(waitTime) {
 	var waitTimeDays = 0;
 	var waitTimeHours = 0;
 	var waitTimeMinuts = 0;
 	var waitTimeString = "";
-	startMin += (startHour * 60 + startDay * 1440);
-	endMin += (endHour * 60 + endDay * 1440);
-	waitTime = (endMin - startMin);
 	if (waitTime / 60 >= 1) {
 		if (waitTime / 1440 >= 1) {
 			waitTimeDays = waitTime / 1440;
@@ -406,15 +427,15 @@ function calculateWaitingTime(timestamp1, timestamp2) {
 		waitTimeHours = waitTime / 60 - waitTimeDays * 1440;
 	}
 	waitTimeMinuts = waitTime - waitTimeHours * 60;
-			
-	waitTimeString = "Wait ";
+
+	waitTimeString = "";
 	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " Day" : "";
 	waitTimeString += (waitTimeDays > 1) ? "s" : "";
-	waitTimeString += (waitTimeString != "Wait ") ? ", " : "";
+	waitTimeString += (waitTimeString != "") ? ", " : "";
 	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " Hour" : "";
 	waitTimeString += (waitTimeHours > 1) ? "s" : "";
-	waitTimeString += (waitTimeString != "Wait ") ? ", " : "";
-	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " Minut" : "";
+	waitTimeString += (waitTimeString != "") ? ", " : "";
+	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " Minute" : "";
 	waitTimeString += (waitTimeMinuts > 1) ? "s" : "";
 
 	return waitTimeString;
