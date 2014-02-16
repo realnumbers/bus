@@ -19,8 +19,9 @@ var queryComplete = false;
 var details = false;
 
 clearPage(1);
-hideIcon(BACK);
+//hideIcon(BACK);
 hideIcon(CANCEL);
+showIcon(BACK);
 hideCancelInputIcon(0);
 hideCancelInputIcon(1);
 hideCancelInputIcon(2);
@@ -385,10 +386,10 @@ function showDetails(resultNumber) {
 	details = true;
 	//clearPage(0);
 	DETAILS.style.display = "block";
-	showIcon(BACK);
 	unBlank(4);
-	hideIcon(CANCEL);
-	showIcon(BACK);
+	//hideIcon(CANCEL);
+	console.log("show Detailview");
+	//showIcon(BACK);
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
 	var i = 0;
 	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
@@ -498,12 +499,12 @@ function goBack() {
 	showAllLabels();
 	hideSpinner();
 }
-$(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+/*$(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
 	if (!details) {
-		DETAILS.style.display = "none";
-		BACK.style.display = "none";
+		//DETAILS.style.display = "none";
+		//BACK.style.display = "none";
 	}
-});
+});*/
 function hideKeyboard() {
 	$(document.activeElement).filter(':input:focus').blur();
 }
