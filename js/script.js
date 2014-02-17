@@ -19,9 +19,9 @@ var queryComplete = false;
 var details = false;
 
 clearPage(1);
-//hideIcon(BACK);
+hideIcon(BACK);
 hideIcon(CANCEL);
-showIcon(BACK);
+//showIcon(BACK);
 hideCancelInputIcon(0);
 hideCancelInputIcon(1);
 hideCancelInputIcon(2);
@@ -385,11 +385,12 @@ function showCancelInputIcon(sectionNo) {
 function showDetails(resultNumber) {
 	details = true;
 	//clearPage(0);
+	showIcon(BACK);
 	DETAILS.style.display = "block";
 	unBlank(4);
 	//hideIcon(CANCEL);
-	console.log("show Detailview");
-	//showIcon(BACK);
+	console.log("show detail view");
+	
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
 	var i = 0;
 	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
@@ -466,7 +467,6 @@ function showDetails(resultNumber) {
 		walkTime = "";
 	i++;	
 	}
-	
 	//makeVisible(4);
 	$(SEARCH).removeClass("search-visible");
 	$(SEARCH).addClass("search-hidden");
@@ -498,13 +498,13 @@ function goBack() {
 	hideCancelInputIcon(2);
 	showAllLabels();
 	hideSpinner();
-}
-/*$(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+}2
+$(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
 	if (!details) {
-		//DETAILS.style.display = "none";
-		//BACK.style.display = "none";
+		DETAILS.style.display = "none";
+		BACK.style.display = "none";
 	}
-});*/
+});
 function hideKeyboard() {
 	$(document.activeElement).filter(':input:focus').blur();
 }
