@@ -38,6 +38,8 @@ function clearPage(startSection) {
 		SECTION[i].style.display = "none";
 		i++;
 	}
+	SECTION[2].children[1].value = "";
+	SECTION[2].children[2].value = "";
 }
 
 function autocom(current_section) {
@@ -203,36 +205,33 @@ function autoSetTime() {
 	//selectTime(2);
 }
 function selectTime(current_section) {
-	if (data == "" || time == ""){
-		makeBlank(current_section);
-		autoSetTime();
-	}
 	var dateElement = SECTION[current_section].children[1];
 	var timeElement = SECTION[current_section].children[2];
 	var date = dateElement.value;
 	var time = timeElement.value;
+
+	if (date == "" && time == "") {
+		//makeBlank(current_section);
+		autoSetTime();
+	}
+	dateElement = SECTION[current_section].children[1];
+	timeElement = SECTION[current_section].children[2];
+	date = dateElement.value;
+	time = timeElement.value;
 	var dateArray = date.split(/[\.\/\-,;:]/);
 	var timeArray = time.split(/\D/);
-	
-	console.log("date elem. 1: " + dateArray[0]);
-	console.log("date elem. 2: " + dateArray[1]);
-	console.log("date elem. 3: " + dateArray[2]);
-	
-	var correctDateArray = formatDate(dateArray);
-	var day = addZero(correctDateArray[0]);
-	var month = addZero(correctDateArray[1]);
-	var year = correctDateArray[2];
-	
-	var correctTimeArray = formatTime(timeArray);
-	var hours = correctTimeArray[0];
-	var minutes = correctTimeArray[1];
-	/*
-	var date_element = SECTION[current_section].children[1];
-	var date = date_element.value;
-	var time_element = SECTION[current_section].children[2];
-	var time = time_element.value;
-	*/
+
 	if (dateElement.validity.valid && timeElement.validity.valid){ 
+		console.log(dateElement);
+		var correctDateArray = formatDate(dateArray);
+		var day = addZero(correctDateArray[0]);
+		var month = addZero(correctDateArray[1]);
+		var year = correctDateArray[2];
+	
+		var correctTimeArray = formatTime(timeArray);
+		var hours = correctTimeArray[0];
+		var minutes = correctTimeArray[1];
+
 		SECTION[current_section].children[0].children[1].innerHTML = day + "." + month + "." + year + ", ";
 		SECTION[current_section].children[0].children[2].innerHTML = hours + ":" + minutes;
 		hideCancelInputIcon(current_section);
