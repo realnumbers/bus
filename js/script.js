@@ -20,32 +20,37 @@ if (navigator.language === "de") {
 		lang = "de";
 }
 
-clearPage(1);
-hideIcon(BACK);
-hideIcon(CANCEL);
-hideCancelInputIcon(0);
-hideCancelInputIcon(1);
-hideCancelInputIcon(2);
+removeClickDelay();
+initApp();
 
-// Eliminates 300ms click delay on mobile 
-window.addEventListener('load', function() {
-     new FastClick(document.body);
-}, false);
+function initApp() {
+	hideElement(".js-section");
+	hideElement("#cancel");
+	hideElement("#back");
+	hideElement(".cancel-input");
+	showElement(".js-active");
+}
 
-function clearPage(startSection) {
-	for (var i = startSection; i < SECTION.length; i++) {
-		SECTION[i].style.display = "none";
-	}
+function removeClickDelay() {
+	// Eliminates 300ms click delay on mobile 
+	window.addEventListener('load', function() {
+  	new FastClick(document.body);
+	}, false);
+}
+
+function hideElement(element) {
+	$(element).hide();
+}
+function showElement(element) {
+	$(element).show();
 }
 
 function autocom(current_section) {
 	var children = SECTION[current_section].children;
 	var input_string = children[1].value;
 
-	for (var i = 2; i < children.length; i++) {
-		children[i].children[0].innerHTML = "";
-		children[i].children[1].innerHTML = "";
-	}
+	$(".js-input").text("");
+
 	if (input_string !== "") {
 		children[2].children[1].innerHTML = "Couldn't find any matches...";
 		children[2].children[1].className += " no-matches";
@@ -92,7 +97,8 @@ function selectBusstop(current_section, div_number) {
 	SECTION[current_section].children[0].children[1].style.display = "inline-block";
 	SECTION[current_section].children[0].children[2].style.display = "inline-block";
 	
-	makeBlank(current_section);
+	hideElement("js-active");
+	$("js-section").removeClass("active-section"); //className = "js-section";
 	hideCancelInputIcon(current_section);
 	
 	if (queryComplete) {
@@ -117,12 +123,6 @@ function selectBusstop(current_section, div_number) {
 		}
 	}
 }
-function makeBlank(current_section) {
-	for (var i = 1; i < SECTION[current_section].children.length; i++) {
-			SECTION[current_section].children[i].style.display = "none";
-	}
-	$(SECTION[current_section]).removeClass("active-section"); //className = "js-section";
-}
 function activateInput(current_section) {
 	if (queryComplete) {
 		hideCancelInputIcon(0);
@@ -130,7 +130,7 @@ function activateInput(current_section) {
 		hideCancelInputIcon(2);
 		showCancelInputIcon(current_section);
 	}
-	unBlank(current_section);
+	activedNextSection();
 	showAllLabels();
 	SECTION[current_section].children[0].children[1].style.display = "none";
 	SECTION[current_section].children[0].children[2].style.display = "none";
@@ -138,7 +138,8 @@ function activateInput(current_section) {
 function deactivateLabel(current_section) {
 	SECTION[current_section].children[0].children[1].style.display = "inline-block";
 	SECTION[current_section].children[0].children[2].style.display = "inline-block";
-	makeBlank(current_section);
+	hideElement("js-active");
+	$("js-section").removeClass("active-section"); //className = "js-section";
 	hideCancelInputIcon(current_section);
 }
 function showAllLabels() {
@@ -148,18 +149,14 @@ function showAllLabels() {
 		i++;
 	}
 }
-function unBlank(current_section) {
-	for (var i = 0; i < SECTION.length; i++) {
-		makeBlank(i);
-	}
-	SECTION[current_section].style.display = "block";
-
-	for (var i = 0; i < SECTION[current_section].children.length; i++) {
-		SECTION[current_section].children[i].style.display = "block";
-	}
-	if (SECTION[current_section].children[1] !== null)
-		SECTION[current_section].children[1].focus();
-	addClass(current_section);
+function activedNextSection() {
+	$(".js-section").nextAll(".js-suggest").hide();
+	$(".js-active").removeClass("js-active").next(".js-section").addClass("js-active");
+	//hideElement(".js-section");
+	$(".active-section").removeClass("active-section");
+	showElement(".js-active");
+	$(".js-active").next(".input").focus();
+	$(".js-active").addClass("active-section");
 }
 function makeVisible(current_section) {
 	SECTION[current_section].style.display = "block";
@@ -192,7 +189,6 @@ function selectTime(current_section) {
 	var time = timeElement.value;
 
 	if (date == "" && time == "") {
-		//makeBlank(current_section);
 		autoSetTime();
 	}
 	dateElement = SECTION[current_section].children[1];
@@ -215,13 +211,11 @@ function selectTime(current_section) {
 		SECTION[current_section].children[0].children[1].innerHTML = day + "." + month + "." + year + ", ";
 		SECTION[current_section].children[0].children[2].innerHTML = hours + ":" + minutes;
 		hideCancelInputIcon(current_section);
-		makeBlank(current_section);
+		hideElement("js-active");
+		$("js-section").removeClass("active-section"); //className = "js-section";
 		showAllLabels();
 		getRoute(date,time);
 	}
-}
-function addClass(current_section) {
-	SECTION[current_section].className += " active-section";
 }
 function removeClass(current_section) {
 	$(SECTION[current_section]).removeClass("active-section");
@@ -321,13 +315,15 @@ function loadConnection(data, resultPointer) {
 }
 function cancelQuery() {
 	queryComplete = false;
-	hideIcon(CANCEL);
+	/*hideIcon(CANCEL);
 	clearPage(0);
 	unBlank(0);
 	SECTION[0].children[0].children[1].innerHTML = "";
 	SECTION[0].children[0].children[2].innerHTML = "";
 	SECTION[2].children[1].value = "";
 	SECTION[2].children[2].value = "";
+	*/
+	initApp();
 }
 function hideResultList() {
 	var list = SECTION[3].children[0].children;
@@ -338,6 +334,7 @@ function hideResultList() {
 		//alert(list[i].innerHTML);
 	}
 }
+
 function hideSpinner() {
 	SECTION[3].children[1].style.display = "none";
 }
