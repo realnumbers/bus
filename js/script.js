@@ -9,6 +9,7 @@ var lang = "it";
 var form_stop;
 var to_stop;
 var matching_busstops = new Array(5);
+var overviewSection = SECTION[3].children[0];
 var busstops = $.getJSON( "js/busstops.json", function(data) {
 		autocom(0);
 	});
@@ -250,7 +251,7 @@ function getRoute(date, time) {
 	count_date = date[2].split("");
 	unBlank(3);
 	hideResultList();
-	
+	showIcon(CANCEL);	
 	if (count_date.length == 2) {
 		date[2] = "20" + date[2];
 	}
@@ -302,6 +303,11 @@ function nextData(data, requestId, count) {
 			}
 		});		
 	}
+	else {
+		hideSpinner();
+		for (var i = 0; i < 5; i++)
+			overviewSection.children[i].style.display = "block";
+	}
 }
 function loadConnection(data, resultPointer) {
 	var con = data.ConnectionList.Connection[0].Overview;
@@ -311,7 +317,6 @@ function loadConnection(data, resultPointer) {
 	var transfers = con.Transfers;
 	con_data[resultPointer]	= data;
 	//console.log(con_data);
-	var overviewSection = SECTION[3].children[0];
 
 	console.log(SECTION[3].children[1]);
 	arrTime = arrTime.split("d");
@@ -331,7 +336,7 @@ function loadConnection(data, resultPointer) {
 	if (transfers > 1)
 		transfers += " changes ";
 	
-	overviewSection.children[resultPointer].style.display = "block";
+	//overviewSection.children[resultPointer].style.display = "block";
 	
 	overviewSection.children[resultPointer].children[0].innerHTML = depTime + " - " + arrTime;
 	if (transfers == 0) {
@@ -341,7 +346,7 @@ function loadConnection(data, resultPointer) {
 		overviewSection.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
 	}
 	
-	hideSpinner();
+	//hideSpinner();
 }
 function cancelQuery() {
 	queryComplete = false;
