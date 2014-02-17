@@ -1,28 +1,28 @@
 var SEARCH = document.getElementById("search");
 var DETAILS = document.getElementById("details");
 var SECTION = document.getElementsByClassName("js-section");
-var con_data = new Array(5);
 var BACK = document.getElementById("back");
 var CANCEL = document.getElementById("cancel");
 var CANCEL_INPUT_ICONS = document.getElementsByClassName("cancel-input");
+var con_data = new Array(5);
 var lang = "it";
 var from_stop = "";
 var to_stop;
 var matching_busstops = new Array(5);
 var overviewSection = SECTION[3].children[0];
+var queryComplete = false;
+var details = false;
 var busstops = $.getJSON( "js/busstops.json", function(data) {
 		autocom(0);
 	});
+
 if (navigator.language === "de") {
 		lang = "de";
 }
-var queryComplete = false;
-var details = false;
 
 clearPage(1);
 hideIcon(BACK);
 hideIcon(CANCEL);
-//showIcon(BACK);
 hideCancelInputIcon(0);
 hideCancelInputIcon(1);
 hideCancelInputIcon(2);
@@ -33,32 +33,25 @@ window.addEventListener('load', function() {
 }, false);
 
 function clearPage(startSection) {
-	var i = startSection;
-	while (i < SECTION.length) {
+	for (var i = startSection; i < SECTION.length; i++) {
 		SECTION[i].style.display = "none";
-		i++;
 	}
-	SECTION[2].children[1].value = "";
-	SECTION[2].children[2].value = "";
 }
 
 function autocom(current_section) {
-	var i;
 	var children = SECTION[current_section].children;
 	var input_string = children[1].value;
 
-	i = 2;
-	while (i < children.length) {
+	for (var i = 2; i < children.length; i++) {
 		children[i].children[0].innerHTML = "";
 		children[i].children[1].innerHTML = "";
-		i++;
 	}
 	if (input_string !== "") {
 		children[2].children[1].innerHTML = "Couldn't find any matches...";
 		children[2].children[1].className += " no-matches";
 		input_string = input_string.split(" ");
 		data = busstops.responseJSON;
-		i = 2;
+		var	i = 2;
 		data[lang].every( function (element, index, array) {
 			var res = input_string.every( function (item, index, array) {
 				var pattern = new RegExp(item, "i");
@@ -144,12 +137,8 @@ function activateInput(current_section) {
 	SECTION[current_section].children[0].children[2].style.display = "none";
 }
 function deactivateLabel(current_section) {
-	console.log("deactivating input " + current_section);
-	console.log(SECTION[current_section].children[0].children[1].innerHTML);
-	
 	SECTION[current_section].children[0].children[1].style.display = "inline-block";
 	SECTION[current_section].children[0].children[2].style.display = "inline-block";
-	console.log("labels should be visible now");
 	makeBlank(current_section);
 	hideCancelInputIcon(current_section);
 }
@@ -189,7 +178,6 @@ function makeVisible(current_section) {
 }
 function autoSetTime() {
 	var currentdate = new Date();
-	console.log(currentdate);
 	var day = addZero(currentdate.getDate());
 	var month = addZero(currentdate.getMonth() + 1);
 	var year = currentdate.getFullYear();
@@ -222,7 +210,6 @@ function selectTime(current_section) {
 	var timeArray = time.split(/\D/);
 
 	if (dateElement.validity.valid && timeElement.validity.valid){ 
-		console.log(dateElement);
 		var correctDateArray = formatDate(dateArray);
 		var day = addZero(correctDateArray[0]);
 		var month = addZero(correctDateArray[1]);
@@ -272,13 +259,8 @@ function getRoute(date, time) {
 			showIcon(CANCEL);
 			queryComplete = true;
 			hideKeyboard();
-			
-			//console.log(data);
 			loadConnection(data, 0);
-			
 			requestId = data.ConResCtxt[0];
-			//console.log(requestId);
-			
 			requestId = requestId.split("#")[0];
 			nextData(data, requestId, 1);
 		}
@@ -286,22 +268,17 @@ function getRoute(date, time) {
 }
 function nextData(data, requestId, count) {
 	if (count < 5) {
-		//console.log(requestId);
-
 		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
 		nextUrl = nextUrl + requestId;
 		nextUrl = nextUrl + "%23";
 		nextUrl = nextUrl + count;
-	
-		//console.log(nextUrl);
+
 		$.ajax({
 			dataType: "jsonp",
 			jsonpCallback: "Callback",
 			url: nextUrl,
 		 	success: function(data) {
-				//console.log(data);
 				loadConnection(data, count);
-				//console.log(requestId);
 				nextData(data, requestId, parseInt(count) + 1);
 			}
 		});		
@@ -319,9 +296,7 @@ function loadConnection(data, resultPointer) {
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
 	con_data[resultPointer]	= data;
-	//console.log(con_data);
 
-	console.log(SECTION[3].children[1]);
 	arrTime = arrTime.split("d");
 	arrTime = arrTime[1].split(":");
 	arrTime = arrTime[0] + ":" + arrTime[1];
@@ -358,6 +333,8 @@ function cancelQuery() {
 	unBlank(0);
 	SECTION[0].children[0].children[1].innerHTML = "";
 	SECTION[0].children[0].children[2].innerHTML = "";
+	SECTION[2].children[1].value = "";
+	SECTION[2].children[2].value = "";
 }
 function hideResultList() {
 	var list = SECTION[3].children[0].children;
@@ -392,12 +369,10 @@ function showCancelInputIcon(sectionNo) {
 }
 function showDetails(resultNumber) {
 	details = true;
-	//clearPage(0);
 	showIcon(BACK);
 	DETAILS.style.display = "block";
 	unBlank(4);
 	//hideIcon(CANCEL);
-	console.log("show detail view");
 	
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
 	var i = 0;
@@ -414,21 +389,16 @@ function showDetails(resultNumber) {
 	var depTime;
 	var arrTime;
 	var nextDepTime;
-	console.log(connection);
 	while (i < TRANS_BLOCK.length) {
 		TRANS_BLOCK[i].style.display = "none";
 
-		//console.log(i);
 			W_BLOCK[i].style.display = "none";
 		i++;
 	}
 	i = 0;
 	while (i < connection.length) {
 		walkTime = "";
-		console.log(i);
 		if (connection[i].Walk.length > 0) {
-			console.log("Walk");
-			console.log(connection[i].Walk);
 			walkTime = "alk " + timeString(calculateWaitingTime("00d00:00:00:00", connection[i].Walk[0].Duration.Time));
 			if (connection[i].Journey.length > 0){
 				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
@@ -448,7 +418,6 @@ function showDetails(resultNumber) {
 			TRANS_BLOCK[i].children[0].children[0].innerHTML = depTime[0] + ":" + depTime[1];
 			TRANS_BLOCK[i].children[2].children[0].innerHTML = arrTime[0] + ":" + arrTime[1];
 			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
-			console.log(connection);
 			if (lang === "de") {
 				arrBusstop = splitBusstopName(arrBusstop[1]);
 				depBusstop = splitBusstopName(depBusstop[1]);
@@ -464,7 +433,6 @@ function showDetails(resultNumber) {
 		
 			if ((i+1) < connection.length && connection[i + 1].Journey.length > 0) {
 				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
-				console.log(nextDepTime);
 				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
 				W_BLOCK[i].style.display = "block";
 			}
@@ -598,11 +566,8 @@ function addZero(number) {
 function formatTime(time) {
 	string1 = time[0].toString();
 	string2 = time[1].toString();
-	console.log("String1 length: " + string1.length + "     String2 length: " + string2.length)
 	if ((time[0] < 10 && string1.substring(0,1) != "0") || string1.length === 1) time[0] = "0" + time[0];
 	if ((time[1] < 10 && string2.substring(0,1) != "0") || string2.length === 1) time[1] = "0" + time[1];
-	console.log(time[0])
-	console.log(time[1])
 	return time;
 }
 function formatDate(date) {
@@ -612,15 +577,11 @@ function formatDate(date) {
 			yearPosition = i;
 		}
 	}
-	console.log("Year is in position " + (yearPosition + 1));
 	if (yearPosition != 2) {
 		var tmp = date[2];
 		date[2] = date[yearPosition];
 		date[yearPosition] = tmp;
 	}
-	console.log("day: " + date[0]);
-	console.log("month: " + date[1]);
-	console.log("year: " + date[2]);
 	return date;
 }
 function resendQuery() {
