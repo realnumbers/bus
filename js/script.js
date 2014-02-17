@@ -118,10 +118,8 @@ function selectBusstop(current_section, div_number) {
 	}
 }
 function makeBlank(current_section) {
-	var i = 1;
-	while (i < SECTION[current_section].children.length) {
+	for (var i = 1; i < SECTION[current_section].children.length; i++) {
 			SECTION[current_section].children[i].style.display = "none";
-			i++;
 	}
 	$(SECTION[current_section]).removeClass("active-section"); //className = "js-section";
 }
@@ -144,24 +142,20 @@ function deactivateLabel(current_section) {
 	hideCancelInputIcon(current_section);
 }
 function showAllLabels() {
-	var i = 0;
-	while (i < 3) {
+	for (var i = 0; i < 3; i++) {
 		SECTION[i].children[0].children[1].style.display = "inline-block";
 		SECTION[i].children[0].children[2].style.display = "inline-block";
 		i++;
 	}
 }
 function unBlank(current_section) {
-	var i = 0;
-	while (i < SECTION.length) {
+	for (var i = 0; i < SECTION.length; i++) {
 		makeBlank(i);
-		i++;
 	}
 	SECTION[current_section].style.display = "block";
-	i = 0;
-	while (i < SECTION[current_section].children.length) {
+
+	for (var i = 0; i < SECTION[current_section].children.length; i++) {
 		SECTION[current_section].children[i].style.display = "block";
-		i++;
 	}
 	if (SECTION[current_section].children[1] !== null)
 		SECTION[current_section].children[1].focus();
@@ -169,12 +163,10 @@ function unBlank(current_section) {
 }
 function makeVisible(current_section) {
 	SECTION[current_section].style.display = "block";
-	i = 0;
-	while (i < SECTION[current_section].children.length) {
+
+	for (var i; i < SECTION[current_section].children.length; i++) {
 		SECTION[current_section].children[i].style.display = "block";
-		i++;
 	}
-	//if (SECTION[current_section].children[1] !== null) SECTION[current_section].children[1].focus();
 	addClass(current_section);
 }
 function autoSetTime() {
@@ -376,7 +368,6 @@ function showDetails(resultNumber) {
 	//hideIcon(CANCEL);
 	
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
-	var i = 0;
 	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
 	var W_BLOCK = document.getElementsByClassName("intermediate-block");
 	var walkTime = "";
@@ -390,13 +381,11 @@ function showDetails(resultNumber) {
 	var depTime;
 	var arrTime;
 	var nextDepTime;
-	while (i < TRANS_BLOCK.length) {
+	for (var i = 0; i < TRANS_BLOCK.length; i++) {
 		TRANS_BLOCK[i].style.display = "none";
-
-			W_BLOCK[i].style.display = "none";
-		i++;
+		W_BLOCK[i].style.display = "none";
 	}
-	i = 0;
+	var i = 0;
 	while (i < connection.length) {
 		walkTime = "";
 		if (connection[i].Walk.length > 0) {
