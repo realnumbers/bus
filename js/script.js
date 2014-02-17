@@ -102,11 +102,11 @@ function selectBusstop(current_section, div_number) {
 	if (queryComplete) {
 		if (current_section === 0) {
 				from_stop = matching_busstops[div_number].id;
-				autoSetTime();
+				resendQuery();
 		}
 		if (current_section === 1) {
 				to_stop = matching_busstops[div_number].id;
-				autoSetTime();
+				resendQuery();
 		}
 	}
 	else {
@@ -117,7 +117,7 @@ function selectBusstop(current_section, div_number) {
 		}
 		if (current_section === 1) {
 				to_stop = matching_busstops[div_number].id;
-				autoSetTime();
+				resendQuery();
 		}
 	}
 }
@@ -200,9 +200,13 @@ function autoSetTime() {
 	//SECTION[2].children[1].value = "27/02/2014";
   	//SECTION[2].children[2].value = "13:20";
 	showAllLabels();
-	selectTime(2);
+	//selectTime(2);
 }
 function selectTime(current_section) {
+	if (data == "" || time == ""){
+		makeBlank(current_section);
+		autoSetTime();
+	}
 	var dateElement = SECTION[current_section].children[1];
 	var timeElement = SECTION[current_section].children[2];
 	var date = dateElement.value;
