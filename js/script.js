@@ -6,7 +6,7 @@ var BACK = document.getElementById("back");
 var CANCEL = document.getElementById("cancel");
 var CANCEL_INPUT_ICONS = document.getElementsByClassName("cancel-input");
 var lang = "it";
-var form_stop;
+var from_stop = "";
 var to_stop;
 var matching_busstops = new Array(5);
 var overviewSection = SECTION[3].children[0];
@@ -63,7 +63,7 @@ function autocom(current_section) {
 			var res = input_string.every( function (item, index, array) {
 				var pattern = new RegExp(item, "i");
 				var found_match = element.label.match(pattern);
-
+				found_match = (element.id === from_stop) ? null : found_match;
 				if (found_match !== null) {
 						return true;
 				}
