@@ -56,7 +56,8 @@ function autocom(current_section) {
 			var res = input_string.every( function (item, index, array) {
 				var pattern = new RegExp(item, "i");
 				var found_match = element.label.match(pattern);
-				found_match = (element.id === from_stop) ? null : found_match;
+				found_match = (current_section == 1 && element.id === from_stop) ? null : found_match;
+				found_match = (current_section == 0 && element.id === to_stop) ? null : found_match;
 				if (found_match !== null) {
 						return true;
 				}
