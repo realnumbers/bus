@@ -29,7 +29,7 @@ function initApp() {
 	hideElement("#back");
 	hideElement(".cancel-input");
 	showElement(".js-active");
-	$(".js-active").children(".js-suggest:first").addClass("js-work");
+	changeWorkElement("reset");
 	$(":input").val("");
 }
 
@@ -42,10 +42,10 @@ function removeClickDelay() {
 }
 
 function hideElement(element) {
-	$(element).hide();
+	return $(element).hide();
 }
 function showElement(element) {
-	$(element).show();
+	return $(element).show();
 }
 function autocom() {
 	var inputString = $(".js-active").children(".js-input").val();
@@ -62,15 +62,15 @@ function autocom() {
 			var foundBusstop = inputString.every( function (item, index, array) {
 				var pattern = new RegExp(item, "i");
 				var foundMatch = element.label.match(pattern);
-				foundMatch = (element.id != to_stop && element.id === from_stop) ? null : foundMatch;
-				foundMatch = (element.it != from_stop && element.id === to_stop) ? null : foundMatch;
+				//foundMatch = (element.id != to_stop && element.id === from_stop) ? null : foundMatch;
+				//foundMatch = (element.it != from_stop && element.id === to_stop) ? null : foundMatch;
 				// return true if there is a match
 				return (foundMatch != null) ? true : false;
 			});
 
 			if (foundBusstop) {
 				matching_busstops[i] = element;
-				$(".js-active").children(".js-work").removeClass("js-work").next().addClass("js-work");
+				changeWorkElement();
 				$(".js-active").children(".js-work").children(".line-big").text(element.name + ", ");
 				$(".js-active").children(".js-work").children(".line-small").text(element.city);
 				showElement(".js-work");
@@ -84,8 +84,17 @@ function autocom() {
 		else
 			hideMatchMsg();
 	}
-	$(".js-active").children(".js-work").removeClass("js-work");
-	$(".js-active").children(".js-suggest:first").addClass("js-work");
+	changeWorkElement("reset");
+}
+// changes the current work element to the next element
+// resets work element with the command "reset"
+function changeWorkElement(command){
+	if (command == "reset") {
+		$(".js-active").children(".js-work").removeClass("js-work");
+		$(".js-active").children(".js-suggest:first").addClass("js-work");
+	}
+	else
+		$(".js-active").children(".js-work").removeClass("js-work").next().addClass("js-work");
 }
 function showMatchMsg(){
 	$(".js-active").children(".js-suggest:first").text("Couldn't find any matches...");
@@ -100,16 +109,16 @@ function hideMatchMsg(){
 	$(".js-active").children(".js-suggest:first").removeClass("js-no-matches");
 }
 function selectBusstop(current_section, div_number) {
-	SECTION[current_section].children[0].children[1].innerHTML = matching_busstops[div_number].name + ", ";
-	SECTION[current_section].children[0].children[2].innerHTML = matching_busstops[div_number].city;
-	SECTION[current_section].children[1].value = "";
-	
-	SECTION[current_section].children[0].children[1].style.display = "inline-block";
-	SECTION[current_section].children[0].children[2].style.display = "inline-block";
-	
-	hideElement("js-active");
-	$("js-section").removeClass("active-section"); //className = "js-section";
-	hideCancelInputIcon(current_section);
+	$(".js-active").find(".line-big:first").text(matching_busstops[div_number - 1].name + ", ");
+	$(".js-active").find(".line-small:first").text(matching_busstops[div_number - 1].city);
+	$(":input").val("");	
+	hideElement(".js-input");
+	$(".js-active").removeClass("js-active").next().addClass("js-active");
+	showElement(".js-active").children(".js-input").show();
+	changeWorkElement("reset");
+	$("js-section").removeClass("active-section"); 
+	$("js-active").addClass("active-section"); 
+	/*hideCancelInputIcon(current_section);
 	
 	if (queryComplete) {
 		if (current_section === 0) {
@@ -132,6 +141,7 @@ function selectBusstop(current_section, div_number) {
 				resendQuery();
 		}
 	}
+	*/
 }
 function activateInput(current_section) {
 	if (queryComplete) {
