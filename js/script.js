@@ -49,8 +49,6 @@ function autocom(current_section) {
 	var children = SECTION[current_section].children;
 	var input_string = children[1].value;
 
-	$(".js-input").text("");
-
 	if (input_string !== "") {
 		children[2].children[1].innerHTML = "Couldn't find any matches...";
 		children[2].children[1].className += " no-matches";
@@ -226,7 +224,6 @@ function getRoute(date, time) {
 	date = date.split(":");
 	time = time.replace(":", "");
 	count_date = date[2].split("");
-	unBlank(3);
 	hideResultList();
 	showIcon(CANCEL);	
 	if (count_date.length == 2) {
@@ -317,7 +314,6 @@ function cancelQuery() {
 	queryComplete = false;
 	/*hideIcon(CANCEL);
 	clearPage(0);
-	unBlank(0);
 	SECTION[0].children[0].children[1].innerHTML = "";
 	SECTION[0].children[0].children[2].innerHTML = "";
 	SECTION[2].children[1].value = "";
@@ -361,7 +357,6 @@ function showDetails(resultNumber) {
 	details = true;
 	showIcon(BACK);
 	DETAILS.style.display = "block";
-	unBlank(4);
 	//hideIcon(CANCEL);
 	
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
