@@ -1,19 +1,8 @@
-var SEARCH = document.getElementById("search");
-var DETAILS = document.getElementById("details");
-var SECTION = document.getElementsByClassName("js-section");
-var BACK = document.getElementById("back");
-var CANCEL = document.getElementById("cancel");
-var CANCEL_INPUT_ICONS = document.getElementsByClassName("cancel-input");
 //tmpUrl: dep, arr, time, date
 var tmpUrl = new Array(4);
 var con_data = new Array(5);
 var lang = "it";
-var from_stop = "";
-var to_stop;
 var matching_busstops = new Array(5);
-var overviewSection = SECTION[3].children[0];
-var queryComplete = false;
-var details = false;
 var busstops = $.getJSON( "js/busstops.json", function(data) {
 		//autocom(0);
 	});
@@ -234,8 +223,7 @@ function nextData(requestId, count) {
 	}
 	else {
 		hideElement(".spinner");
-		for (var i = 0; i < 5; i++)
-			overviewSection.children[i].style.display = "block";
+		showElement(".search-result");
 	}
 }
 function loadOverview(data, resultPointer) {
@@ -263,8 +251,8 @@ function loadOverview(data, resultPointer) {
 	else if (transfers > 1)
 		transfers += " changes ";
 	
-	showElement(".js-work").find(".line-big").text(depTime + " - " + arrTime);
-	showElement(".js-work").find(".line-small").text(duration + transfers);
+	//showElement(".js-work").find(".line-big").text(depTime + " - " + arrTime);
+	//showElement(".js-work").find(".line-small").text(duration + transfers);
 	changeWorkElement();
 	
 }
@@ -275,6 +263,8 @@ function splitBusstopName(busstopName) {
 }
 function showDetails(resultNumber) {
 	activedNextSection();
+}
+function parseDetails(resultNumber){
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
 	var walkTime = "";
 	var waitTime = "";
@@ -309,9 +299,6 @@ function showDetails(resultNumber) {
 			depTime = extractTime(dep);
 			arrTime = extractTime(arr);
 
-			showElement(".intermediate-block").text(depTime[0] + ":" + depTime[1]);
-			$(".intermediate-block").text(arrTime[0] + ":" + arrTime[1]);
-			$(".intermediate-block").text("Bus line " + lineNo);
 			if (lang === "de") {
 				arrBusstop = splitBusstopName(arrBusstop[1]);
 				depBusstop = splitBusstopName(depBusstop[1]);
@@ -320,59 +307,22 @@ function showDetails(resultNumber) {
 				arrBusstop = splitBusstopName(arrBusstop[0]);
 				depBusstop = splitBusstopName(depBusstop[0]);
 			}
-			TRANS_BLOCK[i].children[0].children[1].children[0].innerHTML  = depBusstop[1] + ", ";
-			TRANS_BLOCK[i].children[0].children[1].children[1].innerHTML  = depBusstop[0];
-			TRANS_BLOCK[i].children[2].children[1].children[0].innerHTML  = arrBusstop[1] + ", ";
-			TRANS_BLOCK[i].children[2].children[1].children[1].innerHTML  = arrBusstop[0];
-		
 			if ((i+1) < connection.length && connection[i + 1].Journey.length > 0) {
 				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
 				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
 				W_BLOCK[i].style.display = "block";
 			}
-		TRANS_BLOCK[i].style.display = "block";
 		}
-		W_BLOCK[i].children[1].innerHTML = waitTime + ((waitTime != "" && walkTime != "") ? ", w" : "") + ((waitTime == "") ? "W" : "") + walkTime;
 		waitTime = "";
 		walkTime = "";
 	}
 	//makeVisible(4);
-	$(SEARCH).removeClass("search-visible");
-	$(SEARCH).addClass("search-hidden");
-	$(DETAILS).removeClass("details-hidden");
-	$(DETAILS).addClass("details-visible");
-	
-	$(CANCEL).removeClass("search-visible");
-	$(CANCEL).addClass("search-hidden");
-	$(BACK).removeClass("details-hidden");
-	$(BACK).addClass("details-visible");
+	//$(SEARCH).removeClass("search-visible");
+	//$(SEARCH).addClass("search-hidden");
+	//$(DETAILS).removeClass("details-hidden");
+	//$(DETAILS).addClass("details-visible");
 }
-function goBack() {
-	details = false;
-	SEARCH.style.display = "block";
-	
-	$(DETAILS).removeClass("details-visible");
-	$(DETAILS).addClass("details-hidden");
-	$(SEARCH).removeClass("search-hidden");
-	$(SEARCH).addClass("search-visible");
-	
-	$(BACK).removeClass("details-visible");
-	$(BACK).addClass("details-hidden");
-	$(CANCEL).removeClass("search-hidden");
-	$(CANCEL).addClass("search-visible");
-	
-	hideCancelInputIcon(0);
-	hideCancelInputIcon(1);
-	hideCancelInputIcon(2);
-	showAllLabels();
-	hideSpinner();
-}2
-$(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-	if (!details) {
-		DETAILS.style.display = "none";
-		BACK.style.display = "none";
-	}
-});
+
 function hideKeyboard() {
 	$(document.activeElement).filter(':input:focus').blur();
 }
