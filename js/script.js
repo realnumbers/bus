@@ -4,6 +4,8 @@ var SECTION = document.getElementsByClassName("js-section");
 var BACK = document.getElementById("back");
 var CANCEL = document.getElementById("cancel");
 var CANCEL_INPUT_ICONS = document.getElementsByClassName("cancel-input");
+//tmpUrl: dep, arr, time, date
+var tmpUrl = new Array(4);
 var con_data = new Array(5);
 var lang = "it";
 var from_stop = "";
@@ -13,7 +15,7 @@ var overviewSection = SECTION[3].children[0];
 var queryComplete = false;
 var details = false;
 var busstops = $.getJSON( "js/busstops.json", function(data) {
-		autocom(0);
+		//autocom(0);
 	});
 
 if (navigator.language === "de") {
@@ -28,9 +30,22 @@ function initApp() {
 	hideElement("#cancel");
 	hideElement("#back");
 	hideElement(".cancel-input");
-	showElement(".js-active");
 	changeWorkElement("reset");
 	$(":input").val("");
+	showElement(".js-active").children(".js-input").show();
+	// for test
+	//tmpUrl: dep, arr, time, date
+	tmpUrl[0] = ":1213:1214:";
+	tmpUrl[1] = ":1211:1212:";
+	tmpUrl[2] = "10:20";
+	tmpUrl[3] = "10/03/2014";
+	hideElement(".js-input");
+	$(".js-active").find(".line-big:first").text("Test, ");
+	activedNextSection();
+	showElement(".js-active").children(".js-input").show();
+	hideElement(".js-input");
+	$(".js-active").find(".line-small:first").text("City");
+	activedNextSection();
 }
 
 
@@ -90,11 +105,11 @@ function autocom() {
 // resets work element with the command "reset"
 function changeWorkElement(command){
 	if (command == "reset") {
-		$(".js-active").children(".js-work").removeClass("js-work");
-		$(".js-active").children(".js-suggest:first").addClass("js-work");
+		$(".js-work").removeClass("js-work");
+		$(".js-active").find(".js-suggest:first").addClass("js-work");
 	}
 	else
-		$(".js-active").children(".js-work").removeClass("js-work").next().addClass("js-work");
+		$(".js-active").find(".js-work").removeClass("js-work").next().addClass("js-work");
 }
 function showMatchMsg(){
 	$(".js-active").children(".js-suggest:first").text("Couldn't find any matches...");
@@ -111,80 +126,27 @@ function hideMatchMsg(){
 function selectBusstop(current_section, div_number) {
 	$(".js-active").find(".line-big:first").text(matching_busstops[div_number - 1].name + ", ");
 	$(".js-active").find(".line-small:first").text(matching_busstops[div_number - 1].city);
-	$(":input").val("");	
+	$(".js-active").find(":input").val("");	
+	console.log(matching_busstops);
 	hideElement(".js-input");
+	activedNextSection();
+}
+
+function activedNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
-	showElement(".js-active").children(".js-input").show();
-	changeWorkElement("reset");
 	$("js-section").removeClass("active-section"); 
 	$("js-active").addClass("active-section"); 
-	/*hideCancelInputIcon(current_section);
-	
-	if (queryComplete) {
-		if (current_section === 0) {
-				from_stop = matching_busstops[div_number].id;
-				resendQuery();
-		}
-		if (current_section === 1) {
-				to_stop = matching_busstops[div_number].id;
-				resendQuery();
-		}
+	changeWorkElement("reset");
+	if ($(".js-active").find(":input:first").hasClass("date")) {
+		showElement(".js-active");
+		autoSetTime();
+		activedNextSection();
+		requestRoute();
 	}
-	else {
-		activateInput(current_section + 1);
-		autocom(current_section);
-		if (current_section === 0) {
-				from_stop = matching_busstops[div_number].id;
-		}
-		if (current_section === 1) {
-				to_stop = matching_busstops[div_number].id;
-				resendQuery();
-		}
-	}
-	*/
-}
-function activateInput(current_section) {
-	if (queryComplete) {
-		hideCancelInputIcon(0);
-		hideCancelInputIcon(1);
-		hideCancelInputIcon(2);
-		showCancelInputIcon(current_section);
-	}
-	activedNextSection();
-	showAllLabels();
-	SECTION[current_section].children[0].children[1].style.display = "none";
-	SECTION[current_section].children[0].children[2].style.display = "none";
-}
-function deactivateLabel(current_section) {
-	SECTION[current_section].children[0].children[1].style.display = "inline-block";
-	SECTION[current_section].children[0].children[2].style.display = "inline-block";
-	hideElement("js-active");
-	$("js-section").removeClass("active-section"); //className = "js-section";
-	hideCancelInputIcon(current_section);
-}
-function showAllLabels() {
-	for (var i = 0; i < 3; i++) {
-		SECTION[i].children[0].children[1].style.display = "inline-block";
-		SECTION[i].children[0].children[2].style.display = "inline-block";
-		i++;
-	}
-}
-function activedNextSection() {
-	$(".js-section").nextAll(".js-suggest").hide();
-	$(".js-active").removeClass("js-active").next(".js-section").addClass("js-active");
-	//hideElement(".js-section");
-	$(".active-section").removeClass("active-section");
-	showElement(".js-active");
-	$(".js-active").next(".input").focus();
-	$(".js-active").addClass("active-section");
-}
-function makeVisible(current_section) {
-	SECTION[current_section].style.display = "block";
-
-	for (var i; i < SECTION[current_section].children.length; i++) {
-		SECTION[current_section].children[i].style.display = "block";
-	}
-	addClass(current_section);
+	else if ($(".js-active").find(".line-big:first").text() == "")
+			showElement(".js-active").children(".js-input").show();
+		else
+			activedNextSection();
 }
 function autoSetTime() {
 	var currentdate = new Date();
@@ -194,31 +156,18 @@ function autoSetTime() {
 	var hours = addZero(currentdate.getHours());
 	var minutes = addZero(currentdate.getMinutes());
 	
-	SECTION[2].children[1].value = day + "." + month + "."  + year;
-	SECTION[2].children[2].value = hours + ":" + minutes;
+	$(".date").val(day + "." + month + "."  + year);
+	$(".time").val(hours + ":" + minutes);
 	
-	//SECTION[2].children[1].value = "27/02/2014";
-  	//SECTION[2].children[2].value = "13:20";
-	showAllLabels();
-	//selectTime(2);
+	selectTime();
 }
-function selectTime(current_section) {
-	var dateElement = SECTION[current_section].children[1];
-	var timeElement = SECTION[current_section].children[2];
-	var date = dateElement.value;
-	var time = timeElement.value;
+function selectTime() {
+	var date = $(".date").val();
+	var time = $(".time").val();
 
-	if (date == "" && time == "") {
-		autoSetTime();
-	}
-	dateElement = SECTION[current_section].children[1];
-	timeElement = SECTION[current_section].children[2];
-	date = dateElement.value;
-	time = timeElement.value;
 	var dateArray = date.split(/[\.\/\-,;:]/);
 	var timeArray = time.split(/\D/);
-
-	if (dateElement.validity.valid && timeElement.validity.valid){ 
+	if ($(".date")[0].validity.valid && $(".time")[0].validity.valid) { 
 		var correctDateArray = formatDate(dateArray);
 		var day = addZero(correctDateArray[0]);
 		var month = addZero(correctDateArray[1]);
@@ -228,74 +177,68 @@ function selectTime(current_section) {
 		var hours = correctTimeArray[0];
 		var minutes = correctTimeArray[1];
 
-		SECTION[current_section].children[0].children[1].innerHTML = day + "." + month + "." + year + ", ";
-		SECTION[current_section].children[0].children[2].innerHTML = hours + ":" + minutes;
-		hideCancelInputIcon(current_section);
-		hideElement("js-active");
-		$("js-section").removeClass("active-section"); //className = "js-section";
-		showAllLabels();
-		getRoute(date,time);
+		$(".js-active").find(".line-big").text(day + "." + month + "." + year + ", ")
+		$(".js-active").find(".line-small").text(hours + ":" + minutes);
+		hideElement(".js-input");
 	}
 }
-function removeClass(current_section) {
-	$(SECTION[current_section]).removeClass("active-section");
-}
-function getRoute(date, time) {
+function requestRoute() {
+	//test time, later take the time from url
+	var date = tmpUrl[3];
+	var fromStop = tmpUrl[0];
+	var toStop = tmpUrl[1];
+	var time = tmpUrl[2];;
+	//base url
+	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
+	var requestId;
 	date = date.replace(/\//g, ":");
 	date = date.replace(/\./g, ":");
 	date = date.split(":");
 	time = time.replace(":", "");
-	count_date = date[2].split("");
-	hideResultList();
-	showIcon(CANCEL);	
-	if (count_date.length == 2) {
+	if (date[2].length == 2) {
 		date[2] = "20" + date[2];
 	}
-	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
-	url = url + "startBusStationId=" + from_stop;
-	url = url + "&endBusStationId=" + to_stop;
-	url = url + "&yyyymmddhhmm=" + date[2] + date[1] + date[0] + time;
-	var results = 3;
-	var requestId;
+	url += "startBusStationId=" + fromStop;
+	url += "&endBusStationId=" + toStop;
+	url += "&yyyymmddhhmm=" + date[2] + date[1] + date[0] + time;
+	changeWorkElement("reset");
 	$.ajax({
 		dataType: "jsonp",
 		jsonpCallback: "Callback",
 		url: url,
 	 	success: function(data) {
-			showIcon(CANCEL);
-			queryComplete = true;
-			hideKeyboard();
-			loadConnection(data, 0);
+			//hideKeyboard();
+			loadOverview(data, 0);
 			requestId = data.ConResCtxt[0];
 			requestId = requestId.split("#")[0];
-			nextData(data, requestId, 1);
+			nextData(requestId, 1);
 		}
 	});	
 }
-function nextData(data, requestId, count) {
+function nextData(requestId, count) {
 	if (count < 5) {
 		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
-		nextUrl = nextUrl + requestId;
-		nextUrl = nextUrl + "%23";
-		nextUrl = nextUrl + count;
+		nextUrl += requestId;
+		nextUrl += "%23";
+		nextUrl += count;
 
 		$.ajax({
 			dataType: "jsonp",
 			jsonpCallback: "Callback",
 			url: nextUrl,
 		 	success: function(data) {
-				loadConnection(data, count);
-				nextData(data, requestId, parseInt(count) + 1);
+				loadOverview(data, count);
+				nextData(requestId, parseInt(count) + 1);
 			}
 		});		
 	}
 	else {
-		hideSpinner();
+		hideElement(".spinner");
 		for (var i = 0; i < 5; i++)
 			overviewSection.children[i].style.display = "block";
 	}
 }
-function loadConnection(data, resultPointer) {
+function loadOverview(data, resultPointer) {
 	var con = data.ConnectionList.Connection[0].Overview;
 	var arrTime = con.Arrival.BasicStop.Arr.Time;
 	var depTime = con.Departure.BasicStop.Dep.Time;
@@ -315,75 +258,24 @@ function loadConnection(data, resultPointer) {
 
 	if (transfers == 0)
 		transfers = "";
-	if (transfers == 1)
+	else if (transfers == 1)
 		transfers = "1 change";
-	if (transfers > 1)
+	else if (transfers > 1)
 		transfers += " changes ";
 	
-	//overviewSection.children[resultPointer].style.display = "block";
+	showElement(".js-work").find(".line-big").text(depTime + " - " + arrTime);
+	showElement(".js-work").find(".line-small").text(duration + transfers);
+	changeWorkElement();
 	
-	overviewSection.children[resultPointer].children[0].innerHTML = depTime + " - " + arrTime;
-	if (transfers == 0) {
-		overviewSection.children[resultPointer].children[1].innerHTML = duration;
-	}
-	else {
-		overviewSection.children[resultPointer].children[1].innerHTML = duration + ", " + transfers;
-	}
-	
-	//hideSpinner();
-}
-function cancelQuery() {
-	queryComplete = false;
-	/*hideIcon(CANCEL);
-	clearPage(0);
-	SECTION[0].children[0].children[1].innerHTML = "";
-	SECTION[0].children[0].children[2].innerHTML = "";
-	SECTION[2].children[1].value = "";
-	SECTION[2].children[2].value = "";
-	*/
-	initApp();
-}
-function hideResultList() {
-	var list = SECTION[3].children[0].children;
-	//alert("length:" + SECTION[3].children[0].children.length);
-	for (var i = 0; i < list.length; i++) {
-		//alert(i);
-		list[i].style.display = "none";
-		//alert(list[i].innerHTML);
-	}
 }
 
-function hideSpinner() {
-	SECTION[3].children[1].style.display = "none";
-}
-function showSpinner() {
-	SECTION[3].children[1].style.display = "block";
-}
-function hideIcon(icon) {
-	icon.style.display = "none";
-}
-function showIcon(icon) {
-	icon.style.display = "block";
-}
 function splitBusstopName(busstopName) {
 	busstopName = busstopName.split("(")[1].split(") ");
 	return busstopName;
 }
-function hideCancelInputIcon(sectionNo) {
-	CANCEL_INPUT_ICONS[sectionNo].style.display = "none";
-}
-function showCancelInputIcon(sectionNo) {
-	CANCEL_INPUT_ICONS[sectionNo].style.display = "block";
-}
 function showDetails(resultNumber) {
-	details = true;
-	showIcon(BACK);
-	DETAILS.style.display = "block";
-	//hideIcon(CANCEL);
-	
+	activedNextSection();
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
-	var TRANS_BLOCK = document.getElementsByClassName("transit-block");
-	var W_BLOCK = document.getElementsByClassName("intermediate-block");
 	var walkTime = "";
 	var waitTime = "";
 	var lineNo;
@@ -395,12 +287,10 @@ function showDetails(resultNumber) {
 	var depTime;
 	var arrTime;
 	var nextDepTime;
-	for (var i = 0; i < TRANS_BLOCK.length; i++) {
-		TRANS_BLOCK[i].style.display = "none";
-		W_BLOCK[i].style.display = "none";
-	}
-	var i = 0;
-	while (i < connection.length) {
+	hideElement(".transit-block");
+	hideElement(".intermediate-block");
+
+	for (var i = 0; i < connection.length; i++) {
 		walkTime = "";
 		if (connection[i].Walk.length > 0) {
 			walkTime = "alk " + timeString(calculateWaitingTime("00d00:00:00:00", connection[i].Walk[0].Duration.Time));
@@ -408,7 +298,6 @@ function showDetails(resultNumber) {
 				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
 				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
 			}
-			W_BLOCK[i].style.display = "block";
 		}	
 		else if (connection[i].Journey.length > 0) {
 			lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
@@ -419,9 +308,10 @@ function showDetails(resultNumber) {
 			arr = stops[stops.length - 1].Arr.Time;
 			depTime = extractTime(dep);
 			arrTime = extractTime(arr);
-			TRANS_BLOCK[i].children[0].children[0].innerHTML = depTime[0] + ":" + depTime[1];
-			TRANS_BLOCK[i].children[2].children[0].innerHTML = arrTime[0] + ":" + arrTime[1];
-			TRANS_BLOCK[i].children[1].children[1].innerHTML = "Bus line " + lineNo;
+
+			showElement(".intermediate-block").text(depTime[0] + ":" + depTime[1]);
+			$(".intermediate-block").text(arrTime[0] + ":" + arrTime[1]);
+			$(".intermediate-block").text("Bus line " + lineNo);
 			if (lang === "de") {
 				arrBusstop = splitBusstopName(arrBusstop[1]);
 				depBusstop = splitBusstopName(depBusstop[1]);
@@ -445,7 +335,6 @@ function showDetails(resultNumber) {
 		W_BLOCK[i].children[1].innerHTML = waitTime + ((waitTime != "" && walkTime != "") ? ", w" : "") + ((waitTime == "") ? "W" : "") + walkTime;
 		waitTime = "";
 		walkTime = "";
-	i++;	
 	}
 	//makeVisible(4);
 	$(SEARCH).removeClass("search-visible");
@@ -461,7 +350,6 @@ function showDetails(resultNumber) {
 function goBack() {
 	details = false;
 	SEARCH.style.display = "block";
-	showIcon(CANCEL);
 	
 	$(DETAILS).removeClass("details-visible");
 	$(DETAILS).addClass("details-hidden");
@@ -488,18 +376,6 @@ $(DETAILS).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend M
 function hideKeyboard() {
 	$(document.activeElement).filter(':input:focus').blur();
 }
-/*
-function hideKeyboard(element) {
-    element.attr('readonly', 'readonly'); // Force keyboard to hide on input field.
-    element.attr('disabled', 'true'); // Force keyboard to hide on textarea field.
-    setTimeout(function() {
-        element.blur();  //actually close the keyboard
-        // Remove readonly attribute after keyboard is hidden.
-        element.removeAttr('readonly');
-        element.removeAttr('disabled');
-    }, 100);
-}
-*/
 function extractTime(timestamp) {
 	// 00d10:20:00
 	var all = timestamp.split("d");
@@ -587,7 +463,4 @@ function formatDate(date) {
 		date[yearPosition] = tmp;
 	}
 	return date;
-}
-function resendQuery() {
-	selectTime(2);
 }
