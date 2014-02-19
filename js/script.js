@@ -298,8 +298,22 @@ function loadConnection(data, resultPointer) {
 	depTime = depTime[0] + ":" + depTime[1];
 	duration = duration.split("d");
 	duration = duration[1].split(":");
-	duration = duration[0] + ":" + duration[1];
-
+	
+	hours = parseInt(duration[0]);
+	mins = parseInt(duration[1]);
+	if (hours == 0) {
+		hours = "";
+	} else {
+		hours = hours + "h ";
+	}
+	if (mins == 0) {
+		mins = "";
+	} else {
+		mins = mins + "min";
+	}
+	
+	duration = hours + mins;
+	
 	if (transfers == 0)
 		transfers = "";
 	if (transfers == 1)
