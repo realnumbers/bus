@@ -25,15 +25,15 @@ function initApp() {
 	// for test
 	//tmpUrl: dep, arr, time, date
 	tmpUrl[0] = ":1213:1214:";
-	tmpUrl[1] = ":1211:1212:";
+	tmpUrl[1] = ":672:673:";
 	tmpUrl[2] = "10:20";
 	tmpUrl[3] = "10/03/2014";
 	hideElement(".js-input");
-	$(".js-active").find(".line-big:first").text("Test, ");
+	$(".js-active").find(".js-name:first").text("Test, ");
 	activedNextSection();
 	showElement(".js-active").children(".js-input").show();
 	hideElement(".js-input");
-	$(".js-active").find(".line-small:first").text("City");
+	$(".js-active").find(".js-city:first").text("City");
 	activedNextSection();
 }
 
@@ -75,8 +75,8 @@ function autocom() {
 			if (foundBusstop) {
 				matching_busstops[i] = element;
 				changeWorkElement();
-				$(".js-active").children(".js-work").children(".line-big").text(element.name + ", ");
-				$(".js-active").children(".js-work").children(".line-small").text(element.city);
+				$(".js-active").children(".js-work").children(".js-name").text(element.name + ", ");
+				$(".js-active").children(".js-work").children(".js-city").text(element.city);
 				showElement(".js-work");
 				i++;
 			}
@@ -113,8 +113,8 @@ function hideMatchMsg(){
 	$(".js-active").children(".js-suggest:first").removeClass("js-no-matches");
 }
 function selectBusstop(current_section, div_number) {
-	$(".js-active").find(".line-big:first").text(matching_busstops[div_number - 1].name + ", ");
-	$(".js-active").find(".line-small:first").text(matching_busstops[div_number - 1].city);
+	$(".js-active").find(".js-name:first").text(matching_busstops[div_number - 1].name + ", ");
+	$(".js-active").find(".js-city:first").text(matching_busstops[div_number - 1].city);
 	$(".js-active").find(":input").val("");	
 	console.log(matching_busstops);
 	hideElement(".js-input");
@@ -123,8 +123,8 @@ function selectBusstop(current_section, div_number) {
 
 function activedNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
-	$("js-section").removeClass("active-section"); 
-	$("js-active").addClass("active-section"); 
+	$(".js-section").removeClass("active-section"); 
+	$(".js-active").addClass("active-section"); 
 	changeWorkElement("reset");
 	if ($(".js-active").find(":input:first").hasClass("date")) {
 		showElement(".js-active");
@@ -132,7 +132,7 @@ function activedNextSection() {
 		activedNextSection();
 		requestRoute();
 	}
-	else if ($(".js-active").find(".line-big:first").text() == "")
+	else if ($(".js-active").find(".js-name:first").text() == "")
 			showElement(".js-active").children(".js-input").show();
 		else
 			activedNextSection();
@@ -166,8 +166,8 @@ function selectTime() {
 		var hours = correctTimeArray[0];
 		var minutes = correctTimeArray[1];
 
-		$(".js-active").find(".line-big").text(day + "." + month + "." + year + ", ")
-		$(".js-active").find(".line-small").text(hours + ":" + minutes);
+		$(".js-active").find(".js-name").text(day + "." + month + "." + year + ", ")
+		$(".js-active").find(".js-city").text(hours + ":" + minutes);
 		hideElement(".js-input");
 	}
 }
@@ -190,6 +190,7 @@ function requestRoute() {
 	url += "startBusStationId=" + fromStop;
 	url += "&endBusStationId=" + toStop;
 	url += "&yyyymmddhhmm=" + date[2] + date[1] + date[0] + time;
+	hideElement(".js-suggest");
 	changeWorkElement("reset");
 	$.ajax({
 		dataType: "jsonp",
@@ -222,8 +223,8 @@ function nextData(requestId, count) {
 		});		
 	}
 	else {
+		showElement(".js-suggest");
 		hideElement(".spinner");
-		showElement(".search-result");
 	}
 }
 function loadOverview(data, resultPointer) {
@@ -251,76 +252,92 @@ function loadOverview(data, resultPointer) {
 	else if (transfers > 1)
 		transfers += " changes ";
 	
-	//showElement(".js-work").find(".line-big").text(depTime + " - " + arrTime);
-	//showElement(".js-work").find(".line-small").text(duration + transfers);
+	$(".js-work").find(".js-name").text(depTime + " - " + arrTime);
+	$(".js-work").find(".js-city").text(duration + ", " +  transfers);
 	changeWorkElement();
 	
 }
 
 function splitBusstopName(busstopName) {
-	busstopName = busstopName.split("(")[1].split(") ");
+	var i = (lang == "de") ? 1 : 0;
+	busstopName = busstopName.split(" - ")[i].split("(")[1].split(") ");
 	return busstopName;
 }
 function showDetails(resultNumber) {
-	activedNextSection();
+	var routeData;
+	// jump to the details section
+	$(".js-active").removeClass("js-active");
+	showElement("#details").find(".js-section:first").addClass("js-active");
+	$(".js-section").removeClass("active-section"); 
+	$(".js-active").addClass("active-section"); 
+	hideElement(".js-section");
+	showElement(".js-active");
+	changeWorkElement("reset");
+	hideElement(".js-suggest");
+
+	routeData = parseDetails(resultNumber);
+	for (var i = 0; i < routeData.length; i++)
+		showDetailsSection(routeData[i]);
 }
+function showDetailsSection(routeData) {
+
+	showElement(".js-work").find(".js-time:first").text(routeData.depTime);
+	showElement(".js-work").find(".js-time:last").text(routeData.arrTime);
+	showElement(".js-work").find(".js-name:first").text(routeData.depBusstop[1] + ", ");
+	showElement(".js-work").find(".js-name:last").text(routeData.arrBusstop[1] + ", ");
+	showElement(".js-work").find(".js-city:first").text(routeData.depBusstop[0]);
+	showElement(".js-work").find(".js-city:last").text(routeData.arrBusstop[0]);
+
+	changeWorkElement();
+	if (routeData.waitTime != "")
+		showElement(".js-work").find("p").text(routeData.waitTime);
+	changeWorkElement();
+}
+// returns in Array of JSON depBusstop, arrBusstop, depTime, arrTime, lineNo, waitTime
 function parseDetails(resultNumber){
 	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
-	var walkTime = "";
-	var waitTime = "";
-	var lineNo;
-	var stops;
-	var arrBusstop;
-	var depBusstop;
-	var dep;
-	var arr;
-	var depTime;
-	var arrTime;
+	var allBusstops;
 	var nextDepTime;
-	hideElement(".transit-block");
-	hideElement(".intermediate-block");
+	var waitTime;
+	var walkTime;
+	var conObj = new Object();
+	var routeData = [];
 
 	for (var i = 0; i < connection.length; i++) {
-		walkTime = "";
-		if (connection[i].Walk.length > 0) {
-			walkTime = "alk " + timeString(calculateWaitingTime("00d00:00:00:00", connection[i].Walk[0].Duration.Time));
-			if (connection[i].Journey.length > 0){
-				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
-				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
-			}
-		}	
-		else if (connection[i].Journey.length > 0) {
-			lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
-			stops = connection[i].Journey[0].PassList.BasicStop;
-			arrBusstop = stops[stops.length -1].Station.name.split(" - ");
-			depBusstop = stops[0].Station.name.split(" - ");
-			dep = stops[0].Dep.Time;
-			arr = stops[stops.length - 1].Arr.Time;
-			depTime = extractTime(dep);
-			arrTime = extractTime(arr);
-
-			if (lang === "de") {
-				arrBusstop = splitBusstopName(arrBusstop[1]);
-				depBusstop = splitBusstopName(depBusstop[1]);
-			}
-			else {
-				arrBusstop = splitBusstopName(arrBusstop[0]);
-				depBusstop = splitBusstopName(depBusstop[0]);
-			}
-			if ((i+1) < connection.length && connection[i + 1].Journey.length > 0) {
-				nextDepTime = connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time;
-				waitTime = "Wait " + timeString(calculateWaitingTime(arr, nextDepTime));
-				W_BLOCK[i].style.display = "block";
-			}
-		}
+		conObj = new Object();
 		waitTime = "";
 		walkTime = "";
+		//console.log(connection);
+		if (connection[i].Journey.length > 0) {
+			allBusstops = connection[i].Journey[0].PassList.BasicStop;
+			//city, name
+			conObj.depBusstop = splitBusstopName(allBusstops[0].Station.name);
+			conObj.arrBusstop = splitBusstopName(allBusstops[allBusstops.length - 1].Station.name);
+			// hours, minutes, days
+			conObj.depTime = extractTime(allBusstops[0].Dep.Time);
+			conObj.arrTime = extractTime(allBusstops[allBusstops.length - 1].Arr.Time);
+
+			conObj.lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
+			
+			if (i + 1 < connection.length) {
+				nextDepTime = extractTime(connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time);
+				waitTime = calculateWaitingTime(conObj.arrTime, nextDepTime);
+			}
+		}
+		else
+			walkTime = calculateWaitingTime([0, 0, 0], connection[i].Walk[0].Duration.Time);
+
+		conObj.arrTime = conObj.arrTime[0] + ":" + conObj.arrTime[1];
+		conObj.depTime = conObj.depTime[0] + ":" + conObj.depTime[1];
+		conObj.waitTime = (waitTime == "") ? "" : "Wait " ;
+		conObj.waitTime += timeString(waitTime) 
+		conObj.waitTime += (waitTime == "" || walkTime == "") ? "" : ", walk ";
+		conObj.waitTime += (waitTime == "" && walkTime != "") ? "Walk " : "";
+		conObj.waitTime += timeString(walkTime);
+		routeData[i] = conObj;
+
 	}
-	//makeVisible(4);
-	//$(SEARCH).removeClass("search-visible");
-	//$(SEARCH).addClass("search-hidden");
-	//$(DETAILS).removeClass("details-hidden");
-	//$(DETAILS).addClass("details-visible");
+	return routeData;
 }
 
 function hideKeyboard() {
@@ -335,25 +352,13 @@ function extractTime(timestamp) {
 	time[2] = all[0];
 	return time;					// hours, mins, days 
 }
-function extractTimeToInt (timestamp) {
-	// 00d10:20:00
-	var all = timestamp.split("d");
-	var time = all[1].split(":");
-	time[0] = parseInt(time[0]);
-	time[1] = parseInt(time[1]);
-	time[2] = parseInt(all[0]);
-	return time;					// hours, mins, days 
-}
 function calculateWaitingTime(timestamp1, timestamp2) {
-	var time1 = extractTimeToInt(timestamp1);
-	var time2 = extractTimeToInt(timestamp2);
-
-	var startMin  = time1[1];
-	var endMin    = time2[1];
-	var startHour = time1[0];
-	var endHour   = time2[0];
-	var startDay  = time1[2];
-	var endDay    = time2[2];
+	var startMin  = parseInt(timestamp1[1]);
+	var endMin    = parseInt(timestamp2[1]);
+	var startHour = parseInt(timestamp1[0]);
+	var endHour   = parseInt(timestamp2[0]);
+	var startDay  = parseInt(timestamp1[2]);
+	var endDay    = parseInt(timestamp2[2]);
 	
 	startMin += (startHour * 60 + startDay * 1440);
 	endMin += (endHour * 60 + endDay * 1440);
