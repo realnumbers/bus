@@ -125,17 +125,33 @@ function activedNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
 	$(".js-section").removeClass("active-section"); 
 	$(".js-active").addClass("active-section"); 
+	$(".js-suggest").find(".js-name").text("");
+	$(".js-suggest").find(".js-city").text("");
 	changeWorkElement("reset");
-	if ($(".js-active").find(":input:first").hasClass("date")) {
-		showElement(".js-active");
-		autoSetTime();
-		activedNextSection();
-		requestRoute();
+	if ($(".js-active").find(".js-name:first").text() == "") {
+		if ($(".js-active").find(":input:first").hasClass("date")) {
+			showElement(".js-active");
+			autoSetTime();
+			$(".js-active").removeClass("js-active").next().addClass("js-active");
+			$(".js-section").removeClass("active-section"); 
+			$(".js-active").addClass("active-section"); 
+			showElement(".js-active");
+			showElement(".spinnter");
+			requestRoute();
+		}
+		else {
+			if ($(".js-active").children().hasClass("search-results")) {
+				showElement(".js-active");
+				showElement(".spinnter");
+				requestRoute();
+			}
+			else
+				showElement(".js-active").children(".js-input").show();
+		}
+				
 	}
-	else if ($(".js-active").find(".js-name:first").text() == "")
-			showElement(".js-active").children(".js-input").show();
-		else
-			activedNextSection();
+	else
+		activedNextSection();
 }
 function autoSetTime() {
 	var currentdate = new Date();
@@ -170,6 +186,7 @@ function selectTime() {
 		$(".js-active").find(".js-city").text(hours + ":" + minutes);
 		hideElement(".js-input");
 	}
+	//activedNextSection();
 }
 function requestRoute() {
 	//test time, later take the time from url
@@ -184,6 +201,7 @@ function requestRoute() {
 	date = date.replace(/\./g, ":");
 	date = date.split(":");
 	time = time.replace(":", "");
+	showElement(".spinner");
 	if (date[2].length == 2) {
 		date[2] = "20" + date[2];
 	}
@@ -223,7 +241,7 @@ function nextData(requestId, count) {
 		});		
 	}
 	else {
-		showElement(".js-suggest");
+		$(".js-active").find(".js-suggest").show();
 		hideElement(".spinner");
 	}
 }
@@ -354,6 +372,16 @@ function parseDetails(resultNumber){
 	return routeData;
 }
 
+function toogleInput(element) {
+	console.log(element);
+	$(".js-section").removeClass("js-active");
+	showElement(element).parents(".js-section").addClass("js-active");
+	showElement(".js-active").children(".js-input").show();
+	$(".js-section").removeClass("active-section"); 
+	$(".js-active").addClass("active-section"); 
+	//changeWorkElement("reset");
+
+}
 function hideKeyboard() {
 	$(document.activeElement).filter(':input:focus').blur();
 }
