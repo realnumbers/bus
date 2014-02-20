@@ -198,7 +198,12 @@ button, input {
   font-size: 1.1em;
 }
 .bigger {
-  font-size: 1.5em;
+  font-size: 1.42em;
+}
+@media (min-width: 400px) {
+  .bigger {
+    font-size: 1.5em;
+  }
 }
 .blue {
   color: #1e85fe;
