@@ -12,6 +12,7 @@ if (navigator.language === "de") {
 }
 
 removeClickDelay();
+onEnterEvent();
 initApp();
 
 function initApp() {
@@ -19,9 +20,12 @@ function initApp() {
 	hideElement("#cancel");
 	hideElement("#back");
 	hideElement(".cancel-input");
+	$(".js-section:first").addClass("js-active");
 	changeWorkElement("reset");
 	$(":input").val("");
 	showElement(".js-active").children(".js-input").show();
+	$(".js-name").text("");
+	$(".js-city").text("");
 	// for test
 	//tmpUrl: dep, arr, time, date
 	tmpUrl[0] = ":1213:1214:";
@@ -36,7 +40,16 @@ function initApp() {
 	$(".js-active").find(".js-city:first").text("City");
 	activedNextSection();
 }
-
+function onEnterEvent() {
+	$("#date-input").keydown(function(event){
+		if(event.keyCode == 13)
+			submitTime();	
+	});
+	$("#time-input").keydown(function(event){
+		if(event.keyCode == 13)
+			submitTime();
+	});
+}
 
 function removeClickDelay() {
 	// Eliminates 300ms click delay on mobile 
@@ -50,6 +63,9 @@ function hideElement(element) {
 }
 function showElement(element) {
 	return $(element).show();
+}
+function cancelQuery() {
+	initApp()
 }
 function autocom() {
 	var inputString = $(".js-active").children(".js-input").val();
@@ -74,9 +90,10 @@ function autocom() {
 
 			if (foundBusstop) {
 				matching_busstops[i] = element;
-				changeWorkElement();
+				//changeWorkElement();
 				$(".js-active").children(".js-work").children(".js-name").text(element.name + ", ");
 				$(".js-active").children(".js-work").children(".js-city").text(element.city);
+				changeWorkElement();
 				showElement(".js-work");
 				i++;
 			}
@@ -112,11 +129,12 @@ function hideMatchMsg(){
 	$(".js-active").children(".js-suggest:first").removeClass("no-matches");
 	$(".js-active").children(".js-suggest:first").removeClass("js-no-matches");
 }
-function selectBusstop(current_section, div_number) {
-	$(".js-active").find(".js-name:first").text(matching_busstops[div_number - 1].name + ", ");
-	$(".js-active").find(".js-city:first").text(matching_busstops[div_number - 1].city);
+function selectBusstop(resultNumber) {
+	$(".js-active").find(".js-name:first").text(matching_busstops[resultNumber].name + ", ");
+	$(".js-active").find(".js-city:first").text(matching_busstops[resultNumber].city);
 	$(".js-active").find(":input").val("");	
 	console.log(matching_busstops);
+	$(".js-active").find(".cancel-input").hide();
 	hideElement(".js-input");
 	activedNextSection();
 }
@@ -169,10 +187,11 @@ function autoSetTime() {
 function selectTime() {
 	var date = $(".date").val();
 	var time = $(".time").val();
+	var dataValid = false;
 
 	var dateArray = date.split(/[\.\/\-,;:]/);
 	var timeArray = time.split(/\D/);
-	if ($(".date")[0].validity.valid && $(".time")[0].validity.valid) { 
+	if ($("#date-input")[0].validity.valid && $("#time-input")[0].validity.valid && date != "" && time != "") { 
 		var correctDateArray = formatDate(dateArray);
 		var day = addZero(correctDateArray[0]);
 		var month = addZero(correctDateArray[1]);
@@ -185,8 +204,15 @@ function selectTime() {
 		$(".js-active").find(".js-name").text(day + "." + month + "." + year + ", ")
 		$(".js-active").find(".js-city").text(hours + ":" + minutes);
 		hideElement(".js-input");
+		dataValid = true;
 	}
-	//activedNextSection();
+	return dataValid;
+}
+function submitTime() {
+	var dataValid;
+	dataValid = selectTime();
+	if (dataValid)
+		activedNextSection();
 }
 function requestRoute() {
 	//test time, later take the time from url
@@ -201,6 +227,7 @@ function requestRoute() {
 	date = date.replace(/\./g, ":");
 	date = date.split(":");
 	time = time.replace(":", "");
+	showElement("#cancel");
 	showElement(".spinner");
 	if (date[2].length == 2) {
 		date[2] = "20" + date[2];
@@ -297,6 +324,8 @@ function splitBusstopName(busstopName) {
 }
 function showDetails(resultNumber) {
 	var routeData;
+	hideElement("#cancel");
+	showElement("#back");
 	// jump to the details section
 	$(".js-active").removeClass("js-active");
 	showElement("#details").find(".js-section:first").addClass("js-active");
@@ -372,15 +401,31 @@ function parseDetails(resultNumber){
 	return routeData;
 }
 
+function goBack() {
+	hideElement("#back");
+	showElement("#cancel");
+	hideElement("#details");
+	showElement("#search").find(".js-section").show();
+	showElement("#search").find(".js-section:last").addClass("js-active");
+	showElement(".js-active").find(".js-suggest").show();
+}
 function toogleInput(element) {
-	console.log(element);
+	hideElement(".js-input").val("");
+	hideElement(".js-input").children().text("");
+	$(".js-active").find(".cancel-input").hide();
+
+	if ($(element).parents(".js-section").hasClass("js-active")) {
+		activedNextSection();
+	}
+	else {
 	$(".js-section").removeClass("js-active");
 	showElement(element).parents(".js-section").addClass("js-active");
 	showElement(".js-active").children(".js-input").show();
 	$(".js-section").removeClass("active-section"); 
 	$(".js-active").addClass("active-section"); 
-	//changeWorkElement("reset");
-
+	$(".js-active").find(".cancel-input").show();
+	changeWorkElement("reset");
+	}
 }
 function hideKeyboard() {
 	$(document.activeElement).filter(':input:focus').blur();
