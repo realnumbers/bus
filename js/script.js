@@ -16,7 +16,6 @@ if (navigator.language === "de") {
 		lang = "de";
 }
 
-window.location.href = "#";
 removeClickDelay();
 onEnterEvent();
 initApp();
@@ -24,7 +23,7 @@ initApp();
 function initApp() {
 	hideElement(".js-section");
 	hideElement("#cancel");
-//	hideElement("#back");
+	hideElement("#back");
 	hideElement(".cancel-input");
 	$(".js-section:first").addClass("js-active");
 	changeWorkElement("reset");
@@ -97,11 +96,11 @@ function removeClickDelay() {
 }
 
 $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-		if (!details) {
+	if (!$("#details").find(".js-section").hasClass("js-active")) {
 		hideElement("#details");
-		//BACK.style.display = "none";
-		}
-		});
+		hideElement("#back");
+	}	
+});
 
 function hideElement(element) {
 	return $(element).hide();
@@ -374,7 +373,6 @@ function splitBusstopName(busstopName) {
 }
 function showDetails(resultNumber) {
 	var routeData;
-	showDetailsSection();
 	// jump to the details section
 	$(".js-active").removeClass("js-active");
 	$("#details").find(".js-section:first").addClass("js-active");
@@ -383,11 +381,12 @@ function showDetails(resultNumber) {
 	//hideElement(".js-section");
 	showElement(".js-active");
 	changeWorkElement("reset");
-	hideElement(".js-suggest");
+	//hideElement(".js-suggest");
 
 	routeData = parseDetails(resultNumber);
 	for (var i = 0; i < routeData.length; i++)
 		genDetailElement(routeData[i]);
+	showDetailsSection();
 }
 function genDetailElement(routeData) {
 
@@ -450,25 +449,27 @@ function parseDetails(resultNumber){
 	return routeData;
 }
 
-function goBack() {
-	showSearchSection();
-}
 function showSearchSection() {
-	$("#back").removeClass("details-visible").addClass("details-hidden");
-	$("#cancel").removeClass("search-hidden").addClass("search-visible");
-
-	$("#details").removeClass("details-visible").addClass("details-hidden");
+	$(".js-section").removeClass("js-active active-section");
 	$("#search").find(".js-section").show();
-	$("#search").removeClass("search-hidden").addClass("search-visible");
-	$("#search").find(".js-section:last").addClass("js-active");
+	$("#search").find(".js-section:last").addClass("js-active active-section");
 	$(".js-active").find(".js-suggest").show();
+	$("#cancel").removeClass("search-hidden").addClass("search-visible");
+	$("#search").removeClass("search-hidden").addClass("search-visible");
+	$("#back").removeClass("details-visible").addClass("details-hidden");
+	$("#details").removeClass("details-visible").addClass("details-hidden");
 }
 function showDetailsSection() {
-	$("#back").removeClass("details-hidden").addClass("details-visible");
+	showElement("#details");
+	showElement("#back");
 	$("#cancel").removeClass("search-visible").addClass("search-hidden");
-
-	$("#details").removeClass("details-hidden").addClass("details-visible");
 	$("#search").removeClass("search-visible").addClass("search-hidden");
+
+	$("#back").removeClass("details-hidden").addClass("details-visible");
+	$("#details").removeClass("details-hidden").addClass("details-visible");
+}
+function goBack() {
+	showSearchSection();
 }
 function toogleInput(element) {
 	hideElement(".js-input").val("");
