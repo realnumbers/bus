@@ -1,5 +1,7 @@
 //tmpUrl: dep, arr, time, date
 var tmpUrl = new Array(4);
+tmpUrl[1] = "";
+tmpUrl[2] = "";
 var con_data = new Array(5);
 var lang = "it";
 var matching_busstops = new Array(5);
@@ -28,7 +30,7 @@ function initApp() {
 	$(".js-city").text("");
 	// for test
 	//tmpUrl: dep, arr, time, date
-	tmpUrl[0] = ":1213:1214:";
+	/*tmpUrl[0] = ":1213:1214:";
 	tmpUrl[1] = ":672:673:";
 	tmpUrl[2] = "10:20";
 	tmpUrl[3] = "10/03/2014";
@@ -39,6 +41,7 @@ function initApp() {
 	hideElement(".js-input");
 	$(".js-active").find(".js-city:first").text("City");
 	activedNextSection();
+	*/
 }
 function onEnterEvent() {
 	$("#date-input").keydown(function(event){
@@ -137,6 +140,10 @@ function hideMatchMsg(){
 	$(".js-active").children(".js-suggest:first").removeClass("js-no-matches");
 }
 function selectBusstop(resultNumber) {
+	if (tmpUrl[0] == null)
+		tmpUrl[0] = matching_busstops[resultNumber].id;
+	else
+		tmpUrl[1] = matching_busstops[resultNumber].id;
 	$(".js-active").find(".js-name:first").text(matching_busstops[resultNumber].name + ", ");
 	$(".js-active").find(".js-city:first").text(matching_busstops[resultNumber].city);
 	$(".js-active").find(":input").val("");	
@@ -208,6 +215,8 @@ function selectTime() {
 		var hours = correctTimeArray[0];
 		var minutes = correctTimeArray[1];
 
+		tmpUrl[2] = hours + ":" + minutes;
+		tmpUrl[3] = day + "." + month + "." + year;
 		$(".js-active").find(".js-name").text(day + "." + month + "." + year + ", ")
 		$(".js-active").find(".js-city").text(hours + ":" + minutes);
 		hideElement(".js-input");
