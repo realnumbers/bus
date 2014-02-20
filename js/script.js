@@ -18,7 +18,7 @@ initApp();
 function initApp() {
 	hideElement(".js-section");
 	hideElement("#cancel");
-	hideElement("#back");
+//	hideElement("#back");
 	hideElement(".cancel-input");
 	$(".js-section:first").addClass("js-active");
 	changeWorkElement("reset");
@@ -57,6 +57,13 @@ function removeClickDelay() {
   	new FastClick(document.body);
 	}, false);
 }
+
+$("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+	if (!details) {
+		hideElement("#details");
+		//BACK.style.display = "none";
+	}
+});
 
 function hideElement(element) {
 	return $(element).hide();
@@ -324,23 +331,22 @@ function splitBusstopName(busstopName) {
 }
 function showDetails(resultNumber) {
 	var routeData;
-	hideElement("#cancel");
-	showElement("#back");
+	showDetailsSection();
 	// jump to the details section
 	$(".js-active").removeClass("js-active");
-	showElement("#details").find(".js-section:first").addClass("js-active");
+	$("#details").find(".js-section:first").addClass("js-active");
 	$(".js-section").removeClass("active-section"); 
 	$(".js-active").addClass("active-section"); 
-	hideElement(".js-section");
+	//hideElement(".js-section");
 	showElement(".js-active");
 	changeWorkElement("reset");
 	hideElement(".js-suggest");
 
 	routeData = parseDetails(resultNumber);
 	for (var i = 0; i < routeData.length; i++)
-		showDetailsSection(routeData[i]);
+		genDetailElement(routeData[i]);
 }
-function showDetailsSection(routeData) {
+function genDetailElement(routeData) {
 
 	showElement(".js-work").find(".js-time:first").text(routeData.depTime);
 	showElement(".js-work").find(".js-time:last").text(routeData.arrTime);
@@ -402,12 +408,24 @@ function parseDetails(resultNumber){
 }
 
 function goBack() {
-	hideElement("#back");
-	showElement("#cancel");
-	hideElement("#details");
-	showElement("#search").find(".js-section").show();
-	showElement("#search").find(".js-section:last").addClass("js-active");
-	showElement(".js-active").find(".js-suggest").show();
+	showSearchSection();
+}
+function showSearchSection() {
+	$("#back").removeClass("details-visible").addClass("details-hidden");
+	$("#cancel").removeClass("search-hidden").addClass("search-visible");
+
+	$("#details").removeClass("details-visible").addClass("details-hidden");
+	$("#search").find(".js-section").show();
+	$("#search").removeClass("search-hidden").addClass("search-visible");
+	$("#search").find(".js-section:last").addClass("js-active");
+	$(".js-active").find(".js-suggest").show();
+}
+function showDetailsSection() {
+	$("#back").removeClass("details-hidden").addClass("details-visible");
+	$("#cancel").removeClass("search-visible").addClass("search-hidden");
+
+	$("#details").removeClass("details-hidden").addClass("details-visible");
+	$("#search").removeClass("search-visible").addClass("search-hidden");
 }
 function toogleInput(element) {
 	hideElement(".js-input").val("");
