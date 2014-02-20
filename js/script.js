@@ -1,18 +1,22 @@
 //tmpUrl: dep, arr, time, date
 var tmpUrl = new Array(4);
-tmpUrl[1] = "";
-tmpUrl[2] = "";
 var con_data = new Array(5);
 var lang = "it";
 var matching_busstops = new Array(5);
-var busstops = $.getJSON( "js/busstops.json", function(data) {
-		//autocom(0);
-	});
 
+// For IE 6,7 creats a localStorage by using cookies
+checkStorage();
+
+if (!localStorage.busstops){
+	$.getJSON( "js/busstops.json", function(data) {
+		localStorage.setItem('busstops', JSON.stringify(data));
+	});
+}
 if (navigator.language === "de") {
 		lang = "de";
 }
 
+window.location.href = "#";
 removeClickDelay();
 onEnterEvent();
 initApp();
@@ -43,6 +47,9 @@ function initApp() {
 	activedNextSection();
 	*/
 }
+function busstopsJSON() {
+	return JSON.parse(localStorage.busstops);
+}
 function onEnterEvent() {
 	$("#date-input").keydown(function(event){
 		if(event.keyCode == 13)
@@ -54,19 +61,47 @@ function onEnterEvent() {
 	});
 }
 
+function checkStorage() {
+	if (!window.localStorage) {
+	window.localStorage = {
+		getItem: function (sKey) {
+			if (!sKey || !this.hasOwnProperty(sKey)) { return null; }
+				return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
+		},
+		key: function (nKeyId) {
+				return unescape(document.cookie.replace(/\s*\=(?:.(?!;))*$/, "").split(/\s*\=(?:[^;](?!;))*[^;]?;\s*/)[nKeyId]);
+		},
+		setItem: function (sKey, sValue) {
+			if(!sKey) { return; }
+				 document.cookie = escape(sKey) + "=" + escape(sValue) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+				 this.length = document.cookie.match(/\=/g).length;
+		},
+		length: 0,
+		removeItem: function (sKey) {
+			if (!sKey || !this.hasOwnProperty(sKey)) { return; }
+				document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+				this.length--;
+		},
+		hasOwnProperty: function (sKey) {
+			return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+		}
+		};
+		window.localStorage.length = (document.cookie.match(/\=/g) || window.localStorage).length;
+	}
+}
 function removeClickDelay() {
 	// Eliminates 300ms click delay on mobile 
 	window.addEventListener('load', function() {
-  	new FastClick(document.body);
-	}, false);
+			new FastClick(document.body);
+			}, false);
 }
 
 $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-	if (!details) {
+		if (!details) {
 		hideElement("#details");
 		//BACK.style.display = "none";
-	}
-});
+		}
+		});
 
 function hideElement(element) {
 	return $(element).hide();
@@ -81,24 +116,23 @@ function autocom() {
 	var inputString = $(".js-active").children(".js-input").val();
 	var i = 0;	
 	hideElement(".js-suggest");
-	
+
 	if (inputString !== "") {
 		inputString = inputString.split(" ");
-		data = busstops.responseJSON;
-		
-		//Match every busstop from data
-		var resMatch = data[lang].every( function (element, index, array) {
-			//with every part of the inputSting
-			var foundBusstop = inputString.every( function (item, index, array) {
-				var pattern = new RegExp(item, "i");
-				var foundMatch = element.label.match(pattern);
-				//foundMatch = (element.id != to_stop && element.id === from_stop) ? null : foundMatch;
-				//foundMatch = (element.it != from_stop && element.id === to_stop) ? null : foundMatch;
-				// return true if there is a match
-				return (foundMatch != null) ? true : false;
-			});
 
-			if (foundBusstop) {
+		//Match every busstop from data
+		var resMatch = busstopsJSON()[lang].every( function (element, index, array) {
+				//with every part of the inputSting
+				var foundBusstop = inputString.every( function (item, index, array) {
+					var pattern = new RegExp(item, "i");
+					var foundMatch = element.label.match(pattern);
+					//foundMatch = (element.id != to_stop && element.id === from_stop) ? null : foundMatch;
+					//foundMatch = (element.it != from_stop && element.id === to_stop) ? null : foundMatch;
+					// return true if there is a match
+					return (foundMatch != null) ? true : false;
+					});
+
+				if (foundBusstop) {
 				matching_busstops[i] = element;
 				//changeWorkElement();
 				$(".js-active").children(".js-work").children(".js-name").text(element.name + ", ");
@@ -106,9 +140,9 @@ function autocom() {
 				changeWorkElement();
 				showElement(".js-work");
 				i++;
-			}
-			//return true if I don't have enough results
-			return (i < 5) ? true : false;
+				}
+				//return true if I don't have enough results
+				return (i < 5) ? true : false;
 		});
 		if (resMatch && i == 0)
 			showMatchMsg();
