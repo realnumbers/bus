@@ -504,22 +504,22 @@ function showDetailsSection() {
 function goBack() {
 	showSearchSection();
 }
-function toogleInput(element) {
+function toggleInput(element) {
 	hideElement(".js-input").val("");
 	hideElement(".js-input").children().text("");
 	$(".js-active").find(".cancel-input").hide();
 
 	if ($(element).parents(".js-section").hasClass("js-active")) {
-		activedNextSection();
+		activedNextSection();	
 	}
 	else {
-	$(".js-section").removeClass("js-active");
-	showElement(element).parents(".js-section").addClass("js-active");
-	showElement(".js-active").children(".js-input").show();
-	$(".js-section").removeClass("active-section"); 
-	$(".js-active").addClass("active-section"); 
-	$(".js-active").find(".cancel-input").show();
-	changeWorkElement("reset");
+		$(".js-section").removeClass("js-active");
+		showElement(element).parents(".js-section").addClass("js-active");
+		showElement(".js-active").children(".js-input").show();
+		$(".js-section").removeClass("active-section"); 
+		$(".js-active").addClass("active-section"); 
+		$(".js-active").find(".cancel-input").show();
+		changeWorkElement("reset");
 	}
 }
 function hideKeyboard() {
