@@ -1,6 +1,6 @@
 //tmpUrl: dep, arr, time, date
+localStorage.routeData = new Array();
 var tmpUrl = new Array(4);
-var con_data = new Array(5);
 var lang = "it";
 var matching_busstops = new Array(5);
 
@@ -48,6 +48,12 @@ function initApp() {
 }
 function busstopsJSON() {
 	return JSON.parse(localStorage.busstops);
+}
+function pushRouteData(index) {
+	localStorage.routData += JSON.stringify(routeData);
+}
+function getRouteData(index) {
+	return JSON.parse(localStorage.routeData)[index];
 }
 function onEnterEvent() {
 	$("#date-input").keydown(function(event){
@@ -263,7 +269,20 @@ function submitTime() {
 	if (dataValid)
 		activedNextSection();
 }
-function requestRoute() {
+function showRoute() {
+	hideElement(".js-suggest");
+	changeWorkElement("reset");
+	for (var i = 0; i < localStorage.routeData.length; i++) {
+		if (localStorage.routData[i] != null) {
+			loadOverview(data, i);
+		}
+	}
+	hideElement(".spinner");
+	$(".js-active").find(".js-suggest").show();
+}
+function requestRoute(apiData) {
+	showElement("#cancel");
+	showElement(".spinner");
 	//test time, later take the time from url
 	var date = tmpUrl[3];
 	var fromStop = tmpUrl[0];
@@ -276,26 +295,21 @@ function requestRoute() {
 	date = date.replace(/\./g, ":");
 	date = date.split(":");
 	time = time.replace(":", "");
-	showElement("#cancel");
-	showElement(".spinner");
 	if (date[2].length == 2) {
 		date[2] = "20" + date[2];
 	}
 	url += "startBusStationId=" + fromStop;
 	url += "&endBusStationId=" + toStop;
 	url += "&yyyymmddhhmm=" + date[2] + date[1] + date[0] + time;
-	hideElement(".js-suggest");
-	changeWorkElement("reset");
 	$.ajax({
 		dataType: "jsonp",
 		jsonpCallback: "Callback",
 		url: url,
 	 	success: function(data) {
 			//hideKeyboard();
-			loadOverview(data, 0);
-			requestId = data.ConResCtxt[0];
-			requestId = requestId.split("#")[0];
+			requestId = data.ConResCtxt[0].split("#")[0];
 			nextData(requestId, 1);
+			localStorage = parseData(data);
 		}
 	});	
 }
@@ -311,48 +325,35 @@ function nextData(requestId, count) {
 			jsonpCallback: "Callback",
 			url: nextUrl,
 		 	success: function(data) {
-				loadOverview(data, count);
 				nextData(requestId, parseInt(count) + 1);
+				localStorage.routeData[count] = parseData(data);
 			}
 		});		
 	}
-	else {
-		$(".js-active").find(".js-suggest").show();
-		hideElement(".spinner");
-	}
 }
-function loadOverview(data, resultPointer) {
+function parseData(data) {
+	var routeData = new Object;
 	if (data.ConnectionList != null) {
+		routeData.overview = parseOverview(data);
+		routeData.connection = parseDetails(data);
+		return routeData;
+	}
+	else
+		return null;
+}
+function parseOverview(data) {
+	var overview = new Object;
 	var con = data.ConnectionList.Connection[0].Overview;
 	var arrTime = con.Arrival.BasicStop.Arr.Time;
 	var depTime = con.Departure.BasicStop.Dep.Time;
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
-	con_data[resultPointer]	= data;
 
-	arrTime = arrTime.split("d");
-	arrTime = arrTime[1].split(":");
-	arrTime = arrTime[0] + ":" + arrTime[1];
-	depTime = depTime.split("d");
-	depTime = depTime[1].split(":");
-	depTime = depTime[0] + ":" + depTime[1];
-	duration = duration.split("d");
-	duration = duration[1].split(":");
-	
-	hours = parseInt(duration[0]);
-	mins = parseInt(duration[1]);
-	if (hours == 0) {
-		hours = "";
-	} else {
-		hours = hours + "h ";
-	}
-	if (mins == 0) {
-		mins = "";
-	} else {
-		mins = mins + "min";
-	}
-	
-	duration = hours + mins;
+	overview.arrTime = extractTime(arrTime);
+	overview.depTime = extractTime(depTime);
+
+	duration = calculateWaitingTime([0, 0, 0], extractTime(duration));
+	overview.duration = timeString(duration);
 	
 	if (transfers == 0)
 		transfers = "";
@@ -360,12 +361,13 @@ function loadOverview(data, resultPointer) {
 		transfers = "1 change";
 	else if (transfers > 1)
 		transfers += " changes ";
-	
+	overview.transfers = transfers;
+	return overview;
+}
+function loadOverview(data, resultPointer) {
 	$(".js-work").find(".js-name").text(depTime + " - " + arrTime);
 	$(".js-work").find(".js-city").text(duration + ", " +  transfers);
 	changeWorkElement();
-	
-	}
 }
 
 function splitBusstopName(busstopName) {
@@ -412,8 +414,8 @@ function genDetailElement(routeData) {
 	}
 }
 // returns in Array of JSON depBusstop, arrBusstop, depTime, arrTime, lineNo, waitTime
-function parseDetails(resultNumber){
-	var connection = con_data[resultNumber].ConnectionList.Connection[0].ConSectionList.ConSection;
+function parseDetails(data){
+	var connection = data.ConnectionList.Connection[0].ConSectionList.ConSection;
 	var arrTime = "";
 	var allBusstops;
 	var nextDepTime;
