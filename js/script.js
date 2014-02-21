@@ -389,6 +389,9 @@ function showDetails(resultNumber) {
 	showDetailsSection();
 }
 function genDetailElement(routeData) {
+	if (routeData.waitTime != "")
+		showElement(".js-work").find("p").text(routeData.waitTime);
+	changeWorkElement();
 
 	showElement(".js-work").find(".js-time:first").text(routeData.depTime);
 	showElement(".js-work").find(".js-time:last").text(routeData.arrTime);
@@ -396,10 +399,8 @@ function genDetailElement(routeData) {
 	showElement(".js-work").find(".js-name:last").text(routeData.arrBusstop[1] + ", ");
 	showElement(".js-work").find(".js-city:first").text(routeData.depBusstop[0]);
 	showElement(".js-work").find(".js-city:last").text(routeData.arrBusstop[0]);
+	showElement(".js-work").find(".js-lineNo").text("Line " + routeData.lineNo);
 
-	changeWorkElement();
-	if (routeData.waitTime != "")
-		showElement(".js-work").find("p").text(routeData.waitTime);
 	changeWorkElement();
 }
 // returns in Array of JSON depBusstop, arrBusstop, depTime, arrTime, lineNo, waitTime
@@ -411,13 +412,13 @@ function parseDetails(resultNumber){
 	var walkTime;
 	var conObj = new Object();
 	var routeData = [];
-
+	var node = 0;
 	for (var i = 0; i < connection.length; i++) {
-		conObj = new Object();
 		waitTime = "";
 		walkTime = "";
-		//console.log(connection);
 		if (connection[i].Journey.length > 0) {
+			if (node != 0)
+				node++;
 			allBusstops = connection[i].Journey[0].PassList.BasicStop;
 			//city, name
 			conObj.depBusstop = splitBusstopName(allBusstops[0].Station.name);
@@ -428,22 +429,33 @@ function parseDetails(resultNumber){
 
 			conObj.lineNo = connection[i].Journey[0].JourneyAttributeList.JourneyAttribute[3].Attribute.AttributeVariant[0].Text;
 			
-			if (i + 1 < connection.length) {
+			if (i + 1 < connection.length && connection[i + 1].Journey.length > 0) {
 				nextDepTime = extractTime(connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time);
 				waitTime = calculateWaitingTime(conObj.arrTime, nextDepTime);
 			}
-		}
-		else
-			walkTime = calculateWaitingTime([0, 0, 0], connection[i].Walk[0].Duration.Time);
+			else
+				waitTime = "";
 
-		conObj.arrTime = conObj.arrTime[0] + ":" + conObj.arrTime[1];
-		conObj.depTime = conObj.depTime[0] + ":" + conObj.depTime[1];
-		conObj.waitTime = (waitTime == "") ? "" : "Wait " ;
-		conObj.waitTime += timeString(waitTime) 
-		conObj.waitTime += (waitTime == "" || walkTime == "") ? "" : ", walk ";
-		conObj.waitTime += (waitTime == "" && walkTime != "") ? "Walk " : "";
-		conObj.waitTime += timeString(walkTime);
-		routeData[i] = conObj;
+			conObj.arrTime = conObj.arrTime[0] + ":" + conObj.arrTime[1];
+			conObj.depTime = conObj.depTime[0] + ":" + conObj.depTime[1];
+			conObj.waitTime = (waitTime == "") ? conObj.waitTime : "Wait " ;
+			conObj.waitTime += timeString(waitTime) 
+			routeData[node] = conObj;
+		}
+		else {
+			walkTime = calculateWaitingTime([0, 0, 0], extractTime(connection[i].Walk[0].Duration.Time));
+			waitTime = conObj.waitTime;
+
+			if (waitTime == undefined)
+				waitTime = "";
+			walkTime = timeString(walkTime);
+			waitTime += (waitTime == "" || walkTime == "") ? "" : ", walk ";
+			waitTime += (waitTime == "" && walkTime != "") ? "Walk " : "";
+			waitTime += walkTime;
+			conObj.waitTime = waitTime;
+			routeData[node] = conObj;
+
+		}
 
 	}
 	return routeData;
