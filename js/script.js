@@ -322,6 +322,7 @@ function nextData(requestId, count) {
 	}
 }
 function loadOverview(data, resultPointer) {
+	if (data.ConnectionList != null) {
 	var con = data.ConnectionList.Connection[0].Overview;
 	var arrTime = con.Arrival.BasicStop.Arr.Time;
 	var depTime = con.Departure.BasicStop.Dep.Time;
@@ -364,6 +365,7 @@ function loadOverview(data, resultPointer) {
 	$(".js-work").find(".js-city").text(duration + ", " +  transfers);
 	changeWorkElement();
 	
+	}
 }
 
 function splitBusstopName(busstopName) {
@@ -381,7 +383,7 @@ function showDetails(resultNumber) {
 	//hideElement(".js-section");
 	showElement(".js-active");
 	changeWorkElement("reset");
-	//hideElement(".js-suggest");
+	hideElement(".js-suggest");
 
 	routeData = parseDetails(resultNumber);
 	for (var i = 0; i < routeData.length; i++)
