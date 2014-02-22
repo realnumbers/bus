@@ -134,8 +134,8 @@ button, input {
     width: 35%;
   }
 }
-.active-section collapse {
-  padding-bottom: 2em;
+.active-section .collapse {
+  padding-bottom: 1.5em;
 }
 .main-section {
   position: absolute;

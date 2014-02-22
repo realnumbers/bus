@@ -220,9 +220,10 @@ function activateNextSection() {
 				queryComplete = true;
 				requestRoute();
 			}
-			else
+			else {
 				showElement(".js-active").find(".js-input").show();
 				$(".js-active").find(".input:first").focus();
+			}
 		}
 				
 	}
@@ -513,6 +514,7 @@ function goBack() {
 }
 function toggleInput(element) {
 	//console.log("toggle");
+	console.log("length: " + $("js-active-input").length);
 	if (queryComplete) {
 		//console.log("toggle_2");
 		$(".js-input").children().text("");
@@ -526,43 +528,46 @@ function toggleInput(element) {
 			console.log("hide active");
 			$(".js-active-input").find(".collapse").children().show();
 			$(".js-active-input").find(".collapse").slideToggle(200);
-			$(element).parents(".js-section").removeClass("js-active-input active-section");
+			$(element).parents(".js-section").removeClass("js-active-input js-active active-section");
 			//$(".js-active").find(".cancel-input").hide();
 			//activateNextSection();
 		}
 		// if the selected element is not active, show it and hide the active one
-		else if ($("js-active-input")[0]){
-			console.log("hide active, show inactive");
-			$(".js-active-input").find(".collapse").children().show();
-			$(".js-active-input").find(".collapse").slideToggle();
-			$(".js-active-input").removeClass("js-active-input active-section");
-			
-			$(element).parents(".js-section").addClass("js-active-input active-section");
-			$(".js-active-input").find(".collapse").find().show();
-			$(".js-active-input").find(".collapse").slideToggle(200);
-			$(".js-active-input").find(".input:first").focus();
-			/*
-			$(".js-section").removeClass("js-active");
-			showElement(element).parents(".js-section").addClass("js-active");
-			showElement(".js-active").children(".js-input").show();
-			$(".js-section").removeClass("active-section");
-			$(".js-active").addClass("active-section");
-			$(".js-active").find(".cancel-input").show();
-			changeWorkElement("reset");
-			*/
-		}
-		// if there is no active element, show the selected one
 		else {
-			console.log("show inactive");
-			console.log($(element).find(".collapse"));
+			if ($("js-active-input").length){
+				alert("WIN");
+				console.log("hide active, show inactive");
+				$(".js-active-input").find(".collapse").slideToggle();
+				$(".js-active-input").removeClass("js-active-input js-active active-section");
 			
-			//$(element).find(".collapse").children().show();
-			//$(element).find(".collapse").slideToggle(200);
-			$(element).parents(".js-section").addClass("js-active-input active-section");
-			$(".js-active-input").find(".collapse").children().show();
-			console.log($(".js-active-input").find(".collapse").children());
-			$(".js-active-input").find(".collapse").slideToggle(200);
-			$(".js-active-input").find(".input:first").focus();
+				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
+				$(".js-active-input").find(".collapse").find().show();
+				$(".js-active-input").find(".collapse").slideToggle(200);
+				$(".js-active-input").find(".input:first").focus();
+				/*
+				$(".js-section").removeClass("js-active");
+				showElement(element).parents(".js-section").addClass("js-active");
+				showElement(".js-active").children(".js-input").show();
+				$(".js-section").removeClass("active-section");
+				$(".js-active").addClass("active-section");
+				$(".js-active").find(".cancel-input").show();
+				changeWorkElement("reset");
+				*/
+			}
+			// if there is no active element, show the selected one
+			else {
+				console.log("show inactive");
+				console.log($(element).find(".collapse"));
+			
+				//$(element).find(".collapse").children().show();
+				//$(element).find(".collapse").slideToggle(200);
+				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
+				$(".js-active-input").find(".collapse").children().show();
+				$(".js-active-input").find().show();
+				console.log($(".js-active-input").find(".collapse").children());
+				$(".js-active-input").find(".collapse").slideToggle(200);
+				$(".js-active-input").find(".input:first").focus();
+			}
 		}
 	}
 }
