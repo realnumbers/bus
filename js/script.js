@@ -23,7 +23,7 @@ initApp();
 console.log(localStorage);
 function initApp() {
 	localStorage.routeData = "";
-	hideElement(".js-section");
+	hideElement(".js-section").removeClass("js-active").removeClass("active-section");
 	hideElement("#cancel");
 	hideElement("#back");
 	hideElement(".cancel-input");
