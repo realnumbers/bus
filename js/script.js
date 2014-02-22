@@ -289,6 +289,8 @@ function showRoute() {
 			loadOverview(routeData[i].overview);
 	}
 	$(".js-active").find(".js-suggest").show();
+	showElement(".js-time");
+	showElement(".js-duration");
 	hideElement(".spinner");
 }
 function requestRoute(apiData) {
@@ -375,8 +377,8 @@ function parseOverview(data) {
 	return overview;
 }
 function loadOverview(data) {
-	$(".js-work").find(".js-name").text(data.depTime + " - " + data.arrTime);
-	$(".js-work").find(".js-city").text(data.duration);
+	$(".js-work").find(".js-time").text(data.depTime + " - " + data.arrTime);
+	$(".js-work").find(".js-duration").text(data.duration);
 	changeWorkElement();
 }
 
@@ -517,6 +519,8 @@ function goBack() {
 	showSearchSection();
 }
 function toggleInput(element) {
+	hideElement(".js-time");
+	hideElement(".js-duration");
 	hideElement(".js-input").val("");
 	hideElement(".js-input").children().text("");
 	$(".js-active").find(".cancel-input").hide();
