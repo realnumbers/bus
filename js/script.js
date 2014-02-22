@@ -197,7 +197,7 @@ function selectBusstop(resultNumber) {
 }
 function activateNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
-	$(".js-section").removeClass("active-section"); 
+	$(".js-section").removeClass("active-section js-active-input");
 	$(".js-active").addClass("active-section"); 
 	$(".js-suggest").find(".js-name").text("");
 	$(".js-suggest").find(".js-city").text("");
@@ -518,8 +518,8 @@ function toggleInput(element) {
 	console.log("length: " + $("js-active-input").length);
 	if (queryComplete) {
 		//console.log("toggle_2");
-		$(".js-input").children().text("");
-		$(".js-input").val("");
+		//$(".js-input").children().text("");
+		//$(".js-input").val("");
 		//$(".js-active").find(".collapse").children().show();
 		//hideElement(".js-input").val("");
 		//hideElement(".js-input").children().text("");
@@ -529,20 +529,22 @@ function toggleInput(element) {
 			console.log("hide active");
 			$(".js-active-input").find(".collapse").children().show();
 			$(".js-active-input").find(".collapse").slideToggle(200);
-			$(element).parents(".js-section").removeClass("js-active-input js-active active-section");
+			$(".js-active-input").removeClass("js-active-input js-active active-section");
 			//$(".js-active").find(".cancel-input").hide();
 			//activateNextSection();
 		}
 		// if the selected element is not active, show it and hide the active one
 		else {
-			if ($("js-active-input").length){
-				alert("WIN");
+			if ($(".js-active-input")[0]){
 				console.log("hide active, show inactive");
-				$(".js-active-input").find(".collapse").slideToggle();
+				// hide active input
+				$(".js-active-input").find(".collapse").children().show();
+				$(".js-active-input").find(".collapse").slideToggle(200);
 				$(".js-active-input").removeClass("js-active-input js-active active-section");
-			
+				
+				// show selected input
 				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
-				$(".js-active-input").find(".collapse").find().show();
+				$(".js-active-input").find(".collapse").children().show();
 				$(".js-active-input").find(".collapse").slideToggle(200);
 				$(".js-active-input").find(".input:first").focus();
 				/*
@@ -564,8 +566,8 @@ function toggleInput(element) {
 				//$(element).find(".collapse").slideToggle(200);
 				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
 				$(".js-active-input").find(".collapse").children().show();
-				$(".js-active-input").find().show();
-				console.log($(".js-active-input").find(".collapse").children());
+				//$(".js-active-input").find().show();
+				//console.log($(".js-active-input").find(".collapse").children());
 				$(".js-active-input").find(".collapse").slideToggle(200);
 				$(".js-active-input").find(".input:first").focus();
 			}
