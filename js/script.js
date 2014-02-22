@@ -123,6 +123,7 @@ function autocom() {
 	var inputString = $(".js-active").find(".js-input").val();
 	var i = 0;	
 	hideElement(".js-suggest");
+	changeWorkElement("reset");
 
 	if (inputString !== "") {
 		inputString = inputString.split(" ");
@@ -144,8 +145,8 @@ function autocom() {
 				//changeWorkElement();
 				$(".js-active").children(".collapse").children(".js-work").children(".js-name").text(element.name + ", ");
 				$(".js-active").children(".collapse").children(".js-work").children(".js-city").text(element.city);
-				changeWorkElement();
 				showElement(".js-work");
+				changeWorkElement();
 				i++;
 				}
 				//return true if I don't have enough results
