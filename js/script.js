@@ -1,8 +1,9 @@
 //tmpUrl: dep, arr, time, date
+var history = window.History;
 var tmpUrl = new Array(4);
 var lang = "it";
 var matching_busstops = new Array(5);
-
+var previousHistoryState = 0;
 // For IE 6,7 creats a localStorage by using cookies
 checkStorage();
 
@@ -19,9 +20,57 @@ removeClickDelay();
 onEnterEvent();
 initApp();
 
+history.Adapter.bind(window,'statechange',function() {
+
+	var state = history.getState();
+	if (state.data.detail > previousHistoryState) {
+		changeToDetails(state.data.detail);	
+	}
+	else {
+		if (state.data.detail == previousHistoryState && state.data.detail == 0)
+			alert("Same Page");
+		else
+			showSearchSection(); 
+	}
+	
+	
+	
+	
+	previousHistoryState = state.data.detail;	
+
+
+	// I'm sure that the back btn wasn't pressed
+	/*if (history.getStateByIndex(stateIndex + 1) == undefined) {
+		previousState = history.getStateByIndex(stateIndex - 1).data.detail;
+		if (previousState == 0) {
+			if (state.data.detail > 0) {
+				changeToDetails(state.data.detail);
+			}
+
+		}
+	}
+	// back or forward btn 
+	else {
+	}
+
+	console.log(state);
+	if (state.data.detail == 0) {
+			showSearchSection();
+	}
+	else {
+		console.log("change view");
+		showDetails(state.data.detail);
+		}
+	}
+	*/
+});
+
+//window.onpopstate = function(event) {
+//};
 
 console.log(localStorage);
 function initApp() {
+	//alert("Hello");
 	localStorage.routeData = "";
 	hideElement(".js-section").removeClass("js-active").removeClass("active-section");
 	hideElement("#cancel");
@@ -47,12 +96,53 @@ function initApp() {
 	$(".js-active").find(".js-city:first").text("City");
 	activedNextSection();
 	*/
+
+	loadUrlData();
+}
+function loadUrlData() {
+	var tmpData = history.getState().data;
+	var urlData = new Object();
+	if (history.getPageUrl().split("?")[1] != undefined)
+		urlData = JSON.parse("{\"" + history.getPageUrl().split("?")[1].replace(/&/g, "\", \"").replace(/=/g, "\":\"") +"\"}");
+	if (tmpData.dep == null && urlData.dep != null && urlData.arr != null && urlData.time != null && urlData.date != null && urlData.detail != null) {
+		tmpData = urlData;
+	}
+	if (tmpData.dep != null) {
+	//tmpUrl: dep, arr, time, date
+	tmpUrl[0] = tmpData.dep;
+	tmpUrl[1] = tmpData.arr;
+	tmpUrl[2] = tmpData.time;
+	tmpUrl[3] = tmpData.date;
+	hideElement(".js-input");
+	$(".js-active").find(".js-name:first").text("Busstop,");
+	$(".js-active").find(".js-city:first").text("City");
+	activedNextSection();
+	showElement(".js-active").children(".js-input").show();
+	hideElement(".js-input");
+	$(".js-active").find(".js-name:first").text("Busstop2,");
+	$(".js-active").find(".js-city:first").text("City2");
+	activedNextSection();
+	$(".js-suggest").hide();
+	}
+	else {
+		var tmpData = new Object();
+		tmpData.detail = 0;
+		history.replaceState(tmpData, "Bus", "?detail=0");
+	}
+
+}
+function replaceUrl(dataUrl) {
+	history.replaceState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+}
+function updateUrl(dataUrl) {
+	history.pushState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+	//history.replaceState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+
 }
 function busstopsJSON() {
 	return JSON.parse(localStorage.busstops);
 }
 function pushRouteData(data) {
-//	localStorage.setItem('routeData', JSON.stringify(data));
 	var tmpStorage = localStorage.routeData;
 	if (tmpStorage === "") {
 		tmpStorage = "[";
@@ -127,6 +217,9 @@ function showElement(element) {
 	return $(element).show();
 }
 function cancelQuery() {
+	var tmpData = new Object();
+	tmpData.detail = 0;
+	history.pushState(tmpData, "Bus", "?detail=0");
 	initApp()
 }
 function autocom() {
@@ -286,7 +379,8 @@ function showRoute() {
 	hideElement(".js-suggest");
 	changeWorkElement("reset");
 	for (var i = 0; i < routeData.length; i++) {
-			loadOverview(routeData[i].overview);
+			if (routeData[i] != null)
+				loadOverview(routeData[i].overview);
 	}
 	$(".js-active").find(".js-suggest").show();
 	showElement(".js-time");
@@ -294,10 +388,18 @@ function showRoute() {
 	hideElement(".spinner");
 }
 function requestRoute(apiData) {
+	var tmpData = new Object();
+	tmpData.time = tmpUrl[2];
+	tmpData.date = tmpUrl[3];
+	tmpData.dep = tmpUrl[0];
+	tmpData.arr = tmpUrl[1];
+	tmpData.detail = 0;
 	showElement("#cancel");
 	showElement(".spinner");
-	//test time, later take the time from url
+	
 	localStorage.routeData = "";
+	updateUrl(tmpData);
+	//test time, later take the time from url
 	var date = tmpUrl[3];
 	var fromStop = tmpUrl[0];
 	var toStop = tmpUrl[1];
@@ -388,8 +490,12 @@ function splitBusstopName(busstopName) {
 	return busstopName;
 }
 function showDetails(resultNumber) {
+	var tmpData = history.getState().data;
+	tmpData.detail = resultNumber + 1;
+	updateUrl(tmpData);
+}
+function changeToDetails(resultNumber) {
 	var routeData = getRouteData()[resultNumber].connection;
-	console.log(routeData);
 	// jump to the details section
 	$(".js-active").removeClass("js-active");
 	$("#details").find(".js-section:first").addClass("js-active");
@@ -516,6 +622,7 @@ function showDetailsSection() {
 	$("#details").removeClass("details-hidden").addClass("details-visible");
 }
 function goBack() {
+	history.back();
 	showSearchSection();
 }
 function toggleInput(element) {
