@@ -192,7 +192,7 @@ function selectBusstop(resultNumber) {
 	console.log(matching_busstops);
 	//$(".js-active").find(".cancel-input").hide();
 	//hideElement(".js-input");
-	$(".js-active").find(".collapse").slideToggle();
+	$(".js-active").find(".collapse").slideToggle(300);
 	activateNextSection();
 }
 function activateNextSection() {
@@ -529,6 +529,7 @@ function toggleInput(element) {
 			console.log("hide active");
 			$(".js-active-input").find(".collapse").children().show();
 			$(".js-active-input").find(".collapse").slideToggle(200);
+			$(".js-active").find(".cancel-input").hide();
 			$(".js-active-input").removeClass("js-active-input js-active active-section");
 			//$(".js-active").find(".cancel-input").hide();
 			//activateNextSection();
@@ -537,14 +538,17 @@ function toggleInput(element) {
 		else {
 			if ($(".js-active-input")[0]){
 				console.log("hide active, show inactive");
+				
 				// hide active input
 				$(".js-active-input").find(".collapse").children().show();
+				$(".js-active").find(".cancel-input").hide();
 				$(".js-active-input").find(".collapse").slideToggle(200);
 				$(".js-active-input").removeClass("js-active-input js-active active-section");
 				
 				// show selected input
 				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
 				$(".js-active-input").find(".collapse").children().show();
+				$(".js-active").find(".cancel-input").show();
 				$(".js-active-input").find(".collapse").slideToggle(200);
 				$(".js-active-input").find(".input:first").focus();
 				/*
@@ -553,7 +557,6 @@ function toggleInput(element) {
 				showElement(".js-active").children(".js-input").show();
 				$(".js-section").removeClass("active-section");
 				$(".js-active").addClass("active-section");
-				$(".js-active").find(".cancel-input").show();
 				changeWorkElement("reset");
 				*/
 			}
@@ -566,6 +569,7 @@ function toggleInput(element) {
 				//$(element).find(".collapse").slideToggle(200);
 				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
 				$(".js-active-input").find(".collapse").children().show();
+				$(".js-active").find(".cancel-input").show();
 				//$(".js-active-input").find().show();
 				//console.log($(".js-active-input").find(".collapse").children());
 				$(".js-active-input").find(".collapse").slideToggle(200);
