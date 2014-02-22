@@ -3,8 +3,9 @@ localStorage.routeData = new Array();
 var tmpUrl = new Array(4);
 var lang = "it";
 var matching_busstops = new Array(5);
+var queryComplete = false;
 
-// For IE 6,7 creats a localStorage by using cookies
+// localStorage by using cookies for IE 6,7
 checkStorage();
 
 if (!localStorage.busstops){
@@ -13,7 +14,7 @@ if (!localStorage.busstops){
 	});
 }
 if (navigator.language === "de") {
-		lang = "de";
+	lang = "de";
 }
 
 removeClickDelay();
@@ -31,6 +32,7 @@ function initApp() {
 	showElement(".js-active").children(".js-input").show();
 	$(".js-name").text("");
 	$(".js-city").text("");
+	queryComplete = false;
 	// for test
 	//tmpUrl: dep, arr, time, date
 	/*tmpUrl[0] = ":1213:1214:";
@@ -39,11 +41,11 @@ function initApp() {
 	tmpUrl[3] = "10/03/2014";
 	hideElement(".js-input");
 	$(".js-active").find(".js-name:first").text("Test, ");
-	activedNextSection();
+	activateNextSection();
 	showElement(".js-active").children(".js-input").show();
 	hideElement(".js-input");
 	$(".js-active").find(".js-city:first").text("City");
-	activedNextSection();
+	activateNextSection();
 	*/
 }
 function busstopsJSON() {
@@ -115,10 +117,10 @@ function showElement(element) {
 	return $(element).show();
 }
 function cancelQuery() {
-	initApp()
+	initApp();
 }
 function autocom() {
-	var inputString = $(".js-active").children(".js-input").val();
+	var inputString = $(".js-active").find(".js-input").val();
 	var i = 0;	
 	hideElement(".js-suggest");
 
@@ -140,8 +142,8 @@ function autocom() {
 				if (foundBusstop) {
 				matching_busstops[i] = element;
 				//changeWorkElement();
-				$(".js-active").children(".js-work").children(".js-name").text(element.name + ", ");
-				$(".js-active").children(".js-work").children(".js-city").text(element.city);
+				$(".js-active").children(".collapse").children(".js-work").children(".js-name").text(element.name + ", ");
+				$(".js-active").children(".collapse").children(".js-work").children(".js-city").text(element.city);
 				changeWorkElement();
 				showElement(".js-work");
 				i++;
@@ -187,12 +189,12 @@ function selectBusstop(resultNumber) {
 	$(".js-active").find(".js-city:first").text(matching_busstops[resultNumber].city);
 	$(".js-active").find(":input").val("");	
 	console.log(matching_busstops);
-	$(".js-active").find(".cancel-input").hide();
-	hideElement(".js-input");
-	activedNextSection();
+	//$(".js-active").find(".cancel-input").hide();
+	//hideElement(".js-input");
+	$(".js-active").find(".collapse").slideToggle();
+	activateNextSection();
 }
-
-function activedNextSection() {
+function activateNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
 	$(".js-section").removeClass("active-section"); 
 	$(".js-active").addClass("active-section"); 
@@ -200,7 +202,7 @@ function activedNextSection() {
 	$(".js-suggest").find(".js-city").text("");
 	changeWorkElement("reset");
 	if ($(".js-active").find(".js-name:first").text() == "") {
-		if ($(".js-active").find(":input:first").hasClass("date")) {
+		if ($(".js-active").find(".input:first").hasClass("date")) {
 			showElement(".js-active");
 			autoSetTime();
 			$(".js-active").removeClass("js-active").next().addClass("js-active");
@@ -208,21 +210,23 @@ function activedNextSection() {
 			$(".js-active").addClass("active-section"); 
 			showElement(".js-active");
 			showElement(".spinnter");
+			queryComplete = true;
 			requestRoute();
 		}
 		else {
 			if ($(".js-active").children().hasClass("search-results")) {
 				showElement(".js-active");
 				showElement(".spinnter");
+				queryComplete = true;
 				requestRoute();
 			}
 			else
-				showElement(".js-active").children(".js-input").show();
+				showElement(".js-active").find(".js-input").show();
+				$(".js-active").find(".input:first").focus();
 		}
 				
 	}
-	else
-		activedNextSection();
+	else activateNextSection();
 }
 function autoSetTime() {
 	var currentdate = new Date();
@@ -267,7 +271,7 @@ function submitTime() {
 	var dataValid;
 	dataValid = selectTime();
 	if (dataValid)
-		activedNextSection();
+		activateNextSection();
 }
 function showRoute() {
 	hideElement(".js-suggest");
@@ -310,6 +314,7 @@ function requestRoute(apiData) {
 			requestId = data.ConResCtxt[0].split("#")[0];
 			nextData(requestId, 1);
 			localStorage = parseData(data);
+			queryComplete = true;
 		}
 	});	
 }
@@ -507,21 +512,58 @@ function goBack() {
 	showSearchSection();
 }
 function toggleInput(element) {
-	hideElement(".js-input").val("");
-	hideElement(".js-input").children().text("");
-	$(".js-active").find(".cancel-input").hide();
+	//console.log("toggle");
+	if (queryComplete) {
+		//console.log("toggle_2");
+		$(".js-input").children().text("");
+		$(".js-input").val("");
+		//$(".js-active").find(".collapse").children().show();
+		//hideElement(".js-input").val("");
+		//hideElement(".js-input").children().text("");
 
-	if ($(element).parents(".js-section").hasClass("js-active")) {
-		activedNextSection();	
-	}
-	else {
-		$(".js-section").removeClass("js-active");
-		showElement(element).parents(".js-section").addClass("js-active");
-		showElement(".js-active").children(".js-input").show();
-		$(".js-section").removeClass("active-section"); 
-		$(".js-active").addClass("active-section"); 
-		$(".js-active").find(".cancel-input").show();
-		changeWorkElement("reset");
+		// if the selected element is currently active, hide it
+		if ($(element).parents(".js-section").hasClass("js-active-input")) {
+			console.log("hide active");
+			$(".js-active-input").find(".collapse").children().show();
+			$(".js-active-input").find(".collapse").slideToggle(200);
+			$(element).parents(".js-section").removeClass("js-active-input active-section");
+			//$(".js-active").find(".cancel-input").hide();
+			//activateNextSection();
+		}
+		// if the selected element is not active, show it and hide the active one
+		else if ($("js-active-input")[0]){
+			console.log("hide active, show inactive");
+			$(".js-active-input").find(".collapse").children().show();
+			$(".js-active-input").find(".collapse").slideToggle();
+			$(".js-active-input").removeClass("js-active-input active-section");
+			
+			$(element).parents(".js-section").addClass("js-active-input active-section");
+			$(".js-active-input").find(".collapse").find().show();
+			$(".js-active-input").find(".collapse").slideToggle(200);
+			$(".js-active-input").find(".input:first").focus();
+			/*
+			$(".js-section").removeClass("js-active");
+			showElement(element).parents(".js-section").addClass("js-active");
+			showElement(".js-active").children(".js-input").show();
+			$(".js-section").removeClass("active-section");
+			$(".js-active").addClass("active-section");
+			$(".js-active").find(".cancel-input").show();
+			changeWorkElement("reset");
+			*/
+		}
+		// if there is no active element, show the selected one
+		else {
+			console.log("show inactive");
+			console.log($(element).find(".collapse"));
+			
+			//$(element).find(".collapse").children().show();
+			//$(element).find(".collapse").slideToggle(200);
+			$(element).parents(".js-section").addClass("js-active-input active-section");
+			$(".js-active-input").find(".collapse").children().show();
+			console.log($(".js-active-input").find(".collapse").children());
+			$(".js-active-input").find(".collapse").slideToggle(200);
+			$(".js-active-input").find(".input:first").focus();
+		}
 	}
 }
 function hideKeyboard() {
