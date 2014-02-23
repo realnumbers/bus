@@ -208,7 +208,7 @@ function activateNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
 	$(".js-section").removeClass("active-section js-active-input");
 	$(".js-active").addClass("active-section");
-	if ($(".js-active").children(".collapse").find(".date").length == 0) {
+	if ($(".js-active").children(".collapse").find(".date").length == 0 && !queryComplete) {
 		$(".js-active").find(".collapse").show();
 	}
 	changeWorkElement("reset");
