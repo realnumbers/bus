@@ -528,6 +528,7 @@ function toggleInput(element) {
 		// if the selected element is currently active, hide it
 		if ($(element).parents(".js-section").hasClass("js-active-input")) {
 			console.log("hide active");
+			$(".collapse").hide();
 			$(".js-active-input").find(".collapse").children().show();
 			$(".js-active-input").find(".collapse").slideToggle(200);
 			$(".js-active-input").find(".cancel-input").hide();
@@ -569,6 +570,7 @@ function toggleInput(element) {
 				//$(element).find(".collapse").children().show();
 				//$(element).find(".collapse").slideToggle(200);
 				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
+				$(".collapse").hide();
 				$(".js-active-input").find(".collapse").children().show();
 				$(".js-active-input").find(".cancel-input").show();
 				//$(".js-active-input").find().show();
