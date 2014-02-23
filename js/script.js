@@ -192,6 +192,7 @@ function selectBusstop(resultNumber) {
 	console.log(matching_busstops);
 	//$(".js-active").find(".cancel-input").hide();
 	//hideElement(".js-input");
+	$(".js-active-input").find(".cancel-input").hide();
 	$(".js-active").find(".collapse").slideToggle(300);
 	activateNextSection();
 }
@@ -529,7 +530,7 @@ function toggleInput(element) {
 			console.log("hide active");
 			$(".js-active-input").find(".collapse").children().show();
 			$(".js-active-input").find(".collapse").slideToggle(200);
-			$(".js-active").find(".cancel-input").hide();
+			$(".js-active-input").find(".cancel-input").hide();
 			$(".js-active-input").removeClass("js-active-input js-active active-section");
 			//$(".js-active").find(".cancel-input").hide();
 			//activateNextSection();
@@ -541,14 +542,14 @@ function toggleInput(element) {
 				
 				// hide active input
 				$(".js-active-input").find(".collapse").children().show();
-				$(".js-active").find(".cancel-input").hide();
+				$(".js-active-input").find(".cancel-input").hide();
 				$(".js-active-input").find(".collapse").slideToggle(200);
 				$(".js-active-input").removeClass("js-active-input js-active active-section");
 				
 				// show selected input
 				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
 				$(".js-active-input").find(".collapse").children().show();
-				$(".js-active").find(".cancel-input").show();
+				$(".js-active-input").find(".cancel-input").show();
 				$(".js-active-input").find(".collapse").slideToggle(200);
 				$(".js-active-input").find(".input:first").focus();
 				/*
@@ -569,7 +570,7 @@ function toggleInput(element) {
 				//$(element).find(".collapse").slideToggle(200);
 				$(element).parents(".js-section").addClass("js-active-input js-active active-section");
 				$(".js-active-input").find(".collapse").children().show();
-				$(".js-active").find(".cancel-input").show();
+				$(".js-active-input").find(".cancel-input").show();
 				//$(".js-active-input").find().show();
 				//console.log($(".js-active-input").find(".collapse").children());
 				$(".js-active-input").find(".collapse").slideToggle(200);
