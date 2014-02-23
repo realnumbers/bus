@@ -82,7 +82,7 @@ function loadUrlData() {
 		tmpData = urlData;
 		replaceUrl(tmpData);
 	}
-	if (tmpData.dep != null) {
+	if (tmpData.dep != null && tmpData.detail == 0) {
 	//tmpUrl: dep, arr, time, date
 	tmpUrl[0] = tmpData.dep;
 	tmpUrl[1] = tmpData.arr;
@@ -100,9 +100,14 @@ function loadUrlData() {
 	activedNextSection();
 	}
 	else {
-		var tmpData = new Object();
-		tmpData.detail = 0;
-		history.replaceState(tmpData, "Bus", "?detail=0");
+		if (tmpData.dep == null) {
+			var tmpData = new Object();
+			tmpData.detail = 0;
+			history.replaceState(tmpData, "Bus", "?detail=0");
+		}
+		else {
+			changeToDetails(tmpData.detail);	
+		}
 	}
 
 }
