@@ -30,9 +30,13 @@ function initApp() {
 	changeWorkElement("reset");
 	$(":input").val("");
 	showElement(".js-active").children(".js-input").show();
+	$(".js-active").find().show();
 	$(".js-name").text("");
 	$(".js-city").text("");
 	queryComplete = false;
+	$(".collapse:eq(0)").show();		// show from input
+	$(".collapse:eq(2)").hide();		// hide date inputs
+	$(".js-active").find(".input:first").focus();
 	// for test
 	//tmpUrl: dep, arr, time, date
 	/*tmpUrl[0] = ":1213:1214:";
@@ -193,15 +197,20 @@ function selectBusstop(resultNumber) {
 	//$(".js-active").find(".cancel-input").hide();
 	//hideElement(".js-input");
 	$(".js-active-input").find(".cancel-input").hide();
-	$(".js-active").find(".collapse").slideToggle(300);
+	$(".js-active").find(".collapse").slideToggle(200, hideCollapsedContents);
 	activateNextSection();
+}
+function hideCollapsedContents() {
+	$(".js-suggest").find(".js-name").text("");
+	$(".js-suggest").find(".js-city").text("");
 }
 function activateNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
 	$(".js-section").removeClass("active-section js-active-input");
-	$(".js-active").addClass("active-section"); 
-	$(".js-suggest").find(".js-name").text("");
-	$(".js-suggest").find(".js-city").text("");
+	$(".js-active").addClass("active-section");
+	if ($(".js-active").children(".collapse").find(".date").length == 0) {
+		$(".js-active").find(".collapse").show();
+	}
 	changeWorkElement("reset");
 	if ($(".js-active").find(".js-name:first").text() == "") {
 		if ($(".js-active").find(".input:first").hasClass("date")) {
@@ -265,7 +274,7 @@ function selectTime() {
 		tmpUrl[3] = day + "." + month + "." + year;
 		$(".js-active").find(".js-name").text(day + "." + month + "." + year + ", ")
 		$(".js-active").find(".js-city").text(hours + ":" + minutes);
-		hideElement(".js-input");
+		//hideElement(".js-input");
 		dataValid = true;
 	}
 	return dataValid;
@@ -273,8 +282,11 @@ function selectTime() {
 function submitTime() {
 	var dataValid;
 	dataValid = selectTime();
-	if (dataValid)
+	if (dataValid) {
+		$(".js-active-input").find(".cancel-input").hide();
+		$(".js-active").find(".collapse").slideToggle(300);
 		activateNextSection();
+	}
 }
 function showRoute() {
 	hideElement(".js-suggest");
