@@ -30,13 +30,13 @@ function initApp() {
 	$(".js-section:first").addClass("js-active");
 	changeWorkElement("reset");
 	$(":input").val("");
-	showElement(".js-active").children(".js-input").show();
-	$(".js-active").find().show();
+	$(".js-active").show();
 	$(".js-name").text("");
 	$(".js-city").text("");
 	queryComplete = false;
-	$(".collapse:eq(0)").show();		// show from input
-	$(".collapse:eq(2)").hide();		// hide date inputs
+	$(".collapse:eq(0)").hide();
+	$(".collapse:eq(0)").slideToggle(200);      // show from input
+	$(".collapse:eq(2)").hide();                // hide date inputs
 	$(".js-active").find(".input:first").focus();
 	// for test
 	//tmpUrl: dep, arr, time, date
@@ -130,6 +130,9 @@ $(".js-section").on("transitionend webkitTransitionEnd oTransitionEnd otransitio
 		cancelled = false;
 		initApp();
 	}
+	if (!queryComplete && $(".js-active").find(".input:first").hasClass("date")) {
+		startLoadingResults();
+	}
 });
 function autocom() {
 	var inputString = $(".js-active").find(".js-input").val();
@@ -205,10 +208,10 @@ function selectBusstop(resultNumber) {
 	//$(".js-active").find(".cancel-input").hide();
 	//hideElement(".js-input");
 	$(".js-active-input").find(".cancel-input").hide();
-	$(".js-active").find(".collapse").slideToggle(200, hideCollapsedContents);
+	$(".js-active").find(".collapse").slideToggle(200, hideCollapsedContent);
 	activateNextSection();
 }
-function hideCollapsedContents() {
+function hideCollapsedContent() {
 	$(".js-suggest").find(".js-name").text("");
 	$(".js-suggest").find(".js-city").text("");
 	if (!queryComplete && $(".js-active").hasClass("input-section-hidden")) {
@@ -221,7 +224,15 @@ function hideCollapsedContents() {
 		$(".js-active").prev().removeClass("input-section-hidden");
 		$(".js-active").prev().addClass("input-section-visible");
 	}
-	
+}
+function startLoadingResults() {
+	$(".js-active").removeClass("js-active").next().addClass("js-active");
+	$(".js-section").removeClass("active-section");
+	$(".js-active").addClass("active-section");
+	showElement(".js-active");
+	$(".spinner").css('display', 'block');
+	queryComplete = true;
+	requestRoute();
 }
 function activateNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");
@@ -235,13 +246,6 @@ function activateNextSection() {
 		if ($(".js-active").find(".input:first").hasClass("date")) {
 			showElement(".js-active");
 			autoSetTime();
-			$(".js-active").removeClass("js-active").next().addClass("js-active");
-			$(".js-section").removeClass("active-section"); 
-			$(".js-active").addClass("active-section"); 
-			showElement(".js-active");
-			showElement(".spinnter");
-			queryComplete = true;
-			requestRoute();
 		}
 		else {
 			if ($(".js-active").children().hasClass("search-results")) {
