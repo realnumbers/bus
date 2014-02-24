@@ -1,5 +1,4 @@
 //tmpUrl: dep, arr, time, date
-localStorage.routeData = new Array();
 var tmpUrl = new Array(4);
 var lang = "it";
 var matching_busstops = new Array(5);
@@ -22,8 +21,11 @@ removeClickDelay();
 onEnterEvent();
 initApp();
 
+
+console.log(localStorage);
 function initApp() {
-	hideElement(".js-section");
+	localStorage.routeData = "";
+	hideElement(".js-section").removeClass("js-active").removeClass("active-section");
 	hideElement("#cancel");
 	hideElement("#back");
 	hideElement(".cancel-input");
@@ -56,11 +58,21 @@ function initApp() {
 function busstopsJSON() {
 	return JSON.parse(localStorage.busstops);
 }
-function pushRouteData(index) {
-	localStorage.routData += JSON.stringify(routeData);
+function pushRouteData(data) {
+//	localStorage.setItem('routeData', JSON.stringify(data));
+	var tmpStorage = localStorage.routeData;
+	if (tmpStorage === "") {
+		tmpStorage = "[";
+		tmpStorage += JSON.stringify(data) + "]";
+	}
+	else {
+		tmpStorage = tmpStorage.substring(0, tmpStorage.length - 1) + ",";
+		tmpStorage += JSON.stringify(data) + "]";
+	}
+	localStorage.routeData = tmpStorage;
 }
-function getRouteData(index) {
-	return JSON.parse(localStorage.routeData)[index];
+function getRouteData() {
+	return JSON.parse(localStorage.routeData);
 }
 function onEnterEvent() {
 	$("#date-input").keydown(function(event){
@@ -312,20 +324,22 @@ function submitTime() {
 	}
 }
 function showRoute() {
+	var routeData = getRouteData();
 	hideElement(".js-suggest");
 	changeWorkElement("reset");
-	for (var i = 0; i < localStorage.routeData.length; i++) {
-		if (localStorage.routData[i] != null) {
-			loadOverview(data, i);
-		}
+	for (var i = 0; i < routeData.length; i++) {
+			loadOverview(routeData[i].overview);
 	}
-	hideElement(".spinner");
 	$(".js-active").find(".js-suggest").show();
+	showElement(".js-time");
+	showElement(".js-duration");
+	hideElement(".spinner");
 }
 function requestRoute(apiData) {
 	showElement("#cancel");
 	showElement(".spinner");
 	//test time, later take the time from url
+	localStorage.routeData = "";
 	var date = tmpUrl[3];
 	var fromStop = tmpUrl[0];
 	var toStop = tmpUrl[1];
@@ -351,7 +365,7 @@ function requestRoute(apiData) {
 			//hideKeyboard();
 			requestId = data.ConResCtxt[0].split("#")[0];
 			nextData(requestId, 1);
-			localStorage = parseData(data);
+			pushRouteData(parseData(data));
 			queryComplete = true;
 		}
 	});	
@@ -369,10 +383,12 @@ function nextData(requestId, count) {
 			url: nextUrl,
 		 	success: function(data) {
 				nextData(requestId, parseInt(count) + 1);
-				localStorage.routeData[count] = parseData(data);
+				pushRouteData(parseData(data));
 			}
 		});		
 	}
+	else
+		showRoute();
 }
 function parseData(data) {
 	var routeData = new Object;
@@ -392,24 +408,20 @@ function parseOverview(data) {
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
 
-	overview.arrTime = extractTime(arrTime);
-	overview.depTime = extractTime(depTime);
+	arrTime = extractTime(arrTime);
+	depTime = extractTime(depTime);
 
+	overview.arrTime = arrTime[0] + ":" + arrTime[1];
+	overview.depTime = depTime[0] + ":" + depTime[1];
 	duration = calculateWaitingTime([0, 0, 0], extractTime(duration));
-	overview.duration = timeString(duration);
+	transfers = (transfers == 0) ? "" : ((transfers == 1) ? ", 1 change" : ", " + transfers + " changes ");
+	overview.duration = timeString(duration) + transfers;
 	
-	if (transfers == 0)
-		transfers = "";
-	else if (transfers == 1)
-		transfers = "1 change";
-	else if (transfers > 1)
-		transfers += " changes ";
-	overview.transfers = transfers;
 	return overview;
 }
-function loadOverview(data, resultPointer) {
-	$(".js-work").find(".js-name").text(depTime + " - " + arrTime);
-	$(".js-work").find(".js-city").text(duration + ", " +  transfers);
+function loadOverview(data) {
+	$(".js-work").find(".js-time").text(data.depTime + " - " + data.arrTime);
+	$(".js-work").find(".js-duration").text(data.duration);
 	changeWorkElement();
 }
 
@@ -419,7 +431,8 @@ function splitBusstopName(busstopName) {
 	return busstopName;
 }
 function showDetails(resultNumber) {
-	var routeData;
+	var routeData = getRouteData()[resultNumber].connection;
+	console.log(routeData);
 	// jump to the details section
 	$(".js-active").removeClass("js-active");
 	$("#details").find(".js-section:first").addClass("js-active");
@@ -430,7 +443,6 @@ function showDetails(resultNumber) {
 	changeWorkElement("reset");
 	hideElement(".js-suggest");
 
-	routeData = parseDetails(resultNumber);
 	for (var i = 0; i < routeData.length; i++)
 		genDetailElement(routeData[i]);
 	showDetailsSection();
