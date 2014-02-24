@@ -420,7 +420,7 @@ function showRoute() {
 	hideElement(".spinner");
 }
 function requestRoute(apiData) {
-	if (localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(history.getState().data)) {
+	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(history.getState().data)) {
 	var tmpData = new Object();
 	tmpData.time = tmpUrl[2];
 	tmpData.date = tmpUrl[3];
