@@ -203,6 +203,17 @@ function selectBusstop(resultNumber) {
 function hideCollapsedContents() {
 	$(".js-suggest").find(".js-name").text("");
 	$(".js-suggest").find(".js-city").text("");
+	if (!queryComplete && $(".js-active").hasClass("input-section-hidden")) {
+		$(".js-active").show();
+		$(".js-active").removeClass("input-section-hidden");
+		$(".js-active").addClass("input-section-visible");
+	}
+	if (queryComplete && $(".js-active").children().hasClass("search-results")) {
+		$(".js-active").prev().show();
+		$(".js-active").prev().removeClass("input-section-hidden");
+		$(".js-active").prev().addClass("input-section-visible");
+	}
+	
 }
 function activateNextSection() {
 	$(".js-active").removeClass("js-active").next().addClass("js-active");

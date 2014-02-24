@@ -181,6 +181,16 @@ button, input {
     -webkit-transition: left 0.15s ease-out 0.01s;
   }
 }
+.input-section-visible {
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+  -webkit-transition: left 0.3s ease-out;
+}
+.input-section-hidden {
+  transform: translateX(-200%);
+  transition: transform 0.3s ease-out;
+  -webkit-transition: left 0.3s ease-out;
+}
 .text-element {
   display: inline-block;
   margin: 0.1em 0;
