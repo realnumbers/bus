@@ -4,6 +4,7 @@ var tmpUrl = new Array(4);
 var lang = "it";
 var matching_busstops = new Array(5);
 var queryComplete = false;
+var cancelled = false;
 
 // localStorage by using cookies for IE 6,7
 checkStorage();
@@ -121,8 +122,15 @@ function showElement(element) {
 	return $(element).show();
 }
 function cancelQuery() {
-	initApp();
+	$(".input-section-visible:not(:eq(0))").removeClass("input-section-visible").addClass("input-section-hidden");
+	cancelled = true;
 }
+$(".js-section").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+	if (queryComplete && cancelled) {
+		cancelled = false;
+		initApp();
+	}
+});
 function autocom() {
 	var inputString = $(".js-active").find(".js-input").val();
 	var i = 0;	
