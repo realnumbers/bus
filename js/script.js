@@ -99,13 +99,13 @@ function loadUrlData() {
 	hideElement(".js-input");
 	$(".js-active").find(".js-name:first").text("Busstop,");
 	$(".js-active").find(".js-city:first").text("City");
-	activedNextSection();
+	activateNextSection();
 	hideElement(".js-input");
 	showElement(".js-active").children(".js-input").show();
 	$(".js-active").find(".js-name:first").text("Busstop2,");
 	$(".js-active").find(".js-city:first").text("City2");
 	$(".js-suggest").hide();
-	activedNextSection();
+	activateNextSection();
 	}
 	else {
 		if (tmpData.dep == null) {
