@@ -92,7 +92,7 @@ function loadUrlData() {
 	}
 	if (tmpData.dep != null && tmpData.detail == 0) {
 	//tmpUrl: dep, arr, time, date
-	tmpUrl[0] = tmpData.dep;
+/*	tmpUrl[0] = tmpData.dep;
 	tmpUrl[1] = tmpData.arr;
 	tmpUrl[2] = tmpData.time;
 	tmpUrl[3] = tmpData.date;
@@ -106,7 +106,7 @@ function loadUrlData() {
 	$(".js-active").find(".js-city:first").text("City2");
 	$(".js-suggest").hide();
 	activateNextSection();
-	}
+	*/}
 	else {
 		if (tmpData.dep == null) {
 			var tmpData = new Object();
