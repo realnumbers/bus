@@ -185,8 +185,8 @@ function autocom() {
 				var foundBusstop = inputString.every( function (item, index, array) {
 					var pattern = new RegExp(item, "i");
 					var foundMatch = element.label.match(pattern);
-					//foundMatch = (element.id != to_stop && element.id === from_stop) ? null : foundMatch;
-					//foundMatch = (element.it != from_stop && element.id === to_stop) ? null : foundMatch;
+					foundMatch = (element.id != History.getState().data.arr && element.id === History.getState().data.dep) ? null : foundMatch;
+					foundMatch = (element.it != History.getState().data.dep && element.id === History.getState().data.arr) ? null : foundMatch;
 					// return true if there is a match
 					return (foundMatch != null) ? true : false;
 					});
