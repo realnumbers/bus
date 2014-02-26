@@ -122,7 +122,10 @@ function pushRouteData(data) {
 	localStorage.routeData = tmpStorage;
 }
 function getRouteData() {
-	return JSON.parse(localStorage.routeData);
+	if (localStorage.routeData != "")
+		return JSON.parse(localStorage.routeData);
+	else
+		return null;
 }
 function onEnterEvent() {
 	$("#date-input").keydown(function(event){
@@ -357,11 +360,16 @@ function showRoute() {
 	var routeData = getRouteData();
 	hideElement(".js-suggest");
 	changeWorkElement("reset");
-	for (var i = 0; i < routeData.length; i++) {
-			if (routeData[i] != null)
-				loadOverview(routeData[i].overview);
+	if (routeData != null) {
+		for (var i = 0; i < routeData.length; i++) {
+				if (routeData[i] != null)
+					loadOverview(routeData[i].overview);
+		}
+		$(".js-active").find(".js-suggest").show();
 	}
-	$(".js-active").find(".js-suggest").show();
+	else {
+		alert("Noconnection");
+	}
 	showElement(".js-time");
 	showElement(".js-duration");
 	hideElement(".spinner");
@@ -396,10 +404,15 @@ function requestRoute(apiData) {
 		url: url,
 	 	success: function(data) {
 			//hideKeyboard();
-			requestId = data.ConResCtxt[0].split("#")[0];
-			nextData(requestId, 1);
-			pushRouteData(parseData(data));
-			queryComplete = true;
+			if (data.ConnectionList) {
+				requestId = data.ConResCtxt[0].split("#")[0];
+				nextData(requestId, 1);
+				pushRouteData(parseData(data));
+				queryComplete = true;
+			}
+			else {
+				showRoute();
+			}
 		}
 	});	
 	}
