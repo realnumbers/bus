@@ -1,6 +1,4 @@
-//tmpUrl: dep, arr, time, date
 var History = window.History;
-var tmpUrl = new Array(4);
 var lang = "it";
 var matching_busstops = new Array(5);
 var previousHistoryState = 0;
@@ -42,10 +40,6 @@ History.Adapter.bind(window,'statechange',function() {
 	previousHistoryState = state.data.detail;	
 });
 
-//window.onpopstate = function(event) {
-//};
-
-console.log(localStorage);
 function initApp() {
 	//alert("Hello");
 	//localStorage.routeData = "";
@@ -64,20 +58,6 @@ function initApp() {
 	$(".collapse:eq(0)").slideToggle(200);      // show from input
 	$(".collapse:eq(2)").hide();                // hide date inputs
 	$(".js-active").find(".input:first").focus();
-	// for test
-	//tmpUrl: dep, arr, time, date
-	/*tmpUrl[0] = ":1213:1214:";
-	tmpUrl[1] = ":672:673:";
-	tmpUrl[2] = "10:20";
-	tmpUrl[3] = "10/03/2014";
-	hideElement(".js-input");
-	$(".js-active").find(".js-name:first").text("Test, ");
-	activateNextSection();
-	showElement(".js-active").children(".js-input").show();
-	hideElement(".js-input");
-	$(".js-active").find(".js-city:first").text("City");
-	activateNextSection();
-	*/
 
 	loadUrlData();
 }
@@ -91,11 +71,7 @@ function loadUrlData() {
 		replaceUrl(tmpData);
 	}
 	if (tmpData.dep != null && tmpData.detail == 0) {
-	//tmpUrl: dep, arr, time, date
-/*	tmpUrl[0] = tmpData.dep;
-	tmpUrl[1] = tmpData.arr;
-	tmpUrl[2] = tmpData.time;
-	tmpUrl[3] = tmpData.date;
+	/*
 	hideElement(".js-input");
 	$(".js-active").find(".js-name:first").text("Busstop,");
 	$(".js-active").find(".js-city:first").text("City");
@@ -159,40 +135,7 @@ function onEnterEvent() {
 	});
 }
 
-function checkStorage() {
-	if (!window.localStorage) {
-	window.localStorage = {
-		getItem: function (sKey) {
-			if (!sKey || !this.hasOwnProperty(sKey)) { return null; }
-				return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
-		},
-		key: function (nKeyId) {
-				return unescape(document.cookie.replace(/\s*\=(?:.(?!;))*$/, "").split(/\s*\=(?:[^;](?!;))*[^;]?;\s*/)[nKeyId]);
-		},
-		setItem: function (sKey, sValue) {
-			if(!sKey) { return; }
-				 document.cookie = escape(sKey) + "=" + escape(sValue) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
-				 this.length = document.cookie.match(/\=/g).length;
-		},
-		length: 0,
-		removeItem: function (sKey) {
-			if (!sKey || !this.hasOwnProperty(sKey)) { return; }
-				document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-				this.length--;
-		},
-		hasOwnProperty: function (sKey) {
-			return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
-		}
-		};
-		window.localStorage.length = (document.cookie.match(/\=/g) || window.localStorage).length;
-	}
-}
-function removeClickDelay() {
-	// Eliminates 300ms click delay on mobile 
-	window.addEventListener('load', function() {
-			new FastClick(document.body);
-			}, false);
-}
+
 
 $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
 	if (!$("#details").find(".js-section").hasClass("js-active")) {
@@ -286,11 +229,14 @@ function hideMatchMsg(){
 	$(".js-active").children(".js-suggest:first").removeClass("no-matches");
 	$(".js-active").children(".js-suggest:first").removeClass("js-no-matches");
 }
-function selectBusstop(resultNumber) {
-	if (tmpUrl[0] == null)
-		tmpUrl[0] = matching_busstops[resultNumber].id;
+function selectBusstop(item, resultNumber) {
+	var tmpObj = new Object();
+	tmpObj = History.getState().data;
+	if (item == "from")
+		tmpObj.dep = matching_busstops[resultNumber].id;
 	else
-		tmpUrl[1] = matching_busstops[resultNumber].id;
+		tmpObj.arr = matching_busstops[resultNumber].id;
+	replaceUrl(tmpObj);
 	$(".js-active").find(".js-name:first").text(matching_busstops[resultNumber].name + ", ");
 	$(".js-active").find(".js-city:first").text(matching_busstops[resultNumber].city);
 	$(".js-active").find(":input").val("");	
@@ -354,7 +300,7 @@ function activateNextSection() {
 	else activateNextSection();
 }
 function autoSetTime() {
-	if (History.getState().data.time == undefined) {
+	if (History.getState().data.time == undefined || History.getState().data.date == undefined) {
 		var currentdate = new Date();
 		var day = addZero(currentdate.getDate());
 		var month = addZero(currentdate.getMonth() + 1);
@@ -375,7 +321,7 @@ function selectTime() {
 	var date = $(".date").val();
 	var time = $(".time").val();
 	var dataValid = false;
-
+	var tmpObj = History.getState().data;
 	var dateArray = date.split(/[\.\/\-,;:]/);
 	var timeArray = time.split(/\D/);
 	if ($("#date-input")[0].validity.valid && $("#time-input")[0].validity.valid && date != "" && time != "") { 
@@ -388,8 +334,9 @@ function selectTime() {
 		var hours = correctTimeArray[0];
 		var minutes = correctTimeArray[1];
 
-		tmpUrl[2] = hours + ":" + minutes;
-		tmpUrl[3] = day + "." + month + "." + year;
+		tmpObj.time = hours + ":" + minutes;
+		tmpObj.date = day + "." + month + "." + year;
+		replaceUrl(tmpObj);
 		$(".js-active").find(".js-name").text(day + "." + month + "." + year + ", ")
 		$(".js-active").find(".js-city").text(hours + ":" + minutes);
 		//hideElement(".js-input");
@@ -421,22 +368,17 @@ function showRoute() {
 }
 function requestRoute(apiData) {
 	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(History.getState().data)) {
-	var tmpData = new Object();
-	tmpData.time = tmpUrl[2];
-	tmpData.date = tmpUrl[3];
-	tmpData.dep = tmpUrl[0];
-	tmpData.arr = tmpUrl[1];
-	tmpData.detail = 0;
+	var tmpData = History.getState().data; 
 	showElement("#cancel");
 	showElement(".spinner");
 	
 	localStorage.routeData = "";
-	updateUrl(tmpData);
+	//updateUrl(tmpData);
 	//test time, later take the time from url
-	var date = tmpUrl[3];
-	var fromStop = tmpUrl[0];
-	var toStop = tmpUrl[1];
-	var time = tmpUrl[2];;
+	var date = tmpData.date;
+	var fromStop = tmpData.dep;
+	var toStop = tmpData.arr;
+	var time = tmpData.time;
 	//base url
 	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
 	var requestId;
@@ -815,4 +757,39 @@ function formatDate(date) {
 		date[yearPosition] = tmp;
 	}
 	return date;
+}
+
+function checkStorage() {
+	if (!window.localStorage) {
+	window.localStorage = {
+		getItem: function (sKey) {
+			if (!sKey || !this.hasOwnProperty(sKey)) { return null; }
+				return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
+		},
+		key: function (nKeyId) {
+				return unescape(document.cookie.replace(/\s*\=(?:.(?!;))*$/, "").split(/\s*\=(?:[^;](?!;))*[^;]?;\s*/)[nKeyId]);
+		},
+		setItem: function (sKey, sValue) {
+			if(!sKey) { return; }
+				 document.cookie = escape(sKey) + "=" + escape(sValue) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+				 this.length = document.cookie.match(/\=/g).length;
+		},
+		length: 0,
+		removeItem: function (sKey) {
+			if (!sKey || !this.hasOwnProperty(sKey)) { return; }
+				document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+				this.length--;
+		},
+		hasOwnProperty: function (sKey) {
+			return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+		}
+		};
+		window.localStorage.length = (document.cookie.match(/\=/g) || window.localStorage).length;
+	}
+}
+function removeClickDelay() {
+	// Eliminates 300ms click delay on mobile 
+	window.addEventListener('load', function() {
+			new FastClick(document.body);
+			}, false);
 }
