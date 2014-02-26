@@ -369,12 +369,10 @@ function showRoute() {
 function requestRoute(apiData) {
 	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(History.getState().data)) {
 	var tmpData = History.getState().data; 
+	$(".js-active").find(".js-suggest").hide();
 	showElement("#cancel");
 	showElement(".spinner");
-	
 	localStorage.routeData = "";
-	//updateUrl(tmpData);
-	//test time, later take the time from url
 	var date = tmpData.date;
 	var fromStop = tmpData.dep;
 	var toStop = tmpData.arr;
@@ -409,7 +407,6 @@ function requestRoute(apiData) {
 		showRoute();
 }
 function nextData(requestId, count) {
-	if (count < 5) {
 		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
 		nextUrl += requestId;
 		nextUrl += "%23";
@@ -420,13 +417,13 @@ function nextData(requestId, count) {
 			jsonpCallback: "Callback",
 			url: nextUrl,
 		 	success: function(data) {
-				nextData(requestId, parseInt(count) + 1);
 				pushRouteData(parseData(data));
+				if (count < 5 )
+					nextData(requestId, parseInt(count) + 1);
+				else
+					showRoute();
 			}
 		});		
-	}
-	else
-		showRoute();
 }
 function parseData(data) {
 	var routeData = new Object;
@@ -556,7 +553,7 @@ function parseDetails(data){
 		}
 		else {
 
-			if (connection[i + 1].Journey.length > 0 && arrTime != "") {
+			if ( (i + 1) < connection.length && connection[i + 1].Journey.length > 0 && arrTime != "") {
 				nextDepTime = extractTime(connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time);
 				waitTime = calculateWaitingTime(arrTime, nextDepTime);
 				conObj.waitTime = (waitTime == "") ? conObj.waitTime : "Wait " ;
