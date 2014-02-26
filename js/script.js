@@ -1,5 +1,5 @@
 //tmpUrl: dep, arr, time, date
-var history = window.History;
+var History = window.History;
 var tmpUrl = new Array(4);
 var lang = "it";
 var matching_busstops = new Array(5);
@@ -23,8 +23,8 @@ removeClickDelay();
 onEnterEvent();
 initApp();
 
-history.Adapter.bind(window,'statechange',function() {
-	var state = history.getState();
+History.Adapter.bind(window,'statechange',function() {
+	var state = History.getState();
 	if (state.data.detail > previousHistoryState) {
 		changeToDetails(state.data.detail);	
 	}
@@ -82,10 +82,10 @@ function initApp() {
 	loadUrlData();
 }
 function loadUrlData() {
-	var tmpData = history.getState().data;
+	var tmpData = History.getState().data;
 	var urlData = new Object();
-	if (history.getPageUrl().split("?")[1] != undefined)
-		urlData = JSON.parse("{\"" + history.getPageUrl().split("?")[1].replace(/&/g, "\", \"").replace(/=/g, "\":\"") +"\"}");
+	if (History.getPageUrl().split("?")[1] != undefined)
+		urlData = JSON.parse("{\"" + History.getPageUrl().split("?")[1].replace(/&/g, "\", \"").replace(/=/g, "\":\"") +"\"}");
 	if (tmpData.dep == null && urlData.dep != null && urlData.arr != null && urlData.time != null && urlData.date != null && urlData.detail != null) {
 		tmpData = urlData;
 		replaceUrl(tmpData);
@@ -111,7 +111,7 @@ function loadUrlData() {
 		if (tmpData.dep == null) {
 			var tmpData = new Object();
 			tmpData.detail = 0;
-			history.replaceState(tmpData, "Bus", "?detail=0");
+			History.replaceState(tmpData, "Bus", "?detail=0");
 		}
 		else {
 			tmpData.detail = 0;
@@ -124,10 +124,10 @@ function loadUrlData() {
 
 }
 function replaceUrl(dataUrl) {
-	history.replaceState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+	History.replaceState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
 }
 function updateUrl(dataUrl) {
-	history.pushState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+	History.pushState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
 
 }
 function busstopsJSON() {
@@ -210,7 +210,7 @@ function showElement(element) {
 function cancelQuery() {
 	var tmpData = new Object();
 	tmpData.detail = 0;
-	history.pushState(tmpData, "Bus", "?detail=0");
+	History.pushState(tmpData, "Bus", "?detail=0");
 	initApp()
 	$(".input-section-visible:not(:eq(0))").removeClass("input-section-visible").addClass("input-section-hidden");
 	cancelled = true;
@@ -354,7 +354,7 @@ function activateNextSection() {
 	else activateNextSection();
 }
 function autoSetTime() {
-	if (history.getState().data.time == undefined) {
+	if (History.getState().data.time == undefined) {
 		var currentdate = new Date();
 		var day = addZero(currentdate.getDate());
 		var month = addZero(currentdate.getMonth() + 1);
@@ -365,8 +365,8 @@ function autoSetTime() {
 		$(".time").val(hours + ":" + minutes);
 	}
 	else {
-		$(".date").val(history.getState().data.date);
-		$(".time").val(history.getState().data.time);
+		$(".date").val(History.getState().data.date);
+		$(".time").val(History.getState().data.time);
 	}
 
 	selectTime();
@@ -420,7 +420,7 @@ function showRoute() {
 	hideElement(".spinner");
 }
 function requestRoute(apiData) {
-	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(history.getState().data)) {
+	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(History.getState().data)) {
 	var tmpData = new Object();
 	tmpData.time = tmpUrl[2];
 	tmpData.date = tmpUrl[3];
@@ -491,7 +491,7 @@ function parseData(data) {
 	if (data.ConnectionList != null) {
 		routeData.overview = parseOverview(data);
 		routeData.connection = parseDetails(data);
-		routeData.stamp = history.getState().data;
+		routeData.stamp = History.getState().data;
 		return routeData;
 	}
 	else
@@ -528,7 +528,7 @@ function splitBusstopName(busstopName) {
 	return busstopName;
 }
 function showDetails(resultNumber) {
-	var tmpData = history.getState().data;
+	var tmpData = History.getState().data;
 	tmpData.detail = resultNumber + 1;
 	updateUrl(tmpData);
 }
@@ -660,7 +660,7 @@ function showDetailsSection() {
 	$("#details").removeClass("details-hidden").addClass("details-visible");
 }
 function goBack() {
-	history.back();
+	Histoy.back();
 	showSearchSection();
 }
 function toggleInput(element) {
