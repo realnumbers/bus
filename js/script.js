@@ -602,7 +602,7 @@ function showDetailsSection() {
 	$("#details").removeClass("details-hidden").addClass("details-visible");
 }
 function goBack() {
-	Histoy.back();
+	History.back();
 	showSearchSection();
 }
 function toggleInput(element) {
