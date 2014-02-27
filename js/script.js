@@ -731,10 +731,10 @@ function timeString(waitTime) {
 	waitTimeString = "";
 	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " day" : "";
 	waitTimeString += (waitTimeDays > 1) ? "s" : "";
-	waitTimeString += (waitTimeString != "") ? ", " : "";
+	waitTimeString += (waitTimeString != "" && (waitTimeHours != 0 || waitTimeMinuts != 0)) ? ", " : "";
 	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " hour" : "";
 	waitTimeString += (waitTimeHours > 1) ? "s" : "";
-	waitTimeString += (waitTimeString != "") ? ", " : "";
+	waitTimeString += (waitTimeString != "" && waitTimeMinuts != 0) ? ", " : "";
 	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " minute" : "";
 	waitTimeString += (waitTimeMinuts > 1) ? "s" : "";
 
