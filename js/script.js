@@ -82,7 +82,7 @@ function loadUrlData() {
 			History.replaceState(tmpData, "Bus", "?detail=0");
 		}
 		else {
-			tmpData.detail = 0;
+			tmpData.detail = "0";
 			if (JSON.stringify(tmpData) == JSON.stringify(getRouteData()[0].stamp)) {
 				console.log("Go to detail view");
 				changeToDetails(tmpData.detail);	
