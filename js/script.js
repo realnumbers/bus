@@ -71,18 +71,10 @@ function loadUrlData() {
 		replaceUrl(tmpData);
 	}
 	if (tmpData.dep != null && tmpData.detail == 0) {
-	/*
-	hideElement(".js-input");
-	$(".js-active").find(".js-name:first").text("Busstop,");
-	$(".js-active").find(".js-city:first").text("City");
-	activateNextSection();
-	hideElement(".js-input");
-	showElement(".js-active").children(".js-input").show();
-	$(".js-active").find(".js-name:first").text("Busstop2,");
-	$(".js-active").find(".js-city:first").text("City2");
-	$(".js-suggest").hide();
-	activateNextSection();
-	*/}
+		//Load old Data
+		autoSetBusstop();
+		autoSetTime();
+	}
 	else {
 		if (tmpData.dep == null) {
 			var tmpData = new Object();
@@ -100,10 +92,10 @@ function loadUrlData() {
 
 }
 function replaceUrl(dataUrl) {
-	History.replaceState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+	History.replaceState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&namedep="+ dataUrl.namedep + "&citydep="+ dataUrl.citydep +"&arr=" + dataUrl.arr + "&namearr=" + dataUrl.namearr + "&cityarr=" + dataUrl.cityarr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
 }
 function updateUrl(dataUrl) {
-	History.pushState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&arr=" + dataUrl.arr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+	History.pushState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&namedep="+ dataUrl.namedep + "&citydep="+ dataUrl.citydep +"&arr=" + dataUrl.arr + "&namearr=" + dataUrl.namearr + "&cityarr=" + dataUrl.cityarr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
 
 }
 function busstopsJSON() {
@@ -138,7 +130,25 @@ function onEnterEvent() {
 	});
 }
 
+function autoSetBusstop() {
+	var tmpStop = new Object();
+	tmpStop.id = History.getState().data.dep;
+	tmpStop.city = History.getState().data.citydep;
+	tmpStop.name = History.getState().data.namedep;
+	matching_busstops[0] = tmpStop;
+	selectBusstop("from", 0);
+	tmpStop.id = History.getState().data.arr;
+	tmpStop.city = History.getState().data.cityarr;
+	tmpStop.name = History.getState().data.namearr;
+	matching_busstops[0] = tmpStop;
+	if (!queryComplete && $(".js-active").hasClass("input-section-hidden")) {
+		$(".js-active").show();
+		$(".js-active").removeClass("input-section-hidden");
+		$(".js-active").addClass("input-section-visible");
+	}
+	selectBusstop("to", 0);
 
+}
 
 $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
 	if (!$("#details").find(".js-section").hasClass("js-active")) {
@@ -235,10 +245,16 @@ function hideMatchMsg(){
 function selectBusstop(item, resultNumber) {
 	var tmpObj = new Object();
 	tmpObj = History.getState().data;
-	if (item == "from")
+	if (item == "from") {
 		tmpObj.dep = matching_busstops[resultNumber].id;
-	else
+		tmpObj.citydep = matching_busstops[resultNumber].city;
+		tmpObj.namedep = matching_busstops[resultNumber].name;
+	}
+	else {
 		tmpObj.arr = matching_busstops[resultNumber].id;
+		tmpObj.cityarr = matching_busstops[resultNumber].city;
+		tmpObj.namearr = matching_busstops[resultNumber].name;
+	}
 	replaceUrl(tmpObj);
 	$(".js-active").find(".js-name:first").text(matching_busstops[resultNumber].name + ", ");
 	$(".js-active").find(".js-city:first").text(matching_busstops[resultNumber].city);
