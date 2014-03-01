@@ -87,6 +87,10 @@ function loadUrlData() {
 				console.log("Go to detail view");
 				changeToDetails(tmpData.detail);	
 			}
+			else {
+				localStorage.routeData = "";
+				requestRoute("details");
+			}
 		}
 	}
 
@@ -390,7 +394,7 @@ function showRoute() {
 	showElement(".js-duration");
 	hideElement(".spinner");
 }
-function requestRoute(apiData) {
+function requestRoute(view) {
 	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(History.getState().data)) {
 	var tmpData = History.getState().data; 
 	$(".js-active").find(".js-suggest").hide();
@@ -422,7 +426,7 @@ function requestRoute(apiData) {
 			//hideKeyboard();
 			if (data.ConnectionList) {
 				requestId = data.ConResCtxt[0].split("#")[0];
-				nextData(requestId, 1);
+				nextData(requestId, 1, view);
 				pushRouteData(parseData(data));
 				queryComplete = true;
 			}
@@ -435,7 +439,7 @@ function requestRoute(apiData) {
 	else
 		showRoute();
 }
-function nextData(requestId, count) {
+function nextData(requestId, count, view) {
 		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
 		nextUrl += requestId;
 		nextUrl += "%23";
@@ -448,9 +452,13 @@ function nextData(requestId, count) {
 		 	success: function(data) {
 				pushRouteData(parseData(data));
 				if (count < 5 )
-					nextData(requestId, parseInt(count) + 1);
-				else
-					showRoute();
+					nextData(requestId, parseInt(count) + 1, view);
+				else {
+					if (view == "details")
+						changeToDetails(History.getState().data.detail);	
+					else
+						showRoute();
+				}
 			}
 		});		
 }
