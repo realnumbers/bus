@@ -4,6 +4,7 @@ var matching_busstops = new Array(5);
 var previousHistoryState = 0;
 var queryComplete = false;
 var cancelled = false;
+var visibleView = "search"; // values: search; details; about
 
 // localStorage by using cookies for IE 6,7
 checkStorage();
@@ -137,16 +138,6 @@ function onEnterEvent() {
 			submitTime();
 	});
 }
-
-
-
-$("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-	if (!$("#details").find(".js-section").hasClass("js-active")) {
-		hideElement("#details");
-		hideElement("#back");
-	}	
-});
-
 function hideElement(element) {
 	return $(element).hide();
 }
@@ -269,7 +260,7 @@ function startLoadingResults() {
 	$(".js-section").removeClass("active-section");
 	$(".js-active").addClass("active-section");
 	showElement(".js-active");
-	$(".spinner").css('display', 'block');
+	$(".spinner").css("display", "block");
 	queryComplete = true;
 	requestRoute();
 }
@@ -483,6 +474,7 @@ function showDetails(resultNumber) {
 	var tmpData = History.getState().data;
 	tmpData.detail = resultNumber + 1;
 	updateUrl(tmpData);
+	visibleView = "details";
 }
 function changeToDetails(resultNumber) {
 	var routeData = getRouteData()[resultNumber].connection;
@@ -494,7 +486,7 @@ function changeToDetails(resultNumber) {
 	//hideElement(".js-section");
 	showElement(".js-active");
 	changeWorkElement("reset");
-	hideElement(".js-suggest");
+	//hideElement(".js-suggest");
 
 	for (var i = 0; i < routeData.length; i++)
 		genDetailElement(routeData[i]);
@@ -593,28 +585,48 @@ function parseDetails(data){
 }
 
 function showSearchSection() {
-	$(".js-section").removeClass("js-active active-section");
+	visibleView = "search";
+	//$(".js-section").removeClass("js-active active-section");
 	$("#search").find(".js-section").show();
-	$("#search").find(".js-section:last").addClass("js-active active-section");
-	$(".js-active").find(".js-suggest").show();
+	//$("#search").find(".js-section:last").addClass("js-active active-section");
+	//$(".js-active").find(".js-suggest").show();
+	
 	$("#cancel").removeClass("search-hidden").addClass("search-visible");
 	$("#search").removeClass("search-hidden").addClass("search-visible");
 	$("#back").removeClass("details-visible").addClass("details-hidden");
 	$("#details").removeClass("details-visible").addClass("details-hidden");
 }
 function showDetailsSection() {
-	showElement("#details");
-	showElement("#back");
+	//$("#details").show();
+	//$(".js-section").removeClass("js-active active-section");
+	//$("#details").css("display", "block");
+	$("#search").find(".js-section").show();
+	$(".js-active").find(".js-suggest").show();
+	//changeWorkElement("reset");
+	//showElement("#details");
+	//showElement("#back");
 	$("#cancel").removeClass("search-visible").addClass("search-hidden");
 	$("#search").removeClass("search-visible").addClass("search-hidden");
 
 	$("#back").removeClass("details-hidden").addClass("details-visible");
-	$("#details").removeClass("details-hidden").addClass("details-visible");
+	$("#details").removeClass("details-hidden");
+	$("#details").addClass("details-visible");
+	//$("#details").removeClass("details-hidden").addClass("details-visible");
 }
 function goBack() {
 	History.back();
 	showSearchSection();
 }
+/*
+$("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+	//if (!$("#details").find(".js-section").hasClass("js-active")) {
+	//if (!$("#details").hasClass("details-visible")) {
+	if (visibleView == "search") {
+		$("#details").hide();
+		$("#back").hide();
+	}
+});
+*/
 function toggleInput(element) {
 	//console.log("toggle");
 	console.log("length: " + $("js-active-input").length);
