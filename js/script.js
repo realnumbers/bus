@@ -42,11 +42,9 @@ History.Adapter.bind(window,'statechange',function() {
 });
 
 function initApp() {
-	//alert("Hello");
 	//localStorage.routeData = "";
 	hideElement(".js-section").removeClass("js-active").removeClass("active-section");
-	hideElement("#cancel");
-	hideElement("#back");
+	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
 	hideElement(".cancel-input");
 	$(".js-section:first").addClass("js-active active-section");
 	changeWorkElement("reset");
@@ -369,7 +367,8 @@ function requestRoute(apiData) {
 	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(History.getState().data)) {
 	var tmpData = History.getState().data; 
 	$(".js-active").find(".js-suggest").hide();
-	showElement("#cancel");
+	//showElement("#cancel");
+	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
 	showElement(".spinner");
 	localStorage.routeData = "";
 	var date = tmpData.date;
@@ -591,13 +590,14 @@ function showSearchSection() {
 	//$("#search").find(".js-section:last").addClass("js-active active-section");
 	//$(".js-active").find(".js-suggest").show();
 	
-	$("#cancel").removeClass("search-hidden").addClass("search-visible");
+	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
 	$("#search").removeClass("search-hidden").addClass("search-visible");
-	$("#back").removeClass("details-visible").addClass("details-hidden");
+	$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
 	$("#details").removeClass("details-visible").addClass("details-hidden");
 }
 function showDetailsSection() {
 	//$("#details").show();
+	$("#back").show();
 	//$(".js-section").removeClass("js-active active-section");
 	//$("#details").css("display", "block");
 	$("#search").find(".js-section").show();
@@ -605,12 +605,11 @@ function showDetailsSection() {
 	//changeWorkElement("reset");
 	//showElement("#details");
 	//showElement("#back");
-	$("#cancel").removeClass("search-visible").addClass("search-hidden");
+	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
 	$("#search").removeClass("search-visible").addClass("search-hidden");
 
-	$("#back").removeClass("details-hidden").addClass("details-visible");
-	$("#details").removeClass("details-hidden");
-	$("#details").addClass("details-visible");
+	$("#back").removeClass("icon-hidden-right").addClass("icon-visible");
+	$("#details").removeClass("details-hidden").addClass("details-visible");
 	//$("#details").removeClass("details-hidden").addClass("details-visible");
 }
 function goBack() {
