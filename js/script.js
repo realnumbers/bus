@@ -8,6 +8,7 @@ var cancelled = false;
 // localStorage by using cookies for IE 6,7
 checkStorage();
 
+// load busstops to localStorage if the arnt loaded
 if (!localStorage.busstops){
 	$.getJSON( "js/busstops.json", function(data) {
 		localStorage.setItem('busstops', JSON.stringify(data));
@@ -21,28 +22,7 @@ removeClickDelay();
 onEnterEvent();
 initApp();
 
-History.Adapter.bind(window,'statechange',function() {
-	var state = History.getState();
-	if (state.data.detail > previousHistoryState) {
-		changeToDetails(state.data.detail);	
-	}
-	else {
-		if (state.data.detail == previousHistoryState && state.data.detail == 0) {
-			console.log("Same Page");
-			if (state.data.dep == undefined)
-				initApp();
-			else {
-			}
-		}
-		else
-			showSearchSection(); 
-	}
-	previousHistoryState = state.data.detail;	
-});
-
 function initApp() {
-	//alert("Hello");
-	//localStorage.routeData = "";
 	hideElement(".js-section").removeClass("js-active").removeClass("active-section");
 	hideElement("#cancel");
 	hideElement("#back");
@@ -82,26 +62,44 @@ function loadUrlData() {
 			History.replaceState(tmpData, "Bus", "?detail=0");
 		}
 		else {
+			var tmpView = tmpData.detail;
 			tmpData.detail = "0";
+			replaceUrl(tmpData);
+			tmpData.detail = tmpView;
+			updateUrl(tmpData);
+			previousHistoryState = tmpData.detail;
 			if (JSON.stringify(tmpData) == JSON.stringify(getRouteData()[0].stamp)) {
 				console.log("Go to detail view");
 				changeToDetails(tmpData.detail);	
+				queryComplete = false;
 			}
 			else {
 				localStorage.routeData = "";
 				requestRoute("details");
+				queryComplete = false;
 			}
 		}
 	}
 
 }
 function replaceUrl(dataUrl) {
-	History.replaceState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&namedep="+ dataUrl.namedep + "&citydep="+ dataUrl.citydep +"&arr=" + dataUrl.arr + "&namearr=" + dataUrl.namearr + "&cityarr=" + dataUrl.cityarr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
+	History.replaceState(dataUrl, "Bus",
+	"?dep=" + dataUrl.dep + 
+	"&arr=" + dataUrl.arr + 
+	"&date=" + dataUrl.date + 
+	"&time=" + dataUrl.time + 
+	"&detail=" + dataUrl.detail);
 }
 function updateUrl(dataUrl) {
-	History.pushState(dataUrl, "Bus", "?dep=" + dataUrl.dep + "&namedep="+ dataUrl.namedep + "&citydep="+ dataUrl.citydep +"&arr=" + dataUrl.arr + "&namearr=" + dataUrl.namearr + "&cityarr=" + dataUrl.cityarr + "&date=" + dataUrl.date + "&time=" + dataUrl.time + "&detail=" + dataUrl.detail);
-
+	History.pushState(dataUrl, "Bus", 
+	"?dep=" + dataUrl.dep + 
+	"&arr=" + dataUrl.arr + 
+	"&date=" + dataUrl.date + 
+	"&time=" + dataUrl.time + 
+	"&detail=" + dataUrl.detail);
 }
+
+
 function busstopsJSON() {
 	return JSON.parse(localStorage.busstops);
 }
@@ -428,7 +426,7 @@ function requestRoute(view) {
 				requestId = data.ConResCtxt[0].split("#")[0];
 				nextData(requestId, 1, view);
 				pushRouteData(parseData(data));
-				queryComplete = true;
+				//queryComplete = true;
 			}
 			else {
 				showRoute();
@@ -827,3 +825,25 @@ function removeClickDelay() {
 			new FastClick(document.body);
 			}, false);
 }
+History.Adapter.bind(window,'statechange',function() {
+	var state = History.getState();
+	if (state.data.detail > previousHistoryState) {
+		changeToDetails(state.data.detail);	
+	}
+	else {
+		if (state.data.detail == previousHistoryState && state.data.detail == 0) {
+			console.log("Same Page");
+			if (state.data.dep == undefined)
+				initApp();
+			else {
+			}
+		}
+		else {
+			showSearchSection(); 
+			if (queryComplete == false) {
+				initApp();
+			}
+		}
+	}
+	previousHistoryState = state.data.detail;	
+});
