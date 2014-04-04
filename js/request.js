@@ -1,12 +1,43 @@
-var lang = "it";
 // init all stuff
 checkStorage();
 loadBusstopsList();
-selectLanguage();
 
-//var UrlData = History.getState().data; 
-//urlData = JSON.parse("{\"" + History.getPageUrl().split("?")[1].replace(/&/g, "\", \"").replace(/=/g, "\":\"") +"\"}");
+//loads the ? arguments into Status data
+function loadUrlData() {
+	if (History.getPageUrl().split("?")[1]) {
+		var urlData = JSON.parse("{\"" +
+		History.getPageUrl().
+												split("?")[1].
+												replace(/&/g, "\", \"").
+												replace(/=/g, "\":\"") +
+												"\"}");
+		if (validateUrlInput(urlData)) {
+			replaceUrl(urlData);
+			return true;
+		}
+	}
+	return false;
+}
 
+function compareDataInput(data1, data2) {
+	if (validateUrlInput(data1) && validateUrlInput(data2))
+		if (data1.dep == data2.dep)
+			if (data1.arr == data2.arr)
+				if (data1.date == data2.date)
+					if (data1.time == data2.time)
+						return true;
+	return false;
+}
+
+function validateUrlInput(data) {
+	if (data.dep != undefined)
+		if (data.arr != undefined)
+			if (data.date != undefined)
+				if (data.time != undefined)
+					if (data.detail != undefined)
+						return true;
+	return false;
+}
 // replaces the current Url state with the new State
 function replaceUrl(dataUrl) {
 	History.replaceState(dataUrl, "Bus",
@@ -55,7 +86,7 @@ function getRouteData() {
 }
 
 function requestRoute(UrlData) {
-	localStorage.routeData = "";
+	var stamp = History.getState().data;
 	// Data form the Url
 	var date = UrlData.date;
 	var fromStop = UrlData.dep;
@@ -64,13 +95,14 @@ function requestRoute(UrlData) {
 	//base url
 	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
 	var requestId;
-	date = date.replace(/\//g, "");
-	date = date.replace(/\./g, "");
+	date = date.replace(/\//g, ".");
+	date = date.split(".");
+	date = date[2] + date [1] + date[0];
 	time = time.replace(":", "");
 
 	url += "startBusStationId=" + fromStop;
 	url += "&endBusStationId=" + toStop;
-	url += "&yyyymmddhhmm=" + date;
+	url += "&yyyymmddhhmm=" + date + time;
 	$.ajax({
 		dataType: "jsonp",
 		jsonpCallback: "Callback",
@@ -78,6 +110,8 @@ function requestRoute(UrlData) {
 	 	success: function(data) {
 			//hideKeyboard();
 			if (data.ConnectionList) {
+				localStorage.routeData = "";
+				pushRouteData(stamp);
 				requestId = data.ConResCtxt[0].split("#")[0];
 				nextData(requestId, 1);
 				pushRouteData(parseData(data));
@@ -116,7 +150,6 @@ function parseData(data) {
 	if (data.ConnectionList != null) {
 		routeData.overview = parseOverview(data);
 		routeData.connections = parseDetails(data);
-		routeData.stamp = History.getState().data;
 		return routeData;
 	}
 	else
@@ -306,8 +339,4 @@ function loadBusstopsList() {
 			localStorage.setItem('busstops', JSON.stringify(data));
 		});
 	}
-}
-function selectLanguage() {
-	if (navigator.language === "de")
-		lang = "de";
 }

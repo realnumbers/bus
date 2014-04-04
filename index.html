@@ -36,7 +36,7 @@
           
           <div class="collapse js-dep">
             
-            <input class="input js-input" type="text" placeholder="Start location..." autofocus oninput="autocom(0)">
+            <input class="input js-input" type="text" placeholder="Start location..." autofocus oninput="busstopInput(this)">
             <div class="input-element text-element list-element suggest-element js-suggest js-input" onclick="selectBusstop('from', 0)">
 		      	  <p class="line-big js-name"></p>
 		      	  <p class="line-small js-city"></p>
@@ -342,5 +342,7 @@
   <script type='application/javascript' src='js/fastclick.min.js'></script>
   <script src="js/request.js"></script>
   <script src="js/layout.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/main.js"></script>
   
 </html>
