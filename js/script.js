@@ -4,6 +4,7 @@ var matching_busstops = new Array(5);
 var previousHistoryState = 0;
 var queryComplete = false;
 var cancelled = false;
+var visibleView = "search"; // values: search; details; about
 
 // localStorage by using cookies for IE 6,7
 checkStorage();
@@ -23,9 +24,9 @@ onEnterEvent();
 initApp();
 
 function initApp() {
+	//localStorage.routeData = "";
 	hideElement(".js-section").removeClass("js-active").removeClass("active-section");
-	hideElement("#cancel");
-	hideElement("#back");
+	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
 	hideElement(".cancel-input");
 	$(".js-section:first").addClass("js-active active-section");
 	changeWorkElement("reset");
@@ -131,34 +132,6 @@ function onEnterEvent() {
 			submitTime();
 	});
 }
-
-function autoSetBusstop() {
-	var tmpStop = new Object();
-	tmpStop.id = History.getState().data.dep;
-	tmpStop.city = History.getState().data.citydep;
-	tmpStop.name = History.getState().data.namedep;
-	matching_busstops[0] = tmpStop;
-	selectBusstop("from", 0);
-	tmpStop.id = History.getState().data.arr;
-	tmpStop.city = History.getState().data.cityarr;
-	tmpStop.name = History.getState().data.namearr;
-	matching_busstops[0] = tmpStop;
-	if (!queryComplete && $(".js-active").hasClass("input-section-hidden")) {
-		$(".js-active").show();
-		$(".js-active").removeClass("input-section-hidden");
-		$(".js-active").addClass("input-section-visible");
-	}
-	selectBusstop("to", 0);
-
-}
-
-$("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-	if (!$("#details").find(".js-section").hasClass("js-active")) {
-		hideElement("#details");
-		hideElement("#back");
-	}	
-});
-
 function hideElement(element) {
 	return $(element).hide();
 }
@@ -287,7 +260,7 @@ function startLoadingResults() {
 	$(".js-section").removeClass("active-section");
 	$(".js-active").addClass("active-section");
 	showElement(".js-active");
-	$(".spinner").css('display', 'block');
+	$(".spinner").css("display", "block");
 	queryComplete = true;
 	requestRoute();
 }
@@ -396,7 +369,8 @@ function requestRoute(view) {
 	if (localStorage.routeData == undefined || localStorage.routeData == "" || JSON.stringify(getRouteData()[0].stamp) != JSON.stringify(History.getState().data)) {
 	var tmpData = History.getState().data; 
 	$(".js-active").find(".js-suggest").hide();
-	showElement("#cancel");
+	//showElement("#cancel");
+	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
 	showElement(".spinner");
 	localStorage.routeData = "";
 	var date = tmpData.date;
@@ -505,6 +479,7 @@ function showDetails(resultNumber) {
 	var tmpData = History.getState().data;
 	tmpData.detail = resultNumber + 1;
 	updateUrl(tmpData);
+	visibleView = "details";
 }
 function changeToDetails(resultNumber) {
 	var routeData = getRouteData()[resultNumber].connection;
@@ -516,7 +491,7 @@ function changeToDetails(resultNumber) {
 	//hideElement(".js-section");
 	showElement(".js-active");
 	changeWorkElement("reset");
-	hideElement(".js-suggest");
+	//hideElement(".js-suggest");
 
 	for (var i = 0; i < routeData.length; i++)
 		genDetailElement(routeData[i]);
@@ -615,28 +590,48 @@ function parseDetails(data){
 }
 
 function showSearchSection() {
-	$(".js-section").removeClass("js-active active-section");
+	visibleView = "search";
+	//$(".js-section").removeClass("js-active active-section");
 	$("#search").find(".js-section").show();
-	$("#search").find(".js-section:last").addClass("js-active active-section");
-	$(".js-active").find(".js-suggest").show();
-	$("#cancel").removeClass("search-hidden").addClass("search-visible");
+	//$("#search").find(".js-section:last").addClass("js-active active-section");
+	//$(".js-active").find(".js-suggest").show();
+	
+	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
 	$("#search").removeClass("search-hidden").addClass("search-visible");
-	$("#back").removeClass("details-visible").addClass("details-hidden");
+	$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
 	$("#details").removeClass("details-visible").addClass("details-hidden");
 }
 function showDetailsSection() {
-	showElement("#details");
-	showElement("#back");
-	$("#cancel").removeClass("search-visible").addClass("search-hidden");
+	//$("#details").show();
+	$("#back").show();
+	//$(".js-section").removeClass("js-active active-section");
+	//$("#details").css("display", "block");
+	$("#search").find(".js-section").show();
+	$(".js-active").find(".js-suggest").show();
+	//changeWorkElement("reset");
+	//showElement("#details");
+	//showElement("#back");
+	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
 	$("#search").removeClass("search-visible").addClass("search-hidden");
 
-	$("#back").removeClass("details-hidden").addClass("details-visible");
+	$("#back").removeClass("icon-hidden-right").addClass("icon-visible");
 	$("#details").removeClass("details-hidden").addClass("details-visible");
+	//$("#details").removeClass("details-hidden").addClass("details-visible");
 }
 function goBack() {
 	History.back();
 	showSearchSection();
 }
+/*
+$("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+	//if (!$("#details").find(".js-section").hasClass("js-active")) {
+	//if (!$("#details").hasClass("details-visible")) {
+	if (visibleView == "search") {
+		$("#details").hide();
+		$("#back").hide();
+	}
+});
+*/
 function toggleInput(element) {
 	//console.log("toggle");
 	console.log("length: " + $("js-active-input").length);

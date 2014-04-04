@@ -10,6 +10,8 @@
 
 html,
 body {
+  height: 100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -98,11 +100,9 @@ button, input {
 
 .container {
   position: relative;
+  width: 97%;
   padding: 0 1em 1em;
   margin: 0 auto;
-}
-.container {
-  width: 97%;
 }
 @media (min-width: 450px) {
   .container {
@@ -144,52 +144,49 @@ button, input {
   width: 100%;
 }
 .search-visible {
-  left: 0;
-  transition: left 0.3s ease-out 0.03s;
-  -webkit-transition: left 0.3s ease-out 0.03s;
+  transform: translateX(0);
+  transition: transform 0.2s ease-out 0.04s;
+  -webkit-transition: transform 0.2s ease-out 0.04s;
 }
 .search-hidden {
-  left: -200%;
-  transition: left 0.3s ease-out;
-  -webkit-transition: left 0.3s ease-out;
+  transform: translateX(-200%);
+  transition: transform 0.2s ease-out;
+  -webkit-transition: transform 0.2s ease-out;
 }
 .details-hidden {
-  left: 200%;
-  transition: left 0.3s ease-out;
-  -webkit-transition: left 0.3s ease-out;
+  transform: translateX(200%);
+  transition: transform 0.2s ease-out;
+  -webkit-transition: transform 0.2s ease-out;
 }
 .details-visible {
-  left: 0;
-  transition: left 0.3s ease-out 0.03s;
-  -webkit-transition: left 0.3s ease-out 0.03s;
-}
-@media (min-width: 1000px) {
-  .search-visible {
-    transition: left 0.15s ease-out 0.01s;
-    -webkit-transition: left 0.15s ease-out 0.01s;
-  }
-  .search-hidden {
-    transition: left 0.15s ease-out;
-    -webkit-transition: left 0.15s ease-out;
-  }
-  .details-hidden {
-    transition: left 0.15s ease-out;
-    -webkit-transition: left 0.15s ease-out;
-  }
-  .details-visible {
-    transition: left 0.15s ease-out 0.01s;
-    -webkit-transition: left 0.15s ease-out 0.01s;
-  }
+  transform: translateX(0);
+  transition: transform 0.2s ease-out 0.04s;
+  -webkit-transition: transform 0.2s ease-out 0.04s;
 }
 .input-section-visible {
   transform: translateX(0);
   transition: transform 0.3s ease-out;
-  -webkit-transition: left 0.3s ease-out;
+  -webkit-transition: transform 0.3s ease-out;
 }
 .input-section-hidden {
   transform: translateX(-200%);
   transition: transform 0.3s;
-  -webkit-transition: left 0.3s;
+  -webkit-transition: transform 0.3s;
+}
+.icon-visible {
+  transform: translate(0, -50%);
+  transition: transform 0.2s ease-out 0.02s;
+  -webkit-transition: transform 0.2s ease-out 0.02s;
+}
+.icon-hidden-left {
+  transform: translate(-3000%, -50%);
+  transition: transform 0.2s ease-out 0.02s;
+  -webkit-transition: transform 0.2s ease-out 0.02s;
+}
+.icon-hidden-right {
+  transform: translate(3000%, -50%);
+  transition: transform 0.2s ease-out 0.02s;
+  -webkit-transition: transform 0.2s ease-out 0.02s;
 }
 .text-element {
   display: inline-block;
@@ -237,8 +234,8 @@ button, input {
   /* vertical centering */
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+  //transform: translateY(-50%);
+  //-webkit-transform: translateY(-50%);
   
   height: 2.35em;
   cursor: pointer;
