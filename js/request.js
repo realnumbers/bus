@@ -21,10 +21,16 @@ function loadUrlData() {
 
 function getBusstopById(id) {
 	var busstop = new Object();
-	busstop.name = "name";
-	busstop.city = "city";
-	console.log(id);
-	return busstop;
+	var busstopList = getBusstops();
+	if (lang == "de")
+		busstopList = busstopList.de;
+	else
+		busstopList = busstopList.it;
+
+	for (var i = 0; i < busstopList.length; i++)
+		if (busstopList[i].id == id) 
+			return busstopList[i];
+	return false;
 
 }
 function compareDataInput(data1, data2) {
