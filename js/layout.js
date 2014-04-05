@@ -139,6 +139,10 @@ function genDetails(index) {
 }
 function goBack() {
 	console.log("go Back");
+	$(".details-visible:first").removeClass("details-visible").addClass("details-hidden");
+	$(".search-hidden:first").show(0).removeClass("search-hidden").addClass("search-visible");
+	$(".icon-visible:last").removeClass("icon-visible").addClass("icon-hidden-right");
+	$(".icon-hidden-left:first").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 }
 	/*
 
