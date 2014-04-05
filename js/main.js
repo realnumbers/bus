@@ -1,10 +1,16 @@
 var lang = "it";
 var matchingBusstops = new Array(5);
 $(document).on("requestComplete", msg);
-selectLanguage();
-loadUrlData();
-initLayout();
-initInput();
+initApp();
+
+
+
+function initApp() {
+	selectLanguage();
+	loadUrlData();
+	initLayout();
+	initInput();
+}
 // event for a complete request is "requestComplete"
 //$(document).on("requestComplete", msg);
 
@@ -12,7 +18,7 @@ initInput();
 // check if there are right arguments in url and load them
 function startRequest() {
 if (validateUrlData(History.getState().data)) {
-	$(".spinner").show();
+	showStartRequestStuff();
 	if (getRouteData() == undefined || !compareDataInput(getRouteData()[0], History.getState().data))
 		requestRoute(History.getState().data);
 	else {
@@ -25,6 +31,12 @@ if (validateUrlData(History.getState().data)) {
 else {
 	console.log("No input");
 }
+}
+function cancelQuery() {
+	$(".icon-visible:last").removeClass("icon-visible").addClass("icon-hidden-left");
+	var data = new Object();
+	pushUrl(data);
+	initApp();
 }
 
 function msg(e) {

@@ -1,5 +1,13 @@
 function initLayout() {
+	$(":input").val("");
+	$(".js-name").text("");
+	$(".js-city").text("");
 	$(".spinner").css("display", "none");
+	$(".input-section-visible").hide(0).removeClass("input-section-visible").addClass("input-section-hidden");
+	$(".input-section-hidden").hide(0)
+	$(".details-hidden").hide(0);
+	$(".js-from:last").show(0);
+	$(".js-to:last").show(0);
 	toggleInputHideClass("init");
 }
 function toggleInput(el) {
@@ -56,8 +64,17 @@ function toggleInputHideClass(el) {
 	else if ($(el).hasClass("js-from")) proveNextSection("js-from");
 	else if ($(el).hasClass("js-to")) proveNextSection("js-to");
 	else if ($(el).hasClass("js-time-date")) proveNextSection("js-time-date");
-	$(".input-section-hidden:first").removeClass("input-section-hidden").addClass("input-section-visible");
+
+	$(".input-section-hidden:first").show(0).removeClass("input-section-hidden").addClass("input-section-visible");
 }
+
+function showStartRequestStuff() {
+	$(".spinner").show();
+	$(".icon-hidden-left:first").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
+}
+function showOverview() {
+}
+
 	/*
 
 $(".js-section").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
