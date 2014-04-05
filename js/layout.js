@@ -69,8 +69,11 @@ function toggleInputHideClass(el) {
 }
 
 function showStartRequestStuff() {
-	$(".spinner").show();
+	$(".spinner").css("display", "block");
 	$(".icon-hidden-left:first").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
+	$(".js-overview").hide().children().hide();
+	$(".js-overview").find(".js-time").text("");
+	$(".js-overview").find(".js-duration").text("");
 }
 
 function showOverview() {
@@ -89,16 +92,59 @@ function showOverview() {
 function genOverviewElement(data, index) {
 	index--;
 	console.log(index);
+	$(".js-overview").show().children()[index].style.display = "block";
 	$(".js-overview").find(".js-time")[index].innerHTML = (data.depTime + " - " + data.arrTime);
 	$(".js-overview").find(".js-duration")[index].innerHTML = (data.duration);
 }
 
+function showDetails(el) {
+	// 1 based index
+	var index = $(el).index() + 1;
+	console.log("go to Detail");
+	$(".js-transit").hide();
+	$(".js-intermediate").hide();
+	$(".search-visible:first").show(0).removeClass("search-visible").addClass("search-hidden");
+
+	$(".details-hidden:first").show(0).removeClass("details-hidden").addClass("details-visible");
+	$(".icon-visible:last").removeClass("icon-visible").addClass("icon-hidden-left");
+	$(".icon-hidden-right:first").show(0).removeClass("icon-hidden-right").addClass("icon-visible");
+	genDetails(index);
+}
+
+function genDetails(index) {
+	var data = getRouteData()[index].connections;
+	console.log(index);
+	var tBlock = $(".js-transit:first");
+	var iBlock = $(".js-intermediate:first"); 
+	var i = 0;
+	while (i < data.length) {
+		if (data[i].depTime != undefined) {
+			tBlock.show();
+			tBlock.find(".js-time:first").text(data[i].depTime);
+			tBlock.find(".js-time:last").text(data[i].arrTime);
+			tBlock.find(".js-name:first").text(data[i].depBusstop[1] + ", ");
+			tBlock.find(".js-name:last").text(data[i].arrBusstop[1] + ", ");
+			tBlock.find(".js-city:first").text(data[i].depBusstop[0]);
+			tBlock.find(".js-city:last").text(data[i].arrBusstop[0]);
+			tBlock.find(".js-lineNo").text("Line " + data[i].lineNo);
+
+		}
+		if (data[i].waitTime != "") 
+			iBlock.show().find("p").text(data[i].waitTime);
+		
+		i++;
+		tBlock = tBlock.nextAll(".js-transit:first");
+		iBlock = iBlock.nextAll(".js-intermediate:first");
+	}
+}
+function goBack() {
+	console.log("go Back");
+}
 	/*
 
 $(".js-section").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
 	}
 }
-		$(".js-active").find(".collapse").slideToggle(300);
 
 	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
 	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
@@ -110,5 +156,4 @@ $(".js-section").on("transitionend webkitTransitionEnd oTransitionEnd otransitio
 
 	$("#back").removeClass("icon-hidden-right").addClass("icon-visible");
 	$("#details").removeClass("details-hidden").addClass("details-visible");
-function toggleInput(element) {
 */
