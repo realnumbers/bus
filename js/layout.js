@@ -17,14 +17,14 @@ function toggleInput(el) {
 		  $(el).next(".js-time-date").length > 0){
 		$(el).next(":first").slideToggle(300, function () {
 			$(":input").val("");
-			});
+			}).find(":input:first").focus();
 	}
 	else
 		$(el).slideToggle(300, function () {
 			showSuggests(".js-section", -1);
 			toggleInputHideClass(el);
 			$(":input").val("");
-		});
+		}).find(":input:first").focus();
 }
 
 function showSuggests(section, number, busstop) {
@@ -66,7 +66,7 @@ function toggleInputHideClass(el) {
 	else if ($(el).hasClass("js-to")) proveNextSection("js-to");
 	else if ($(el).hasClass("js-time-date")) proveNextSection("js-time-date");
 
-	$(".input-section-hidden:first").show(0).removeClass("input-section-hidden").addClass("input-section-visible");
+	$(".input-section-hidden:first").show(0).removeClass("input-section-hidden").addClass("input-section-visible").find(":input:first").focus();
 }
 
 function showStartRequestStuff() {
