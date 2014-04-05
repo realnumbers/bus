@@ -1,7 +1,7 @@
 var lang = "it";
 var History = window.History;
 var matchingBusstops = new Array(5);
-$(document).on("requestComplete", msg);
+$(document).on("requestComplete", requestComplete);
 initApp();
 
 function initApp() {
@@ -9,10 +9,7 @@ function initApp() {
 	loadUrlData();
 	initLayout();
 	initInput();
-	if (History.getState().data.detail == 0)
-		changeToSearch();
-	else if (History.getState().data.detail > 0)
-		changeToDetails(History.getState().data.detail);	
+	startRequest();
 }
 // event for a complete request is "requestComplete"
 //$(document).on("requestComplete", msg);
@@ -54,9 +51,15 @@ function showDetails(el) {
 	pushUrl(data);
 }
 
-function msg(e) {
+function requestComplete(e) {
 	$(".spinner").hide();
-	showOverview();
+	if (History.getState().data.detail == 0)
+		showOverview();
+	else if (History.getState().data.detail > 0)
+		changeToDetails(History.getState().data.detail);	
+	msg(e)
+}
+function msg(e) {
 	console.log("Event: " + e.type + " Msg: " + e.message);
 }
 
