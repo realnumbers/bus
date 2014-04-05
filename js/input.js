@@ -1,9 +1,12 @@
-	var matchingBusstops = new Array(5);
+function initInput() {
 	$(":input").val("");
 	removeClickDelay();
 	onEnterEvent();
+	if (History.getState().data.time == undefined || History.getState().data.date == undefined)
+		autoSetTime();
+}
 
-	function busstopInput(el) {
+function busstopInput(el) {
 		var inputString = $(el).val();
 		var i = 0;	
 		var section = ($(el).parents(".js-to").length > 0) ? 
@@ -49,7 +52,7 @@ function selectBusstop(el) {
 	var dataUrl = History.getState().data;
 	var section = ($(el).parents(".js-to").length > 0) ?
 								 ".js-to" : ".js-from";
-	showSelectedBusstop(section, index);
+	showSelectedBusstop(section, matchingBusstops[index]);
 	toggleInput($(el).parents(section));
 	if (section == ".js-to")
 		dataUrl.arr = matchingBusstops[index].id;
@@ -71,12 +74,17 @@ function submitTime() {
 	replaceUrl(dataUrl); 
 }
 function autoSetTime() {
-		var currentdate = new Date();
-		var day = addZero(currentdate.getDate());
-		var month = addZero(currentdate.getMonth() + 1);
-		var year = currentdate.getFullYear();
-		var hours = addZero(currentdate.getHours());
-		var minutes = addZero(currentdate.getMinutes());
+	var currentdate = new Date();
+	var dataUrl = History.getState().data;
+	var day = addZero(currentdate.getDate());
+	var month = addZero(currentdate.getMonth() + 1);
+	var year = currentdate.getFullYear();
+	var hours = addZero(currentdate.getHours());
+	var minutes = addZero(currentdate.getMinutes());
+	dataUrl.time = hours + ":" + minutes;
+	dataUrl.date = day + "." + month + "." + year;
+	dataUrl.detail = 0;
+	replaceUrl(dataUrl); 
 }
 function selectTime() {
 	var time = new Array()
@@ -96,7 +104,38 @@ function selectTime() {
 // prove if this section has just got a value from url and
 // jump to the next
 function proveNextSection(section) {
+	var dataUrl = History.getState().data;
+	switch (section) {
+		case "init" :		
+			if (dataUrl.dep != undefined) {
+				$(".js-from:last").hide();
+				showSelectedBusstop(".js-from", getBusstopById(dataUrl.dep));
+				toggleInputHideClass(".js-from:first");
+			}
+			break;	
+		case "js-from": 
+			if (dataUrl.arr != undefined) {
+				$(".js-to:last").hide();
+				showSelectedBusstop(".js-to", getBusstopById(dataUrl.arr));
+				toggleInputHideClass(".js-to:first");
+			}
+			break;
+		case "js-to": 
+			if (dataUrl.time != undefined && dataUrl.date != undefined) {
+				var time = new Array();
+				time[0] = dataUrl.date;
+				time[1] = dataUrl.time;
+				$(".js-time-date:last").hide();
+				showSelectetTime(time);
+				toggleInputHideClass(".js-time-date:first");
+			}
+			break;
+		case "js-time-date": console.log("js-time");
+			startRequest();
+			break;
+	}
 }
+
 function addZero(number) {
 	if (number.toString().length == 1)
 		return "0" + number.toString();

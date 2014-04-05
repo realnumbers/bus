@@ -1,6 +1,6 @@
-initLayout();
 function initLayout() {
-$(".spinner").css("display", "none");
+	$(".spinner").css("display", "none");
+	toggleInputHideClass("init");
 }
 function toggleInput(el) {
 	if ($(el).next(".js-from").length > 0 ||
@@ -38,9 +38,9 @@ function showSuggests(section, number, busstop) {
 	});
 }
 
-function showSelectedBusstop(section, index) {
-	$(section + ":first").find(".js-name").text(matchingBusstops[index].name + ", ");
-	$(section + ":first").find(".js-city").text(matchingBusstops[index].city);
+function showSelectedBusstop(section, busstop) {
+	$(section + ":first").find(".js-name").text(busstop.name + ", ");
+	$(section + ":first").find(".js-city").text(busstop.city);
 }
 
 function showSelectetTime(time) {
@@ -48,12 +48,15 @@ function showSelectetTime(time) {
 	$(".js-time-date:first").find(".js-city").text(time[0]);
 }
 
+// Moves the next input section into visible and
+// and proves if the next feld is already fulled
 function toggleInputHideClass(el) {
-	$(".input-section-hidden:first").removeClass("input-section-hidden").addClass("input-section-visible");
 	//To validate the next input feld
-	if ($(el).hasClass("js-from")) proveNextSection("js-from");
+	if (el == "init") proveNextSection("init");
+	else if ($(el).hasClass("js-from")) proveNextSection("js-from");
 	else if ($(el).hasClass("js-to")) proveNextSection("js-to");
-	else if ($(el).hasClass("js-time-date")) proveNextSection("js-time");
+	else if ($(el).hasClass("js-time-date")) proveNextSection("js-time-date");
+	$(".input-section-hidden:first").removeClass("input-section-hidden").addClass("input-section-visible");
 }
 	/*
 

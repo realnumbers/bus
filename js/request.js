@@ -11,16 +11,24 @@ function loadUrlData() {
 												replace(/&/g, "\", \"").
 												replace(/=/g, "\":\"") +
 												"\"}");
-		if (validateUrlInput(urlData)) {
-			replaceUrl(urlData);
-			return true;
-		}
+
+		urlData = unStringUndefined(urlData);
+		replaceUrl(urlData);
+		return true;
 	}
 	return false;
 }
 
+function getBusstopById(id) {
+	var busstop = new Object();
+	busstop.name = "name";
+	busstop.city = "city";
+	console.log(id);
+	return busstop;
+
+}
 function compareDataInput(data1, data2) {
-	if (validateUrlInput(data1) && validateUrlInput(data2))
+	if (validateUrlData(data1) && validateUrlData(data2))
 		if (data1.dep == data2.dep)
 			if (data1.arr == data2.arr)
 				if (data1.date == data2.date)
@@ -29,7 +37,7 @@ function compareDataInput(data1, data2) {
 	return false;
 }
 
-function validateUrlInput(data) {
+function validateUrlData(data) {
 	if (data.dep != undefined)
 		if (data.arr != undefined)
 			if (data.date != undefined)
@@ -38,6 +46,21 @@ function validateUrlInput(data) {
 						return true;
 	return false;
 }
+function unStringUndefined (data) {
+	if (data.dep == "undefined")
+		data.dep = undefined;
+	if (data.arr == "undefined")
+		data.arr = undefined;
+	if (data.date == "undefined")
+		data.date = undefined;
+	if (data.time == "undefined")
+		data.time = undefined;
+	if (data.detail == "undefined")
+		data.detail = undefined;
+						
+	return data;
+}
+		
 // replaces the current Url state with the new State
 function replaceUrl(dataUrl) {
 	History.replaceState(dataUrl, "Bus",
