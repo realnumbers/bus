@@ -1,20 +1,24 @@
-var matchingBusstops = new Array(5);
+	var matchingBusstops = new Array(5);
+	$(":input").val("");
+	removeClickDelay();
+	onEnterEvent();
 
-removeClickDelay();
-onEnterEvent();
+	function busstopInput(el) {
+		var inputString = $(el).val();
+		var i = 0;	
+		var section = ($(el).parents(".js-to").length > 0) ? 
+									".js-to" : ".js-from";
+		// hide all Suggests
+		showSuggests(section, -1);
 
-function busstopInput(el) {
-	console.log(el);
-	var inputString = $(el).val();
-	var i = 0;	
-	if (inputString != "") {
-		inputString = inputString.split(" ");
+		if (inputString != "") {
+			inputString = inputString.split(" ");
 
-		//Match every busstop from data
-		var resMatch = getBusstops()[lang].every( function (element, index, array) {
-				//with every part of the inputSting
-				var foundBusstop = inputString.every( function (item, index, array) {
-					var pattern = new RegExp(item, "i");
+			//Match every busstop from data
+			var resMatch = getBusstops()[lang].every( function (element, index, array) {
+					//with every part of the inputSting
+					var foundBusstop = inputString.every( function (item, index, array) {
+						var pattern = new RegExp(item, "i");
 					var foundMatch = element.label.match(pattern);
 					foundMatch = (element.id != History.getState().data.arr && element.id === History.getState().data.dep) ? null : foundMatch;
 					foundMatch = (element.it != History.getState().data.dep && element.id === History.getState().data.arr) ? null : foundMatch;
@@ -24,29 +28,48 @@ function busstopInput(el) {
 
 				if (foundBusstop) {
 				matchingBusstops[i] = element;
-				console.log(element.label);
+				showSuggests(section, i, element);
 				i++;
 				}
 				//return true if I don't have enough results
 				return (i < 5) ? true : false;
 		});
-		if (resMatch && i == 0)
-			showMatchMsg();
-		else
-			hideMatchMsg();
+		if (resMatch && i == 0) {
+			var element = new Object();
+			element.city = "No matching Busstop";
+			element.name = "";
+			showSuggests(section, 0, element);
+		}
 	}
 }
 
-function showMatchMsg(){
-	alert("No Matches");
-}
-function hideMatchMsg(){
-}
 
 function selectBusstop(el) {
-	console.log($(el));
+	var index = $(el).index() - 1;
+	var dataUrl = History.getState().data;
+	var section = ($(el).parents(".js-to").length > 0) ?
+								 ".js-to" : ".js-from";
+	showSelectedBusstop(section, index);
+	toggleInput($(el).parents(section));
+	if (section == ".js-to")
+		dataUrl.arr = matchingBusstops[index].id;
+	else
+		dataUrl.dep = matchingBusstops[index].id;
+	replaceUrl(dataUrl); 
 }
 
+function submitTime() {
+	var time;
+	var dataUrl = History.getState().data;
+	time = selectTime();
+	showSelectetTime(time);
+	toggleInput(".js-time-date:last");
+
+	dataUrl.time = time[1];
+	dataUrl.date = time[0];
+	dataUrl.detail = 0;
+	replaceUrl(dataUrl); 
+}
 function autoSetTime() {
 		var currentdate = new Date();
 		var day = addZero(currentdate.getDate());
@@ -56,18 +79,24 @@ function autoSetTime() {
 		var minutes = addZero(currentdate.getMinutes());
 }
 function selectTime() {
-	var date = $(".date").val();
-	var time = $(".time").val();
+	var time = new Array()
+	time[0] = $(".date").val();
+	time[1] = $(".time").val();
 	if ($("#date-input")[0].validity.valid &&
 		  $("#time-input")[0].validity.valid &&
-		  date != "" &&
-		  time != ""
+		  time[0] != "" &&
+		  time[1] != ""
 		 ) {
-		date = formateDate(date.split(/[\.\/\-,;:]/));
-		alert("Time input Correct");
+		time[0] = formateDate(time[0].split(/[\.\/\-,;:]/));
+		return time;
 	}
+	return undefined;
 }
 
+// prove if this section has just got a value from url and
+// jump to the next
+function proveNextSection(section) {
+}
 function addZero(number) {
 	if (number.toString().length == 1)
 		return "0" + number.toString();
@@ -84,7 +113,7 @@ function formateDate(date) {
 	}
 	else if (date[2].toString().length == 2)
 		date[2] = "20" + date[2].toString();
-	return date
+	return date[0] + "." + date[1] + "." + date[2];
 }
 
 function onEnterEvent() {

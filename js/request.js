@@ -108,7 +108,6 @@ function requestRoute(UrlData) {
 		jsonpCallback: "Callback",
 		url: url,
 	 	success: function(data) {
-			//hideKeyboard();
 			if (data.ConnectionList) {
 				localStorage.routeData = "";
 				pushRouteData(stamp);
@@ -139,8 +138,11 @@ function nextData(requestId, count, view) {
 				pushRouteData(parseData(data));
 				if (count < 5 )
 					nextData(requestId, parseInt(count) + 1, view);
-				else
-					alert("Got all Data from Api");
+				else {
+					$.event.trigger({
+						type: "requestComplete"
+					});
+				}
 			}
 		});		
 }
