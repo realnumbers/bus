@@ -9,18 +9,13 @@ checkStorage();
 loadBusstopsList();
 
 function initApp() {
+	console.log("init App");
 	selectLanguage();
 	loadUrlData();
 	initLayout();
 	initInput();
 	startRequest();
 	
-	//	var data = History.getState().data;
-	//	var tmpDetail = data.detail;
-	//	data.detail = 0;
-//		replaceUrl(data);
-//		data.detail = tmpDetail;
-//		pushUrl(data);
 }
 // event for a complete request is "requestComplete"
 //$(document).on("requestComplete", msg);

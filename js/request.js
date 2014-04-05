@@ -9,12 +9,23 @@ function loadUrlData() {
 												"\"}");
 
 		urlData = unStringUndefined(urlData);
-		replaceUrl(urlData);
+		if (urlData.detail > 0) {
+			console.log("Detail view");
+			addState(urlData);
+		}
+		else
+			replaceUrl(urlData);
 		return true;
 	}
 	return false;
 }
-
+function addState(data) {
+	var tmpDetail = data.detail;
+	data.detail = 0;
+	replaceUrl(data);
+	data.detail = tmpDetail;
+	pushUrl(data);
+}
 function getBusstopById(id) {
 	var busstop = new Object();
 	var busstopList = getBusstops();
