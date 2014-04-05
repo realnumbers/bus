@@ -14,6 +14,13 @@ function initApp() {
 	initLayout();
 	initInput();
 	startRequest();
+	
+	//	var data = History.getState().data;
+	//	var tmpDetail = data.detail;
+	//	data.detail = 0;
+//		replaceUrl(data);
+//		data.detail = tmpDetail;
+//		pushUrl(data);
 }
 // event for a complete request is "requestComplete"
 //$(document).on("requestComplete", msg);
@@ -59,8 +66,9 @@ function requestComplete(e) {
 	$(".spinner").hide();
 	if (History.getState().data.detail == 0)
 		showOverview();
-	else if (History.getState().data.detail > 0)
+	else if (History.getState().data.detail > 0) {
 		changeToDetails(History.getState().data.detail);	
+	}
 	msg(e)
 }
 function msg(e) {
@@ -70,8 +78,10 @@ function msg(e) {
 History.Adapter.bind(window,'statechange',function() {
 	var state = History.getState();
 	console.log("New Url State");
-	if (state.data.detail == 0)
+	if (state.data.detail == 0) {
 		changeToSearch();
+		startRequest();
+	}
 	else if (state.data.detail > 0)
 		startRequest();
 	
