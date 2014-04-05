@@ -1,15 +1,18 @@
 var lang = "it";
+var History = window.History;
 var matchingBusstops = new Array(5);
 $(document).on("requestComplete", msg);
 initApp();
-
-
 
 function initApp() {
 	selectLanguage();
 	loadUrlData();
 	initLayout();
 	initInput();
+	if (History.getState().data.detail == 0)
+		changeToSearch();
+	else if (History.getState().data.detail > 0)
+		changeToDetails(History.getState().data.detail);	
 }
 // event for a complete request is "requestComplete"
 //$(document).on("requestComplete", msg);
@@ -39,11 +42,32 @@ function cancelQuery() {
 	initApp();
 }
 
+function goBack() {
+	History.back();
+}
+function showDetails(el) {
+	var data = History.getState().data;
+	// 1 based index
+	var index = $(el).index() + 1;
+	// push new state
+	data.detail = index;
+	pushUrl(data);
+}
+
 function msg(e) {
 	$(".spinner").hide();
 	showOverview();
 	console.log("Event: " + e.type + " Msg: " + e.message);
 }
+
+History.Adapter.bind(window,'statechange',function() {
+	var state = History.getState();
+	console.log("New Url State");
+	if (state.data.detail == 0)
+		changeToSearch();
+	else if (state.data.detail > 0)
+		changeToDetails(state.data.detail);	
+});
 
 function selectLanguage() {
 	if (navigator.language === "de")

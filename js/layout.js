@@ -10,6 +10,7 @@ function initLayout() {
 	$(".js-to:last").show(0);
 	toggleInputHideClass("init");
 }
+
 function toggleInput(el) {
 	if ($(el).next(".js-from").length > 0 ||
 		  $(el).next(".js-to").length > 0 ||
@@ -70,7 +71,7 @@ function toggleInputHideClass(el) {
 
 function showStartRequestStuff() {
 	$(".spinner").css("display", "block");
-	$(".icon-hidden-left:first").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
+	$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 	$(".js-overview").hide().children().hide();
 	$(".js-overview").find(".js-time").text("");
 	$(".js-overview").find(".js-duration").text("");
@@ -97,17 +98,15 @@ function genOverviewElement(data, index) {
 	$(".js-overview").find(".js-duration")[index].innerHTML = (data.duration);
 }
 
-function showDetails(el) {
-	// 1 based index
-	var index = $(el).index() + 1;
+function changeToDetails(index) {
 	console.log("go to Detail");
 	$(".js-transit").hide();
 	$(".js-intermediate").hide();
 	$(".search-visible:first").show(0).removeClass("search-visible").addClass("search-hidden");
 
 	$(".details-hidden:first").show(0).removeClass("details-hidden").addClass("details-visible");
-	$(".icon-visible:last").removeClass("icon-visible").addClass("icon-hidden-left");
-	$(".icon-hidden-right:first").show(0).removeClass("icon-hidden-right").addClass("icon-visible");
+	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
+	$("#back").show(0).removeClass("icon-hidden-right").addClass("icon-visible");
 	genDetails(index);
 }
 
@@ -137,27 +136,10 @@ function genDetails(index) {
 		iBlock = iBlock.nextAll(".js-intermediate:first");
 	}
 }
-function goBack() {
+function changeToSearch() {
 	console.log("go Back");
 	$(".details-visible:first").removeClass("details-visible").addClass("details-hidden");
 	$(".search-hidden:first").show(0).removeClass("search-hidden").addClass("search-visible");
-	$(".icon-visible:last").removeClass("icon-visible").addClass("icon-hidden-right");
-	$(".icon-hidden-left:first").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
-}
-	/*
-
-$(".js-section").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-	}
-}
-
-	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
-	$("#cancel").removeClass("icon-hidden-left").addClass("icon-visible");
-	$("#search").removeClass("search-hidden").addClass("search-visible");
 	$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
-	$("#details").removeClass("details-visible").addClass("details-hidden");
-	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
-	$("#search").removeClass("search-visible").addClass("search-hidden");
-
-	$("#back").removeClass("icon-hidden-right").addClass("icon-visible");
-	$("#details").removeClass("details-hidden").addClass("details-visible");
-*/
+	$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
+}
