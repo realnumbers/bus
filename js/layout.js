@@ -72,7 +72,25 @@ function showStartRequestStuff() {
 	$(".spinner").show();
 	$(".icon-hidden-left:first").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 }
+
 function showOverview() {
+	var routeData = getRouteData();
+	if (routeData != undefined) {
+		for (var i = 1; i < routeData.length; i++) {
+				if (routeData[i] != null)
+					genOverviewElement(routeData[i].overview, i);
+		}
+	}
+	else {
+		console.log("Noconnection");
+	}
+
+}
+function genOverviewElement(data, index) {
+	index--;
+	console.log(index);
+	$(".js-overview").find(".js-time")[index].innerHTML = (data.depTime + " - " + data.arrTime);
+	$(".js-overview").find(".js-duration")[index].innerHTML = (data.duration);
 }
 
 	/*

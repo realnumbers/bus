@@ -41,6 +41,7 @@ function cancelQuery() {
 
 function msg(e) {
 	$(".spinner").hide();
+	showOverview();
 	console.log("Event: " + e.type + " Msg: " + e.message);
 }
 

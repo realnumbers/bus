@@ -159,7 +159,7 @@ function nextData(requestId, count, view) {
 			url: nextUrl,
 		 	success: function(data) {
 				pushRouteData(parseData(data));
-				if (count < 5 )
+				if (count < 4 )
 					nextData(requestId, parseInt(count) + 1, view);
 				else {
 					$.event.trigger({
