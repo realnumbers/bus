@@ -13,6 +13,8 @@ function initApp() {
 	selectLanguage();
 	loadUrlData();
 	initLayout();
+	onEnterEvent();
+	removeClickDelay();
 	initInput();
 	startRequest();
 	bindUrlEvent();
@@ -65,8 +67,10 @@ function requestComplete(e) {
 		error(e.error);
 	else {
 	$(".js-error").hide(0);
-		if (History.getState().data.detail == 0)
+		if (History.getState().data.detail == 0) {
+			changeToSearch();
 			showOverview();
+		}
 		else if (History.getState().data.detail > 0) {
 			changeToDetails(History.getState().data.detail);	
 		}
@@ -82,7 +86,7 @@ function bindUrlEvent() {
 		var state = History.getState();
 		console.log("New Url State");
 		if (state.data.detail == 0) {
-			changeToSearch();
+		//	changeToSearch();
 			//showOverview();
 			startRequest();
 		}
@@ -170,4 +174,28 @@ function loadBusstopsList() {
 		$.event.trigger({
 			type: "busstopsLoaded"
 		});
+}
+
+function onEnterEvent() {
+	$("#date-input").keydown(function(event){
+		if(event.keyCode == 13) {
+			console.log("EdffffffffffffffffffffffffffffffffffffffffffdfdffEnter");
+			submitTime();	
+		}
+	});
+	$("#time-input").keydown(function(event){
+		if(event.keyCode == 13)
+			submitTime();
+	});
+}
+
+function hideKeyboard() {
+	$(document.activeElement).filter(':input:focus').blur();
+}
+
+// Eliminates 300ms click delay on mobile 
+function removeClickDelay() {
+	window.addEventListener('load', function() {
+			new FastClick(document.body);
+			}, false);
 }

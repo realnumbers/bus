@@ -1,7 +1,5 @@
 function initInput() {
 	$(":input").val("");
-	removeClickDelay();
-	onEnterEvent();
 	if (History.getState().data.time == undefined || History.getState().data.date == undefined)
 		autoSetTime();
 	$("#date-input").val(History.getState().data.date);
@@ -132,7 +130,7 @@ function proveNextSection(section) {
 				toggleInputHideClass(".js-time-date:first");
 			}
 			break;
-		case "js-time-date": console.log("js-time");
+		case "js-time-date": console.log("Got All Data");
 			//startRequest();
 			break;
 	}
@@ -157,24 +155,3 @@ function formateDate(date) {
 	return date[0] + "." + date[1] + "." + date[2];
 }
 
-function onEnterEvent() {
-	$("#date-input").keydown(function(event){
-		if(event.keyCode == 13)
-			submitTime();	
-	});
-	$("#time-input").keydown(function(event){
-		if(event.keyCode == 13)
-			submitTime();
-	});
-}
-
-function hideKeyboard() {
-	$(document.activeElement).filter(':input:focus').blur();
-}
-
-// Eliminates 300ms click delay on mobile 
-function removeClickDelay() {
-	window.addEventListener('load', function() {
-			new FastClick(document.body);
-			}, false);
-}

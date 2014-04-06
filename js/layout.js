@@ -22,12 +22,13 @@ function toggleInput(el) {
 			}).find(":input:first").focus();
 	}
 	else
+		//$(el).slideToggle(0, function () {
 		$(el).slideToggle(300, function () {
 			showSuggests(".js-section", -1);
 			toggleInputHideClass(el);
 			$("js-to").find(":input").val("");
 			$("js-form").find(":input").val("");
-		}).find(":input:first").focus();
+		});
 }
 
 function showSuggests(section, number, busstop) {
@@ -141,7 +142,7 @@ function genDetails(index) {
 }
 function changeToSearch() {
 	var UrlData = History.getState().data;
-	console.log("go Back");
+	console.log("Change To Search");
 	$(".details-visible:first").removeClass("details-visible").addClass("details-hidden");
 	$(".search-hidden:first").show(0).removeClass("search-hidden").addClass("search-visible");
 	$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
