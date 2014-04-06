@@ -141,7 +141,7 @@ function requestRoute(UrlData) {
 	url += "&yyyymmddhhmm=" + date + time;
 	$.jsonp({
 		url: url,
-		timeout: 10000,
+		timeout: 5000,
 		callbackParameter: "callback",
 		success: function(data) {
 			if (data.ConnectionList) {
@@ -176,7 +176,7 @@ function nextData(requestId, count, view) {
 
 	$.jsonp({
 		callbackParameter: "callback",
-		timeout: 10000,
+		timeout: 3000,
 		url: nextUrl,
 	 	success: function(data) {
 			pushRouteData(parseData(data));
