@@ -19,6 +19,7 @@ body {
   color: #454441;
   background-color: #eee;
 }
+
 @media (min-width: 500px) {
   body {
     font-size: 18px;
@@ -365,8 +366,11 @@ button, input {
 
 /* SEARCH RESULTS */
 
-.search-results {
+.search-results, .error {
   margin-top: 2em;
+}
+.error h3 {
+	margin-bottom: 0.3em;
 }
 .search-results .line-big {
   display: inline-block;
