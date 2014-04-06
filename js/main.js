@@ -178,10 +178,8 @@ function loadBusstopsList() {
 
 function onEnterEvent() {
 	$("#date-input").keydown(function(event){
-		if(event.keyCode == 13) {
-			console.log("EdffffffffffffffffffffffffffffffffffffffffffdfdffEnter");
+		if(event.keyCode == 13)
 			submitTime();	
-		}
 	});
 	$("#time-input").keydown(function(event){
 		if(event.keyCode == 13)
