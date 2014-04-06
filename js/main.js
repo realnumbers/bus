@@ -14,6 +14,7 @@ function initApp() {
 	loadUrlData();
 	initLayout();
 	onEnterEvent();
+	busstopEvents();
 	removeClickDelay();
 	initInput();
 	startRequest();
@@ -184,6 +185,27 @@ function onEnterEvent() {
 	$("#time-input").keydown(function(event){
 		if(event.keyCode == 13)
 			submitTime();
+	});
+}
+
+function busstopEvents() {
+	// 38 is key up
+	// 40 is key down
+	$(".js-from").find(":input").keydown(function(event){
+		if (event.keyCode == 40)
+			selectNext(".js-from");
+		else if (event.keyCode == 38)
+			selectPrevious(".js-from");
+		else if(event.keyCode == 13)
+			selectEnterBusstop(".js-to");
+	});
+	$(".js-to").find(":input").keydown(function(event){
+		if (event.keyCode == 40)
+			selectNext(".js-to");
+		else if (event.keyCode == 38)
+			selectPrevious(".js-to");
+		else if(event.keyCode == 13)
+			selectEnterBusstop(".js-to");
 	});
 }
 

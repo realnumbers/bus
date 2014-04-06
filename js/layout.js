@@ -32,6 +32,7 @@ function toggleInput(el) {
 }
 
 function showSuggests(section, number, busstop) {
+	$(section).find(".js-suggest:first").addClass("selected");
 	$(section).find(".js-suggest").each( function (index, el) {
 		if ($(el).parents(section) && index == number) {
 			$(el).show();

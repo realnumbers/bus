@@ -61,6 +61,24 @@ function selectBusstop(el) {
 	replaceUrl(dataUrl); 
 }
 
+function selectNext() {
+	if ($(".selected").next(".js-suggest").length > 0)
+		$(".selected").removeClass("selected").next(".js-suggest").addClass("selected");
+	else
+		$(".selected").removeClass("selected").prevAll(".js-suggest:last").addClass("selected");
+}
+
+function selectPrevious() {
+	if ($(".selected").prev(".js-suggest").length > 0)
+		$(".selected").removeClass("selected").prev(".js-suggest").addClass("selected");
+	else
+		$(".selected").removeClass("selected").nextAll(".js-suggest:last").addClass("selected");
+}
+
+function selectEnterBusstop() {
+	selectBusstop(".selected:first");
+}
+
 function submitTime() {
 	var time;
 	var dataUrl = History.getState().data;
