@@ -131,7 +131,7 @@ function proveNextSection(section) {
 			}
 			break;
 		case "js-time-date": console.log("js-time");
-			startRequest();
+			//startRequest();
 			break;
 	}
 }

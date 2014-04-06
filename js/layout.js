@@ -1,4 +1,5 @@
 function initLayout() {
+	$(".js-error").hide();
 	$(":input").val("");
 	$(".js-name").text("");
 	$(".js-city").text("");
@@ -90,7 +91,7 @@ function showOverview() {
 		}
 	}
 	else {
-		console.log("Noconnection");
+		console.log("Invalide Error: Noconnection");
 	}
 
 }

@@ -15,6 +15,7 @@ function initApp() {
 	initLayout();
 	initInput();
 	startRequest();
+	bindUrlEvent();
 	
 }
 // event for a complete request is "requestComplete"
@@ -59,28 +60,66 @@ function showDetails(el) {
 
 function requestComplete(e) {
 	$(".spinner").hide();
-	if (History.getState().data.detail == 0)
-		showOverview();
-	else if (History.getState().data.detail > 0) {
-		changeToDetails(History.getState().data.detail);	
+	if (e.error != undefined)
+		error(e.error);
+	else {
+	$(".js-error").hide(0);
+		if (History.getState().data.detail == 0)
+			showOverview();
+		else if (History.getState().data.detail > 0) {
+			changeToDetails(History.getState().data.detail);	
+		}
 	}
 	msg(e)
 }
 function msg(e) {
-	console.log("Event: " + e.type + " Msg: " + e.message);
+	console.log("Event: " + e.type + " Msg: " + e.message + ", Error: " + e.error);
 }
 
-History.Adapter.bind(window,'statechange',function() {
-	var state = History.getState();
-	console.log("New Url State");
-	if (state.data.detail == 0) {
-		changeToSearch();
-		startRequest();
+function bindUrlEvent() {
+	History.Adapter.bind(window,'statechange',function() {
+		var state = History.getState();
+		console.log("New Url State");
+		if (state.data.detail == 0) {
+			changeToSearch();
+			//showOverview();
+			startRequest();
+		}
+		else if (state.data.detail > 0)
+			startRequest();
+	});
+}
+
+function error(el) {
+	var msg;
+	var title;
+	switch (el) {
+		case "connection" :
+			msg = "It seems like there are no bus connections for these stations at the specified time. Please try changing your query.";
+			title = "No connections found.";
+			break;
+		case "api" :
+			msg = "It seems like the SASA backend service which we use to obtain bus data is not responding. Please try again later.";
+			title = "Couldn't fetch bus data.";
+			break;
+		case "network" :
+			msg = "It seems like your internet connection is not working. Please try to restore the connection and try again.";
+			title = "No network connection.";
+			break;
+		default :
+			msg = "Random Error";
+			title = "Random Error";
+			break;
 	}
-	else if (state.data.detail > 0)
-		startRequest();
-	
-});
+	$.event.trigger({
+		type: "error",
+		msg: msg,
+		title: title
+	});
+	$(".js-error").show(0);
+	$(".js-error").find("h3").text(title);
+	$(".js-error").find("p").text(msg);
+}
 
 function selectLanguage() {
 	if (navigator.language === "de")

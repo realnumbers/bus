@@ -157,17 +157,9 @@
 		      
 		      <img class="spinner" src="img/loading.svg" alt="Loading...">
 		      
-					<section class="error error-connection">
+					<section class="error js-error">
 						<h3>No connections found.</h3>
 						<p>It seems like there are no bus connections for these stations at the specified time. Please try changing your query.</p>
-					</section>
-					<section class="error error-api">
-						<h3>Couldn't fetch bus data.</h3>
-						<p>It seems like the SASA backend service which we use to obtain bus data is not responding. Please try again later.</p>
-					</section>
-					<section class="error error-network">
-						<h3>No network connection.</h3>
-						<p>It seems like your internet connection is not working. Please try to restore the connection and try again.</p>
 					</section>
 					
         </section>
@@ -363,6 +355,7 @@
   
   <script src="js/jquery-1.11.0.min.js"></script>
   <script src="js/jquery.history.js"></script>
+  <script src="js/jquery.jsonp-2.4.0.min.js"></script>
   <script type='application/javascript' src='js/fastclick.min.js'></script>
   <script src="js/request.js"></script>
   <script src="js/input.js"></script>

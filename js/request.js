@@ -139,11 +139,11 @@ function requestRoute(UrlData) {
 	url += "startBusStationId=" + fromStop;
 	url += "&endBusStationId=" + toStop;
 	url += "&yyyymmddhhmm=" + date + time;
-	$.ajax({
-		dataType: "jsonp",
-		jsonpCallback: "Callback",
+	$.jsonp({
 		url: url,
-	 	success: function(data) {
+		timeout: 10000,
+		callbackParameter: "callback",
+		success: function(data) {
 			if (data.ConnectionList) {
 				localStorage.routeData = "";
 				pushRouteData(stamp);
@@ -152,35 +152,50 @@ function requestRoute(UrlData) {
 				pushRouteData(parseData(data));
 			}
 			else {
-				alert("Error");
-				console.log("Error");
-				console.log(data);
+				$.event.trigger({
+					type: "requestComplete",
+					error: "connection"
+				});
 			}
+		},
+		error: function(option, msg) {
+			msg = (msg == "timeout")? "network" : "api";
+			$.event.trigger({
+				type: "requestComplete",
+				error: msg 
+			});
 		}
 	});	
 }
 
 function nextData(requestId, count, view) {
-		var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
-		nextUrl += requestId;
-		nextUrl += "%23";
-		nextUrl += count;
+	var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
+	nextUrl += requestId;
+	nextUrl += "%23";
+	nextUrl += count;
 
-		$.ajax({
-			dataType: "jsonp",
-			jsonpCallback: "Callback",
-			url: nextUrl,
-		 	success: function(data) {
-				pushRouteData(parseData(data));
-				if (count < 4 )
-					nextData(requestId, parseInt(count) + 1, view);
-				else {
-					$.event.trigger({
-						type: "requestComplete"
-					});
-				}
+	$.jsonp({
+		callbackParameter: "callback",
+		timeout: 10000,
+		url: nextUrl,
+	 	success: function(data) {
+			pushRouteData(parseData(data));
+			if (count < 4 )
+				nextData(requestId, parseInt(count) + 1, view);
+			else {
+				$.event.trigger({
+					type: "requestComplete"
+				});
 			}
-		});		
+		},
+		error: function(option, msg) {
+			msg = (msg == "timeout")? "network" : "api";
+			$.event.trigger({
+				type: "requestComplete",
+				error: msg 
+			});
+ 		}
+	});		
 }
 
 function parseData(data) {
@@ -340,5 +355,3 @@ function timeString(waitTime) {
 
 	return waitTimeString;
 }
-
-function Callback() {}
