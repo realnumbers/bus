@@ -76,6 +76,7 @@ function toggleInputHideClass(el) {
 
 function showStartRequestStuff() {
 	$(".spinner").css("display", "block");
+	$(".js-error").hide();
 	$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 	$(".js-overview").hide().children().hide();
 	$(".js-overview").find(".js-time").text("");
