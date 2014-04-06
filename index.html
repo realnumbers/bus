@@ -18,12 +18,13 @@
   <body>
 	  
     <section class="container">
-      
+			
       <header class="topbar">
         <img class="icon right icon-visible" id="menu" src="img/menu.svg" onclick="menu()" alt="Menu">
         <img class="icon left icon-hidden-right" id="back" src="img/back.svg" onClick="goBack()" alt="Back">
         <img class="icon left icon-hidden-left" id="cancel" src="img/x.svg" onclick="cancelQuery()" alt="Cancel">      
       </header>
+			
       <section class="main-section search search-visible" id="search">
 
 				<!--begin Section from -->
@@ -164,7 +165,7 @@
 					
         </section>
       </section> <!-- end search -->
-
+			
       <section class="main-section details details-hidden" id="details">      
         <section class="js-section details-section">
 		      
@@ -350,7 +351,15 @@
 	
       </section> <!-- end details -->
       
-    </section>
+    </section> <!-- end details -->
+			
+			<noscript>
+				<section class="">
+					<h2 class="nsc-head">Good job, you're using NoScript!</h2>
+					<p class="nsc-txt">Unfortunately, this website does not work without Javascript. It is needed to get the bus data from the SASA API and to display it dynamically.</p>
+					<p class="nsc-txt">We're terribly sorry, but there's just no other way in this case.</p>
+				</section>
+			</noscript>
   </body>
   
   <script src="js/jquery-1.11.0.min.js"></script>
