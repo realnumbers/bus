@@ -17,19 +17,17 @@ function toggleInput(el) {
 		  $(el).next(".js-to").length > 0 ||
 		  $(el).next(".js-time-date").length > 0){
 		$(el).next(":first").slideToggle(300, function () {
-			$(":input").val("");
-			$("#date-input").val(History.getState().data.date);
-			$("#time-input").val(History.getState().data.time);
+			$("js-to").find(":input").val("");
+			$("js-form").find(":input").val("");
 			}).find(":input:first").focus();
 	}
 	else
 		$(el).slideToggle(300, function () {
 			showSuggests(".js-section", -1);
 			toggleInputHideClass(el);
-			$(":input").val("");
+			$("js-to").find(":input").val("");
+			$("js-form").find(":input").val("");
 		}).find(":input:first").focus();
-	$("#date-input").val(History.getState().data.date);
-	$("#time-input").val(History.getState().data.time);
 }
 
 function showSuggests(section, number, busstop) {

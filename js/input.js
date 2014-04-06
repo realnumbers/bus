@@ -4,6 +4,8 @@ function initInput() {
 	onEnterEvent();
 	if (History.getState().data.time == undefined || History.getState().data.date == undefined)
 		autoSetTime();
+	$("#date-input").val(History.getState().data.date);
+	$("#time-input").val(History.getState().data.time);
 }
 
 function busstopInput(el) {
