@@ -87,7 +87,7 @@ function showOverview() {
 	if (routeData != undefined) {
 		for (var i = 1; i < routeData.length; i++) {
 				if (routeData[i] != null)
-					genOverviewElement(routeData[i].overview, i);
+					genOverviewElement(routeData[i].overview, i-1);
 		}
 	}
 	else {
@@ -96,7 +96,6 @@ function showOverview() {
 
 }
 function genOverviewElement(data, index) {
-	index--;
 	console.log(index);
 	$(".js-overview").show().children()[index].style.display = "block";
 	$(".js-overview").find(".js-time")[index].innerHTML = (data.depTime + " - " + data.arrTime);
@@ -142,9 +141,11 @@ function genDetails(index) {
 	}
 }
 function changeToSearch() {
+	var UrlData = History.getState().data;
 	console.log("go Back");
 	$(".details-visible:first").removeClass("details-visible").addClass("details-hidden");
 	$(".search-hidden:first").show(0).removeClass("search-hidden").addClass("search-visible");
 	$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
-	$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
+	if (UrlData.arr != undefined && UrlData.dep != undefined)
+		$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 }

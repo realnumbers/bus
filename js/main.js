@@ -40,10 +40,11 @@ else {
 }
 }
 function cancelQuery() {
-	$(".icon-visible:last").removeClass("icon-visible").addClass("icon-hidden-left");
+	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
 	var data = new Object();
 	pushUrl(data);
-	initApp();
+	initLayout();
+	initInput();
 }
 
 function goBack() {
