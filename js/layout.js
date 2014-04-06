@@ -17,6 +17,8 @@ function toggleInput(el) {
 		  $(el).next(".js-time-date").length > 0){
 		$(el).next(":first").slideToggle(300, function () {
 			$(":input").val("");
+			$("#date-input").val(History.getState().data.date);
+			$("#time-input").val(History.getState().data.time);
 			}).find(":input:first").focus();
 	}
 	else
@@ -25,6 +27,8 @@ function toggleInput(el) {
 			toggleInputHideClass(el);
 			$(":input").val("");
 		}).find(":input:first").focus();
+	$("#date-input").val(History.getState().data.date);
+	$("#time-input").val(History.getState().data.time);
 }
 
 function showSuggests(section, number, busstop) {
