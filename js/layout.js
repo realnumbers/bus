@@ -13,25 +13,27 @@ function initLayout() {
 }
 
 function toggleInput(el) {
+	$(".selected").removeClass("selected");
+	showSuggests(".js-section", -1);
 	if ($(el).next(".js-from").length > 0 ||
 		  $(el).next(".js-to").length > 0 ||
 		  $(el).next(".js-time-date").length > 0){
 		$(el).next(":first").slideToggle(300, function () {
-			$("js-to").find(":input").val("");
-			$("js-form").find(":input").val("");
+			$(".js-to").find(":input").val("");
+			$(".js-from").find(":input").val("");
 			}).find(":input:first").focus();
 	}
 	else
 		//$(el).slideToggle(0, function () {
 		$(el).slideToggle(300, function () {
-			showSuggests(".js-section", -1);
 			toggleInputHideClass(el);
-			$("js-to").find(":input").val("");
-			$("js-form").find(":input").val("");
+			$(".js-to").find(":input").val("");
+			$(".js-from").find(":input").val("");
 		});
 }
 
 function showSuggests(section, number, busstop) {
+	$(".selected").removeClass("selected");
 	$(section).find(".js-suggest:first").addClass("selected");
 	$(section).find(".js-suggest").each( function (index, el) {
 		if ($(el).parents(section) && index == number) {
