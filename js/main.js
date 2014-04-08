@@ -207,6 +207,7 @@ function busstopEvents() {
 		else if(event.keyCode == 13)
 			selectEnterBusstop(".js-to");
 	});
+	$(".js-suggest").hover(function () {suggestInHover(this);} , function () {suggestOutHover(this);})
 }
 
 function hideKeyboard() {

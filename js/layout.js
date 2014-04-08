@@ -34,7 +34,6 @@ function toggleInput(el) {
 
 function showSuggests(section, number, busstop) {
 	$(".selected").removeClass("selected");
-	$(section).find(".js-suggest:first").addClass("selected");
 	$(section).find(".js-suggest").each( function (index, el) {
 		if ($(el).parents(section) && index == number) {
 			$(el).show();
@@ -54,9 +53,43 @@ function showSuggests(section, number, busstop) {
 	});
 }
 
+function suggestInHover(el) {
+ $(".selected").removeClass("selected");
+ $(el).addClass("selected");
+}
+
+function suggestOutHover(el) {
+ $(".selected").removeClass("selected");
+}
 function showSelectedBusstop(section, busstop) {
 	$(section + ":first").find(".js-name").text(busstop.name + ", ");
 	$(section + ":first").find(".js-city").text(busstop.city);
+}
+
+function selectNext(el) {
+	if ($(".selected").length == 0)
+		$(el).find(".js-suggest:first").addClass("selected");
+	else {
+		if ($(".selected").next(".js-suggest").length > 0)
+			$(".selected").removeClass("selected").next(".js-suggest").addClass("selected");
+		else
+			$(".selected").removeClass("selected").prevAll(".js-suggest:last").addClass("selected");
+	}
+}
+
+function selectPrevious(el) {
+	if ($(".selected").length == 0)
+		$(el).find(".js-suggest:last").addClass("selected");
+	else {
+		if ($(".selected").prev(".js-suggest").length > 0)
+			$(".selected").removeClass("selected").prev(".js-suggest").addClass("selected");
+		else
+			$(".selected").removeClass("selected").nextAll(".js-suggest:last").addClass("selected");
+	}
+}
+
+function selectEnterBusstop() {
+	selectBusstop(".selected:first");
 }
 
 function showSelectetTime(time) {
