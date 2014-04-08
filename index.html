@@ -42,6 +42,10 @@
 
 					<input class="input js-input" type="text" placeholder="Start location..." autofocus oninput="busstopInput(this)">
 
+					<div class="input-element text-element list-element suggest-element js-nomatches">
+						<p class="line-small no-matches">No matching bus stops.</p>
+					</div>
+
 					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
 						<p class="line-big js-name"></p>
 						<p class="line-small js-city"></p>
@@ -81,6 +85,10 @@
 
 					<input class="input js-input" type="text" placeholder="Destination..." oninput="busstopInput(this)">
 
+					<div class="input-element text-element list-element suggest-element js-nomatches">
+						<p class="line-small no-matches">No matching bus stops.</p>
+					</div>
+					
 					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
 						<p class="line-big js-name"></p>
 						<p class="line-small js-city"></p>
