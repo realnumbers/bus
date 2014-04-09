@@ -1,4 +1,5 @@
 function initLayout() {
+	$(".js-no-matches").hide();
 	$(".js-error").hide();
 	$(":input").val("");
 	$(".js-name").text("");
@@ -33,6 +34,7 @@ function toggleInput(el) {
 }
 
 function showSuggests(section, number, busstop) {
+	$(section).find(".js-no-matches").hide();
 	$(".selected").removeClass("selected");
 	$(section).find(".js-suggest").each( function (index, el) {
 		if ($(el).parents(section) && index == number) {

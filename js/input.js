@@ -38,10 +38,7 @@ function busstopInput(el) {
 				return (i < 5) ? true : false;
 		});
 		if (resMatch && i == 0) {
-			var element = new Object();
-			element.city = "No matching Busstop";
-			element.name = "";
-			showSuggests(section, 0, element);
+			$(section).find(".js-no-matches").show();
 		}
 	}
 }
