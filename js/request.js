@@ -125,13 +125,13 @@ function loadMoreConnections() {
 		var count = getRouteData().length - 1;
 		nextData(getRouteData()[0].requestId, count + 5, count);
 }
-function requestRoute(UrlData) {
+function requestRoute() {
 	var stamp = History.getState().data;
 	// Data form the Url
-	var date = UrlData.date;
-	var fromStop = UrlData.dep;
-	var toStop = UrlData.arr;
-	var time = UrlData.time;
+	var date = stamp.date;
+	var fromStop = stamp.dep;
+	var toStop = stamp.arr;
+	var time = stamp.time;
 	//base url
 	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
 	var requestId;
