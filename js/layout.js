@@ -1,4 +1,5 @@
 function initLayout() {
+	$(".js-load").hide();
 	$(".js-no-matches").hide();
 	$(".js-error").hide();
 	$(":input").val("");
@@ -114,6 +115,7 @@ function toggleInputHideClass(el) {
 function showStartRequestStuff() {
 	$(".spinner").css("display", "block");
 	$(".js-error").hide();
+	$(".js-load").hide();
 	$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 	$(".js-overview").hide().children().hide();
 	$(".js-overview").find(".js-time").text("");
@@ -138,6 +140,7 @@ function showOverview() {
 						el = el.next();
 				}
 		}
+		$(".js-load").show();
 	}
 	else {
 		console.log("Invalide Error: Noconnection");
