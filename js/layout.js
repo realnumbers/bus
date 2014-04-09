@@ -128,15 +128,13 @@ function showOverview() {
 		
 		for (var i = 1; i < routeData.length; i++) {
 				if (routeData[i] != null) {
-
-							
-							}
 						el.show();
 						el.find(".js-time").text(routeData[i].overview.depTime + " - " + routeData[i].overview.arrTime);
 						el.find(".js-duration").text(routeData[i].overview.duration);
 						if (el.next().length == 0 && i < routeData.length - 1) {
 								console.log("add Element");
 								$(".js-overview").append('<div class="text-element list-element " onclick="showDetails(this)"> <p class="line-big bigger js-time"></p><p class="line-small list js-duration"></p></div>');
+						}
 						el = el.next();
 				}
 		}

@@ -121,6 +121,10 @@ function getRouteData() {
 		return undefined;
 }
 
+function loadMoreConnections() {
+		var count = getRouteData().length - 1;
+		nextData(getRouteData()[0].requestId, count + 5, count);
+}
 function requestRoute(UrlData) {
 	var stamp = History.getState().data;
 	// Data form the Url
@@ -146,9 +150,10 @@ function requestRoute(UrlData) {
 		success: function(data) {
 			if (data.ConnectionList) {
 				localStorage.routeData = "";
-				pushRouteData(stamp);
 				requestId = data.ConResCtxt[0].split("#")[0];
-				nextData(requestId, 1);
+				stamp.requestId = requestId;
+				pushRouteData(stamp);
+				nextData(requestId, 5, 1);
 				pushRouteData(parseData(data));
 			}
 			else {
@@ -168,7 +173,7 @@ function requestRoute(UrlData) {
 	});	
 }
 
-function nextData(requestId, count, view) {
+function nextData(requestId, limit, count) {
 	var nextUrl = "http://html5.sasabus.org/backend/sasabusdb/nextRoute?context=";
 	nextUrl += requestId;
 	nextUrl += "%23";
@@ -180,8 +185,8 @@ function nextData(requestId, count, view) {
 		url: nextUrl,
 	 	success: function(data) {
 			pushRouteData(parseData(data));
-			if (count < 4 )
-				nextData(requestId, parseInt(count) + 1, view);
+			if (count < limit )
+				nextData(requestId, limit, parseInt(count) + 1);
 			else {
 				$.event.trigger({
 					type: "requestComplete"
