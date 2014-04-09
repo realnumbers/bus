@@ -130,6 +130,8 @@ function error(el) {
 function selectLanguage() {
 	if (navigator.language === "de")
 		lang = "de";
+	if (navigator.language === "it")
+		console.log($("from"));
 }
 
 // creats localStorage by using cookies for IE 6,7 if it doesnt exist

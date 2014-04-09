@@ -122,22 +122,29 @@ function showStartRequestStuff() {
 
 function showOverview() {
 	var routeData = getRouteData();
+	var el = $(".js-overview").children(":first");
 	if (routeData != undefined) {
+		$(".js-overview").show();
+		
 		for (var i = 1; i < routeData.length; i++) {
-				if (routeData[i] != null)
-					genOverviewElement(routeData[i].overview, i-1);
+				if (routeData[i] != null) {
+
+							
+							}
+						el.show();
+						el.find(".js-time").text(routeData[i].overview.depTime + " - " + routeData[i].overview.arrTime);
+						el.find(".js-duration").text(routeData[i].overview.duration);
+						if (el.next().length == 0 && i < routeData.length - 1) {
+								console.log("add Element");
+								$(".js-overview").append('<div class="text-element list-element " onclick="showDetails(this)"> <p class="line-big bigger js-time"></p><p class="line-small list js-duration"></p></div>');
+						el = el.next();
+				}
 		}
 	}
 	else {
 		console.log("Invalide Error: Noconnection");
 	}
 
-}
-function genOverviewElement(data, index) {
-	console.log(index);
-	$(".js-overview").show().children()[index].style.display = "block";
-	$(".js-overview").find(".js-time")[index].innerHTML = (data.depTime + " - " + data.arrTime);
-	$(".js-overview").find(".js-duration")[index].innerHTML = (data.duration);
 }
 
 function changeToDetails(index) {
