@@ -124,6 +124,10 @@ function getRouteData() {
 function loadMoreConnections() {
 		var count = getRouteData().length - 1;
 		nextData(getRouteData()[0].requestId, count + 5, count);
+		var data = JSON.parse(localStorage.routeData);
+		localStorage.routeData = "";
+		data[0].detail = count + 5;
+		localStorage.routeData = JSON.stringify(data);
 }
 function requestRoute() {
 	var stamp = History.getState().data;

@@ -29,7 +29,7 @@ function initApp() {
 function startRequest() {
 if (validateUrlData(History.getState().data)) {
 	showStartRequestStuff();
-	if (getRouteData() == undefined || !(compareDataInput(getRouteData()[0], History.getState().data)))
+	if (getRouteData() == undefined || !(compareDataInput(getRouteData()[0], History.getState().data)) || getRouteData()[0].detail <= History.getState().data.detail)
 		requestRoute();
 	else {
 		$.event.trigger({
