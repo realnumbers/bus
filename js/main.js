@@ -29,8 +29,8 @@ function initApp() {
 function startRequest() {
 if (validateUrlData(History.getState().data)) {
 	showStartRequestStuff();
-	if (getRouteData() == undefined || !compareDataInput(getRouteData()[0], History.getState().data))
-		requestRoute(History.getState().data);
+	if (getRouteData() == undefined || !(compareDataInput(getRouteData()[0], History.getState().data)))
+		requestRoute();
 	else {
 		$.event.trigger({
 			type: "requestComplete",
