@@ -45,7 +45,7 @@ function busstopInput(el) {
 
 
 function selectBusstop(el) {
-	var index = $(el).index() - 1;
+	var index = $(el).index() - 2;
 	var dataUrl = History.getState().data;
 	var section = ($(el).parents(".js-to").length > 0) ?
 								 ".js-to" : ".js-from";
