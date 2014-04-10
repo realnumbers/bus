@@ -132,6 +132,9 @@ function requestRoute() {
 	var fromStop = stamp.dep;
 	var toStop = stamp.arr;
 	var time = stamp.time;
+	var limit = stamp.detail;
+	if (limit < 5)
+		limit = 5;
 	//base url
 	var url = "http://html5.sasabus.org/backend/sasabusdb/calcRoute?";
 	var requestId;
@@ -153,7 +156,7 @@ function requestRoute() {
 				requestId = data.ConResCtxt[0].split("#")[0];
 				stamp.requestId = requestId;
 				pushRouteData(stamp);
-				nextData(requestId, 5, 1);
+				nextData(requestId, limit, 1);
 				pushRouteData(parseData(data));
 			}
 			else {
