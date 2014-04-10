@@ -140,6 +140,12 @@ function showOverview() {
 						el = el.next();
 				}
 		}
+		while (el.length != 0) {
+			var nextEl = el.next();
+			el.remove();
+			el = nextEl;
+		}
+
 		$(".js-load").show();
 	}
 	else {
