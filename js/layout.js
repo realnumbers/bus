@@ -168,6 +168,10 @@ function changeToDetails(index) {
 
 function genDetails(index) {
 	var data = getRouteData()[index].connections;
+	var htmlTransit = '<section class="transit-block js-transit"><div class="location-line"><p class="timestamp js-time left-column line-big bigger">07:18</p><div class="text-element"><p class="line-big chosen js-name">Waltherplatz,</p><p class="line-small chosen js-city">Bozen</p></div></div><div class="connection-line"><div class="left-column bigger"><img src="img/arrow.svg" class="connection-symbol"></div><p class="action line-big thin blue js-lineNo">10A Bus Line</p></div><div class="location-line"><p class="timestamp js-time left-column line-big bigger">07:21</p><div class="text-element"><p class="line-big chosen js-name">Grieser Platz,</p><p class="line-small chosen js-city">Bozen</p></div></div></section>'
+
+	var htmlIntermediate = '<section class="intermediate-block js-intermediate"><div class="left-column bigger"></div><p class="action line-big thin blue">Wait 4 minutes</p></section>'
+
 	console.log(index);
 	var tBlock = $(".js-transit:first");
 	var iBlock = $(".js-intermediate:first"); 
@@ -182,15 +186,30 @@ function genDetails(index) {
 			tBlock.find(".js-city:first").text(data[i].depBusstop[0]);
 			tBlock.find(".js-city:last").text(data[i].arrBusstop[0]);
 			tBlock.find(".js-lineNo").text("Line " + data[i].lineNo);
-
+			if (tBlock.nextAll(".js-transit").length == 0 && i  < data.length - 1)
+				tBlock.parent().append(htmlTransit);
+			tBlock = tBlock.nextAll(".js-transit:first");
 		}
-		if (data[i].waitTime != "") 
+		if (data[i].waitTime != "") {
 			iBlock.show().find("p").text(data[i].waitTime);
+			if (iBlock.nextAll(".js-intermediate").length == 0)
+				iBlock.parent().append(htmlIntermediate);
+			iBlock = iBlock.nextAll(".js-intermediate:first");
+		}
 		
 		i++;
-		tBlock = tBlock.nextAll(".js-transit:first");
-		iBlock = iBlock.nextAll(".js-intermediate:first");
 	}
+	while (tBlock.length != 0) {
+		var nextTBlock = tBlock.nextAll(".js-transit:first");
+		tBlock.remove()
+		tBlock = nextTBlock;
+	}
+	while (iBlock.length != 0) {
+		var nextIBlock = iBlock.nextAll(".js-intermediate:first");
+		iBlock.remove()
+		iBlock = nextIBlock;
+	}
+
 }
 function changeToSearch() {
 	var UrlData = History.getState().data;
