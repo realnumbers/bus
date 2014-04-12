@@ -159,6 +159,7 @@ function requestRoute() {
 				localStorage.routeData = "";
 				requestId = data.ConResCtxt[0].split("#")[0];
 				stamp.requestId = requestId;
+				stamp.detail = limit;
 				pushRouteData(stamp);
 				nextData(requestId, limit, 1);
 				pushRouteData(parseData(data));
