@@ -141,7 +141,7 @@ button, input {
 .main-section {
   position: absolute;
   left: 0;
-  padding: 0 1em;
+  padding: 0 1em 3em;
   width: 100%;
 }
 .search-visible {
@@ -285,10 +285,8 @@ button, input {
   text-transform: uppercase;
   width: 3.2em;
 }
-.selected {
-	font-size: 135%;
-	transform: translateX(-0.2em);
-	-webkit-transform: translateX(-0.2em);
+.selected * {
+	color: #1E85FE;
 }
 .input {
   width: 100%;
@@ -393,6 +391,12 @@ button, input {
 }
 .text-element.list-element {
   cursor: pointer;
+}
+.load-more-btn {
+	margin-top: 1em;
+	font-size: 1.2em;
+	font-style: italic;
+	cursor: pointer;
 }
 
 /* Loading icon */
