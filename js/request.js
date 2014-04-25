@@ -242,10 +242,51 @@ function parseOverview(data) {
 	return overview;
 }
 
+function parseBusstopName(name){
+  //name structur: [0] city, [1] name
+  var replaceCityList = new Object();
+  var replaceNameList = new Object();
+
+  if (replaceCityList[name[0]] != undefined)
+    name[0] = replaceCityList[name[0]];
+
+  if (replaceNameList[name[1]] != undefined)
+    name[1] = replaceNameList[name[1]];
+
+  return name;
+  /*var replaceCityList = new Array();
+  var replaceNameList = new Array();
+  String.prototype.replaceAll = function (str1, str2, ignore) {
+      return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof (str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
+  };
+ replaceCityList.every( function (element, index, array) {
+    var pattern = new RegExp(element.orginText, "i");
+    if (name[0].match(pattern)) {
+      name[0] = name[0].replaceAll(element.orginText, element.replaceText); 
+      return true;
+    }
+    else
+      return false;
+
+  });
+  replaceNameList.every( function (element, index, array) {
+    var pattern = new RegExp(element.orginText, "i");
+    if (name[1].match(pattern)) {
+      name[1] = name[1].replaceAll(element.orginText, element.replaceText); 
+      return true;
+    }
+    else
+      return false;
+  });
+  console.log(name);
+  return name;
+  */
+}
+
 function splitBusstopName(busstopName) {
 	var i = (lang == "de") ? 1 : 0;
 	busstopName = busstopName.split(" - ")[i].split("(")[1].split(") ");
-	return busstopName;
+	return parseBusstopName(busstopName);
 }
 
 // returns in Array of JSON depBusstop, arrBusstop, depTime, arrTime, lineNo, waitTime
