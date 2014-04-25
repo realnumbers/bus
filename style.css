@@ -369,6 +369,7 @@ button, input {
   font-size: 1.3em;
   font-style: italic;
   color: #666;
+	cursor: default;
 }
 .cancel-input {
   float: right;
