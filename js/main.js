@@ -7,6 +7,7 @@ $(document).on("busstopsLoaded", initApp);
 
 checkStorage();
 loadBusstopsList();
+hideKeyboard();
 
 function initApp() {
 	console.log("init App");
