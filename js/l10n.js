@@ -1,28 +1,28 @@
-var l10n_en = {
-	"l-from": "From",
-	"l-to": "To",
-	"l-when": "When",
-	"l-no-matches": "No matching bus stops",
-	"l-more": "Load more results",
-	"lp-from": "Start...",
-	"lp-to": "Destination...",
-	"la-menu": "Menu",
-	"la-cancel": "Reset query",
-	"la-hide-input": "Hide input",
-	"la-back": "Back",
-};
-
-var l10n_de = {
-	"l-from": "Von",
-	"l-to": "Nach",
-	"l-when": "Wann",
-	"l-no-matches": "Keine passenden Haltestellen",
-	"l-more": "Mehr Resultate laden",
-	"lp-from": "Start...",
-	"lp-to": "Ziel...",
-	"la-menu": "Menü",
-	"la-cancel": "Anfrage zurücksetzen",
-  "la-hide-input": "Eingabefeld verstecken",
-	"la-back": "Zurück",
-	}
+var l10n = {
+  "l10n_en": [
+    {"class": "l-from", "val": "From"},
+    {"class": "l-to", "val": "To"},
+    {"class": "l-when", "val": "When"},
+    {"class": "l-no-matches", "val": "No matching bus stops"},
+    {"class": "l-more", "val": "Load more results"},
+    {"class": "lp-from", "val": "Start..."},
+    {"class": "lp-to", "val": "Destination..."},
+    {"class": "la-menu", "val": "Menu"},
+    {"class": "la-cancel", "val": "Reset query"},
+    {"class": "la-hide-input", "val": "Hide input"},
+    {"class": "la-back", "val": "Back"},
+  ],
+  "l10n_de": [
+    {"class": "l-from", "val": "Von"},
+    {"class": "l-to", "val": "Nach"},
+    {"class": "l-when", "val": "Wann"},
+    {"class": "l-no-matches", "val": "Keine passenden Haltestellen"},
+    {"class": "l-more", "val": "Mehr Resultate laden"},
+    {"class": "lp-from", "val": "Start..."},
+    {"class": "lp-to", "val": "Ziel..."},
+    {"class": "la-menu", "val": "Menü"},
+    {"class": "la-cancel", "val": "Anfrage zurücksetzen"},
+    {"class": "la-hide-input", "val": "Eingabefeld verstecken"},
+    {"class": "la-back", "val": "Źurück"},
+  ]
 };
