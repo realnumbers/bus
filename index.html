@@ -20,7 +20,7 @@
 	<section class="container">
 
 		<header class="topbar">
-			<img class="icon right icon-visible la-menu" id="menu" src="img/menu.svg" onclick="menu()" alt="Menu">
+			<img class="icon right icon-visible la-menu" id="menu" src="img/menu.svg" onclick="showMenu()" alt="Menu">
 			<img class="icon left icon-hidden-right la-back" id="back" src="img/back.svg" onClick="goBack()" alt="Back">
 			<img class="icon left icon-hidden-left la-cancel" id="cancel" src="img/x.svg" onclick="cancelQuery()" alt="Cancel">
 		</header>
@@ -155,7 +155,7 @@
 		</section>
 		<!-- end search -->
 
-		<section class="main-section details details-hidden" id="details">
+		<section class="main-section details details-hidden-right" id="details">
 			<section class="js-section details-section">
 
 				<section class="transit-block js-transit">
@@ -192,6 +192,10 @@
 
 		</section>
 		<!-- end details -->
+
+		<section class="main-section menu-hidden" id="menu">
+					<div>Hello this is our about page</div>
+		</section>
 
 		<noscript>
 			<section class="">

@@ -8,7 +8,7 @@ function initLayout() {
   $(".spinner").css("display", "none");
   $(".input-section-visible").hide(0).removeClass("input-section-visible").addClass("input-section-hidden");
   $(".input-section-hidden").hide(0);
-  $(".details-hidden").hide(0);
+  $(".details-hidden-right").hide(0);
   $(".js-from:last").show(0);
   $(".js-to:last").show(0);
   toggleInputHideClass("init");
@@ -258,8 +258,9 @@ function changeToDetails(index) {
   $(".js-transit").hide();
   $(".js-intermediate").hide();
   $(".search-visible:first").show(0).removeClass("search-visible").addClass("search-hidden");
-
-  $(".details-hidden:first").show(0).removeClass("details-hidden").addClass("details-visible");
+	$(".menu-visible:first").removeClass("menu-visible").addClass("menu-hidden");
+  $(".details-hidden-right:first").show(0).removeClass("details-hidden-right").addClass("details-visible");
+  $(".details-hidden-left:first").show(0).removeClass("details-hidden-left").addClass("details-visible");
   $("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
   $("#back").show(0).removeClass("icon-hidden-right").addClass("icon-visible");
   genDetails(index);
@@ -314,25 +315,27 @@ function genDetails(index) {
 function changeToSearch() {
 	var UrlData = History.getState().data;
 	console.log("Change To Search");
-	$(".details-visible:first").removeClass("details-visible").addClass("details-hidden");
+	$(".details-visible:first").removeClass("details-visible").addClass("details-hidden-right");
+	$(".menu-visible:first").removeClass("menu-visible").addClass("menu-hidden");
 	$(".search-hidden:first").show(0).removeClass("search-hidden").addClass("search-visible");
 	$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
 	if (UrlData.arr != undefined && UrlData.dep != undefined)
 		$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 }
 
-function menu() {
-  changeToAbout();
+function showMenu() {
+  var data = new Object();
+  data.about = true;
+  History.pushState(data, "Bus", "?menu");
 }
 
-function changeToAbout() {
-	console.log("go to About");
-	$(".js-transit").hide();
-	$(".js-intermediate").hide();
-	$(".search-visible:first").show(0).removeClass("search-visible").addClass("search-hidden");
-
-	$(".details-hidden:first").show(0).removeClass("details-hidden").addClass("details-visible");
+function changeToMenu() {
+	console.log("go to Menu");
+  if ($(".search-visible").length)
+	  $(".search-visible:first").removeClass("search-visible").addClass("search-hidden");
+  else if ($(".details-visible").length)
+	  $(".details-visible:first").removeClass("details-visible").addClass("details-hidden-left");
+	$(".menu-hidden:first").show(0).removeClass("menu-hidden").addClass("menu-visible");
 	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
 	$("#back").show(0).removeClass("icon-hidden-right").addClass("icon-visible");
-
 }

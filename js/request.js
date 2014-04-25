@@ -1,21 +1,25 @@
 //loads the ? arguments into Status data
 function loadUrlData() {
 	if (History.getPageUrl().split("?")[1]) {
-		var urlData = JSON.parse("{\"" +
-		History.getPageUrl().
-												split("?")[1].
-												replace(/&/g, "\", \"").
-												replace(/=/g, "\":\"") +
-												"\"}");
-
-		urlData = unStringUndefined(urlData);
-		if (urlData.detail > 0) {
-			console.log("Detail view");
-			addState(urlData);
-		}
-		else
-			replaceUrl(urlData);
-		return true;
+    if (History.getPageUrl().split("?")[1] === "menu/")
+      showMenu();
+    else {
+  		var urlData = JSON.parse("{\"" +
+  		History.getPageUrl().
+  												split("?")[1].
+  												replace(/&/g, "\", \"").
+  												replace(/=/g, "\":\"") +
+  												"\"}");
+  
+	  	urlData = unStringUndefined(urlData);
+	  	if (urlData.detail > 0) {
+	  		console.log("Detail view");
+	  		addState(urlData);
+	  	}
+	  	else
+	  		replaceUrl(urlData);
+	  	return true;
+    }
 	}
 	return false;
 }

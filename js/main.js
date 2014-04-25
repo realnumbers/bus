@@ -88,12 +88,16 @@ function bindUrlEvent() {
 		var state = History.getState();
 		console.log("New Url State");
 		if (state.data.detail == 0) {
-		//	changeToSearch();
+			changeToSearch();
 			//showOverview();
 			startRequest();
 		}
 		else if (state.data.detail > 0)
 			startRequest();
+    else if (state.data.about === true) {
+      changeToMenu();
+    }
+      
 	});
 }
 

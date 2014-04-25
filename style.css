@@ -150,7 +150,7 @@ button, input {
   transition: transform 0.2s ease-out 0.04s;
   -webkit-transition: -webkit-transform 0.2s ease-out 0.04s;
 }
-.search-hidden, details-hidden-left {
+.search-hidden, .details-hidden-left {
   transform: translateX(-200%);
   -webkit-transform: translateX(-200%);
   transition: transform 0.2s ease-out;
