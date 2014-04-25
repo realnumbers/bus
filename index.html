@@ -2,217 +2,223 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
 
-	<title>Bus</title>
+  <title>Bus</title>
 
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="fonts/fonts.css">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="touch-icon-144-precomposed.png">
-	<link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="favicon.png">
 
 </head>
 
 <body>
 
-	<section class="container">
+  <section class="container">
 
-		<header class="topbar">
-			<img class="icon right icon-visible la-menu" id="menu" src="img/menu.svg" onclick="showMenu()" alt="Menu">
-			<img class="icon left icon-hidden-right la-back" id="back" src="img/back.svg" onClick="goBack()" alt="Back">
-			<img class="icon left icon-hidden-left la-cancel" id="cancel" src="img/x.svg" onclick="cancelQuery()" alt="Cancel">
-		</header>
+    <header class="topbar">
+      <img class="icon right icon-visible la-menu" id="menu" src="img/menu.svg" onclick="showMenu()" alt="Menu">
+      <img class="icon left icon-hidden-right la-back" id="back" src="img/back.svg" onClick="goBack()" alt="Back">
+      <img class="icon left icon-hidden-left la-cancel" id="cancel" src="img/x.svg" onclick="cancelQuery()" alt="Cancel">
+    </header>
 
-		<section class="main-section search search-visible" id="search">
+    <section class="main-section search search-visible" id="search">
 
-			<!--begin Section from -->
+      <!--begin Section from -->
 
-			<section class="js-section active-section input-section-hidden">
+      <section class="js-section active-section input-section-hidden">
 
-				<div class="text-element chosen-data js-from" onclick="toggleInput(this)">
-					<h3 class="blue label text-element l-from">From:</h3>
-					<p class="line-big js-name"></p>
-					<p class="line-small js-city"></p>
-					<img class="cancel-input la-hide-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
-				</div>
+        <div class="text-element chosen-data js-from" onclick="toggleInput(this)">
+          <h3 class="blue label text-element l-from">From:</h3>
+          <p class="line-big js-name"></p>
+          <p class="line-small js-city"></p>
+          <img class="cancel-input la-hide-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
+        </div>
 
-				<div class="collapse js-from">
+        <div class="collapse js-from">
 
-					<input class="input js-input lp-from" type="text" placeholder="Start location..." autofocus oninput="busstopInput(this)">
+          <input class="input js-input lp-from" type="text" placeholder="Start location..." autofocus oninput="busstopInput(this)">
 
-					<div class="input-element text-element list-element suggest-element js-nomatches">
-						<p class="line-small no-matches js-no-matches l-no-matches">No matching bus stops.</p>
-					</div>
+          <div class="input-element text-element list-element suggest-element js-nomatches">
+            <p class="line-small no-matches js-no-matches l-no-matches">No matching bus stops.</p>
+          </div>
 
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
 
-				</div>
-			</section>
+        </div>
+      </section>
 
-			<!--begin Section to-->
+      <!--begin Section to-->
 
-			<section class="js-section input-section-hidden">
+      <section class="js-section input-section-hidden">
 
-				<div class="text-element chosen-data js-to" onclick="toggleInput(this)">
-					<h3 class="blue label text-element l-to">To:</h3>
-					<p class="line-big js-name"></p>
-					<p class="line-small js-city"></p>
-					<img class="cancel-input la-hide-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
-				</div>
+        <div class="text-element chosen-data js-to" onclick="toggleInput(this)">
+          <h3 class="blue label text-element l-to">To:</h3>
+          <p class="line-big js-name"></p>
+          <p class="line-small js-city"></p>
+          <img class="cancel-input la-hide-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
+        </div>
 
-				<div class="collapse js-to">
+        <div class="collapse js-to">
 
-					<input class="input js-input lp-to" type="text" placeholder="Destination..." oninput="busstopInput(this)">
+          <input class="input js-input lp-to" type="text" placeholder="Destination..." oninput="busstopInput(this)">
 
-					<div class="input-element text-element list-element suggest-element">
-						<p class="line-small no-matches js-no-matches l-no-matches">No matching bus stops.</p>
-					</div>
-					
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element  js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-					<div class="input-element text-element list-element suggest-element  js-suggest" onclick="selectBusstop(this)">
-						<p class="line-big js-name"></p>
-						<p class="line-small js-city"></p>
-					</div>
-				</div>
-			</section>
+          <div class="input-element text-element list-element suggest-element">
+            <p class="line-small no-matches js-no-matches l-no-matches">No matching bus stops.</p>
+          </div>
 
-			<!-- Section Time and Date -->
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element  js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+          <div class="input-element text-element list-element suggest-element  js-suggest" onclick="selectBusstop(this)">
+            <p class="line-big js-name"></p>
+            <p class="line-small js-city"></p>
+          </div>
+        </div>
+      </section>
 
-			<section class="js-section clearfix input-section-hidden">
+      <!-- Section Time and Date -->
 
-				<div class="text-element chosen-data js-time-date" onclick="toggleInput(this)">
-					<h3 class="blue label text-element l-when">When:</h3>
-					<p class="line-big js-name"></p>
-					<p class="line-small js-city"></p>
-					<img class="cancel-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
-				</div>
+      <section class="js-section clearfix input-section-hidden">
 
-				<div class="js-time-date">
+        <div class="text-element chosen-data js-time-date" onclick="toggleInput(this)">
+          <h3 class="blue label text-element l-when">When:</h3>
+          <p class="line-big js-name"></p>
+          <p class="line-small js-city"></p>
+          <img class="cancel-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
+        </div>
 
-					<input class="input date js-input" id="date-input" type="text" placeholder="21.07.2014" pattern="(\d\d.\d\d.(201\d|1[4,9]))|((201\d|1[4,9]).\d\d.\d\d)">
-					<input class="input time js-input" id="time-input" type="time" placeholder="16:04" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
-					<button class="input submit-btn js-input" onclick="submitTime()">
-						<img class="submit-icon" src="img/right.svg">
-					</button>
-				</div>
-			</section>
+        <div class="js-time-date">
 
-			<!-- Section Overview -->
+          <input class="input date js-input" id="date-input" type="text" placeholder="21.07.2014" pattern="(\d\d.\d\d.(201\d|1[4,9]))|((201\d|1[4,9]).\d\d.\d\d)">
+          <input class="input time js-input" id="time-input" type="time" placeholder="16:04" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+          <button class="input submit-btn js-input" onclick="submitTime()">
+            <img class="submit-icon" src="img/right.svg">
+          </button>
+        </div>
+      </section>
 
-			<section class="js-section input-section-hidden">
+      <!-- Section Overview -->
 
-				<section class="search-results js-overview">
-					<div class="text-element list-element " onclick="showDetails(this)">
-						<p class="line-big bigger js-time"></p>
-						<p class="line-small list js-duration"></p>
-					</div>
-				</section>
+      <section class="js-section input-section-hidden">
 
-				<img class="spinner" src="img/loading.svg" alt="Loading...">
-				<div class="load-more-btn blue js-load l-more" onclick="loadMoreConnections()">Load more results</div>
-				<section class="error js-error">
-					<h3>No connections found.</h3>
-					<p>It seems like there are no bus connections for these stations at the specified time. Please try changing your query.</p>
-				</section>
+        <section class="search-results js-overview">
+          <div class="text-element list-element " onclick="showDetails(this)">
+            <p class="line-big bigger js-time"></p>
+            <p class="line-small list js-duration"></p>
+          </div>
+        </section>
 
-			</section>
-		</section>
-		<!-- end search -->
+        <img class="spinner" src="img/loading.svg" alt="Loading...">
+        <div class="load-more-btn blue js-load l-more" onclick="loadMoreConnections()">Load more results</div>
+        <section class="error js-error">
+          <h3>No connections found.</h3>
+          <p>It seems like there are no bus connections for these stations at the specified time. Please try changing your query.</p>
+        </section>
 
-		<section class="main-section details details-hidden-right" id="details">
-			<section class="js-section details-section">
+      </section>
+    </section>
+    <!-- end search -->
 
-				<section class="transit-block js-transit">
-					<div class="location-line">
-						<p class="timestamp js-time left-column line-big bigger"></p>
-						<div class="text-element">
-							<p class="line-big chosen js-name"></p>
-							<p class="line-small chosen js-city"></p>
-						</div>
-					</div>
+    <section class="main-section details details-hidden-right" id="details">
+      <section class="js-section details-section">
 
-					<div class="connection-line">
-						<div class="left-column bigger">
-							<img src="img/arrow.svg" class="connection-symbol">
-						</div>
-						<p class="action line-big thin blue js-lineNo"></p>
-					</div>
+        <section class="transit-block js-transit">
+          <div class="location-line">
+            <p class="timestamp js-time left-column line-big bigger"></p>
+            <div class="text-element">
+              <p class="line-big chosen js-name"></p>
+              <p class="line-small chosen js-city"></p>
+            </div>
+          </div>
 
-					<div class="location-line">
-						<p class="timestamp js-time left-column line-big bigger"></p>
-						<div class="text-element">
-							<p class="line-big chosen js-name"></p>
-							<p class="line-small chosen js-city"></p>
-						</div>
-					</div>
-				</section>
+          <div class="connection-line">
+            <div class="left-column bigger">
+              <img src="img/arrow.svg" class="connection-symbol">
+            </div>
+            <p class="action line-big thin blue js-lineNo"></p>
+          </div>
 
-				<section class="intermediate-block js-intermediate">
-					<div class="left-column bigger"></div>
-					<p class="action line-big thin blue"></p>
-				</section>
+          <div class="location-line">
+            <p class="timestamp js-time left-column line-big bigger"></p>
+            <div class="text-element">
+              <p class="line-big chosen js-name"></p>
+              <p class="line-small chosen js-city"></p>
+            </div>
+          </div>
+        </section>
 
-			</section>
+        <section class="intermediate-block js-intermediate">
+          <div class="left-column bigger"></div>
+          <p class="action line-big thin blue"></p>
+        </section>
 
-		</section>
-		<!-- end details -->
+      </section>
 
-		<section class="main-section menu-hidden" id="menu">
-					<div>Hello this is our about page</div>
-		</section>
+    </section>
+    <!-- end details -->
 
-		<noscript>
-			<section class="">
-				<h2 class="nsc-head">Good job, you're using NoScript!</h2>
-				<p class="nsc-txt">Unfortunately, this website does not work without Javascript. It is needed to get the bus data from the SASA API and to display it dynamically.</p>
-				<p class="nsc-txt">We're terribly sorry, but there's just no other way in this case.</p>
-			</section>
-		</noscript>
+    <section class="main-section menu-hidden" id="menu">
+      <section class="about-section">
+        <h1 class="menu-title blue">About</h1>
+        <p class="menu-subhead">The best way to find the right bus connection in South Tyrol.</p>
+        <p>Designed and developed by <a href="http://tobiasbernard.com">Tobias Bernard</a> and <a href="http://julian.sparber.net">Julian Sparber</a>.</p>
+        <p>Bus Data by <a href="http://sasabus.org/">OpenSASA.org</a>.</p>
+        <p>This application is Free Software, released under the terms of the GNU Affero GPL. Get the source on <a href="https://github.com/realnumbers/bus/">Github</a>.</p>
+      </section>
+    </section>
 
-		<script src="js/jquery-1.11.0.min.js"></script>
-		<script src="js/jquery.history.js"></script>
-		<script src="js/jquery.jsonp-2.4.0.min.js"></script>
-		<script type='application/javascript' src='js/fastclick.min.js'></script>
-		<script src="js/request.js"></script>
-		<script src="js/input.js"></script>
-		<script src="js/layout.js"></script>
-		<script src="js/main.js"></script>
+    <noscript>
+      <section class="">
+        <h2 class="nsc-head">Good job, you're using NoScript!</h2>
+        <p class="nsc-txt">Unfortunately, this website does not work without Javascript. It is needed to get the bus data from the SASA API and to display it dynamically.</p>
+        <p class="nsc-txt">We're terribly sorry, but there's just no other way in this case.</p>
+      </section>
+    </noscript>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.history.js"></script>
+    <script src="js/jquery.jsonp-2.4.0.min.js"></script>
+    <script type='application/javascript' src='js/fastclick.min.js'></script>
+    <script src="js/request.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

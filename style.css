@@ -68,12 +68,14 @@ li {
 }
 a {
   font-weight: 600;
-  color: #555;
   text-decoration: none;
+  color: #1e85fe;
+  cursor: pointer;
 }
 a:hover,
 a:focus {
-  text-decoration: underline;
+  //text-decoration: underline;
+  border-bottom: solid 0.1em;
 }
 button, input {
   border-radius: 0;
@@ -426,16 +428,19 @@ button, input {
 
 /* SETTINGS */
 
-.settings-title {
+.menu-title {
   font-size: 3.2em;
   font-weight: 200;
   text-transform: uppercase;
+}
+.menu-subhead {
+  
 }
 .settings-element {
   margin: 1em 0;
 }
 .about-section {
-  margin-top: 1em;
+  /*margin-top: 1em;*/
 }
 .about-section p {
   margin-bottom: 1em;
