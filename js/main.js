@@ -20,7 +20,7 @@ function initApp() {
 	initInput();
 	startRequest();
 	bindUrlEvent();
-	
+	l10nReplacement();
 }
 // event for a complete request is "requestComplete"
 //$(document).on("requestComplete", msg);
@@ -114,8 +114,8 @@ function error(el) {
 			title = "No network connection.";
 			break;
 		default :
-			msg = "Random Error";
-			title = "Random Error";
+			msg = "An unknown error has occurred. Shit is fucked up.";
+			title = "Unknown Error";
 			break;
 	}
 	$.event.trigger({

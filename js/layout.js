@@ -24,96 +24,70 @@ $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionen
 function l10nReplacement() {
   var l10n = {
     "l10n_en": [
-      {
-        "class": "l-from",
-        "val": "From:"
-      },
-      {
-        "class": "l-to",
-        "val": "To:"
-      },
-      {
-        "class": "l-when",
-        "val": "When:"
-      },
-      {
-        "class": "l-no-matches",
-        "val": "No matching bus stops"
-      },
-      {
-        "class": "l-more",
-        "val": "Load more results"
-      },
-      {
-        "class": "lp-from",
-        "val": "Start..."
-      },
-      {
-        "class": "lp-to",
-        "val": "Destination..."
-      },
-      {
-        "class": "la-menu",
-        "val": "Menu"
-      },
-      {
-        "class": "la-cancel",
-        "val": "Reset query"
-      },
-      {
-        "class": "la-hide-input",
-        "val": "Hide input"
-      },
-      {
-        "class": "la-back",
-        "val": "Back"
-      },
+      {"class": "l-from", "val": "From:"},
+      {"class": "l-to", "val": "To:"},
+      {"class": "l-when", "val": "When:"},
+      {"class": "l-no-matches", "val": "No matching bus stops"},
+      {"class": "l-more", "val": "Load more results"},
+      {"class": "l-changes", "val": "changes"},
+      {"class": "l-er-con-t", "val": "No connections found"},
+      {"class": "l-er-con-m", "val": "It seems like there are no bus connections for these stations at the specified time. Please try changing your query."},
+      {"class": "l-er-api-t", "val": "Couldn't fetch bus data"},
+      {"class": "l-er-api-m", "val": "It seems like the SASA backend service which we use to obtain bus data is not responding. Please try again later."},
+      {"class": "l-er-net-t", "val": "No network connection"},
+      {"class": "l-er-net-m", "val": "It seems like your internet connection is not working. Please try to restore the connection and try again."},
+      {"class": "l-er-unk-t", "val": "Unknown Error"},
+      {"class": "l-er-unk-m", "val": "An unknown error has occurred. Shit is fucked up."},
+      {"class": "lp-from", "val": "Start..."},
+      {"class": "lp-to", "val": "Destination..."},
+      {"class": "la-menu", "val": "Menu"},
+      {"class": "la-cancel", "val": "Reset query"},
+      {"class": "la-hide-input", "val": "Hide input"},
+      {"class": "la-back", "val": "Back"},
     ],
     "l10n_de": [
-      {
-        "class": "l-from",
-        "val": "Von:"
-      },
-      {
-        "class": "l-to",
-        "val": "Nach:"
-      },
-      {
-        "class": "l-when",
-        "val": "Wann:"
-      },
-      {
-        "class": "l-no-matches",
-        "val": "Keine passenden Haltestellen"
-      },
-      {
-        "class": "l-more",
-        "val": "Mehr Resultate laden"
-      },
-      {
-        "class": "lp-from",
-        "val": "Start..."
-      },
-      {
-        "class": "lp-to",
-        "val": "Ziel..."
-      },
-      {
-        "class": "la-menu",
-        "val": "Menü"
-      },
-      {
-        "class": "la-cancel",
-        "val": "Anfrage zurücksetzen"
-      },
-      {
-        "class": "la-hide-input",
-        "val": "Eingabefeld verstecken"
-      },
-      {
-        "class": "la-back",
-        "val": "Źurück"
-      },
+      {"class": "l-from", "val": "Von:"},
+      {"class": "l-to", "val": "Nach:"},
+      {"class": "l-when", "val": "Wann:"},
+      {"class": "l-no-matches", "val": "Keine passenden Haltestellen"},
+      {"class": "l-more", "val": "Mehr Resultate laden"},
+      {"class": "l-changes", "val": "Mal umsteigen"},
+      {"class": "l-er-con-t", "val": "Keine Verbinungen"},
+      {"class": "l-er-con-m", "val": "Es gibt keine Busverbindungen für diese Anfrage. Bitte versuchen Sie, ihre Anfrage zu ändern."},
+      {"class": "l-er-api-t", "val": "Backend nicht erreichbar."},
+      {"class": "l-er-api-m", "val": "Der SASA Backend Service von dem wir unsere Verbindungsdaten erhalten, konnte nicht erreicht werden. Bitte versuchen Sie es erneut."},
+      {"class": "l-er-net-t", "val": "Keine Netzwerkverbindung"},
+      {"class": "l-er-net-m", "val": "Es gibt ein Problem mit Ihrer Netzwerkverbindung. Bitte versuchen Sie dieses zu beheben und versuchen Sie es erneut."},
+      {"class": "l-er-unk-t", "val": "Unbekannter Fehler"},
+      {"class": "l-er-unk-m", "val": "Ein unbekannter Fehler ist aufgetreten."},
+      {"class": "lp-from", "val": "Start..."},
+      {"class": "lp-to", "val": "Ziel..."},
+      {"class": "la-menu", "val": "Menü"},
+      {"class": "la-cancel", "val": "Anfrage zurücksetzen"},
+      {"class": "la-hide-input", "val": "Eingabefeld verstecken"},
+      {"class": "la-back", "val": "Źurück"},
+    ],
+    "l10n_it": [
+      {"class": "l-from", "val": "Da:"},
+      {"class": "l-to", "val": "A:"},
+      {"class": "l-when", "val": "Ora:"},
+      {"class": "l-no-matches", "val": "Keine passenden Haltestellen"},
+      {"class": "l-more", "val": "Carica altri risultati"},
+      {"class": "l-changes", "val": "cambi"},
+      {"class": "l-er-con-t", "val": "Keine Verbinungen."},
+      {"class": "l-er-con-m", "val": "Es gibt keine Busverbindungen für diese Anfrage. Bitte versuchen Sie, ihre Anfrage zu ändern."},
+      {"class": "l-er-api-t", "val": "Backend non raggiungibile"},
+      {"class": "l-er-api-m", "val": "Der SASA Backend Service von dem wir unsere Verbindungsdaten erhalten, konnte nicht erreicht werden. Bitte versuchen Sie es erneut."},
+      {"class": "l-er-net-t", "val": "Problema connessione rete"},
+      {"class": "l-er-net-m", "val": "Es gibt ein Problem mit Ihrer Netzwerkverbindung. Bitte versuchen Sie dieses zu beheben und versuchen Sie es erneut."},
+      {"class": "l-er-unk-t", "val": "Errore sconosciuto"},
+      {"class": "l-er-unk-m", "val": ""},
+      {"class": "lp-from", "val": "Partenza..."},
+      {"class": "lp-to", "val": "Destinazione..."},
+      {"class": "la-menu", "val": "Menu"},
+      {"class": "la-cancel", "val": "Annulla richiesta"},
+      {"class": "la-hide-input", "val": "Nascondi input"},
+      {"class": "la-back", "val": "Indietro"},
     ]
   };
 

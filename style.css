@@ -144,29 +144,23 @@ button, input {
   padding: 0 1em 3em;
   width: 100%;
 }
-.search-visible {
+.search-visible, .details-visible, .menu-visible {
   transform: translateX(0);
   -webkit-transform: translateX(0);
   transition: transform 0.2s ease-out 0.04s;
   -webkit-transition: -webkit-transform 0.2s ease-out 0.04s;
 }
-.search-hidden {
+.search-hidden, details-hidden-left {
   transform: translateX(-200%);
   -webkit-transform: translateX(-200%);
   transition: transform 0.2s ease-out;
   -webkit-transition: -webkit-transform 0.2s ease-out;
 }
-.details-hidden {
+.details-hidden-right, .menu-hidden {
   transform: translateX(200%);
   -webkit-transform: translateX(200%);
   transition: transform 0.2s ease-out;
   -webkit-transition: -webkit-transform 0.2s ease-out;
-}
-.details-visible {
-  transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transition: transform 0.2s ease-out 0.04s;
-  -webkit-transition: -webkit-transform 0.2s ease-out 0.04s;
 }
 .input-section-visible {
   transform: translateX(0);
