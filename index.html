@@ -20,9 +20,9 @@
 	<section class="container">
 
 		<header class="topbar">
-			<img class="icon right icon-visible" id="menu" src="img/menu.svg" onclick="menu()" alt="Menu">
-			<img class="icon left icon-hidden-right" id="back" src="img/back.svg" onClick="goBack()" alt="Back">
-			<img class="icon left icon-hidden-left" id="cancel" src="img/x.svg" onclick="cancelQuery()" alt="Cancel">
+			<img class="icon right icon-visible la-menu" id="menu" src="img/menu.svg" onclick="menu()" alt="Menu">
+			<img class="icon left icon-hidden-right la-back" id="back" src="img/back.svg" onClick="goBack()" alt="Back">
+			<img class="icon left icon-hidden-left la-cancel" id="cancel" src="img/x.svg" onclick="cancelQuery()" alt="Cancel">
 		</header>
 
 		<section class="main-section search search-visible" id="search">
@@ -32,18 +32,18 @@
 			<section class="js-section active-section input-section-hidden">
 
 				<div class="text-element chosen-data js-from" onclick="toggleInput(this)">
-					<h3 class="blue label text-element">From:</h3>
+					<h3 class="blue label text-element l-from">From:</h3>
 					<p class="line-big js-name"></p>
 					<p class="line-small js-city"></p>
-					<img class="cancel-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
+					<img class="cancel-input la-hide-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
 				</div>
 
 				<div class="collapse js-from">
 
-					<input class="input js-input" type="text" placeholder="Start location..." autofocus oninput="busstopInput(this)">
+					<input class="input js-input lp-from" type="text" placeholder="Start location..." autofocus oninput="busstopInput(this)">
 
 					<div class="input-element text-element list-element suggest-element js-nomatches">
-						<p class="line-small no-matches js-no-matches">No matching bus stops.</p>
+						<p class="line-small no-matches js-no-matches l-no-matches">No matching bus stops.</p>
 					</div>
 
 					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
@@ -75,18 +75,18 @@
 			<section class="js-section input-section-hidden">
 
 				<div class="text-element chosen-data js-to" onclick="toggleInput(this)">
-					<h3 class="blue label text-element">To:</h3>
+					<h3 class="blue label text-element l-to">To:</h3>
 					<p class="line-big js-name"></p>
 					<p class="line-small js-city"></p>
-					<img class="cancel-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
+					<img class="cancel-input la-hide-input" id="cancelInput" src="img/hide.svg" alt="Hide input">
 				</div>
 
 				<div class="collapse js-to">
 
-					<input class="input js-input" type="text" placeholder="Destination..." oninput="busstopInput(this)">
+					<input class="input js-input lp-to" type="text" placeholder="Destination..." oninput="busstopInput(this)">
 
 					<div class="input-element text-element list-element suggest-element">
-						<p class="line-small no-matches js-no-matches">No matching bus stops.</p>
+						<p class="line-small no-matches js-no-matches l-no-matches">No matching bus stops.</p>
 					</div>
 					
 					<div class="input-element text-element list-element suggest-element js-suggest" onclick="selectBusstop(this)">
@@ -117,7 +117,7 @@
 			<section class="js-section clearfix input-section-hidden">
 
 				<div class="text-element chosen-data js-time-date" onclick="toggleInput(this)">
-					<h3 class="blue label text-element">When:</h3>
+					<h3 class="blue label text-element l-when">When:</h3>
 					<p class="line-big js-name"></p>
 					<p class="line-small js-city"></p>
 					<img class="cancel-input" id="cancelInput" src="img/hide.svg" alt="Hide input">

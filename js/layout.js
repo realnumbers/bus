@@ -14,6 +14,45 @@ function initLayout() {
 	toggleInputHideClass("init");
 }
 
+function l10nReplacement() {
+  var l10n_en = {
+  	"l-from": "From",
+  	"l-to": "To",
+  	"l-when": "When",
+  	"l-no-matches": "No matching bus stops",
+  	"l-more": "Load more results",
+  	"lp-from": "Start...",
+  	"lp-to": "Destination...",
+  	"la-menu": "Menu",
+  	"la-cancel": "Reset query",
+  	"la-hide-input": "Hide input",
+  	"la-back": "Back",
+  };
+
+  var l10n_de = {
+  	"l-from": "Von",
+  	"l-to": "Nach",
+  	"l-when": "Wann",
+  	"l-no-matches": "Keine passenden Haltestellen",
+  	"l-more": "Mehr Resultate laden",
+  	"lp-from": "Start...",
+  	"lp-to": "Ziel...",
+  	"la-menu": "Menü",
+  	"la-cancel": "Anfrage zurücksetzen",
+    "la-hide-input": "Eingabefeld verstecken",
+  	"la-back": "Zurück",
+  };
+
+
+  var langUI = "en";
+  if (navigator.language.substr(0, 1) == "de")
+    langUI = "de";
+  else if (navigator.language.substr(0, 1) == "it")
+    langUI = "it";
+
+  for (var i = 0; i < l10n[langUI].length; i++)
+    $(l10n[langUI][i].class).text(l10n[langUI][i].text);
+}
 function toggleInput(el) {
 	$(".selected").removeClass("selected");
 	showSuggests(".js-section", -1);
