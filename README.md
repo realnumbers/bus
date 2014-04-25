@@ -8,7 +8,7 @@ Works for all SASA bus connections in South Tyrol (i.e. city buses in the areas 
 ##Current Status
 **Everything is under heavy development and subject to change.**
 
-The search part of the app is mostly working, but the part that displays the results from the API is not fully implemented yet. Everything else is still in planning.
+Most of the app's functionality is implemented, but there are still some bugs and things missing.
 
 ##Pics or it didn't happen
 
@@ -19,4 +19,4 @@ Here are some screenshots of the current state:
 
 ##Copyright
 
-Designed and developed by [Tobias Bernard](http://tobiasbernard.com) and [Julian Sparber](http://julian.sparber.net). Released under the terms of the GNU Affero Public License version 3 or later.
+Designed and developed by [Tobias Bernard](http://tobiasbernard.com) and [Julian Sparber](http://julian.sparber.net). Released under the terms of the GNU Affero General Public License version 3 or later.

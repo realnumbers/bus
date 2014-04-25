@@ -67,7 +67,6 @@ li {
   color: #888580;
 }
 a {
-  font-weight: 600;
   text-decoration: none;
   color: #1e85fe;
   cursor: pointer;
@@ -428,22 +427,24 @@ button, input {
 
 /* SETTINGS */
 
+.about-section {
+  /*margin-top: 1em;*/
+}
+.about-section p {
+  margin-bottom: 0.4em;
+}
 .menu-title {
+  margin-bottom: 0.2em;
   font-size: 3.2em;
   font-weight: 200;
   text-transform: uppercase;
 }
 .menu-subhead {
-  
+  margin-bottom: 1em !important;
+  font-size: 1.3em;
 }
 .settings-element {
   margin: 1em 0;
-}
-.about-section {
-  /*margin-top: 1em;*/
-}
-.about-section p {
-  margin-bottom: 1em;
 }
 
 /* NOSCRIPT */
