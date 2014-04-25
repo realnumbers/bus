@@ -26,15 +26,15 @@ function l10nReplacement() {
     "l10n_en": [
       {
         "class": "l-from",
-        "val": "From"
+        "val": "From:"
       },
       {
         "class": "l-to",
-        "val": "To"
+        "val": "To:"
       },
       {
         "class": "l-when",
-        "val": "When"
+        "val": "When:"
       },
       {
         "class": "l-no-matches",
@@ -72,15 +72,15 @@ function l10nReplacement() {
     "l10n_de": [
       {
         "class": "l-from",
-        "val": "Von"
+        "val": "Von:"
       },
       {
         "class": "l-to",
-        "val": "Nach"
+        "val": "Nach:"
       },
       {
         "class": "l-when",
-        "val": "Wann"
+        "val": "Wann:"
       },
       {
         "class": "l-no-matches",
@@ -119,14 +119,25 @@ function l10nReplacement() {
 
   console.log(navigator.language.substr(0, 2));
   var langUI = "l10n_en";
-  if (navigator.language.substr(0, 2) == "en")
+  if (navigator.language.substr(0, 2) == "de")
     langUI = "l10n_de";
   else if (navigator.language.substr(0, 1) == "it")
     langUI = "l10n_it";
 
   for (var i = 0; i < l10n[langUI].length; i++) {
-    console.log(l10n[langUI][i].class);
-    $(l10n[langUI][i].class).text(l10n[langUI][i].val);
+    console.log($(l10n[langUI][i].class));
+    var typ = l10n[langUI][i].class.split("-")[0];
+    switch (typ) {
+      case "l": 
+        $("." + l10n[langUI][i].class).text(l10n[langUI][i].val);
+        break;
+      case "lp": 
+        $("." + l10n[langUI][i].class).attr("placeholder",l10n[langUI][i].val);
+        break;
+      case "la": 
+        $("." + l10n[langUI][i].class).attr("alt",l10n[langUI][i].val);
+        break;
+    }
   }
 }
 
