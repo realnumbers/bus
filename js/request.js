@@ -132,6 +132,7 @@ function loadMoreConnections() {
 		localStorage.routeData = "";
 		data[0].detail = count + 5;
 		localStorage.routeData = JSON.stringify(data);
+    $(".spinner").css("display", "block");
 }
 function requestRoute() {
 	var stamp = History.getState().data;

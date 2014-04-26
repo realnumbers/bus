@@ -263,6 +263,7 @@ function changeToDetails(index) {
   $(".details-hidden-left:first").show(0).removeClass("details-hidden-left").addClass("details-visible");
   $("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
   $("#back").show(0).removeClass("icon-hidden-right").addClass("icon-visible");
+	$("#menu").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
   genDetails(index);
 }
 
@@ -319,6 +320,7 @@ function changeToSearch() {
 	$(".menu-visible:first").removeClass("menu-visible").addClass("menu-hidden");
 	$(".search-hidden:first").show(0).removeClass("search-hidden").addClass("search-visible");
 	$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
+	$("#menu").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 	if (UrlData.arr != undefined && UrlData.dep != undefined)
 		$("#cancel").show(0).removeClass("icon-hidden-left").addClass("icon-visible");
 }
@@ -337,5 +339,6 @@ function changeToMenu() {
 	  $(".details-visible:first").removeClass("details-visible").addClass("details-hidden-left");
 	$(".menu-hidden:first").show(0).removeClass("menu-hidden").addClass("menu-visible");
 	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
+	$("#menu").removeClass("icon-visible").addClass("icon-hidden-left");
 	$("#back").show(0).removeClass("icon-hidden-right").addClass("icon-visible");
 }
