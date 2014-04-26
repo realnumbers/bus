@@ -392,7 +392,7 @@ function calculateWaitingTime(timestamp1, timestamp2) {
 function timeString(waitTime) {
 	var waitTimeDays = 0;
 	var waitTimeHours = 0;
-	var waitTimeMinuts = 0;
+	var waitTimeMinutes = 0;
 	var waitTimeString = "";
 	if (waitTime / 60 >= 1) {
 		if (waitTime / 1440 >= 1) {
@@ -400,17 +400,14 @@ function timeString(waitTime) {
 		}
 		waitTimeHours = parseInt(waitTime / 60 - waitTimeDays * 1440);
 	}
-	waitTimeMinuts = waitTime - waitTimeHours * 60;
+	waitTimeMinutes = waitTime - waitTimeHours * 60;
 
 	waitTimeString = "";
-	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " day" : "";
-	waitTimeString += (waitTimeDays > 1) ? "s" : "";
-	waitTimeString += (waitTimeString != "" && (waitTimeHours != 0 || waitTimeMinuts != 0)) ? ", " : "";
-	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " hour" : "";
-	waitTimeString += (waitTimeHours > 1) ? "s" : "";
-	waitTimeString += (waitTimeString != "" && waitTimeMinuts != 0) ? ", " : "";
-	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " minute" : "";
-	waitTimeString += (waitTimeMinuts > 1) ? "s" : "";
+	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " d" : "";
+	waitTimeString += (waitTimeString != "" && (waitTimeHours != 0 || waitTimeMinutes != 0)) ? ", " : "";
+	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " h" : "";
+	waitTimeString += (waitTimeString != "" && waitTimeMinutes != 0) ? ", " : "";
+	waitTimeString += (waitTimeMinutes != 0) ? waitTimeMinutes + " min" : "";
 
 	return waitTimeString;
 }
