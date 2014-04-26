@@ -127,7 +127,7 @@ function getRouteData() {
 
 function loadMoreConnections() {
 		var count = getRouteData().length - 1;
-		nextData(getRouteData()[0].requestId, count + 5, count);
+		nextData(getRouteData()[0].requestId, count + 5 - 1, count);
 		var data = JSON.parse(localStorage.routeData);
 		localStorage.routeData = "";
 		data[0].detail = count + 5;
@@ -166,7 +166,7 @@ function requestRoute() {
 				stamp.requestId = requestId;
 				stamp.detail = limit;
 				pushRouteData(stamp);
-				nextData(requestId, limit, 1);
+				nextData(requestId, limit - 1, 1);
 				pushRouteData(parseData(data));
 			}
 			else {
