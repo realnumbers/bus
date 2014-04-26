@@ -253,7 +253,7 @@ function parseOverview(data) {
 	overview.arrTime = arrTime[0] + ":" + arrTime[1];
 	overview.depTime = depTime[0] + ":" + depTime[1];
 	duration = calculateWaitingTime([0, 0, 0], extractTime(duration));
-	transfers = (transfers == 0) ? "" : ((transfers === 1) ? ",1 " + l10nChangeSingle : ", " + transfers + " " + l10nChangesMultiple);
+	transfers = (transfers == 0) ? "" : ((transfers === 1) ? ", 1 " + l10nChangeSingle : ", " + transfers + " " + l10nChangesMultiple);
 	overview.duration = timeString(duration) + transfers;
 	
 	return overview;
