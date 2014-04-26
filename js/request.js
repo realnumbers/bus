@@ -234,14 +234,20 @@ function parseOverview(data) {
 	var depTime = con.Departure.BasicStop.Dep.Time;
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
-
+  var l10ChangeSingle = "hello";
+  var l10ChangesMultiple = "hell23o";
+  var langUI = "l10n_en";
+  if (navigator.language.substr(0, 2) == "de")
+    langUI = "l10n_de";
+  else if (navigator.language.substr(0, 1) == "it")
+    langUI = "l10n_it";
 	arrTime = extractTime(arrTime);
 	depTime = extractTime(depTime);
 
 	overview.arrTime = arrTime[0] + ":" + arrTime[1];
 	overview.depTime = depTime[0] + ":" + depTime[1];
 	duration = calculateWaitingTime([0, 0, 0], extractTime(duration));
-	transfers = (transfers == 0) ? "" : ((transfers == 1) ? ", 1 change" : ", " + transfers + " changes ");
+	transfers = (transfers == 0) ? "" : ((transfers === 1) ? ", 1" + l10nChangeSingle : ", " + transfers + " " + l10nChangesMultiple);
 	overview.duration = timeString(duration) + transfers;
 	
 	return overview;
@@ -404,10 +410,10 @@ function timeString(waitTime) {
 
 	waitTimeString = "";
 	waitTimeString += (waitTimeDays != 0) ? waitTimeDays + " d" : "";
-	waitTimeString += (waitTimeString != "" && (waitTimeHours != 0 || waitTimeMinutes != 0)) ? ", " : "";
+	waitTimeString += (waitTimeString != "" && (waitTimeHours != 0 || waitTimeMinuts != 0)) ? ", " : "";
 	waitTimeString += (waitTimeHours != 0) ? waitTimeHours + " h" : "";
-	waitTimeString += (waitTimeString != "" && waitTimeMinutes != 0) ? ", " : "";
-	waitTimeString += (waitTimeMinutes != 0) ? waitTimeMinutes + " min" : "";
+	waitTimeString += (waitTimeString != "" && waitTimeMinuts != 0) ? ", " : "";
+	waitTimeString += (waitTimeMinuts != 0) ? waitTimeMinuts + " min" : "";
 
 	return waitTimeString;
 }
