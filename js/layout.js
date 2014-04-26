@@ -72,14 +72,14 @@ function l10nReplacement() {
       {"class": "l-to", "val": "A:"},
       {"class": "l-when", "val": "Ora:"},
       {"class": "l-no-matches", "val": "Keine passenden Haltestellen"},
-      {"class": "l-more", "val": "Carica altri risultati"},
+      {"class": "l-more", "val": "Carica più risultati"},
       {"class": "l-changes", "val": "cambi"},
-      {"class": "l-er-con-t", "val": "Keine Verbinungen."},
+      {"class": "l-er-con-t", "val": "Nessuna connessione."},
       {"class": "l-er-con-m", "val": "Es gibt keine Busverbindungen für diese Anfrage. Bitte versuchen Sie, ihre Anfrage zu ändern."},
       {"class": "l-er-api-t", "val": "Backend non raggiungibile"},
       {"class": "l-er-api-m", "val": "Der SASA Backend Service von dem wir unsere Verbindungsdaten erhalten, konnte nicht erreicht werden. Bitte versuchen Sie es erneut."},
       {"class": "l-er-net-t", "val": "Problema connessione rete"},
-      {"class": "l-er-net-m", "val": "Es gibt ein Problem mit Ihrer Netzwerkverbindung. Bitte versuchen Sie dieses zu beheben und versuchen Sie es erneut."},
+      {"class": "l-er-net-m", "val": "C'è un problema con la connessione rete. La preghiamo di risolverlo e provare ancora."},
       {"class": "l-er-unk-t", "val": "Errore sconosciuto"},
       {"class": "l-er-unk-m", "val": ""},
       {"class": "lp-from", "val": "Partenza..."},
@@ -95,7 +95,7 @@ function l10nReplacement() {
   var langUI = "l10n_en";
   if (navigator.language.substr(0, 2) == "de")
     langUI = "l10n_de";
-  else if (navigator.language.substr(0, 1) == "it")
+  else if (navigator.language.substr(0, 2) == "it")
     langUI = "l10n_it";
 
   for (var i = 0; i < l10n[langUI].length; i++) {
