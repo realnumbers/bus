@@ -234,15 +234,15 @@ function parseOverview(data) {
 	var depTime = con.Departure.BasicStop.Dep.Time;
 	var duration = con.Duration.Time;
 	var transfers = con.Transfers;
-  var l10nChangeSingle = "hello";
-  var l10nChangesMultiple = "hell23o";
+  var l10nChangeSingle = "change";
+  var l10nChangesMultiple = "changes";
   var langUI = "l10n_en";
   if (navigator.language.substr(0, 2) == "de")
     langUI = "l10n_de";
   else if (navigator.language.substr(0, 1) == "it")
     langUI = "l10n_it";
 	for (var i = 0; i < l10n[langUI].length; i++) {
-    if (l10n[langUI][i].class === "lj-changesMultiple")
+    if (l10n[langUI][i].class === "lj-changeMultiple")
        l10nChangesMultiple = l10n[langUI][i].val;
     if (l10n[langUI][i].class === "lj-changeSingle")
        l10nChangeSingle = l10n[langUI][i].val;

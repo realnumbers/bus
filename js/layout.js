@@ -60,7 +60,7 @@ var l10n = {
       {"class": "l-er-net-m", "val": "C'è un problema con la connessione rete. La preghiamo di risolverlo e provare ancora."},
       {"class": "l-er-unk-t", "val": "Errore sconosciuto"},
       {"class": "l-er-unk-m", "val": ""},
-      {"class": "lp-from", "val": "Partenza..."},
+      {"class": "lp-from", "val": "Luogo di partenza..."},
       {"class": "lp-to", "val": "Destinazione..."},
       {"class": "la-menu", "val": "Menu"},
       {"class": "la-cancel", "val": "Annulla richiesta"},
