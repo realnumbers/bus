@@ -107,8 +107,9 @@ $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionen
 $("#menu").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
   if (History.getState().data.menu === undefined) {
     $("#menu-section").hide();
-    $("#back").hide();
-  } 
+  	if (History.getState().data.detail == 0)
+  		$("#back").removeClass("icon-visible").addClass("icon-hidden-right");
+	}
 });
 
 function l10nReplacement() {
