@@ -269,33 +269,6 @@ function parseBusstopName(name) {
     name[1] = replaceNameList[name[1]];
 
   return name;
-  /*var replaceCityList = new Array();
-  var replaceNameList = new Array();
-  String.prototype.replaceAll = function (str1, str2, ignore) {
-      return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof (str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
-  };
- replaceCityList.every( function (element, index, array) {
-    var pattern = new RegExp(element.orginText, "i");
-    if (name[0].match(pattern)) {
-      name[0] = name[0].replaceAll(element.orginText, element.replaceText); 
-      return true;
-    }
-    else
-      return false;
-
-  });
-  replaceNameList.every( function (element, index, array) {
-    var pattern = new RegExp(element.orginText, "i");
-    if (name[1].match(pattern)) {
-      name[1] = name[1].replaceAll(element.orginText, element.replaceText); 
-      return true;
-    }
-    else
-      return false;
-  });
-  console.log(name);
-  return name;
-  */
 }
 
 function splitBusstopName(busstopName) {
@@ -337,8 +310,7 @@ function parseDetails(data) {
       if (i + 1 < connection.length && connection[i + 1].Journey.length > 0) {
         nextDepTime = extractTime(connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time);
         waitTime = calculateWaitingTime(conObj.arrTime, nextDepTime);
-        conObj.waitTime = (waitTime == "") ? conObj.waitTime : "Wait ";
-        conObj.waitTime += timeString(waitTime)
+        conObj.waitTime = timeString(waitTime)
       } else
         conObj.waitTime = "";
 
@@ -350,20 +322,11 @@ function parseDetails(data) {
       if ((i + 1) < connection.length && connection[i + 1].Journey.length > 0 && arrTime != "") {
         nextDepTime = extractTime(connection[i + 1].Journey[0].PassList.BasicStop[0].Dep.Time);
         waitTime = calculateWaitingTime(arrTime, nextDepTime);
-        conObj.waitTime = (waitTime == "") ? conObj.waitTime : "Wait ";
-        conObj.waitTime += timeString(waitTime)
+        conObj.waitTime = timeString(waitTime)
       }
 
-      walkTime = calculateWaitingTime([0, 0, 0], extractTime(connection[i].Walk[0].Duration.Time));
+      conObj.walkTime = timeString(calculateWaitingTime([0, 0, 0], extractTime(connection[i].Walk[0].Duration.Time)));
       waitTime = conObj.waitTime;
-
-      if (waitTime == undefined)
-        waitTime = "";
-      walkTime = timeString(walkTime);
-      waitTime += (waitTime == "" || walkTime == "") ? "" : ", walk ";
-      waitTime += (waitTime == "" && walkTime != "") ? "Walk " : "";
-      waitTime += walkTime;
-      conObj.waitTime = waitTime;
       routeData[node] = conObj;
 
       conObj = new Object();

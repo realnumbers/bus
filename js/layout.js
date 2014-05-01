@@ -280,6 +280,44 @@ function changeToDetails(index) {
   genDetails(index);
 }
 
+function genWaitWalkTimeString(waitTime, walkTime) {
+	var walk;
+	var string;
+	if (waitTime === undefined)
+		waitTime = "";
+	if (walkTime === undefined)
+		walkTime = "";
+	string = genTimeString(waitTime, "lj-wait");
+	walk = genTimeString(walkTime, "lj-walk");
+	if (string !== "" && walk !== "")
+		string = string + ", " + walk;
+	else if (walk !== "")
+		string = walk;
+
+	return string;
+}
+
+function genTimeString(waitTime, l10nClass) {
+  var l10nWait = "Wait";
+  for (var i = 0; i < l10n[langUI()].length; i++) {
+    if (l10n[langUI()][i].class === l10nClass)
+      l10nWait = l10n[langUI()][i].val;
+  }
+	if (waitTime !== "") {
+		switch (langUI()) {
+			case "l10n_en": 
+				waitTime =  l10nWait + " " + waitTime;
+				break;
+			case "l10n_it": 
+				waitTime =  l10nWait + " " + waitTime;
+				break;
+			case "l10n_de": 
+				waitTime =  waitTime + " " + l10nWait;
+				break;
+		}
+	}
+	return waitTime;
+}
 function genDetails(index) {
   var data = getRouteData()[index].connections;
   var htmlTransit = '<section class="transit-block js-transit"><div class="location-line"><p class="timestamp js-time left-column line-big bigger">07:18</p><div class="text-element"><p class="line-big chosen js-name">Waltherplatz,</p><p class="line-small chosen js-city">Bozen</p></div></div><div class="connection-line"><div class="left-column bigger"><img src="img/arrow.svg" class="connection-symbol"></div><p class="action line-big thin blue js-lineNo">10A Bus Line</p></div><div class="location-line"><p class="timestamp js-time left-column line-big bigger">07:21</p><div class="text-element"><p class="line-big chosen js-name">Grieser Platz,</p><p class="line-small chosen js-city">Bozen</p></div></div></section>';
@@ -304,8 +342,8 @@ function genDetails(index) {
         tBlock.parent().append(htmlTransit);
       tBlock = tBlock.nextAll(".js-transit:first");
     }
-    if (data[i].waitTime != "") {
-      iBlock.show().find("p").text(data[i].waitTime);
+    if (data[i].waitTime != "" || data[i].walkTime != ""  ) {
+      iBlock.show().find("p").text(genWaitWalkTimeString(data[i].waitTime, data[i].walkTime));
       if (iBlock.nextAll(".js-intermediate").length == 0)
         iBlock.parent().append(htmlIntermediate);
       iBlock = iBlock.nextAll(".js-intermediate:first");

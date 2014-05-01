@@ -43,6 +43,15 @@ else {
 	console.log("No input");
 }
 }
+function langUI() {
+  var langTmp = "l10n_en";
+  if (navigator.language.substr(0, 2) == "de")
+    langTmp = "l10n_de";
+  else if (navigator.language.substr(0, 2) == "it")
+    langTmp = "l10n_it";
+	return langTmp;
+}
+
 function cancelQuery() {
 	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
 	var data = new Object();
