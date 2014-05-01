@@ -291,6 +291,10 @@ function changeToDetails(index) {
 function genWaitWalkTimeString(waitTime, walkTime) {
 	var walk;
 	var string;
+	String.prototype.capitalize = function() {
+		    return this.charAt(0).toUpperCase() + this.slice(1);
+	}
+
 	if (waitTime === undefined)
 		waitTime = "";
 	if (walkTime === undefined)
@@ -302,7 +306,7 @@ function genWaitWalkTimeString(waitTime, walkTime) {
 	else if (walk !== "")
 		string = walk;
 
-	return string;
+	return string.capitalize();
 }
 
 function genTimeString(waitTime, l10nClass) {
