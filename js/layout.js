@@ -151,6 +151,7 @@ function toggleInput(el) {
   //$(el).slideToggle(0, function () {
     $(el).slideToggle(300, function () {
       toggleInputHideClass(el);
+			$(":input").blur();
       $(".js-to").find(":input").val("");
       $(".js-from").find(":input").val("");
     });
