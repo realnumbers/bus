@@ -72,30 +72,30 @@ function unStringUndefined(data) {
     data.date = undefined;
   if (data.time == "undefined")
     data.time = undefined;
-  if (data.detail == "undefined")
-    data.detail = undefined;
+  if (data.detail == "undefined" || data.detail == undefined)
+    data.detail = 0;
 
   return data;
 }
 
 // replaces the current Url state with the new State
 function replaceUrl(dataUrl) {
-  History.replaceState(dataUrl, "Bus",
-    "?dep=" + dataUrl.dep +
-    "&arr=" + dataUrl.arr +
-    "&date=" + dataUrl.date +
-    "&time=" + dataUrl.time +
-    "&detail=" + dataUrl.detail);
+  History.replaceState(dataUrl, "Bus", "?" +
+    ((dataUrl.dep != undefined) ? ("dep=" + dataUrl.dep + "&") : "") +
+    ((dataUrl.arr != undefined) ? ("arr=" + dataUrl.arr + "&") : "") +
+    ((dataUrl.date != undefined) ? ("date=" + dataUrl.date + "&") : "") +
+    ((dataUrl.time != undefined) ? ("time=" + dataUrl.time + "&") : "") +
+    ((dataUrl.detail != undefined) ? ("detail=" + dataUrl.detail) : ""));
 }
 
 // adds a new history entry with the new url
 function pushUrl(dataUrl) {
-  History.pushState(dataUrl, "Bus",
-    "?dep=" + dataUrl.dep +
-    "&arr=" + dataUrl.arr +
-    "&date=" + dataUrl.date +
-    "&time=" + dataUrl.time +
-    "&detail=" + dataUrl.detail);
+  History.pushState(dataUrl, "Bus", "?" +
+    ((dataUrl.dep != undefined) ? ("dep=" + dataUrl.dep + "&") : "") +
+    ((dataUrl.arr != undefined) ? ("arr=" + dataUrl.arr + "&") : "") +
+    ((dataUrl.date != undefined) ? ("date=" + dataUrl.date + "&") : "") +
+    ((dataUrl.time != undefined) ? ("time=" + dataUrl.time + "&") : "") +
+    ((dataUrl.detail != undefined) ? ("detail=" + dataUrl.detail) : ""));
 }
 
 // return the busstop list as json witch is saved in the localStorage
