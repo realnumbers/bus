@@ -108,7 +108,7 @@ function bindUrlEvent() {
 		}
 		else if (state.data.detail > 0)
 			startRequest();
-    else if (state.data.about === true) {
+    else if (state.data.menu === true) {
       changeToMenu();
     }
       

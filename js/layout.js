@@ -82,6 +82,7 @@ var l10n = {
 
 function initLayout() {
   $(".js-load").hide();
+	$("#menu-section").hide();
   $(".js-no-matches").hide();
   $(".js-error").hide();
   $(":input").val("");
@@ -103,8 +104,8 @@ $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionen
   } 
 });
 $("#menu").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-  if (History.getState().data.menu == undefined) {
-    $("#details").hide();
+  if (History.getState().data.menu === undefined) {
+    $("#menu-section").hide();
     $("#back").hide();
   } 
 });
@@ -380,7 +381,7 @@ function changeToSearch() {
 
 function showMenu() {
   var data = new Object();
-  data.about = true;
+  data.menu = true;
   History.pushState(data, "Bus", "?menu");
 }
 
