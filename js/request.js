@@ -31,7 +31,7 @@ function addState(data) {
 function getBusstopById(id) {
   var busstop = new Object();
   var busstopList = getBusstops();
-  if (lang == "de")
+  if (langUI == "l10n_de")
     busstopList = busstopList.de;
   else
     busstopList = busstopList.it;
@@ -234,16 +234,11 @@ function parseOverview(data) {
   var transfers = con.Transfers;
   var l10nChangeSingle = "change";
   var l10nChangesMultiple = "changes";
-  var langUI = "l10n_en";
-  if (navigator.language.substr(0, 2) == "de")
-    langUI = "l10n_de";
-  else if (navigator.language.substr(0, 2) == "it")
-    langUI = "l10n_it";
-  for (var i = 0; i < l10n[langUI].length; i++) {
-    if (l10n[langUI][i].class === "lj-changeMultiple")
-      l10nChangesMultiple = l10n[langUI][i].val;
-    if (l10n[langUI][i].class === "lj-changeSingle")
-      l10nChangeSingle = l10n[langUI][i].val;
+  for (var i = 0; i < l10n[langUI()].length; i++) {
+    if (l10n[langUI()][i].class === "lj-changeMultiple")
+      l10nChangesMultiple = l10n[langUI()][i].val;
+    if (l10n[langUI()][i].class === "lj-changeSingle")
+      l10nChangeSingle = l10n[langUI()][i].val;
   }
   arrTime = extractTime(arrTime);
   depTime = extractTime(depTime);
@@ -272,12 +267,11 @@ function parseBusstopName(name) {
 }
 
 function splitBusstopName(busstopName) {
-  var i = (lang == "de") ? 1 : 0;
+  var i = (langUI() == "l10n_de") ? 1 : 0;
   busstopName = busstopName.split(" - ")[i].split("(")[1].split(") ");
   return parseBusstopName(busstopName);
 }
 
-// returns in Array of JSON depBusstop, arrBusstop, depTime, arrTime, lineNo, waitTime
 function parseDetails(data) {
   var connection = data.ConnectionList.Connection[0].ConSectionList.ConSection;
   var arrTime = "";

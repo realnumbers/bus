@@ -1,4 +1,3 @@
-var lang = "it";
 var History = window.History;
 var matchingBusstops = new Array(5);
 // init all stuff
@@ -11,7 +10,6 @@ hideKeyboard();
 
 function initApp() {
 	console.log("init App");
-	selectLanguage();
 	loadUrlData();
 	initLayout();
 	onEnterEvent();
@@ -146,13 +144,6 @@ function error(el) {
 	$(".js-error").show(0);
 	$(".js-error").find("h3").text(title);
 	$(".js-error").find("p").text(msg);
-}
-
-function selectLanguage() {
-	if (navigator.language === "de")
-		lang = "de";
-	if (navigator.language === "it")
-		console.log($("from"));
 }
 
 // creats localStorage by using cookies for IE 6,7 if it doesnt exist
