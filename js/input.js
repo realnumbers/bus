@@ -9,6 +9,7 @@ function initInput() {
 function busstopInput(el) {
 		var inputString = $(el).val();
 		var i = 0;	
+		var lang = (langUI() === "l10n_de") ? "de" : "it";
 		var section = ($(el).parents(".js-to").length > 0) ? 
 									".js-to" : ".js-from";
 		// hide all Suggests

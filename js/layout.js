@@ -102,6 +102,12 @@ $("#details").on("transitionend webkitTransitionEnd oTransitionEnd otransitionen
     $("#back").hide();
   } 
 });
+$("#menu").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
+  if (History.getState().data.menu == undefined) {
+    $("#details").hide();
+    $("#back").hide();
+  } 
+});
 
 function l10nReplacement() {
   console.log(navigator.language.substr(0, 2));
