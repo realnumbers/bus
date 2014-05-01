@@ -191,30 +191,58 @@ function showSelectedBusstop(section, busstop) {
   $(section + ":first").find(".js-city").text(busstop.city);
 }
 
-function selectNext(el) {
+function selectNext(section, el) {
   if ($(".selected").length == 0)
-    $(el).find(".js-suggest:first").addClass("selected");
+    $(section).find(el + ":first").addClass("selected");
   else {
-    if ($(".selected").next(".js-suggest").length > 0)
-      $(".selected").removeClass("selected").next(".js-suggest").addClass("selected");
-    else
-      $(".selected").removeClass("selected").prevAll(".js-suggest:last").addClass("selected");
+		if (section != "#search"){
+    	if ($(".selected").next(el).length > 0)
+   			$(".selected").removeClass("selected").next(el).addClass("selected");
+    	else {
+				if (section === ".js-overview") {
+      			$(".selected").removeClass("selected");
+	    			$("#search").find(el + ":first").addClass("selected");
+				}
+				else
+     				$(".selected").removeClass("selected").prevAll(el + ":last").addClass("selected");
+			}
+		}
+		else {
+				if ($(".selected").parents().next().find(el).length > 0)
+      		$(".selected").removeClass("selected").parents().next().find(el + ":first").addClass("selected");
+				else {
+      		$(".selected").removeClass("selected");
+    			$(section).find(el + ":first").addClass("selected");
+				}
+			}
   }
 }
 
-function selectPrevious(el) {
+function selectPrevious(section, el) {
   if ($(".selected").length == 0)
-    $(el).find(".js-suggest:last").addClass("selected");
+    $(section).find(el + ":last").addClass("selected");
   else {
-    if ($(".selected").prev(".js-suggest").length > 0)
-      $(".selected").removeClass("selected").prev(".js-suggest").addClass("selected");
-    else
-      $(".selected").removeClass("selected").nextAll(".js-suggest:last").addClass("selected");
-  }
-}
+		if (section != "#search"){
+    	if ($(".selected").prev(el).length > 0)
+    	  $(".selected").removeClass("selected").prev(el).addClass("selected");
+   	 	else {
+				if (section === ".js-overview") {
+     			$(".selected").removeClass("selected").parents().prev().find(el + ":first").addClass("selected");
+				}
+				else
+      		$(".selected").removeClass("selected").nextAll(el + ":last").addClass("selected");
+			}
+		}
+		else {
+			if ($(".selected").parents().prev().find(el).length > 0)
+     		$(".selected").removeClass("selected").parents().prev().find(el + ":first").addClass("selected");
+			else {
+     		$(".selected").removeClass("selected");
+    		$(section).find(el + ":last").addClass("selected");
+			}
+		}
 
-function selectEnterBusstop() {
-  selectBusstop(".selected:first");
+  }
 }
 
 function showSelectetTime(time) {
@@ -257,7 +285,7 @@ function showOverview() {
         el.find(".js-duration").text(routeData[i].overview.duration);
         if (el.next().length == 0 && i < routeData.length - 1) {
           console.log("add Element");
-          $(".js-overview").append('<div class="text-element list-element " onclick="showDetails(this)"> <p class="line-big bigger js-time"></p><p class="line-small list js-duration"></p></div>');
+          $(".js-overview").append('<div class="text-element list-element js-selectable-el" onclick="showDetails(this)"> <p class="line-big bigger js-time"></p><p class="line-small list js-duration"></p></div>');
         }
         el = el.next();
       }
@@ -272,7 +300,7 @@ function showOverview() {
   } else {
     console.log("Invalide Error: Noconnection");
   }
-
+	$(".js-selectable-el").hover(function () {suggestInHover(this);} , function () {suggestOutHover(this);})
 }
 
 function changeToDetails(index) {

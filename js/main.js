@@ -210,26 +210,37 @@ function onEnterEvent() {
 	});
 }
 
+function getCicle(){
+	if ($(".js-from").find(":input").is(":focus"))
+		return ".js-suggest";
+	if ($(".js-to").find(":input").is(":focus"))
+		return ".js-suggest";
+	return ".js-selectable-el";
+}
+function getSection(){
+	if ($(".js-from").find(":input").is(":focus"))
+		return ".js-from";
+	if ($(".js-to").find(":input").is(":focus"))
+		return ".js-to";
+	if ($(".selected").parents().hasClass("js-overview"))
+		return ".js-overview";
+	return "#search";
+}
+
 function busstopEvents() {
 	// 38 is key up
 	// 40 is key down
-	$(".js-from").find(":input").keydown(function(event){
+	//$(".js-from").find(":input").keydown(function(event){
+	$(document).keydown(function(event){
 		if (event.keyCode == 40)
-			selectNext(".js-from");
+			selectNext(getSection(), getCicle());
 		else if (event.keyCode == 38)
-			selectPrevious(".js-from");
+			selectPrevious(getSection(), getCicle());
 		else if(event.keyCode == 13)
-			selectEnterBusstop(".js-to");
-	});
-	$(".js-to").find(":input").keydown(function(event){
-		if (event.keyCode == 40)
-			selectNext(".js-to");
-		else if (event.keyCode == 38)
-			selectPrevious(".js-to");
-		else if(event.keyCode == 13)
-			selectEnterBusstop(".js-to");
+			$(".selected:first").trigger("click");
 	});
 	$(".js-suggest").hover(function () {suggestInHover(this);} , function () {suggestOutHover(this);})
+	$(".js-selectable-el").hover(function () {suggestInHover(this);} , function () {suggestOutHover(this);})
 }
 
 function hideKeyboard() {
