@@ -22,9 +22,10 @@ function initApp() {
 	l10nReplacement();
 }
 function browserInit() {
-	var pattern = new RegExp("Chrome", "i");
+	var pattern = new RegExp("Firefox", "i");
 	if(navigator.userAgent.match(pattern)) {
-		$("#time-input").attr("type", "text");	
+		$("#date-input").attr("type", "date");	
+		$("#time-input").attr("type", "time");	
 	}
 }
 
