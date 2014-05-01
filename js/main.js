@@ -10,6 +10,7 @@ hideKeyboard();
 
 function initApp() {
 	console.log("init App");
+	browserInit();
 	loadUrlData();
 	initLayout();
 	onEnterEvent();
@@ -20,6 +21,13 @@ function initApp() {
 	bindUrlEvent();
 	l10nReplacement();
 }
+function browserInit() {
+	var pattern = new RegExp("Chrome", "i");
+	if(navigator.userAgent.match(pattern)) {
+		$("#time-input").attr("type", "text");	
+	}
+}
+
 // event for a complete request is "requestComplete"
 //$(document).on("requestComplete", msg);
 
