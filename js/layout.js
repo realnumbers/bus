@@ -298,11 +298,7 @@ function genWaitWalkTimeString(waitTime, walkTime) {
 }
 
 function genTimeString(waitTime, l10nClass) {
-  var l10nWait = "Wait";
-  for (var i = 0; i < l10n[langUI()].length; i++) {
-    if (l10n[langUI()][i].class === l10nClass)
-      l10nWait = l10n[langUI()][i].val;
-  }
+  var l10nWait = getL10nString(l10nClass);
 	if (waitTime !== "") {
 		switch (langUI()) {
 			case "l10n_en": 
@@ -337,7 +333,7 @@ function genDetails(index) {
       tBlock.find(".js-name:last").text(data[i].arrBusstop[1] + ", ");
       tBlock.find(".js-city:first").text(data[i].depBusstop[0]);
       tBlock.find(".js-city:last").text(data[i].arrBusstop[0]);
-      tBlock.find(".js-lineNo").text("Line " + data[i].lineNo);
+      tBlock.find(".js-lineNo").text(getL10nString("lj-line") + " " + data[i].lineNo);
       if (tBlock.nextAll(".js-transit").length == 0 && i < data.length - 1)
         tBlock.parent().append(htmlTransit);
       tBlock = tBlock.nextAll(".js-transit:first");

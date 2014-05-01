@@ -51,6 +51,13 @@ function langUI() {
     langTmp = "l10n_it";
 	return langTmp;
 }
+function getL10nString(l10nClass) {
+  for (var i = 0; i < l10n[langUI()].length; i++) {
+    if (l10n[langUI()][i].class === l10nClass)
+      l10nString = l10n[langUI()][i].val;
+  }
+	return l10nString;
+}
 
 function cancelQuery() {
 	$("#cancel").removeClass("icon-visible").addClass("icon-hidden-left");
