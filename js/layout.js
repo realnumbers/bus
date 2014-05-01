@@ -194,26 +194,26 @@ function showSelectedBusstop(section, busstop) {
 
 function selectNext(section, el) {
   if ($(".selected").length == 0)
-    $(section).find(el + ":first").addClass("selected");
+    $(section).find(el + ":first:visible").addClass("selected");
   else {
 		if (section != "#search"){
-    	if ($(".selected").next(el).length > 0)
-   			$(".selected").removeClass("selected").next(el).addClass("selected");
+    	if ($(".selected").next(el + ":visible").length > 0)
+   			$(".selected").removeClass("selected").next(el + ":visible").addClass("selected");
     	else {
 				if (section === ".js-overview") {
       			$(".selected").removeClass("selected");
-	    			$("#search").find(el + ":first").addClass("selected");
+	    			$("#search").find(el + ":first:visible").addClass("selected");
 				}
 				else
-     				$(".selected").removeClass("selected").prevAll(el + ":last").addClass("selected");
+     				$(".selected").removeClass("selected").prevAll(el + ":last:visible").addClass("selected");
 			}
 		}
 		else {
-				if ($(".selected").parents().next().find(el).length > 0)
-      		$(".selected").removeClass("selected").parents().next().find(el + ":first").addClass("selected");
+				if ($(".selected").parents().next().find(el + ":visible").length > 0)
+      		$(".selected").removeClass("selected").parents().next().find(el + ":first:visible").addClass("selected");
 				else {
       		$(".selected").removeClass("selected");
-    			$(section).find(el + ":first").addClass("selected");
+    			$(section).find(el + ":first:visible").addClass("selected");
 				}
 			}
   }
@@ -221,25 +221,25 @@ function selectNext(section, el) {
 
 function selectPrevious(section, el) {
   if ($(".selected").length == 0)
-    $(section).find(el + ":last").addClass("selected");
+    $(section).find(el + ":visible:last").addClass("selected");
   else {
 		if (section != "#search"){
-    	if ($(".selected").prev(el).length > 0)
-    	  $(".selected").removeClass("selected").prev(el).addClass("selected");
+    	if ($(".selected").prev(el + ":visible").length > 0)
+    	  $(".selected").removeClass("selected").prev(el + ":visible").addClass("selected");
    	 	else {
 				if (section === ".js-overview") {
-     			$(".selected").removeClass("selected").parents().prev().find(el + ":first").addClass("selected");
+     			$(".selected").removeClass("selected").parents().prev().find(el + ":first:visible").addClass("selected");
 				}
 				else
-      		$(".selected").removeClass("selected").nextAll(el + ":last").addClass("selected");
+      		$(".selected").removeClass("selected").nextAll(el + ":last:visible").addClass("selected");
 			}
 		}
 		else {
-			if ($(".selected").parents().prev().find(el).length > 0)
-     		$(".selected").removeClass("selected").parents().prev().find(el + ":first").addClass("selected");
+			if ($(".selected").parents().prev().find(el + ":visible").length > 0)
+     		$(".selected").removeClass("selected").parents().prev().find(el + ":first:visible").addClass("selected");
 			else {
      		$(".selected").removeClass("selected");
-    		$(section).find(el + ":last").addClass("selected");
+    		$(section).find(el + ":visible:last").addClass("selected");
 			}
 		}
 
