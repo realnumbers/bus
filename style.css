@@ -73,7 +73,6 @@ a {
 }
 a:hover,
 a:focus {
-  //text-decoration: underline;
   border-bottom: solid 0.1em;
 }
 button, input {
