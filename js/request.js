@@ -118,7 +118,7 @@ function pushRouteData(data) {
 
 //return the Api data form localeStorage
 function getRouteData() {
-  if (localStorage.routeData != undefined)
+  if (localStorage.routeData != undefined && localStorage.routeData != "")
     return JSON.parse(localStorage.routeData);
   else
     return undefined;
