@@ -83,6 +83,7 @@ var l10n = {
 function initLayout() {
   $(".js-load").hide();
 	$("#menu-section").hide();
+  $("#back").hide();
   $(".js-no-matches").hide();
   $(".js-error").hide();
   $(":input").val("");
