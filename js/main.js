@@ -120,21 +120,20 @@ function error(el) {
 	var title;
 	switch (el) {
 		case "connection" :
-			msg = "It seems like there are no bus connections for these stations at the specified time. Please try changing your query.";
-			title = "No connections found.";
+			msg = getL10nString("l-er-con-m");
+			title = getL10nString("l-er-con-t");
 			break;
 		case "api" :
-			msg = "It seems like the SASA backend service which we use to obtain bus data is not responding. Please try again later.";
-			title = "Couldn't fetch bus data.";
+			msg = getL10nString("l-er-api-m");
+			title = getL10nString("l-er-api-t");
 			break;
 		case "network" :
-			msg = "It seems like your internet connection is not working. Please try to restore the connection and try again.";
-			title = "No network connection.";
+			msg = getL10nString("l-er-net-m");
+			title = getL10nString("l-er-net-t");
 			break;
 		default :
-			msg = "An unknown error has occurred. Shit is fucked up.";
-			title = "Unknown Error";
-			break;
+			msg = getL10nString("l-er-unk-m");
+			title = getL10nString("l-er-unk-t");
 	}
 	$.event.trigger({
 		type: "error",
