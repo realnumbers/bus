@@ -13,6 +13,7 @@ Here are some screenshots:
 
 ![Search](docs/search.png)
 ![Search results](docs/results.png)
+![Search results](docs/details.png)
 
 ##FAQ
 
