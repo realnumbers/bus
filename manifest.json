@@ -1,0 +1,15 @@
+{
+  "name": "Bus",
+  "description": "An awesome bus routing app for SASA buses",
+  "version": "1.0",
+  "launch_path": "/index.html",
+  "icons": {
+    "144": "touch-icon-144-precomposed.png",
+    "16": "favicon.png"
+  },
+  "developer": {
+    "name": "Real Numbers",
+    "url": "https://github.com/realnumbers"
+  },
+  "default_locale": "en"
+}
