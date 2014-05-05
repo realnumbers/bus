@@ -56,6 +56,8 @@ function langUI() {
     langTmp = "l10n_de";
   else if (navigator.language.substr(0, 2) == "it")
     langTmp = "l10n_it";
+  else if (navigator.language.substr(0, 2) == "eo")
+    langTmp = "l10n_eo";
 	return langTmp;
 }
 function getL10nString(l10nClass) {

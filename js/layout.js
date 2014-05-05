@@ -84,7 +84,8 @@ var l10n = {
       {"class": "l-when", "val": "Kiam:"},
       {"class": "l-no-matches", "val": "Neniu taûga haltejo"},
       {"class": "l-more", "val": "Ŝarĝu pliajn rezultojn"},
-      {"class": "l-changes", "val": "ŝanĝoj"},
+      {"class": "l-changeMultiple", "val": "ŝanĝoj"},
+      {"class": "l-changeSingle", "val": "ŝanĝo"},
       {"class": "l-er-con-t", "val": "Neniu interligo"},
       {"class": "l-er-con-m", "val": "Ne ekzistas busa interligo por tiu informpeto. Bonvolu ŝanĝi vian informpeton."},
       {"class": "l-er-api-t", "val": "Servilo ne estas atingebla."},
@@ -140,25 +141,19 @@ $("#menu").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend M
 });
 
 function l10nReplacement() {
-  console.log(navigator.language.substr(0, 2));
-  var langUI = "l10n_en";
-  if (navigator.language.substr(0, 2) == "de")
-    langUI = "l10n_de";
-  else if (navigator.language.substr(0, 2) == "it")
-    langUI = "l10n_it";
 
-  for (var i = 0; i < l10n[langUI].length; i++) {
-    console.log($(l10n[langUI][i].class));
-    var typ = l10n[langUI][i].class.split("-")[0];
+  for (var i = 0; i < l10n[langUI()].length; i++) {
+    console.log($(l10n[langUI()][i].class));
+    var typ = l10n[langUI()][i].class.split("-")[0];
     switch (typ) {
       case "l": 
-        $("." + l10n[langUI][i].class).text(l10n[langUI][i].val);
+        $("." + l10n[langUI()][i].class).text(l10n[langUI()][i].val);
         break;
       case "lp": 
-        $("." + l10n[langUI][i].class).attr("placeholder",l10n[langUI][i].val);
+        $("." + l10n[langUI()][i].class).attr("placeholder",l10n[langUI()][i].val);
         break;
       case "la": 
-        $("." + l10n[langUI][i].class).attr("alt",l10n[langUI][i].val);
+        $("." + l10n[langUI()][i].class).attr("alt",l10n[langUI()][i].val);
         break;
     }
   }
@@ -349,6 +344,9 @@ function genTimeString(waitTime, l10nClass) {
 				break;
 			case "l10n_de": 
 				waitTime =  waitTime + " " + l10nWait;
+				break;
+			case "l10n_eo": 
+				waitTime =  l10nWait + " " + waitTime;
 				break;
 		}
 	}
